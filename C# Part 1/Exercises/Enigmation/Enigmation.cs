@@ -11,13 +11,13 @@
         public static void Main(string[] args)
         {
             string input = System.IO.File.ReadAllText(@"C:\test.txt");
-            //string input = Console.ReadLine();
+
+            // string input = Console.ReadLine();
             input = input.TrimEnd('=');
             string sub = string.Empty;
-            
-            
             bool inParens = false;
             string output = string.Empty;
+
             for (int i = 0; i < input.Length; i++)
             {
                 if (inParens)
@@ -96,15 +96,13 @@
                                 num = num % current;
                                 operand = string.Empty;
                                 break;
-
-
                             default:
                                 break;
                         }
                     }
+
                     operand = input[i].ToString();
                 }
- 
             }
 
             return num.ToString();
