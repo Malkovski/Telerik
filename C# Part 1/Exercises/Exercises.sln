@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardWars", "CardWars\CardWa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartesianCoordinateSystem", "CartesianCoordinateSystem\CartesianCoordinateSystem.csproj", "{0FD493A3-BBDB-4B11-9D76-9002220F8F79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipBombs", "ConsoleApplication1\ShipBombs.csproj", "{9D1395AF-3EA3-4367-ABF4-BB63E1CD26D7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DancingBits", "DancingBits\DancingBits.csproj", "{D24E7722-FC9A-4DA4-B2B2-2315276FD167}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecimalToBinary", "DecimalToBinary\DecimalToBinary.csproj", "{A58F5B89-ED30-4C58-B1D2-EC1607AA31DF}"
@@ -59,6 +57,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripleRotation", "TripleRot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeAllLoveBits", "WeAllLoveBits\WeAllLoveBits.csproj", "{2449C067-E471-47D3-8C6B-4B4FB0E43EF1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipBombs", "ShipBombs\ShipBombs.csproj", "{9D1395AF-3EA3-4367-ABF4-BB63E1CD26D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoikoTower", "GoikoTower\GoikoTower.csproj", "{2D02EA6D-86D4-40AE-912B-51722545F174}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,10 +87,6 @@ Global
 		{0FD493A3-BBDB-4B11-9D76-9002220F8F79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FD493A3-BBDB-4B11-9D76-9002220F8F79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FD493A3-BBDB-4B11-9D76-9002220F8F79}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9D1395AF-3EA3-4367-ABF4-BB63E1CD26D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9D1395AF-3EA3-4367-ABF4-BB63E1CD26D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9D1395AF-3EA3-4367-ABF4-BB63E1CD26D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9D1395AF-3EA3-4367-ABF4-BB63E1CD26D7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D24E7722-FC9A-4DA4-B2B2-2315276FD167}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D24E7722-FC9A-4DA4-B2B2-2315276FD167}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D24E7722-FC9A-4DA4-B2B2-2315276FD167}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -177,6 +175,14 @@ Global
 		{2449C067-E471-47D3-8C6B-4B4FB0E43EF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2449C067-E471-47D3-8C6B-4B4FB0E43EF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2449C067-E471-47D3-8C6B-4B4FB0E43EF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D1395AF-3EA3-4367-ABF4-BB63E1CD26D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D1395AF-3EA3-4367-ABF4-BB63E1CD26D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D1395AF-3EA3-4367-ABF4-BB63E1CD26D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D1395AF-3EA3-4367-ABF4-BB63E1CD26D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D02EA6D-86D4-40AE-912B-51722545F174}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D02EA6D-86D4-40AE-912B-51722545F174}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D02EA6D-86D4-40AE-912B-51722545F174}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D02EA6D-86D4-40AE-912B-51722545F174}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
