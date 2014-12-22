@@ -61,6 +61,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipBombs", "ShipBombs\Ship
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoikoTower", "GoikoTower\GoikoTower.csproj", "{2D02EA6D-86D4-40AE-912B-51722545F174}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageGame", "PageGame\PageGame.csproj", "{4608DF4D-F2A9-4958-8827-C69FFE1B6B64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -183,6 +185,10 @@ Global
 		{2D02EA6D-86D4-40AE-912B-51722545F174}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D02EA6D-86D4-40AE-912B-51722545F174}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D02EA6D-86D4-40AE-912B-51722545F174}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4608DF4D-F2A9-4958-8827-C69FFE1B6B64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4608DF4D-F2A9-4958-8827-C69FFE1B6B64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4608DF4D-F2A9-4958-8827-C69FFE1B6B64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4608DF4D-F2A9-4958-8827-C69FFE1B6B64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
