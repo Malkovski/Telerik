@@ -10,7 +10,7 @@
     {
        public static void Main(string[] args)
         {       
-           string[] givenArr = Console.ReadLine().Split( new string[] {", "}, StringSplitOptions.RemoveEmptyEntries).ToArray();
+           string[] givenArr = Console.ReadLine().Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries).ToArray();
            int sum = 0;
            int maxSum = 0;
            string result = string.Empty;
@@ -24,7 +24,8 @@
                    for (int j = counter; j > i; j--)
                    {
                        sum += int.Parse(givenArr[j]);
-                   }                                   
+                   } 
+                                  
                    if (sum > maxSum)
                    {
                        maxSum = sum;
@@ -34,12 +35,15 @@
                        {
                            result += givenArr[h] + ", ";                           
                        }
+
                        result = result.TrimEnd(new char[] { ',', ' ' });
                    }
+
                    counter--;
                    sum = 0;
                }                            
-           }          
+           }       
+   
            Console.WriteLine("The sequence with maximal sum is {0} and it's sum is {1}", result, maxSum);
         }
     }
