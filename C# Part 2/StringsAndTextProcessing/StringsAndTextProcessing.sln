@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task6StringLength", "Task6StringLength\Task6StringLength.csproj", "{B5825B54-D530-42C4-95AD-CBDE190F9ED1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task7EncodeDecode", "Task7EncodeDecode\Task7EncodeDecode.csproj", "{B7D1D787-414E-41B6-8E8D-2A4427D3469B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B5825B54-D530-42C4-95AD-CBDE190F9ED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5825B54-D530-42C4-95AD-CBDE190F9ED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5825B54-D530-42C4-95AD-CBDE190F9ED1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7D1D787-414E-41B6-8E8D-2A4427D3469B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7D1D787-414E-41B6-8E8D-2A4427D3469B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7D1D787-414E-41B6-8E8D-2A4427D3469B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7D1D787-414E-41B6-8E8D-2A4427D3469B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
