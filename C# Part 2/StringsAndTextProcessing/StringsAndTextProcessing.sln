@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task16DateDifference", "Tas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task17DateInBulgarian", "Task17DateInBulgarian\Task17DateInBulgarian.csproj", "{E6C37306-8FFD-4C64-83B0-738717364E88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task18ExtractEmails", "Task18ExtractEmails\Task18ExtractEmails.csproj", "{E6CB09CD-FFB1-4E9D-8130-FF1DC8E26C00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task21LetterCounter", "Task21LetterCounter\Task21LetterCounter.csproj", "{A1C47A67-035E-441F-9376-504E1E1BD581}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,14 @@ Global
 		{E6C37306-8FFD-4C64-83B0-738717364E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6C37306-8FFD-4C64-83B0-738717364E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6C37306-8FFD-4C64-83B0-738717364E88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6CB09CD-FFB1-4E9D-8130-FF1DC8E26C00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6CB09CD-FFB1-4E9D-8130-FF1DC8E26C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6CB09CD-FFB1-4E9D-8130-FF1DC8E26C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6CB09CD-FFB1-4E9D-8130-FF1DC8E26C00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1C47A67-035E-441F-9376-504E1E1BD581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1C47A67-035E-441F-9376-504E1E1BD581}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1C47A67-035E-441F-9376-504E1E1BD581}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1C47A67-035E-441F-9376-504E1E1BD581}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

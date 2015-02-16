@@ -24,8 +24,7 @@
 
             DateTime realDateTime = new DateTime(year, month, day, hour, minute, seconds);
             realDateTime = realDateTime.Add(new TimeSpan(6, 30, 0));
-            Console.Write("{0}.{1}.{2} {3}:{4}:{5}", realDateTime.Day, realDateTime.Month, realDateTime.Year, realDateTime.Hour,
-                realDateTime.Minute, realDateTime.Second);
+            Console.Write("{0}.{1}.{2} {3}:{4}:{5}", realDateTime.Day,  realDateTime.Month,  realDateTime.Year,  realDateTime.Hour, realDateTime.Minute, realDateTime.Second);
             Console.WriteLine();
             string dayofWeek = realDateTime.DayOfWeek.ToString();
 

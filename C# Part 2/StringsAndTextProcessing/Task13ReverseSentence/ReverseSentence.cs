@@ -6,15 +6,13 @@
     using System.Text;
     using System.Threading.Tasks;
 
-   public class reverseSentence
+   public class ReverseSentence
     {
        public static void Main(string[] args)
         {
-            StringBuilder text =  new StringBuilder(Console.ReadLine());      
-            //text.Replace("!", " !");
+            StringBuilder text = new StringBuilder(Console.ReadLine());     
             string newText = text.ToString();
             int cnt = 0;
-
             string[] words = newText.Split(new string[] { " " }, StringSplitOptions.None);
             string[] newWords = new string[words.Length];
 
@@ -26,8 +24,6 @@
                 newWords[cnt] = tempWord;
                 cnt++;       
             }
-
-           // newWords[words.Length - 1] = words[words.Length - 1];
 
             for (int i = 0; i < words.Length; i++)
             {
@@ -52,8 +48,8 @@
                     Console.Write(newWords[i]);
                 }
             }
-            Console.WriteLine();
-           
+
+            Console.WriteLine();          
         }
     }
 }

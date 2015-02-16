@@ -16,8 +16,7 @@
             url = url.Substring(protEnd + 3);
             int servStart = url.IndexOf('/');
             Console.WriteLine("[server]= " + url.Substring(0, servStart));
-            Console.WriteLine("[resource]= " + url.Substring(servStart));
-            
+            Console.WriteLine("[resource]= " + url.Substring(servStart));            
         }
     }
 }
