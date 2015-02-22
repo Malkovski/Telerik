@@ -14,7 +14,7 @@
             string text = Console.ReadLine();
             string num = string.Empty;
 
-            for (int i = text.Length - 1; i >= 0; )
+            for (int i = text.Length - 1; i >= 0;)
             {
                 if (text[i] == 'f')
                 {
@@ -53,13 +53,24 @@
                 }
             }
 
-            decimal result = 0;
-            int pow = 0;
-            for (int j = num.Length - 1; j >= 0; j--)
+            BigInteger result = 0;
+            result = int.Parse(num[num.Length - 1].ToString()) * 1;
+
+            if (num.Length > 2)
             {
-                result += decimal.Parse(num[j].ToString()) * (decimal)(Math.Pow(7, pow));
-                pow++;
-            }
+                int pow = 1;
+                for (int j = num.Length - 2; j >= 0; j--)
+                {
+                    BigInteger temp = 1;
+                    for (int i = 0; i < pow; i++)
+                    {
+                        temp *= 7;
+                    }
+
+                    result += int.Parse(num[j].ToString()) * temp;
+                    pow++;
+                }
+            } 
 
             Console.WriteLine(result);
         }
