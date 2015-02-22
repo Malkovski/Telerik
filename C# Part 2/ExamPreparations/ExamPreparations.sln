@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zerggg", "Zerggg\Zerggg.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermutationExample", "PermutationExample\PermutationExample.csproj", "{249D1DC6-00C1-4ABE-B7C7-BBAA37D55000}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trails3D", "Trails3D\Trails3D.csproj", "{A718040A-78FC-4E08-B2C7-AB45A70D1D7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{249D1DC6-00C1-4ABE-B7C7-BBAA37D55000}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{249D1DC6-00C1-4ABE-B7C7-BBAA37D55000}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{249D1DC6-00C1-4ABE-B7C7-BBAA37D55000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A718040A-78FC-4E08-B2C7-AB45A70D1D7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A718040A-78FC-4E08-B2C7-AB45A70D1D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A718040A-78FC-4E08-B2C7-AB45A70D1D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A718040A-78FC-4E08-B2C7-AB45A70D1D7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
