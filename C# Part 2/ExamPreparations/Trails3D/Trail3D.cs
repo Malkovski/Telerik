@@ -42,266 +42,264 @@
 
 				grid[redH, redW] = 1;
 				grid[blueH, blueW] = 2;
-                bool curve = false;
-                bool turn = false;
-                int direction = 0;
-                int prevDirect = 0;
-                int way = 0;
-                int prevWay = 0;
+				int direction = 0;
+				int prevDirect = 0;
+				int way = 0;
+				int prevWay = 0;
 
-                
+				
 
 				for (int i = 0; i < shortest; i++)
 				{
-                    ///// RED SIDE CHECKING
+					///// RED SIDE CHECKING
 
-                    if (i == 0)
-                    {
-                        if (redRoad[0] == 'M')
-                        {
-                            direction = 1;
-                            redW++;
-                            if (grid[redH, redW] == 0)
-                            {
-                                grid[redH, redW] = 1;
-                            }
-                            else
-                            {
-                                redCrush = true;
-                            }
-                           
-                        }
-                        else if (redRoad[0] == 'L')
-                        {
-                            direction = 2;
-                        }
-                        else if (redRoad[0] == 'R')
-                        {
-                            direction = 3;
-                        }
+					if (i == 0)
+					{
+						if (redRoad[0] == 'M')
+						{
+							direction = 1;
+							redW++;
+							if (grid[redH, redW] == 0)
+							{
+								grid[redH, redW] = 1;
+							}
+							else
+							{
+								redCrush = true;
+							}
+						   
+						}
+						else if (redRoad[0] == 'L')
+						{
+							direction = 2;
+						}
+						else if (redRoad[0] == 'R')
+						{
+							direction = 3;
+						}
 
-                        prevDirect = direction;
-                    }
-                    else
-                    {
-                        if (redRoad[i] == 'M')
-                        {
-                            if (direction == 1)
-                            {
-                                redW++;
-                                if (grid[redH, redW] == 0)
-                                {
-                                    grid[redH, redW] = 1;
-                                }
-                                else
-                                {
-                                    redCrush = true;
-                                }
-                            }
-                            else if (direction == 2)
-                            {
-                                if (prevDirect == 3)
-                                {                                   
-                                    redW++;
-                                    if (grid[redH, redW] == 0)
-                                    {
-                                        grid[redH, redW] = 1;
-                                    }
-                                    else
-                                    {
-                                        redCrush = true;
-                                    }
-                                }
-                                else if (prevDirect == 1 || prevDirect == 2)
-                                {
-                                    redH--;
-                                    if (grid[redH, redW] == 0)
-                                    {
-                                        grid[redH, redW] = 1;
-                                    }
-                                    else
-                                    {
-                                        redCrush = true;
-                                    }
-                                }
-                               
-                            }
-                            else
-                            {
-                                if (prevDirect == 2)
-                                {
-                                    direction = 1;
-                                    redW++;
+						prevDirect = direction;
+					}
+					else
+					{
+						if (redRoad[i] == 'M')
+						{
+							if (direction == 1)
+							{
+								redW++;
+								if (grid[redH, redW] == 0)
+								{
+									grid[redH, redW] = 1;
+								}
+								else
+								{
+									redCrush = true;
+								}
+							}
+							else if (direction == 2)
+							{
+								if (prevDirect == 3)
+								{                                   
+									redW++;
+									if (grid[redH, redW] == 0)
+									{
+										grid[redH, redW] = 1;
+									}
+									else
+									{
+										redCrush = true;
+									}
+								}
+								else if (prevDirect == 1 || prevDirect == 2)
+								{
+									redH--;
+									if (grid[redH, redW] == 0)
+									{
+										grid[redH, redW] = 1;
+									}
+									else
+									{
+										redCrush = true;
+									}
+								}
+							   
+							}
+							else
+							{
+								if (prevDirect == 2)
+								{
+									direction = 1;
+									redW++;
 
-                                    if (grid[redH, redW] == 0)
-                                    {
-                                        grid[redH, redW] = 1;
-                                    }
-                                    else
-                                    {
-                                        redCrush = true;
-                                    }
-                                }
-                                else if (prevDirect == 1 || prevDirect == 3)
-                                {
-                                    redH++;
-                                    if (grid[redH, redW] == 0)
-                                    {
-                                        grid[redH, redW] = 1;
-                                    }
-                                    else
-                                    {
-                                        redCrush = true;
-                                    }
-                                }
-                               
-                            }
+									if (grid[redH, redW] == 0)
+									{
+										grid[redH, redW] = 1;
+									}
+									else
+									{
+										redCrush = true;
+									}
+								}
+								else if (prevDirect == 1 || prevDirect == 3)
+								{
+									redH++;
+									if (grid[redH, redW] == 0)
+									{
+										grid[redH, redW] = 1;
+									}
+									else
+									{
+										redCrush = true;
+									}
+								}
+							   
+							}
 
-                            prevDirect = direction;
-                        }
-                        else if (redRoad[i] == 'L')
-                        {
-                            direction = 2;
-                        }
-                        else if (redRoad[i] == 'R')
-                        {
-                            direction = 3;
-                        }
-                    }
+							prevDirect = direction;
+						}
+						else if (redRoad[i] == 'L')
+						{
+							direction = 2;
+						}
+						else if (redRoad[i] == 'R')
+						{
+							direction = 3;
+						}
+					}
 
-                    ////BLUE SIDE CHECKING
+					////BLUE SIDE CHECKING
 
-                    if (i == 0)
-                    {
-                        if (blueRoad[0] == 'M')
-                        {
-                            way = 1;
-                            blueW--;
+					if (i == 0)
+					{
+						if (blueRoad[0] == 'M')
+						{
+							way = 1;
+							blueW--;
 
-                            if (grid[blueH, blueW] == 0)
-                            {
-                                grid[blueH, blueW] = 1;
-                            }
-                            else
-                            {
-                                blueCrush = true;
-                            }
+							if (grid[blueH, blueW] == 0)
+							{
+								grid[blueH, blueW] = 1;
+							}
+							else
+							{
+								blueCrush = true;
+							}
 
-                        }
-                        else if (blueRoad[0] == 'L')
-                        {
-                            way = 2;
-                        }
-                        else if (blueRoad[0] == 'R')
-                        {
-                            way = 3;
-                        }
+						}
+						else if (blueRoad[0] == 'L')
+						{
+							way = 2;
+						}
+						else if (blueRoad[0] == 'R')
+						{
+							way = 3;
+						}
 
-                        prevWay = way;
-                    }
-                    else
-                    {
-                        if (blueRoad[i] == 'M')
-                        {
-                            if (way == 1)
-                            {
-                                blueW--;
-                                if (grid[blueH, blueW] == 0)
-                                {
-                                    grid[blueH, blueW] = 1;
-                                }
-                                else
-                                {
-                                    blueCrush = true;
-                                }
-                            }
-                            else if (way == 2)
-                            {
-                                if (prevWay == 3)
-                                {
-                                    blueW--;
-                                    if (grid[blueH, blueW] == 0)
-                                    {
-                                        grid[blueH, blueW] = 1;
-                                    }
-                                    else
-                                    {
-                                        blueCrush = true;
-                                    }
-                                }
-                                else if (prevWay == 1 || prevWay == 2)
-                                {
-                                    blueH++;
-                                    if (grid[blueH, blueW] == 0)
-                                    {
-                                        grid[blueH, blueW] = 1;
-                                    }
-                                    else
-                                    {
-                                        blueCrush = true;
-                                    }
-                                }
+						prevWay = way;
+					}
+					else
+					{
+						if (blueRoad[i] == 'M')
+						{
+							if (way == 1)
+							{
+								blueW--;
+								if (grid[blueH, blueW] == 0)
+								{
+									grid[blueH, blueW] = 1;
+								}
+								else
+								{
+									blueCrush = true;
+								}
+							}
+							else if (way == 2)
+							{
+								if (prevWay == 3)
+								{
+									blueW--;
+									if (grid[blueH, blueW] == 0)
+									{
+										grid[blueH, blueW] = 1;
+									}
+									else
+									{
+										blueCrush = true;
+									}
+								}
+								else if (prevWay == 1 || prevWay == 2)
+								{
+									blueH++;
+									if (grid[blueH, blueW] == 0)
+									{
+										grid[blueH, blueW] = 1;
+									}
+									else
+									{
+										blueCrush = true;
+									}
+								}
 
-                            }
-                            else
-                            {
-                                if (prevWay == 2)
-                                {
-                                    blueW--;
-                                    if (grid[blueH, blueW] == 0)
-                                    {
-                                        grid[blueH, blueW] = 1;
-                                    }
-                                    else
-                                    {
-                                        blueCrush = true;
-                                    }
-                                }
-                                else if (prevWay == 1)
-                                {
-                                    blueH--;
-                                    if (grid[blueH, blueW] == 0)
-                                    {
-                                        grid[blueH, blueW] = 1;
-                                    }
-                                    else
-                                    {
-                                        blueCrush = true;
-                                    }
-                                }
-                                else
-                                {
-                                    way = 1;
+							}
+							else
+							{
+								if (prevWay == 2)
+								{
+									blueW--;
+									if (grid[blueH, blueW] == 0)
+									{
+										grid[blueH, blueW] = 1;
+									}
+									else
+									{
+										blueCrush = true;
+									}
+								}
+								else if (prevWay == 1)
+								{
+									blueH--;
+									if (grid[blueH, blueW] == 0)
+									{
+										grid[blueH, blueW] = 1;
+									}
+									else
+									{
+										blueCrush = true;
+									}
+								}
+								else
+								{
+									way = 1;
 
-                                    if (grid[blueH, blueW] == 0)
-                                    {
-                                        grid[blueH, blueW] = 1;
-                                    }
-                                    else
-                                    {
-                                        blueCrush = true;
-                                    }
-                                }
+									if (grid[blueH, blueW] == 0)
+									{
+										grid[blueH, blueW] = 1;
+									}
+									else
+									{
+										blueCrush = true;
+									}
+								}
 
-                            }
+							}
 
-                            prevWay = way;
-                        }
-                        else if (blueRoad[i] == 'L')
-                        {
-                            way = 2;
-                        }
-                        else if (blueRoad[i] == 'R')
-                        {
-                            way = 3;
-                        }
-                    }
+							prevWay = way;
+						}
+						else if (blueRoad[i] == 'L')
+						{
+							way = 2;
+						}
+						else if (blueRoad[i] == 'R')
+						{
+							way = 3;
+						}
+					}
 
 					if (redCrush || blueCrush)
 					{
 						//break;
 					}
-                    PrintGrid(grid);
+					PrintGrid(grid);
 				}
 
 				
