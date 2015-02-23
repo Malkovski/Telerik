@@ -35,7 +35,7 @@
 					}
 
 					words[i] = eqWord.ToString() + words[i];
-                    eqWord.Clear();
+					eqWord.Clear();
 				}
 			}
 
@@ -62,19 +62,19 @@
 			{
 				int place = char.ToUpper(textNew[i]) - 65 + 1;               
 
-                if (place > textNew.Length - i)
-                {
-                    place = place - (textNew.Length - i); 
-                }
-                else
-                {
-                    place = i + place;
-                }
+				if (place > textNew.Length - i)
+				{
+					place = place - (textNew.Length - i); 
+				}
+				else
+				{
+					place = i + place;
+				}
 
-                while (place > textNew.Length - 1)
-                {
-                    place = place - textNew.Length;
-                }	
+				while (place > textNew.Length - 1)
+				{
+					place = place - textNew.Length;
+				}	
 				text.Remove(i, 1);
 				text.Insert(place, textNew[i]);
 				textNew = text.ToString();             
