@@ -57,16 +57,7 @@
                place.RemoveAt(pos);
                tempCount = -1;
                pos = -1;
-           }
-          
-            
-           // Dictionary<int, string>.ValueCollection valueColl = pargr.Values;
-           // Dictionary<int, string>.KeyCollection valueKeys = pargr.Keys;
-            //valueKeys = valueKeys.OrderBy(x => )
-            // (int i = valueColl.Count - 1; i >= 0; i--)
-           // {
-           //     Console.WriteLine(valueColl.ElementAt(i));
-           // }
+           }         
         }
     }
 }
