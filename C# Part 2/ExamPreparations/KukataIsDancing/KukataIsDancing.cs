@@ -52,7 +52,7 @@
             {
                 if (p == 'L')
                 {
-                    row--;                  
+                                      
                 }
             }
             else if (row == 0)
