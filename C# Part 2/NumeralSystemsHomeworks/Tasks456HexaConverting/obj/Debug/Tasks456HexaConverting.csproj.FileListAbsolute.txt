@@ -1,0 +1,6 @@
+D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Tasks456HexaConverting\bin\Debug\Tasks456HexaConverting.exe.config
+D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Tasks456HexaConverting\bin\Debug\Tasks456HexaConverting.exe
+D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Tasks456HexaConverting\bin\Debug\Tasks456HexaConverting.pdb
+D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Tasks456HexaConverting\obj\Debug\Tasks456HexaConverting.csprojResolveAssemblyReference.cache
+D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Tasks456HexaConverting\obj\Debug\Tasks456HexaConverting.exe
+D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Tasks456HexaConverting\obj\Debug\Tasks456HexaConverting.pdb

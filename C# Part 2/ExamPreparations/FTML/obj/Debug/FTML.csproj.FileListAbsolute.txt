@@ -1,0 +1,6 @@
+D:\Malkie\Telerik\C# Part 2\ExamPreparations\FTML\bin\Debug\FTML.exe.config
+D:\Malkie\Telerik\C# Part 2\ExamPreparations\FTML\bin\Debug\FTML.exe
+D:\Malkie\Telerik\C# Part 2\ExamPreparations\FTML\bin\Debug\FTML.pdb
+D:\Malkie\Telerik\C# Part 2\ExamPreparations\FTML\obj\Debug\FTML.csprojResolveAssemblyReference.cache
+D:\Malkie\Telerik\C# Part 2\ExamPreparations\FTML\obj\Debug\FTML.exe
+D:\Malkie\Telerik\C# Part 2\ExamPreparations\FTML\obj\Debug\FTML.pdb

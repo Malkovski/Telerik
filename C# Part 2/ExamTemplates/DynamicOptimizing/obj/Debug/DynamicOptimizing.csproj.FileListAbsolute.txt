@@ -1,0 +1,6 @@
+D:\Malkie\Telerik\C# Part 2\ExamTemplates\DynamicOptimizing\bin\Debug\DynamicOptimizing.exe.config
+D:\Malkie\Telerik\C# Part 2\ExamTemplates\DynamicOptimizing\bin\Debug\DynamicOptimizing.exe
+D:\Malkie\Telerik\C# Part 2\ExamTemplates\DynamicOptimizing\bin\Debug\DynamicOptimizing.pdb
+D:\Malkie\Telerik\C# Part 2\ExamTemplates\DynamicOptimizing\obj\Debug\DynamicOptimizing.csprojResolveAssemblyReference.cache
+D:\Malkie\Telerik\C# Part 2\ExamTemplates\DynamicOptimizing\obj\Debug\DynamicOptimizing.exe
+D:\Malkie\Telerik\C# Part 2\ExamTemplates\DynamicOptimizing\obj\Debug\DynamicOptimizing.pdb

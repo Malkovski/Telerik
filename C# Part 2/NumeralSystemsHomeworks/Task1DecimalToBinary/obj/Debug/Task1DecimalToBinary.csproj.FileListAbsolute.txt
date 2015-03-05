@@ -1,0 +1,6 @@
+D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Task1DecimalToBinary\bin\Debug\Task1DecimalToBinary.exe.config
+D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Task1DecimalToBinary\bin\Debug\Task1DecimalToBinary.exe
+D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Task1DecimalToBinary\bin\Debug\Task1DecimalToBinary.pdb
+D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Task1DecimalToBinary\obj\Debug\Task1DecimalToBinary.csprojResolveAssemblyReference.cache
+D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Task1DecimalToBinary\obj\Debug\Task1DecimalToBinary.exe
+D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Task1DecimalToBinary\obj\Debug\Task1DecimalToBinary.pdb

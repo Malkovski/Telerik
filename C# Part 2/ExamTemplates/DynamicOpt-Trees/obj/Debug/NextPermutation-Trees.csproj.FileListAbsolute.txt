@@ -1,0 +1,3 @@
+D:\Malkie\Telerik\C# Part 2\ExamTemplates\DynamicOpt-Trees\bin\Debug\DynamicOpt-Trees.exe.config
+D:\Malkie\Telerik\C# Part 2\ExamTemplates\DynamicOpt-Trees\obj\Debug\DynamicOpt-Trees.exe
+D:\Malkie\Telerik\C# Part 2\ExamTemplates\DynamicOpt-Trees\obj\Debug\DynamicOpt-Trees.pdb

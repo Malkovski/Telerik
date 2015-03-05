@@ -1,0 +1,6 @@
+D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task15ReplaceTags\bin\Debug\Task15ReplaceTags.exe.config
+D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task15ReplaceTags\bin\Debug\Task15ReplaceTags.exe
+D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task15ReplaceTags\bin\Debug\Task15ReplaceTags.pdb
+D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task15ReplaceTags\obj\Debug\Task15ReplaceTags.csprojResolveAssemblyReference.cache
+D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task15ReplaceTags\obj\Debug\Task15ReplaceTags.exe
+D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task15ReplaceTags\obj\Debug\Task15ReplaceTags.pdb

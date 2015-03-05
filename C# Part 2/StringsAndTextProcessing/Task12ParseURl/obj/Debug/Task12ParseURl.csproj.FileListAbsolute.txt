@@ -1,0 +1,6 @@
+D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task12ParseURl\bin\Debug\Task12ParseURl.exe.config
+D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task12ParseURl\bin\Debug\Task12ParseURl.exe
+D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task12ParseURl\bin\Debug\Task12ParseURl.pdb
+D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task12ParseURl\obj\Debug\Task12ParseURl.csprojResolveAssemblyReference.cache
+D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task12ParseURl\obj\Debug\Task12ParseURl.exe
+D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task12ParseURl\obj\Debug\Task12ParseURl.pdb
