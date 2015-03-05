@@ -1,0 +1,6 @@
+C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\Sheets\bin\Debug\Sheets.exe.config
+C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\Sheets\bin\Debug\Sheets.exe
+C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\Sheets\bin\Debug\Sheets.pdb
+C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\Sheets\obj\Debug\Sheets.exe
+C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\Sheets\obj\Debug\Sheets.pdb
+C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\Sheets\obj\Debug\Sheets.csprojResolveAssemblyReference.cache

@@ -1,0 +1,1 @@
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\CartesianCoordinateSys\CartesianCoordinateSys\bin\Debug\CartesianCoordinateSys.exe.config

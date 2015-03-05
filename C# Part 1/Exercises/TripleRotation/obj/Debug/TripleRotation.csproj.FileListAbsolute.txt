@@ -1,0 +1,6 @@
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Solution3\TripleRotation\bin\Debug\TripleRotation.exe.config
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Solution3\TripleRotation\obj\Debug\TripleRotation.csprojResolveAssemblyReference.cache
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Solution3\TripleRotation\bin\Debug\TripleRotation.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Solution3\TripleRotation\bin\Debug\TripleRotation.pdb
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Solution3\TripleRotation\obj\Debug\TripleRotation.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Solution3\TripleRotation\obj\Debug\TripleRotation.pdb

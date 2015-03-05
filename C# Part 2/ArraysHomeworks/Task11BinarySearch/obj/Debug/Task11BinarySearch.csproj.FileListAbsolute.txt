@@ -1,0 +1,6 @@
+E:\Telerik\gitHub\Telerik\C# Part 2\ArraysHomeworks\Task11BinarySearch\bin\Debug\Task11BinarySearch.exe.config
+E:\Telerik\gitHub\Telerik\C# Part 2\ArraysHomeworks\Task11BinarySearch\bin\Debug\Task11BinarySearch.exe
+E:\Telerik\gitHub\Telerik\C# Part 2\ArraysHomeworks\Task11BinarySearch\bin\Debug\Task11BinarySearch.pdb
+E:\Telerik\gitHub\Telerik\C# Part 2\ArraysHomeworks\Task11BinarySearch\obj\Debug\Task11BinarySearch.csprojResolveAssemblyReference.cache
+E:\Telerik\gitHub\Telerik\C# Part 2\ArraysHomeworks\Task11BinarySearch\obj\Debug\Task11BinarySearch.exe
+E:\Telerik\gitHub\Telerik\C# Part 2\ArraysHomeworks\Task11BinarySearch\obj\Debug\Task11BinarySearch.pdb

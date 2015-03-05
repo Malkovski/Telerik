@@ -1,0 +1,5 @@
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test3-Math\Test3-Math\bin\Debug\Test3-Math.exe.config
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test3-Math\Test3-Math\bin\Debug\Test3-Math.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test3-Math\Test3-Math\bin\Debug\Test3-Math.pdb
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test3-Math\Test3-Math\obj\Debug\Test3-Math.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test3-Math\Test3-Math\obj\Debug\Test3-Math.pdb

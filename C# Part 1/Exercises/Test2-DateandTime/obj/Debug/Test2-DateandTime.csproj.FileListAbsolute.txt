@@ -1,0 +1,6 @@
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test2-DateandTime\Test2-DateandTime\bin\Debug\Test2-DateandTime.exe.config
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test2-DateandTime\Test2-DateandTime\bin\Debug\Test2-DateandTime.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test2-DateandTime\Test2-DateandTime\bin\Debug\Test2-DateandTime.pdb
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test2-DateandTime\Test2-DateandTime\obj\Debug\Test2-DateandTime.csprojResolveAssemblyReference.cache
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test2-DateandTime\Test2-DateandTime\obj\Debug\Test2-DateandTime.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test2-DateandTime\Test2-DateandTime\obj\Debug\Test2-DateandTime.pdb

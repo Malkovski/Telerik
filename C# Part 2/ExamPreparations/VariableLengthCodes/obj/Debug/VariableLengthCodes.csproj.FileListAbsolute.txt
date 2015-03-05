@@ -1,0 +1,6 @@
+E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\VariableLengthCodes\bin\Debug\VariableLengthCodes.exe.config
+E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\VariableLengthCodes\bin\Debug\VariableLengthCodes.exe
+E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\VariableLengthCodes\bin\Debug\VariableLengthCodes.pdb
+E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\VariableLengthCodes\obj\Debug\VariableLengthCodes.exe
+E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\VariableLengthCodes\obj\Debug\VariableLengthCodes.pdb
+E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\VariableLengthCodes\obj\Debug\VariableLengthCodes.csprojResolveAssemblyReference.cache

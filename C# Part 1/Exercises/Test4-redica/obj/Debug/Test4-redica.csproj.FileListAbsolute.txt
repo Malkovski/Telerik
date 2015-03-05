@@ -1,0 +1,9 @@
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test4-redica\Test4-redica\bin\Debug\Test4-redica.exe.config
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test4-redica\Test4-redica\bin\Debug\Test4-redica.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test4-redica\Test4-redica\bin\Debug\Test4-redica.pdb
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test4-redica\Test4-redica\obj\Debug\Test4-redica.csprojResolveAssemblyReference.cache
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test4-redica\Test4-redica\obj\Debug\Test4-redica.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test4-redica\Test4-redica\obj\Debug\Test4-redica.pdb
+E:\Telerik\gitHub\Telerik\C# Part 1\Exercises\Test4-redica\bin\Debug\Test4-redica.exe.config
+E:\Telerik\gitHub\Telerik\C# Part 1\Exercises\Test4-redica\obj\Debug\Test4-redica.exe
+E:\Telerik\gitHub\Telerik\C# Part 1\Exercises\Test4-redica\obj\Debug\Test4-redica.pdb

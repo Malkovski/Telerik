@@ -1,0 +1,6 @@
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\MasivCompare\MasivCompare\bin\Debug\MasivCompare.exe.config
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\MasivCompare\MasivCompare\bin\Debug\MasivCompare.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\MasivCompare\MasivCompare\bin\Debug\MasivCompare.pdb
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\MasivCompare\MasivCompare\obj\Debug\MasivCompare.csprojResolveAssemblyReference.cache
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\MasivCompare\MasivCompare\obj\Debug\MasivCompare.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\MasivCompare\MasivCompare\obj\Debug\MasivCompare.pdb

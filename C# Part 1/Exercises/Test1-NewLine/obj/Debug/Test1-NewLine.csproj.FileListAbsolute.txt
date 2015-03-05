@@ -1,0 +1,6 @@
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test1-NewLine\Test1-NewLine\bin\Debug\Test1-NewLine.exe.config
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test1-NewLine\Test1-NewLine\bin\Debug\Test1-NewLine.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test1-NewLine\Test1-NewLine\bin\Debug\Test1-NewLine.pdb
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test1-NewLine\Test1-NewLine\obj\Debug\Test1-NewLine.csprojResolveAssemblyReference.cache
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test1-NewLine\Test1-NewLine\obj\Debug\Test1-NewLine.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test1-NewLine\Test1-NewLine\obj\Debug\Test1-NewLine.pdb

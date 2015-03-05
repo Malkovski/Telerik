@@ -1,0 +1,1 @@
+E:\Telerik\gitHub\Telerik\C# Part 2\ArraysHomeworks\Task8MaximalSum\bin\Debug\Task8MaximalSum.exe.config

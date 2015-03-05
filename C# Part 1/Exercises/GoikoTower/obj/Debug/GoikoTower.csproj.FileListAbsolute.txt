@@ -1,0 +1,6 @@
+E:\Telerik\gitHub\Telerik\C# Part 1\Exercises\GoikoTower\bin\Debug\GoikoTower.exe.config
+E:\Telerik\gitHub\Telerik\C# Part 1\Exercises\GoikoTower\bin\Debug\GoikoTower.exe
+E:\Telerik\gitHub\Telerik\C# Part 1\Exercises\GoikoTower\bin\Debug\GoikoTower.pdb
+E:\Telerik\gitHub\Telerik\C# Part 1\Exercises\GoikoTower\obj\Debug\GoikoTower.csprojResolveAssemblyReference.cache
+E:\Telerik\gitHub\Telerik\C# Part 1\Exercises\GoikoTower\obj\Debug\GoikoTower.exe
+E:\Telerik\gitHub\Telerik\C# Part 1\Exercises\GoikoTower\obj\Debug\GoikoTower.pdb

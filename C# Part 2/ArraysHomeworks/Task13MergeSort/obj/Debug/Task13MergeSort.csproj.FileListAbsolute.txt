@@ -1,0 +1,6 @@
+E:\Telerik\gitHub\Telerik\C# Part 2\ArraysHomeworks\Task13MergeSort\bin\Debug\Task13MergeSort.exe.config
+E:\Telerik\gitHub\Telerik\C# Part 2\ArraysHomeworks\Task13MergeSort\bin\Debug\Task13MergeSort.exe
+E:\Telerik\gitHub\Telerik\C# Part 2\ArraysHomeworks\Task13MergeSort\bin\Debug\Task13MergeSort.pdb
+E:\Telerik\gitHub\Telerik\C# Part 2\ArraysHomeworks\Task13MergeSort\obj\Debug\Task13MergeSort.csprojResolveAssemblyReference.cache
+E:\Telerik\gitHub\Telerik\C# Part 2\ArraysHomeworks\Task13MergeSort\obj\Debug\Task13MergeSort.exe
+E:\Telerik\gitHub\Telerik\C# Part 2\ArraysHomeworks\Task13MergeSort\obj\Debug\Task13MergeSort.pdb

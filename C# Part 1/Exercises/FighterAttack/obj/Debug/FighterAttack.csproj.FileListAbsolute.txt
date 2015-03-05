@@ -1,0 +1,6 @@
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Solution2\FighterAttack\bin\Debug\FighterAttack.exe.config
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Solution2\FighterAttack\bin\Debug\FighterAttack.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Solution2\FighterAttack\bin\Debug\FighterAttack.pdb
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Solution2\FighterAttack\obj\Debug\FighterAttack.csprojResolveAssemblyReference.cache
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Solution2\FighterAttack\obj\Debug\FighterAttack.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Solution2\FighterAttack\obj\Debug\FighterAttack.pdb

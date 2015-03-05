@@ -1,0 +1,6 @@
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\ExamPreparations\AcademyTasks\bin\Debug\AcademyTasks.exe.config
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\ExamPreparations\AcademyTasks\bin\Debug\AcademyTasks.exe
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\ExamPreparations\AcademyTasks\bin\Debug\AcademyTasks.pdb
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\ExamPreparations\AcademyTasks\obj\Debug\AcademyTasks.csprojResolveAssemblyReference.cache
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\ExamPreparations\AcademyTasks\obj\Debug\AcademyTasks.exe
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\ExamPreparations\AcademyTasks\obj\Debug\AcademyTasks.pdb

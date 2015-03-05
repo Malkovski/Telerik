@@ -1,0 +1,5 @@
+E:\Telerik\gitHub\Telerik\C# Part 2\ArraysHomeworks\Task12IndexOfLetters\bin\Debug\Task12IndexOfLetters.exe.config
+E:\Telerik\gitHub\Telerik\C# Part 2\ArraysHomeworks\Task12IndexOfLetters\bin\Debug\Task12IndexOfLetters.exe
+E:\Telerik\gitHub\Telerik\C# Part 2\ArraysHomeworks\Task12IndexOfLetters\bin\Debug\Task12IndexOfLetters.pdb
+E:\Telerik\gitHub\Telerik\C# Part 2\ArraysHomeworks\Task12IndexOfLetters\obj\Debug\Task12IndexOfLetters.exe
+E:\Telerik\gitHub\Telerik\C# Part 2\ArraysHomeworks\Task12IndexOfLetters\obj\Debug\Task12IndexOfLetters.pdb

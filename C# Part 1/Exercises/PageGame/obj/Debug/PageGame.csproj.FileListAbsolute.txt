@@ -1,0 +1,6 @@
+E:\Telerik\gitHub\Telerik\C# Part 1\Exercises\PageGame\bin\Debug\PageGame.exe.config
+E:\Telerik\gitHub\Telerik\C# Part 1\Exercises\PageGame\bin\Debug\PageGame.exe
+E:\Telerik\gitHub\Telerik\C# Part 1\Exercises\PageGame\bin\Debug\PageGame.pdb
+E:\Telerik\gitHub\Telerik\C# Part 1\Exercises\PageGame\obj\Debug\PageGame.csprojResolveAssemblyReference.cache
+E:\Telerik\gitHub\Telerik\C# Part 1\Exercises\PageGame\obj\Debug\PageGame.exe
+E:\Telerik\gitHub\Telerik\C# Part 1\Exercises\PageGame\obj\Debug\PageGame.pdb

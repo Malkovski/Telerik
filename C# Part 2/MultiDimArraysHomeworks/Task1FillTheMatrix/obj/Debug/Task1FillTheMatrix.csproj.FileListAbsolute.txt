@@ -1,0 +1,9 @@
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\Solution1\Task1FillTheMatrix\bin\Debug\Task1FillTheMatrix.exe.config
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\Solution1\Task1FillTheMatrix\obj\Debug\Task1FillTheMatrix.csprojResolveAssemblyReference.cache
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\Solution1\Task1FillTheMatrix\bin\Debug\Task1FillTheMatrix.exe
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\Solution1\Task1FillTheMatrix\bin\Debug\Task1FillTheMatrix.pdb
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\Solution1\Task1FillTheMatrix\obj\Debug\Task1FillTheMatrix.exe
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\Solution1\Task1FillTheMatrix\obj\Debug\Task1FillTheMatrix.pdb
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task1FillTheMatrix\bin\Debug\Task1FillTheMatrix.exe.config
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task1FillTheMatrix\obj\Debug\Task1FillTheMatrix.exe
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task1FillTheMatrix\obj\Debug\Task1FillTheMatrix.pdb

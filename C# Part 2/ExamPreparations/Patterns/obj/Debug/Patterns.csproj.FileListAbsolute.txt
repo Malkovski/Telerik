@@ -1,0 +1,6 @@
+E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\Patterns\bin\Debug\Patterns.exe.config
+E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\Patterns\bin\Debug\Patterns.exe
+E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\Patterns\bin\Debug\Patterns.pdb
+E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\Patterns\obj\Debug\Patterns.csprojResolveAssemblyReference.cache
+E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\Patterns\obj\Debug\Patterns.exe
+E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\Patterns\obj\Debug\Patterns.pdb

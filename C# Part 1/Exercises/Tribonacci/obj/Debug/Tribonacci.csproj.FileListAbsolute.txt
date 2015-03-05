@@ -1,0 +1,6 @@
+C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercisesLevel2\Tribonacci\bin\Debug\Tribonacci.exe.config
+C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercisesLevel2\Tribonacci\bin\Debug\Tribonacci.exe
+C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercisesLevel2\Tribonacci\bin\Debug\Tribonacci.pdb
+C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercisesLevel2\Tribonacci\obj\Debug\Tribonacci.csprojResolveAssemblyReference.cache
+C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercisesLevel2\Tribonacci\obj\Debug\Tribonacci.exe
+C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercisesLevel2\Tribonacci\obj\Debug\Tribonacci.pdb

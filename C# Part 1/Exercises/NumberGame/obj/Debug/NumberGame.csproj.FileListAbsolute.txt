@@ -1,0 +1,6 @@
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\NumberGame\NumberGame\bin\Debug\NumberGame.exe.config
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\NumberGame\NumberGame\obj\Debug\NumberGame.csprojResolveAssemblyReference.cache
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\NumberGame\NumberGame\bin\Debug\NumberGame.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\NumberGame\NumberGame\bin\Debug\NumberGame.pdb
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\NumberGame\NumberGame\obj\Debug\NumberGame.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\NumberGame\NumberGame\obj\Debug\NumberGame.pdb

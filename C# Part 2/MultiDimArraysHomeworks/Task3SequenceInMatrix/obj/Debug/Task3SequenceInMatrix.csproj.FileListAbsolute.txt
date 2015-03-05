@@ -1,0 +1,9 @@
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\Solution1\Task3SequenceInMatrix\bin\Debug\Task3SequenceInMatrix.exe.config
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\Solution1\Task3SequenceInMatrix\bin\Debug\Task3SequenceInMatrix.exe
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\Solution1\Task3SequenceInMatrix\bin\Debug\Task3SequenceInMatrix.pdb
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\Solution1\Task3SequenceInMatrix\obj\Debug\Task3SequenceInMatrix.csprojResolveAssemblyReference.cache
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\Solution1\Task3SequenceInMatrix\obj\Debug\Task3SequenceInMatrix.exe
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\Solution1\Task3SequenceInMatrix\obj\Debug\Task3SequenceInMatrix.pdb
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task3SequenceInMatrix\bin\Debug\Task3SequenceInMatrix.exe.config
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task3SequenceInMatrix\obj\Debug\Task3SequenceInMatrix.exe
+E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task3SequenceInMatrix\obj\Debug\Task3SequenceInMatrix.pdb

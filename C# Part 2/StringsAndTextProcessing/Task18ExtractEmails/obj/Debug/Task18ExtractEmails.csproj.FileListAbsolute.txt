@@ -1,0 +1,6 @@
+E:\Telerik\gitHub\Telerik\C# Part 2\StringsAndTextProcessing\Task18ExtractEmails\bin\Debug\Task18ExtractEmails.exe.config
+E:\Telerik\gitHub\Telerik\C# Part 2\StringsAndTextProcessing\Task18ExtractEmails\bin\Debug\Task18ExtractEmails.exe
+E:\Telerik\gitHub\Telerik\C# Part 2\StringsAndTextProcessing\Task18ExtractEmails\bin\Debug\Task18ExtractEmails.pdb
+E:\Telerik\gitHub\Telerik\C# Part 2\StringsAndTextProcessing\Task18ExtractEmails\obj\Debug\Task18ExtractEmails.csprojResolveAssemblyReference.cache
+E:\Telerik\gitHub\Telerik\C# Part 2\StringsAndTextProcessing\Task18ExtractEmails\obj\Debug\Task18ExtractEmails.exe
+E:\Telerik\gitHub\Telerik\C# Part 2\StringsAndTextProcessing\Task18ExtractEmails\obj\Debug\Task18ExtractEmails.pdb

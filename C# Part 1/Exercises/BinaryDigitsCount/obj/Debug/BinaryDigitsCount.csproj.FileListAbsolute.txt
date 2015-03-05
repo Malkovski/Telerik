@@ -1,0 +1,6 @@
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\ExercicesLevel-3\BinaryDigitsCount\bin\Debug\BinaryDigitsCount.exe.config
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\ExercicesLevel-3\BinaryDigitsCount\bin\Debug\BinaryDigitsCount.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\ExercicesLevel-3\BinaryDigitsCount\bin\Debug\BinaryDigitsCount.pdb
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\ExercicesLevel-3\BinaryDigitsCount\obj\Debug\BinaryDigitsCount.csprojResolveAssemblyReference.cache
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\ExercicesLevel-3\BinaryDigitsCount\obj\Debug\BinaryDigitsCount.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\ExercicesLevel-3\BinaryDigitsCount\obj\Debug\BinaryDigitsCount.pdb

@@ -1,0 +1,6 @@
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\IntroCSharp\IntroCSharp\bin\Debug\IntroCSharp.exe.config
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\IntroCSharp\IntroCSharp\bin\Debug\IntroCSharp.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\IntroCSharp\IntroCSharp\bin\Debug\IntroCSharp.pdb
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\IntroCSharp\IntroCSharp\obj\Debug\IntroCSharp.csprojResolveAssemblyReference.cache
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\IntroCSharp\IntroCSharp\obj\Debug\IntroCSharp.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\IntroCSharp\IntroCSharp\obj\Debug\IntroCSharp.pdb

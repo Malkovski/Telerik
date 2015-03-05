@@ -1,0 +1,6 @@
+C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\CardWars\bin\Debug\CardWars.exe.config
+C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\CardWars\bin\Debug\CardWars.exe
+C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\CardWars\bin\Debug\CardWars.pdb
+C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\CardWars\obj\Debug\CardWars.csprojResolveAssemblyReference.cache
+C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\CardWars\obj\Debug\CardWars.exe
+C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\CardWars\obj\Debug\CardWars.pdb

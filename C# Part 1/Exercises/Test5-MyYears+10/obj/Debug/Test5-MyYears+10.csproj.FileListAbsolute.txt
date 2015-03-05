@@ -1,0 +1,5 @@
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test5-MyYears+10\Test5-MyYears+10\bin\Debug\Test5-MyYears+10.exe.config
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test5-MyYears+10\Test5-MyYears+10\bin\Debug\Test5-MyYears+10.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test5-MyYears+10\Test5-MyYears+10\bin\Debug\Test5-MyYears+10.pdb
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test5-MyYears+10\Test5-MyYears+10\obj\Debug\Test5-MyYears+10.exe
+c:\users\geogi malkovski\documents\visual studio 2013\Projects\Test5-MyYears+10\Test5-MyYears+10\obj\Debug\Test5-MyYears+10.pdb
