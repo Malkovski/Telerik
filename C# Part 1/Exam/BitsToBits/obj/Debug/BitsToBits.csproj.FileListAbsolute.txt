@@ -1,0 +1,6 @@
+c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\BitsToBits\bin\Debug\BitsToBits.exe.config
+c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\BitsToBits\bin\Debug\BitsToBits.exe
+c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\BitsToBits\bin\Debug\BitsToBits.pdb
+c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\BitsToBits\obj\Debug\BitsToBits.csprojResolveAssemblyReference.cache
+c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\BitsToBits\obj\Debug\BitsToBits.exe
+c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\BitsToBits\obj\Debug\BitsToBits.pdb

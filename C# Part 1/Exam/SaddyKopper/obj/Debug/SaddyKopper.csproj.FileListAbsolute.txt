@@ -1,0 +1,6 @@
+c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\SaddyKopper\bin\Debug\SaddyKopper.exe.config
+c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\SaddyKopper\bin\Debug\SaddyKopper.exe
+c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\SaddyKopper\bin\Debug\SaddyKopper.pdb
+c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\SaddyKopper\obj\Debug\SaddyKopper.exe
+c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\SaddyKopper\obj\Debug\SaddyKopper.pdb
+c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\SaddyKopper\obj\Debug\SaddyKopper.csprojResolveAssemblyReference.cache

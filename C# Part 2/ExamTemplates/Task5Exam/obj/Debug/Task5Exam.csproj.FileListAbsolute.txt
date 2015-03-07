@@ -1,0 +1,6 @@
+D:\Malkie\Telerik\C# Part 2\ExamTemplates\Task5Exam\obj\Debug\Task5Exam.csprojResolveAssemblyReference.cache
+D:\Malkie\Telerik\C# Part 2\ExamTemplates\Task5Exam\bin\Debug\Task5Exam.exe.config
+D:\Malkie\Telerik\C# Part 2\ExamTemplates\Task5Exam\bin\Debug\Task5Exam.exe
+D:\Malkie\Telerik\C# Part 2\ExamTemplates\Task5Exam\bin\Debug\Task5Exam.pdb
+D:\Malkie\Telerik\C# Part 2\ExamTemplates\Task5Exam\obj\Debug\Task5Exam.exe
+D:\Malkie\Telerik\C# Part 2\ExamTemplates\Task5Exam\obj\Debug\Task5Exam.pdb

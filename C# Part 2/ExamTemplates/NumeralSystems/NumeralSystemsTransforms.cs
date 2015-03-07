@@ -17,7 +17,7 @@
             int toBase = 9;
             int len = 4;
 
-            // In case equal length of the words wit given length( 4 in this case)
+            // In case equal length of the words with given length( 4 in this case)
             string input = TextToNumbers(line, len);
 
             // Converting from any numeral sys to decimal
@@ -40,7 +40,8 @@
 
                 switch (word.ToString())
                 {
-                    case "": input = ""; break;
+                    case "": input = ""; 
+                        break;
 
                     default:
                         break;
@@ -70,7 +71,7 @@
 
         private static BigInteger TransformFromBaseToDecimal(string input, int fromBase, BigInteger result)
         {
-            result = BigInteger.Parse(input[input.Length -1].ToString());
+            result = BigInteger.Parse(input[input.Length - 1].ToString());
             BigInteger pow = 1;
 
             for (int i = input.Length - 2; i >= 0; i--)
