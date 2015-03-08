@@ -1,0 +1,6 @@
+C:\Users\Mastermind\Documents\Visual Studio 2013\Projects\ArraysHomeworks\Task10FindSum\bin\Debug\Task10FindSum.exe.config
+C:\Users\Mastermind\Documents\Visual Studio 2013\Projects\ArraysHomeworks\Task10FindSum\bin\Debug\Task10FindSum.exe
+C:\Users\Mastermind\Documents\Visual Studio 2013\Projects\ArraysHomeworks\Task10FindSum\bin\Debug\Task10FindSum.pdb
+C:\Users\Mastermind\Documents\Visual Studio 2013\Projects\ArraysHomeworks\Task10FindSum\obj\Debug\Task10FindSum.csprojResolveAssemblyReference.cache
+C:\Users\Mastermind\Documents\Visual Studio 2013\Projects\ArraysHomeworks\Task10FindSum\obj\Debug\Task10FindSum.exe
+C:\Users\Mastermind\Documents\Visual Studio 2013\Projects\ArraysHomeworks\Task10FindSum\obj\Debug\Task10FindSum.pdb

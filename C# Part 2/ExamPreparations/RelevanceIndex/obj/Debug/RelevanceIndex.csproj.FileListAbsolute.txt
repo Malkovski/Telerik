@@ -1,0 +1,6 @@
+D:\Malkie\Telerik\C# Part 2\ExamPreparations\RelevanceIndex\bin\Debug\RelevanceIndex.exe.config
+D:\Malkie\Telerik\C# Part 2\ExamPreparations\RelevanceIndex\bin\Debug\RelevanceIndex.exe
+D:\Malkie\Telerik\C# Part 2\ExamPreparations\RelevanceIndex\bin\Debug\RelevanceIndex.pdb
+D:\Malkie\Telerik\C# Part 2\ExamPreparations\RelevanceIndex\obj\Debug\RelevanceIndex.csprojResolveAssemblyReference.cache
+D:\Malkie\Telerik\C# Part 2\ExamPreparations\RelevanceIndex\obj\Debug\RelevanceIndex.exe
+D:\Malkie\Telerik\C# Part 2\ExamPreparations\RelevanceIndex\obj\Debug\RelevanceIndex.pdb
