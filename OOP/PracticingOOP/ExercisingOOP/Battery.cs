@@ -1,85 +1,111 @@
-﻿namespace ExercisingOOP
+﻿namespace MobilePhones
 {
-	using System;
+    using System;
+    using System.Text;
 
-	public class Battery
-	{
-		private string batteryModel;
-		private int idleHours;
-		private int talkHours;
-		private BatteryType type;
+    public class Battery
+    {
+        private string batteryModel;
+        private int idleHours;
+        private int talkHours;
 
-		public Battery(string batteryModel)
-		{
-			this.BatteryModel = batteryModel;         
-		}
+        public Battery(string batteryModel)
+        {
+            this.BatteryModel = batteryModel;         
+        }
 
-		public Battery(string batteryModel, BatteryType type, int idleHours, int talkHours) : this(batteryModel)
-		{
-			this.IdleHours = idleHours;
-			this.TalkHours = talkHours;
-			this.Type = Type;
-		}
+        public Battery(string batteryModel, int idleHours, int talkHours) : this(batteryModel)
+        {
+            this.IdleHours = idleHours;
+            this.TalkHours = talkHours;
+        }
 
-		public string BatteryModel
-		{
-			get
-			{ 
-				return this.batteryModel; 
-			}      
-			set 
-			{
-					if (value == null)
-					{
-						throw new ArgumentException("Data must not be null!");	 
-					}
+        public Battery(string batteryModel, int idleHours, int talkHours, BatteryType type)
+            : this(batteryModel, idleHours, talkHours)
+        {
+            this.Type = type;
+        }
 
-				this.batteryModel = value; 
-			}
-		}
+        public string BatteryModel
+        {
+            get
+            { 
+                return this.batteryModel; 
+            }   
+   
+            set 
+            {
+                    if (string.IsNullOrEmpty(value))
+                    {
+                        throw new ArgumentException("Enter battery model!!!");
+                    }
 
-		public int IdleHours
-		{ 
-			get
-			{ 
-				return this.idleHours; 
-			}
-			set
-			{
-				int valueType = 0;
+                this.batteryModel = value; 
+            }
+        }
 
-				if (int.TryParse(value.ToString(), out valueType) == false)
-				{
-					throw new ArgumentException("Use only symbols from 0...9!");
-				}
+        public int IdleHours
+        { 
+            get
+            { 
+                return this.idleHours; 
+            }
 
-				this.idleHours = value; 
-			}
-		}
+            set
+            {
+                int valueType = 0;
 
-		public int TalkHours
-		{
-			get
-			{ 
-				return this.talkHours;
-			}
-			set
-			{
-				int valueType = 0;
+                if (!int.TryParse(value.ToString(), out valueType))
+                {
+                    throw new ArgumentException("Use only symbols from 0...9!");
+                }
+                else if (int.Parse(value.ToString()) < 0)
+                {
+                    throw new ArgumentException("Data must be positive number!!!");
+                }
 
-				if (int.TryParse(value.ToString(), out valueType) == false)
-				{
-					throw new ArgumentException("Use only symbols from 0...9!");
-				}
+                this.idleHours = value; 
+            }
+        }
 
-				this.talkHours = value; 
-			}
-		}
+        public int TalkHours
+        {
+            get
+            { 
+                return this.talkHours;
+            }
 
-		public BatteryType Type
-		{
-			get;
-			set;
-		}
-	}
+            set
+            {
+                int valueType = 0;
+
+                if (!int.TryParse(value.ToString(), out valueType))
+                {
+                    throw new ArgumentException("Use only symbols from 0...9!");
+                }
+                else if (int.Parse(value.ToString()) < 0)
+                {
+                    throw new ArgumentException("Data must be positive number!!!");
+                }
+
+                this.talkHours = value; 
+            }
+        }
+
+        public BatteryType Type
+        {
+            get;
+            set;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder info = new StringBuilder();
+            info.Append(string.Format("model: {0};", this.BatteryModel));
+            info.Append(string.Format(" Idle hours: {0};", this.IdleHours));
+            info.Append(string.Format(" Talk hours: {0}", this.TalkHours));
+
+            return info.ToString();
+        }
+    }
 }

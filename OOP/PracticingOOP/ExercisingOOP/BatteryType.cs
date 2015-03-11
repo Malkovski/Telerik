@@ -1,9 +1,11 @@
-﻿namespace ExercisingOOP
+﻿namespace MobilePhones
 {
     public enum BatteryType
     {
         LiIon,
         NiMH,
-        NiCd
+        NiCd,
+        LiPol,
+        Nuclear
     }
 }

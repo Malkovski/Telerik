@@ -1,8 +1,10 @@
-﻿namespace ExercisingOOP
+﻿namespace MobilePhones
 {
     using System;
+    using System.Text;
+
     public class Display
-    {
+    {       
         private string displaySize;
         private long displayColors;
 
@@ -23,8 +25,14 @@
             { 
                 return this.displaySize;
             }
+
             set
-            { 
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException("Enter size!!!");
+                }
+
                 this.displaySize = value; 
             }
         }
@@ -35,6 +43,7 @@
             {
                 return this.displayColors;
             }
+
             set
             {
                 int valueType = 0;
@@ -43,7 +52,7 @@
                 {
                     throw new ArgumentException("Use only symbols from 0...9!");
                 }
-                else if (value.ToString().Length < 256 &&  value.ToString().Length > 19)
+                else if (value.ToString().Length < 256 && value.ToString().Length > 19)
                 {
                     throw new ArgumentException("Wrong color size range!");
                 }
@@ -51,5 +60,14 @@
                 this.displayColors = value;
             }
         }
+
+        public override string ToString()
+        {
+            StringBuilder info = new StringBuilder();
+            info.Append(string.Format("size: {0};", this.DisplaySize));
+            info.Append(string.Format(" Dispaly colors: {0}", this.DisplayColors));
+
+            return info.ToString();
+        }           
     }
 }
