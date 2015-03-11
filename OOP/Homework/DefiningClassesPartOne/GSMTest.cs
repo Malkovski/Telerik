@@ -66,10 +66,7 @@
 
             GSM anotherGsm = new GSM("Asha", "Nokia");
             Console.WriteLine(anotherGsm);
-            foreach (var call in anotherGsm.CallHistory)
-            {
-                Console.WriteLine(call);
-            }
+          
         }
     }
 }
