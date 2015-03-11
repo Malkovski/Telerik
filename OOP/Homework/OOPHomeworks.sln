@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobilePhones", "DefiningClassesPartOne\MobilePhones.csproj", "{2CCC1993-7D50-4027-B789-57066C015151}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefiningClassesPartTwo", "DefiningClassesPartTwo\DefiningClassesPartTwo.csproj", "{319CF190-85D4-4DCA-B632-7F482E207BC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2CCC1993-7D50-4027-B789-57066C015151}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CCC1993-7D50-4027-B789-57066C015151}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CCC1993-7D50-4027-B789-57066C015151}.Release|Any CPU.Build.0 = Release|Any CPU
+		{319CF190-85D4-4DCA-B632-7F482E207BC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{319CF190-85D4-4DCA-B632-7F482E207BC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{319CF190-85D4-4DCA-B632-7F482E207BC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{319CF190-85D4-4DCA-B632-7F482E207BC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

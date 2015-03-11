@@ -6,7 +6,7 @@
 
     public class GSM
     {
-        public static GSM iPhoneS4;
+        private static GSM iPhoneS4;
         private static Battery iBattery;
         private static Display iDisplay;
 
@@ -137,11 +137,6 @@
         {
             get
             {
-                if (CallHistory.Count == 0)
-                {
-                    throw new ArgumentException("Call list is empty!!!");
-                }
-
                 return this.callHistory;
             }
 
