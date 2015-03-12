@@ -5,7 +5,12 @@
 
     public class Path
     {
-        private List<Point3D> listOfPoints;
+       private List<Point3D> listOfPoints;
+
+       public Path()
+       {
+           this.listOfPoints = new List<Point3D>();
+       }
 
        public List<Point3D> ListOfPoints
        {
@@ -16,7 +21,7 @@
 
            set
            {
-               this.listOfPoints = value;
+               this.ListOfPoints = value;
            }
        }
 

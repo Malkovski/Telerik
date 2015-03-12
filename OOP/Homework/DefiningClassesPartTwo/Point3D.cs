@@ -86,5 +86,18 @@
 
             return string.Format("X coordinate is:{0}, Y coordinate is:{1}, Z coordinate is:{2}", this.X, this.Y, this.Z);
         }
+
+        public static Point3D Parse(string fileData)
+        {
+            string[] coordinateParts = fileData.Split(',');
+            double[] coords = new double[3];
+
+            for (int i = 0; i < coordinateParts.Length; i++)
+            {
+                coords[i] = double.Parse(coordinateParts[i].Substring(coordinateParts[i].LastIndexOf(':') + 1));
+            }
+
+            return new Point3D(coords[0], coords[1], coords[2]);
+        }
     }
 }
