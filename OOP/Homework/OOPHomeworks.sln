@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobilePhones", "DefiningCla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefiningClassesPartTwo", "DefiningClassesPartTwo\DefiningClassesPartTwo.csproj", "{319CF190-85D4-4DCA-B632-7F482E207BC2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionMethodsDelegatesLambdaLINQ", "ExtensionMethodsDelegatesLambdaLINQ\ExtensionMethodsDelegatesLambdaLINQ.csproj", "{E1827FC6-3457-4E8D-9205-F60774F0AEA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOPPrinciplesPartOne", "OOPPrinciplesPartOne\OOPPrinciplesPartOne.csproj", "{ABA56566-76FD-4814-B07D-8FB57427F3AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{319CF190-85D4-4DCA-B632-7F482E207BC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{319CF190-85D4-4DCA-B632-7F482E207BC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{319CF190-85D4-4DCA-B632-7F482E207BC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1827FC6-3457-4E8D-9205-F60774F0AEA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1827FC6-3457-4E8D-9205-F60774F0AEA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1827FC6-3457-4E8D-9205-F60774F0AEA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1827FC6-3457-4E8D-9205-F60774F0AEA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABA56566-76FD-4814-B07D-8FB57427F3AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABA56566-76FD-4814-B07D-8FB57427F3AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABA56566-76FD-4814-B07D-8FB57427F3AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABA56566-76FD-4814-B07D-8FB57427F3AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
