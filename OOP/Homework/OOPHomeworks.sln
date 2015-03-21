@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionMethodsDelegatesLa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOPPrinciplesPartOne", "OOPPrinciplesPartOne\OOPPrinciplesPartOne.csproj", "{ABA56566-76FD-4814-B07D-8FB57427F3AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumansExercise", "HumansExercise\HumansExercise.csproj", "{5B07E796-DD04-4604-84AF-3D723AAE1EDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{ABA56566-76FD-4814-B07D-8FB57427F3AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABA56566-76FD-4814-B07D-8FB57427F3AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABA56566-76FD-4814-B07D-8FB57427F3AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B07E796-DD04-4604-84AF-3D723AAE1EDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B07E796-DD04-4604-84AF-3D723AAE1EDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B07E796-DD04-4604-84AF-3D723AAE1EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B07E796-DD04-4604-84AF-3D723AAE1EDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
