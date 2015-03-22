@@ -71,7 +71,7 @@
 
         public override string ToString()
         {
-            return string.Format("{0} {1} {2}", this.FirstName, this.LastName, this.MoneyPerHour());
+            return string.Format("{0} {1} {2:0.00}", this.FirstName, this.LastName, this.MoneyPerHour());
         }
     }
 }

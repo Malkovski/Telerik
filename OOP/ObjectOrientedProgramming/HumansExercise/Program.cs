@@ -41,18 +41,25 @@
                 Console.WriteLine(st);
             }
 
+            Console.WriteLine();
             List<Worker> sortedWorkers = new List<Worker>(workers.OrderByDescending(x => x.MoneyPerHour()));
+
+            foreach (var wo in sortedWorkers)
+            {
+                Console.WriteLine(wo);
+            }
 
             var merged = new List<Human>();
             merged.AddRange(sortedStudents);
             merged.AddRange(sortedWorkers);
 
+            Console.WriteLine();
             var sortedMergedHumans = merged.OrderBy(x => x.FirstName).ThenBy(y => y.LastName);
 
             foreach (var item in sortedMergedHumans)
             {
                 Console.WriteLine(item);
             }
-        }   
+        }
     }
 }
