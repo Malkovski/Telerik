@@ -2,6 +2,6 @@
 {
     public interface IDepositable
     {
-        void DepositMoney(decimal amount);
+        void DepositMoney(decimal ammount);
     }
 }

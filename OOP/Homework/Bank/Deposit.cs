@@ -24,6 +24,11 @@
 
         public void DepositMoney(decimal amount)
         {
+            if (amount < 0)
+            {
+                throw new ArgumentNullException("Deposit ammount cannot be negative!!!");
+            }
+
             this.Balance += amount;
         }
 

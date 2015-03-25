@@ -17,9 +17,9 @@
             var acc1 = new Loan(something, 139955, 10);
             var acc2 = new Mortgage(something, 10000, 20);
             var acc3 = new Deposit(otherCust, 100, 100);
-            acc3.DepositMoney(-1000);
+            acc3.DepositMoney(1000);
 
-            Console.WriteLine(acc3.CalculateInterestForPeriod(12));
+            Console.WriteLine(acc2.CalculateInterestForPeriod(12));
             
         }
     }

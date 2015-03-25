@@ -1,5 +1,7 @@
 ﻿namespace Bank
 {
+    using System;
+
     public class Loan : Account, IDepositable
     {
         public Loan(Customer customer, decimal balance, decimal rate)
@@ -23,6 +25,11 @@
 
         public void DepositMoney(decimal amount)
         {
+            if (amount < 0)
+            {
+                throw new ArgumentNullException("Deposit ammount cannot be negative!!!");
+            }
+
             this.Balance += amount;
         }
     }
