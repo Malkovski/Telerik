@@ -10,14 +10,13 @@
     public class Tank : Machine, ITank
     {
         private const double InitialHealth = 100;
-        private double defencePoints;
-        private double attackPoints;
+
         private bool defenseMode;
 
         public Tank(string name, double attackPoints, double defensePoints)
             : base(name, InitialHealth, attackPoints, defensePoints)
         {
-            this.defenseMode = true;
+            this.ToggleDefenseMode();
         }
 
         public bool DefenseMode
@@ -30,15 +29,17 @@
 
         public void ToggleDefenseMode()
         {
-            if (this.DefenseMode)
+            this.defenseMode = !defenseMode;
+
+            if (this.defenseMode)
             {
-                this.defencePoints += 30;
-                this.attackPoints -= 40;
+                this.DefensePoints += 30;
+                this.AttackPoints -= 40;
             }
             else
             {
-                this.defencePoints -= 30;
-                this.attackPoints += 40;
+                this.DefensePoints -= 30;
+                this.AttackPoints += 40;
             }        
         }
 
@@ -47,18 +48,17 @@
             StringBuilder info = new StringBuilder();
 
             info.Append(base.ToString());
-            info.AppendLine("*Defence: ");
 
             if (this.defenseMode)
             {
-                info.Append("ON");
+                info.AppendLine(" *Defence: ON");
             }
             else
             {
-                info.Append("OFF");
+                info.AppendLine(" *Defence: OFF");
             }
 
-
+            
             return info.ToString();
         }
     }

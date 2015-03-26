@@ -2,11 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Text;
-    using System.Threading.Tasks;
     using WarMachines.Interfaces;
-    using WarMachines.Pilots;
 
     public abstract class Machine : IMachine
     {
@@ -15,13 +12,15 @@
         private double healthPoints;
         private double attackPoints;
         private double defensePoints;
-        private IList<string> targets;
+        private IList<string> targets = new List<string>();
 
         public Machine(string name, double healthPoints, double attackPoints, double defensePoints)
         {
             this.Name = name;
             this.Pilot = pilot;
             this.HealthPoints = healthPoints;
+            this.AttackPoints = attackPoints;
+            this.DefensePoints = defensePoints;
         }
 
         public string Name
@@ -71,6 +70,11 @@
             {
                 return this.attackPoints;
             }
+
+            set
+            {
+                this.attackPoints = value;
+            }
         }
 
         public double DefensePoints
@@ -78,6 +82,11 @@
             get
             {
                 return this.defensePoints;
+            }
+
+            set
+            {
+                this.defensePoints = value;
             }
         }
 
@@ -99,28 +108,30 @@
             StringBuilder info = new StringBuilder();
 
             info.AppendLine("- " + this.Name);
-            info.AppendLine("*Type: " + this.GetType().Name);
-            info.AppendLine("*Health: " + this.HealthPoints);
-            info.AppendLine("*Attack: " + this.AttackPoints);
-            info.AppendLine("*Defense: " + this.DefensePoints);
+            info.AppendLine(" *Type: " + this.GetType().Name);
+            info.AppendLine(" *Health: " + this.HealthPoints);
+            info.AppendLine(" *Attack: " + this.AttackPoints);
+            info.AppendLine(" *Defense: " + this.DefensePoints);
 
             if (this.Targets.Count == 0)
             {
-                info.AppendLine("*Targets: None");
+                info.Append(" *Targets: None");
             }
             else
-            {
-                info.AppendLine("*Targets: ");
+            {      
+                string givenTragets = string.Empty;
 
                 for (int i = 0; i < targets.Count; i++)
                 {
-                    info.Append(targets[i]);
+                    givenTragets += targets[i];
 
                     if (i < targets.Count - 1)
                     {
-                        info.Append(", ");
+                        givenTragets += ", ";
                     }
                 }
+
+                info.AppendLine(" *Targets: " + givenTragets);
             }
             
             return info.ToString();
