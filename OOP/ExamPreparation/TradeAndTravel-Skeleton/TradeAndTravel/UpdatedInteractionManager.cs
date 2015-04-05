@@ -69,7 +69,7 @@
                     person = new Merchant(personNameString, personLocation);
                     break;
                 default:
-                    base.CreatePerson(personTypeString, personNameString, personLocation);
+                    person = base.CreatePerson(personTypeString, personNameString, personLocation);
                     break;
             }
             return person; 
