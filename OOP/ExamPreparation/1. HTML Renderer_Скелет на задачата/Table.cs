@@ -8,9 +8,6 @@
 
     public class Table : Element, ITable
     {
-        private readonly string name = "table";
-
-
         private int rows;
         private int cols;
         private IElement[,] elements;
