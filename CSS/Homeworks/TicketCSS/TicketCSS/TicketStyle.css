@@ -1,0 +1,45 @@
+﻿body {
+    background-color: #1d1b1b;
+        font-family: Arial;
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 25px;
+    color: #888888;
+}
+
+td:nth-child(2n+1) {
+    font-style: italic;
+    color: white;
+    vertical-align:text-top;
+    text-align:left;
+}
+
+.personal {
+    color: #eee98b;
+}
+
+.info {
+    color: #888;
+}
+
+#name:before {
+    content: "*";
+    font-size:120px;
+    vertical-align:middle;
+    line-height:20px;
+    color: green;  
+}
+
+#extra-info {
+    color: red;
+}
+
+#answers {
+    color: #ff6a00;
+}
+
+td a {
+    text-decoration: none;
+}
