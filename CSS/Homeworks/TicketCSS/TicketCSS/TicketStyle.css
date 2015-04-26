@@ -1,11 +1,15 @@
-﻿body {
+﻿html {
+    font-size: 16px;
+}
+
+body {
     background-color: #1d1b1b;
         font-family: Arial;
 }
 
 h1 {
     font-weight: 100;
-    font-size: 25px;
+    font-size: 1.6em;
     color: #888888;
 }
 
@@ -26,8 +30,8 @@ td:nth-child(2n+1) {
 
 #name:before {
     content: "*";
-    font-size:120px;
-    vertical-align:middle;
+    font-size:3em;
+    vertical-align:bottom;
     line-height:20px;
     color: green;  
 }
@@ -42,4 +46,9 @@ td:nth-child(2n+1) {
 
 td a {
     text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: blue;
 }

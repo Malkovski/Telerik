@@ -1,0 +1,47 @@
+﻿html {
+    font-size: 14px;
+    font-family: Arial;
+}
+
+th {
+    background-color: #48d118;
+    color: white;
+    text-align: left;
+}
+
+tr {
+    height: 2em;
+    border-bottom: hidden;
+}
+
+table {
+    border-collapse: collapse;
+    vertical-align: central;
+    border-left: hidden;
+    border-right: hidden;
+}
+
+img {
+    width: 1.6em;
+}
+
+.country, .city {
+    font-weight: bold;
+}
+
+tr:nth-child(2n) {
+    background-color: #d7d29a;
+}
+
+thead tr:first-of-type {
+    border-bottom: thin;
+    border-top: hidden;
+}
+
+tbody tr:last-of-type {
+    border-bottom: thin;
+}
+
+span:before {
+    content: " ";
+}
