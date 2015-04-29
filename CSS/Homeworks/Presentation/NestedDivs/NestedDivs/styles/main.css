@@ -1,0 +1,10 @@
+﻿
+div {
+    background: black;
+    border-radius: 50px;
+    padding: 4%;
+}
+
+.red {
+    border: 1px solid red;
+}
