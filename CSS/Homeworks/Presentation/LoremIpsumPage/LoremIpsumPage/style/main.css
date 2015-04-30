@@ -10,11 +10,11 @@ p:first-line {
 }
 
 p:first-letter {
-    font-family: "ITCEdscr";
+    font-family: "Edwardian Script ITC";
     font-size: 4em;
 }
 
 @font-face {
     font-family: Edwardian Script ITC;
-    src: url(fonts/ITCEdscr.ttf);
+    src: url('fonts/Edwardian_Scr_ITC_TT.ttf');
 }
