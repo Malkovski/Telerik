@@ -1,0 +1,55 @@
+﻿html {
+    background-color: lightgray;
+    font-size: 14px;
+}
+
+h1 {
+    color: black;
+    font-size: 1.3em;
+    font-family: Arial Narrow;
+    font-weight: normal;
+}
+
+article {
+    background-color: white;
+    border: 1px solid #a9a9a9;
+    margin-left: 10pt;
+    margin: 16px 0 16px 0;
+    padding: 8px;
+    height: 80pt;
+    width: 300pt;
+}
+
+img {
+    border: 1px solid #b3b3b3;
+    float: left;
+    height: 80pt;
+    margin-right: 15px;
+}
+
+p {
+    font-family: Verdana;
+    font-size: 0.8em;
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+button {  
+    background: url('../images/button.png');
+    float: right;
+    color: white;
+    border-color: #800;
+    font-size: 0.9em;
+    margin-left: 4px;
+    margin-top: 12px;
+    padding-left: 16px;
+    height: 25px;
+}
+
+.add {
+    width: 45pt;
+}
+
+.listen {
+    width: 65pt;
+}
