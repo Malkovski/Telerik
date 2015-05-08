@@ -89,6 +89,10 @@ a {
     color: darkred;
 }
 
+a:hover {
+    color: lightblue;
+}
+
 .bold {
     font-weight: bold;
 }
