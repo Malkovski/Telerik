@@ -1,11 +1,11 @@
-html {
-    width: 960px;
+html, body {
     font-family: 'Courier New', Courier, 'Nimbus Mono L', monospace;
     font-size: 16px;
-    background-color: #e2e2e2;
+
 }
 
 #wrapper {
+<<<<<<< HEAD
     background-color: white;
     display: inline;
     padding-right: 5px;
@@ -13,10 +13,14 @@ html {
     position: absolute;
     left: 500px;
     top: 300px;
+=======
+    width: 960px;
+>>>>>>> 4b1745f205562e959b8fb321a0b321084cd157fe
 }
 
 .menu {
     list-style-type: none;
+<<<<<<< HEAD
     margin-left: -45px;
     position: relative;
     display: inline-table;
@@ -26,11 +30,14 @@ html {
     content: "";
         clear: both;
         display: block;
+=======
+>>>>>>> 4b1745f205562e959b8fb321a0b321084cd157fe
 }
 
 .menu>li {
     display: inline;
     float: left;
+<<<<<<< HEAD
     margin-left: 5px;
 
 }
@@ -38,12 +45,17 @@ html {
 .menu>li:hover a {
     font-size: 20px;
     padding: 10px 40px 20px 40px;
+=======
+    display: block;
+    margin: 5px;
+>>>>>>> 4b1745f205562e959b8fb321a0b321084cd157fe
 }
 
 .menu>li>a {
     border: 1px solid black;
     border-radius: 10px;
     padding: 10px 20px;
+<<<<<<< HEAD
    background: #87e0fd; /* Old browsers */
 background: -moz-linear-gradient(top,  #87e0fd 0%, #0076dd 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#87e0fd), color-stop(100%,#0076dd)); /* Chrome,Safari4+ */
@@ -54,12 +66,28 @@ background: linear-gradient(to bottom,  #87e0fd 0%,#0076dd 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#0076dd',GradientType=0 ); /* IE6-9 */
 
 
+=======
+    background: #87e0fd; /* Old browsers */
+    background: -moz-linear-gradient(top,  #87e0fd 0%, #0655dd 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#87e0fd), color-stop(100%,#0655dd)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #87e0fd 0%,#0655dd 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #87e0fd 0%,#0655dd 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #87e0fd 0%,#0655dd 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #87e0fd 0%,#0655dd 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#0655dd',GradientType=0 ); /* IE6-9 */
+}
+
+.menu>li:hover>a {
+    font-size: 20px;
+    padding: 10px 40px;
+>>>>>>> 4b1745f205562e959b8fb321a0b321084cd157fe
 }
 
 .content {
     display: none;
     border: 1px solid black;
     border-radius: 10px;
+<<<<<<< HEAD
     margin-left: 20px;
     margin-top: 10px;
     padding: 5px;
@@ -72,4 +100,45 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
 
 a {
     text-decoration: none;
+=======
+    padding: 15px;
+    margin: 0 0 0 20px;
+    background: #f0f9ff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f0f9ff 0%, #cbebff 47%, #a1dbff 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f0f9ff), color-stop(47%,#cbebff), color-stop(100%,#a1dbff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #f0f9ff 0%,#cbebff 47%,#a1dbff 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #f0f9ff 0%,#cbebff 47%,#a1dbff 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #f0f9ff 0%,#cbebff 47%,#a1dbff 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #f0f9ff 0%,#cbebff 47%,#a1dbff 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=0 ); /* IE6-9 */
+
+}
+
+.menu>li:hover .content {
+    position: absolute;
+    display: block;
+    z-index: 1;
+}
+
+a {
+    text-decoration: none;
+}
+
+h3 {
+    margin-left: 5px;
+    text-decoration: underline;
+}
+
+div>ul {
+    list-style-type: square;
+    margin-left: -35px;
+}
+
+.content li>a:hover {
+    text-decoration: underline;
+}
+
+.bold {
+    font-weight: bold;
+>>>>>>> 4b1745f205562e959b8fb321a0b321084cd157fe
 }
