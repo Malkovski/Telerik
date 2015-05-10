@@ -1,0 +1,94 @@
+html, body, div, header, ul, li, nav, a, p, h1, article {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    word-break: break-word;
+    -ms-word-break: break-word;
+} 
+
+body {
+	font-family: Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+#wrapper {
+	width: 960px;
+	margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 4px;
+}
+
+.clear {
+	clear: both;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#archive {
+   position: absolute;
+   right: 5px;
+   top: 0;
+}
+
+#archive ul li {
+    float: left;
+}
+
+#archive ul li a {
+    font-size: 10px;
+    color: black;
+    margin-left: 14px;
+}
+
+#header {
+    background-image: url('images/topnav_divider.png');
+    margin-top: 17px;
+    position: relative;
+    height: 49px;
+    padding-top: 15px;
+    padding-left: 50px;
+}
+
+#nav {
+    float: left;
+}
+
+#nav li {
+    float: left;
+    margin-top: 5px;
+
+}
+
+#nav li a {
+    font-size: 18px;
+    color: white;
+    text-transform: capitalize;
+    margin-right: 24px;
+}
+
+#header h1 {
+    text-align: right;
+    color: white;
+    font-size: 28px;
+    margin-right: 15px;
+}
+
+#content h1 {
+    font-size: 24px;
+    padding: 16px 0;
+}
+
+p {
+    float:left;
+    text-align: justify;
+}
+
+p:after {
+    content: '.';
+    display: block;
+    visibility: hidden;
+    line-height: 14px;
+}
