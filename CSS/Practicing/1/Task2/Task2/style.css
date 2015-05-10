@@ -1,34 +1,20 @@
-html {
-    width: 960px;
+html, body {
     font-family: 'Courier New', Courier, 'Nimbus Mono L', monospace;
     font-size: 16px;
-    background-color: #e2e2e2;
+
 }
 
 #wrapper {
-    background-color: white;
-    display: inline-block;
-    padding-left: 10px;
-    padding-bottom: 0px;
-    padding-right: 10px;
-    position: absolute;
-    left: 500px;
-    top: 300px;
+    width: 960px;
 }
 
 .menu {
     list-style-type: none;
-    margin-left: -45px;
-}
-
-.menu:after {
-    content: "";
-        clear: both;
-        display: block;
 }
 
 .menu>li {
     float: left;
+    display: block;
     margin: 5px;
 }
 
@@ -69,9 +55,9 @@ html {
 }
 
 .menu>li:hover .content {
+    position: absolute;
     display: block;
     z-index: 1;
-    position: relative;
 }
 
 a {

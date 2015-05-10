@@ -1,0 +1,90 @@
+html, body, div, ul ,li, a {
+    padding: 0;
+    margin: 0;
+    word-wrap: break-word;
+    text-decoration: none;
+}
+
+html, body {
+    font-family: Constantina, Georgia, 'Nimbus Roman No9 L', serif;
+    font-size: 16px;
+}
+
+#wrapper {
+    width: 960px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.menu li ul {
+    display: none;
+    position: absolute;
+}
+
+img {
+    display: none;
+}
+
+.menu li {
+    text-align: center;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 5px;
+    padding-top: 10px;
+	width : 170px;
+	height: 30px;
+	border-radius: 15px;
+    background-color: #B6FF00;
+}
+
+.menu li > a {
+    color: black;
+}
+
+.menu li > a:hover {
+    text-decoration: underline;
+}
+
+.menu li:hover ul {
+    display: inline-block;
+    position: absolute;
+    left: 165px;
+    top: -5px;
+    width:240px;  
+}
+
+.menu li:hover ul li {
+    width: 540px;
+    height: 40px;
+    border-radius: 10px;
+    text-align: left;
+    background-color: #008000;
+    color: white;
+    padding-top: 18px;
+}
+
+.menu li:hover ul li a {
+    color: white;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+.menu li ul li:hover {
+    width: 540px;
+    height: 310px;
+}
+
+.menu li ul li:hover img {
+    display: block;
+    width: 500px;
+    height: 250px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.menu li:first-child 
+{
+	margin-top: 7px;
+}
