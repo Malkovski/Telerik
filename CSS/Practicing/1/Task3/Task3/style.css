@@ -1,0 +1,93 @@
+div, ul, li, h1, h2, strong, span, input, button {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    -ms-word-break: break-word;
+    word-break: break-word;
+}
+
+body {
+  font-size: 18px;  
+  font-family: Arial;
+
+}
+
+#root {
+  width: 610px
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1 {
+    color: lightblue;
+    font-style: italic;
+    text-align:center;
+    letter-spacing: -1px;
+}
+
+#me {
+    float: left;
+}
+
+#other {
+    float:left;
+    margin-left: 5px;
+}
+
+.chat-container {
+    float: right;   
+    width: 300px;
+    height: 500px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #4AE871 0, #F1FFBC 100%);
+    margin-top: 21px;
+    margin-left: 1px;
+    color: #2AA0BD;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 23px;
+   
+}
+
+.messages {
+    margin-top: 40px;
+}
+
+strong {
+    font-weight: normal;
+    text-transform: lowercase;
+    font-style: italic;
+    text-transform: lowercase;
+}
+
+span {
+    display: block;
+    font-weight: normal;
+}
+
+.me {
+    text-align: left;
+}
+
+.other {
+    text-align: right;
+}
+
+ul li {
+    margin: 1px 15px;
+
+}
+
+ul li:first-child {
+    border-bottom: 1px solid black;
+}
+
+.sent-message {
+    position: absolute;
+    bottom: 0;
+}
