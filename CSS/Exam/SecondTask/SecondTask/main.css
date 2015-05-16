@@ -1,0 +1,69 @@
+html, body, div, ul, li, img, p, label, input {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 14px;
+    color: #AECFEE;
+    font-family: Arial;
+}
+
+#root {
+    width: 500px;
+    background-color: #205D99;
+    text-align: center;
+}
+
+input {
+    visibility: hidden;
+    height: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    border-bottom: 3px solid #79AEE3;
+}
+
+
+label {
+   display: block;
+   font-size: 20px;
+   margin-top: 0;
+   margin-bottom: 10px;
+   font-weight: bold;
+}
+
+img {
+    width: 200px;
+    height: 110px;
+    float: left;
+    border: 15px solid #79AEE3;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: justify;
+}
+
+.preview {
+    padding: 15px;  
+    display: none;
+}
+
+ul li:first-child .preview {
+    display: block;
+}
+
+ul li:first-child label {
+    font-size: 24px;
+}
+
+ul li:active .preview {
+    display: block;
+}
