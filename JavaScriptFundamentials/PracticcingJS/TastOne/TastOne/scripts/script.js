@@ -7,7 +7,7 @@ function promptMe() {
 }
 
 function askMe() {
-    confirm('Can you imagine this?')
+    confirm('Can you imagine this?');
 }
 
 var a = 50880;
