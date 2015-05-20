@@ -42,26 +42,30 @@ function showResult() {
      document.getElementById('result3').innerHTML = 'Max is: ' + max + ' and Min is: ' + min;
  }
 
-var propArray = [];
+function getProperties() {
+    var propArray = [];
 
-for (var a in window) {
-    if (window.hasOwnProperty(a)) {
-        propArray.push(a)
+
+    for (var a in document) {
+        if (document.hasOwnProperty(a)) {
+            propArray.push(a)
+        }
     }
+
+    var lexiMin = propArray[0];
+    var lexiMax = propArray[0];
+
+    for (var i = 0; i < propArray.length; i++) {
+        if (lexiMin > propArray[i]) {
+            lexiMin = propArray[i];
+        }
+
+        if (propArray[i] > lexiMax) {
+            lexiMax = propArray[i];
+        }
+    }
+
+    document.getElementById('document').innerHTML = 'Lexicographically largest is- ' + lexiMax + ' -and smallest is- ' + lexiMin;
 }
 
-var lexiMin = propArray[0];
-var lexiMax = propArray[0];
 
-for (var i = 0; i < propArray.length; i++) {
-    if (lexiMin > propArray[i]) {
-        lexiMin = propArray[i];
-    }
-
-    if (propArray[i] > lexiMax) {
-        lexiMax = propArray[i];
-    }
-}
-
-console.log(lexiMax);
-console.log(lexiMin);
