@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Array homework</title>
+    <script src="scripts.js"></script>
+    <style>
+        h3, hr{
+            padding: 0;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Problem 1 - Increase array members</h3>
+    <div style="background-color: aqua" id="problem1" onclick="showArray()">click me</div>
+    <hr/>
+    <h3>Problem2 - Lexicographically comparison</h3>
+    <div>Fill the boxes with chars separated with ',' only!</div>
+    <input type="text" id="first" />
+    <input type="text" id="second" />
+    <div onclick="lexiCompare()" style="background-color: aqua">click me for lexicographically comparing the above char arrays</div>
+    <div><span id="bigger"></span> is before than <span id="smaller"></span></div>
+    <hr/>
+    <h3>Problem3 - Maximal sequence</h3>
+    <div>Fill the box with digits separated with ',' only!</div>
+    <input type="text" id="digits" />
+    <div onclick="longestEqDigits()" style="background-color: aqua">click me!</div>
+    <div>Longest equal sequence is: <span id="result"> </span></div>
+    <hr/>
+    <h3>Problem4 - Maximal increasing sequence</h3>
+    <div>Fill the box with digits separated with ',' only!</div>
+    <input type="text" id="sequence" />
+    <div onclick="longestIncrSequence()" style="background-color: aqua">click me!</div>
+    <div>Longest increasing sequence is: <span id="result2"> </span></div>
+    <hr />
+    <h3>Problem5 - Selection sort</h3>
+    <div>Fill the box with digits separated with ',' only!</div>
+    <input type="text" id="sequence2" />
+    <div onclick="selectionSort()" style="background-color: aqua">click me!</div>
+    <div>Selection sorting of the digits is: <span id="result3"> </span></div>
+    <hr />
+    <h3>Problem6 - Most frequent number</h3>
+    <div>Fill the box with digits separated with ',' only!</div>
+    <input type="text" id="sequence3" />
+    <div onclick="mostFrequent()" style="background-color: aqua">click me!</div>
+    <div>Most frequent digits is: <span id="result4"> </span></div>
+    <hr />
+    <h3>Problem7 -  Binary search</h3>
+    <div>Fill the box with sorted digits in increasing order, separated with ',' only!</div>
+    <label for="sequence4">Sorted digits</label>
+    <input type="text" id="sequence4" />
+    <label for="sequence5">Searched element</label>
+    <input type="text" id="sequence5" />
+    <div onclick="FindIndex()" style="background-color: aqua">click me!</div>
+    <div>The index of the element searched is: <span id="result5"> </span></div>
+</body>
+</html>
