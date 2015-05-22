@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <h4 style="margin: 0">Problem 1. English digit</h4>
+    <label for="data">Enter number</label>
+    <input type="text" id="data"/>
+    <div style="background-color: olive; margin: 2px" onclick="lastDigitInWord()">CLICK ME!</div>
+    <div>Result: <span id="result"></span></div>
+    <hr style="margin: 0; padding: 0;"/>
+    <h4 style="margin: 0">Problem 2. Reverse number</h4>
+    <label for="data2">Enter number</label>
+    <input type="text" id="data2" />
+    <div style="background-color: olive; margin: 2px" onclick="reverseNumber()">CLICK ME!</div>
+    <div>Result: <span id="result2"></span></div>
+    <hr />
+    <h4 style="margin: 0">Problem 3. Occurrences of word</h4>
+    <div style="font-size: 12px;" id="lorem">Lorem Lorem Lorem Lorem Lorem Lorem ipsum  dolor dolor dolor dolor dolor Dolor doLor sit amet, consectetur adipiscing elit. Cras id erat tristique, elementum purus et, vehicula ipsum. Nam ultricies consequat nulla ac iaculis. Curabitur venenatis metus sed sapien pulvinar, non cursus magna mollis. Praesent feugiat aliquam lectus. Sed sit amet tincidunt justo, vitae mattis libero. Proin congue mollis sodales. Etiam eleifend ex libero, et porta tortor pulvinar quis. Ut imperdiet ipsum vitae metus hendrerit, finibus cursus neque ultrices. Donec mattis ornare ligula, non semper est condimentum vitae. Aenean ultrices elit in massa lobortis interdum. Donec mollis ullamcorper est, id elementum ipsum fermentum quis.</div>
+    <label for="data3">Enter word</label>
+    <input type="text" id="data3" />
+    <label for="data4">You can enter 'true' or 'false' for case sensitive/insensitive search</label>
+    <input type="text" id="data4" />
+    <div style="background-color: olive; margin: 2px" onclick="wordCount()">CLICK ME!</div>
+    <div>Result: <span id="result3"></span></div>
+    <hr />
+    <h4 style="margin: 0">Problem 4. Number of elements</h4>
+    <div style="background-color: olive; margin: 2px" onclick="divCount()">CLICK ME TO COUNT!</div>
+    <div>Number of div tags on this page is: <span id="result4"></span></div>
+    <hr />
+    <h4 style="margin: 0">Problem 5. Appearance count</h4>
+    <label for="data5">Enter digits separated with ',' only!</label>
+    <input type="text" id="data5" />
+    <label for="data6">Enter digit to count</label>
+    <input type="text" id="data6" />
+    <div style="background-color: olive; margin: 2px" onclick="appearanceCount()">CLICK ME!</div>
+    <div>Result: <span id="result5"></span></div>
+    <hr />
+    <h4 style="margin: 0">Problem 6. Larger than neighbours</h4>
+    <label for="data7">Enter digits separated with ',' only!</label>
+    <input type="text" id="data7" />
+    <label for="data8">Enter digit to check</label>
+    <input type="text" id="data8" />
+    <div style="background-color: olive; margin: 2px" onclick="neighbourLarger()">CLICK ME!</div>
+    <div>Result: <span id="result6"></span></div>
+    <hr />
+    <h4 style="margin: 0">Problem 7. First larger than neighbours</h4>
+    <label for="data9">Enter digits separated with ',' only!</label>
+    <input type="text" id="data9" />
+    <div style="background-color: olive; margin: 2px" onclick="firstNeighbourLarger()">CLICK ME!</div>
+    <div>Result: <span id="result7"></span></div>
+</body>
+</html>
