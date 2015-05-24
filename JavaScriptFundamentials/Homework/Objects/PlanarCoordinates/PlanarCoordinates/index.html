@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>UsingObject</title>
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <h3>Problem 1. Planar coordinates</h3>
+    <div style="float: left">
+        <div>Enter point coordinates</div>
+        <label for="x1">Point1: X</label>
+        <input type="text" id="x1" />
+        <label for="y1">Y</label>
+        <input type="text" id="y1" />
+        <br />
+        <label for="x2">Point2: X</label>
+        <input type="text" id="x2" />
+        <label for="y2">Y</label>
+        <input type="text" id="y2" />
+    </div>
+    <div onclick="distance()" style="float: left; height: 70px; width: 200px; text-align: center; border: 2px solid black; background-color: chocolate">Click here for calculate the distance between the points!</div>
+    <div style="float: left; margin-left: 20px">Result: <span id="result1" style="color: crimson"></span></div>
+    <div style="clear: both"></div>
+        <label for="x3">Line1 - Point1: X</label>
+        <input type="text" id="x3" />
+        <label for="y3">Y</label>
+        <input type="text" id="y3" />
+        <label for="x4">Point2: X</label>
+        <input type="text" id="x4" />
+        <label for="y4">Y</label>
+        <input type="text" id="y4" />
+        <span onclick="distanceLineOne()" style="border: 2px solid black; background-color: coral">Click</span>
+        <span> Length: <span style="color: blue" id="result2"></span></span>
+    <br />
+        <label for="x5">Line2 - Point1: X</label>
+        <input type="text" id="x5" />
+        <label for="y5">Y</label>
+        <input type="text" id="y5" />
+        <label for="x6">Point2: X</label>
+        <input type="text" id="x6" />
+        <label for="y6">Y</label>
+        <input type="text" id="y6" />
+        <span onclick="distanceLineTwo()" style="border: 2px solid black; background-color: coral">Click</span>
+        <span> Length: <span style="color: blue" id="result3" ></span></span>
+    <br />
+        <label for="x7">Line3 - Point1: X</label>
+        <input type="text" id="x7" />
+        <label for="y7">Y</label>
+        <input type="text" id="y7" />
+        <label for="x8">Point2: X</label>
+        <input type="text" id="x8" />
+        <label for="y8">Y</label>
+        <input type="text" id="y8" />
+        <span onclick="distanceLineThree()" style="border: 2px solid black; background-color: coral">Click</span>
+        <span> Length: <span style="color: blue" id="result4"></span></span>
+    <div><span onclick="triangleCheck()" style="display: inline-block;border : 2px solid black; background-color: coral">Click to see if these lines can form a triangle!: <span id="result5"> </span></span></div>
+
+</body>
+</html>

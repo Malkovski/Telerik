@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Deep Copy</title>
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <h3>Problem 3. Deep copy</h3>
+    <div>Test me in the 'console' please!</div>
+    <h3>Problem 4. Has property</h3>
+    <div>Auto creating: var char = {fname: 'Hanko', lname: 'Brat', age: 1350, friends: 'Chuck Norris'}</div>
+    <label for="property">Enter property!</label>
+    <input type="text" id="property" />
+    <div style="background-color: darkcyan" onclick="testForProp()">CLICK TO TEST</div>
+    <div id="result2"></div>
+    <h3>Problem 5. Youngest person</h3>
+    <div>
+        Auto creating: var idols = [ </div>
+        <div>
+            {fname: 'Hanko', lname: 'Brat', age: <input type="text" value="1350" id="age0" style="width: 40px" />},<br />
+            {fname: 'Misho', lname: 'Shamara', age: <input type="text" value="50" id="age1" style="width: 40px" />},<br />
+            {fname: 'Krisko', lname: 'Beats', age: <input type="text" value="13" id="age2" style="width: 40px" />},<br />
+            {fname: 'Sto', lname: 'Kila', age: <input type="text" value="35" id="age3" style="width: 40px" />}];
+        </div>
+    <div style="background-color: darkcyan" onclick="findByAge()">CLICK TO TEST</div>
+    <div>The youngest star is: <span id="result3"></span></div>
+    <h3>Problem 6. Grouping by given property</h3>
+    <div>The data passed to the functions is:</div>
+    <div>
+        createPerson('Hanko', 'Brat', 1350 ),<br />
+        createPerson('Misho', 'Shamara', 1350 ),<br />
+        createPerson('Krisko', 'Beats', 22 ),<br />
+        createPerson('Drisko', 'Beats', 11 ),<br />
+        createPerson('Sto', 'Kila', 22 ),<br />
+        createPerson('Sto', 'Tona',  22 ),<br />
+        createPerson('Sto', 'Grama', 2),<br />
+        <label for="property2">Enter property!</label>
+        <input type="text" id="property2" />
+        <div style="background-color: darkcyan" onclick="startGrouping()">CLICK TO GROUP</div>
+    </div>
+</body>
+</html>
