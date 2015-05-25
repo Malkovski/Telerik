@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Data types and variables - Integer types</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        // Task 6 : Write an expression that checks if given print (x,  y) is within a circle K(O, 5).
+        var r = 5,
+            x = 3.2,
+            y = 3.6;
+        if ((Math.pow(x, 2) + Math.pow(y, 2)) > Math.pow(r, 2)) {
+            jsConsole.writeLine("The point isn't in the circle.");
+        } else {
+            jsConsole.writeLine("The point is in the circle.");
+        }
+    </script>
+</body>
+
+</html>

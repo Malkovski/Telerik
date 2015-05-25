@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Data types and variables - Integer types</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+		// Task 2 : Write a boolean expression that checks for given integer if it can be divided (without remainder) by 7 and 5 in the same time.
+		var number = 35;
+
+        if (((number % 5) === 0) || ((number % 7) === 0)) {
+            jsConsole.writeLine("The number can be devided by 5 and 7 exactly.");
+        } else {
+            jsConsole.writeLine("The number cannot be devided by 5 and 7 exactly.");
+        }
+    </script>
+</body>
+
+</html>

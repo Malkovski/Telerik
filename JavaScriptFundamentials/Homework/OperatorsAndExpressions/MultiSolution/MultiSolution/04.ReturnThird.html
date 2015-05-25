@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Data types and variables - Integer types</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+
+<body>
+	<div id="js-console"></div>				 
+	<script src="scripts/js-console.js"></script>
+	<script>
+		// Task 4 : Write an expression that checks for given integer if its third digit (right-to-left) is 7. E. g. 1732  true.
+		var number = 732,
+            tempNumber = number / 100;
+        
+        number = Math.round(tempNumber % 10);
+        if (number === 7) {
+            jsConsole.writeLine("The third digit(right-to-left) IS number 7!");    
+        } else {
+            jsConsole.writeLine("The third digit(right-to-left) IS NOT number 7!");  
+        }
+	</script>
+</body>
+
+</html>

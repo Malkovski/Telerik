@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Data types and variables - Integer types</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+		// Task 9 :Write an expression that checks for given point (x, y) if it is within the circle K( (1,1), 3) and out of the rectangle R(top=1, left=-1, width=6, height=2).
+        var radius = 3,
+            height = 2,
+            width = 6,
+            x = 1.7,
+            y = 2.3;
+        if ((Math.pow(x, 2)) + (Math.pow(y, 2)) < (Math.pow(radius, 2))) {
+            if (x < -1 || x > width || y < 1 || y > height)  {
+                jsConsole.writeLine("The point(" + x +"," + y + ") is in the circle and out of the rectangle");
+            } else {
+                jsConsole.writeLine("The point(" + x +"," + y + ") is in the circle but in the rectangle too");
+            }
+        } else {
+            jsConsole.writeLine("The point(" + x +"," + y + ") isn't in the circle at all!");
+        }
+    </script>
+</body>
+
+</html>

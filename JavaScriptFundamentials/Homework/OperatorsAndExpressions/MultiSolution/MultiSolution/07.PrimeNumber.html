@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Data types and variables - Integer types</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+		// Task 7 : Write an expression that checks if given positive integer number n (n ≤ 100) is prime. E.g. 37 is prime.
+		var number = 101,
+			isPrime = true;
+        for (var i = 2; i <= Math.round(Math.sqrt(number)); i++) {
+            if ((number % i) == 0) {
+		        isPrime = false;
+	        }
+        }
+        if (isPrime) {
+           jsConsole.writeLine("The number " + number + " is prime number.");
+	    } else {
+            jsConsole.writeLine("The number " + number + " isn't prime number.");
+        }
+    </script>
+</body>
+
+</html>

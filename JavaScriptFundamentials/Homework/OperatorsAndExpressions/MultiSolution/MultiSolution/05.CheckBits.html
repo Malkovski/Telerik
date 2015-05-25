@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Data types and variables - Integer types</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        // Task 5 : Write a boolean expression for finding if the bit 3 (counting from 0) of a given integer is 1 or 0.
+        var number = 17;
+        if ((number & 8) === 0) {
+            jsConsole.writeLine("Bit 3 of " +  number + " is 0");
+        } else {
+            jsConsole.writeLine("Bit 3 of " +  number + " is 1");
+        }
+    </script>
+</body>
+
+</html>
