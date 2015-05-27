@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Problems1to</title>
+    <script src="scripts.js"></script>
+    <style>
+        .click {
+            border: 2px solid red;
+            background-color: cyan;
+        }
+
+        h4 {
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+
+        div {
+            padding-top: 5px;
+        }
+
+        .long {
+            width: 700px;
+        }
+    </style>
+</head>
+<body>
+    <h4>Problem 1. Reverse string</h4>
+    <label for="string1">Enter string:</label>
+    <input type="text" id="string1" />
+    <span class="click" onclick="startReverse()">CLICK FOR REVERSING</span>
+    <label for="result1">Reversed:</label>
+    <input type="text" id="result1" />
+    <h4>Problem 2. Correct brackets</h4>
+    <label for="string2">Enter expression:</label>
+    <input type="text" id="string2" />
+    <span class="click" onclick="startBracketCheck()">CLICK FOR CHECK</span>
+    <label for="result2">Reversed:</label>
+    <input type="text" id="result2" />
+    <h4>Problem 3. Sub-string in text</h4>
+    <label for="string3">Paste some text:</label>
+    <input type="text" id="string3" class="long" />
+    <div>
+        <label for="string4">Enter substring:</label>
+        <input type="text" id="string4" />
+        <span class="click" onclick="startSubstrCount()">CLICK FOR COUNT</span>
+        <label for="result3">Count:</label>
+        <input type="text" id="result3" />
+    </div>
+    <h4>Problem 4. Parse tags</h4>
+    <div>Example: We are &lt;mixcase&gt;living&lt;/mixcase&gt; in a &lt;upcase&gt;yellow submarine&lt;/upcase&gt;. We &lt;mixcase&gt;don't&lt;/mixcase&gt; have &lt;lowcase&gt;anything&lt;/lowcase&gt; else.</div>
+    <label for="string5">Paste some text like the example above:</label>
+    <input type="text" id="string5" class="long" />
+    <div>
+        <span class="click" onclick="startParsing()">CLICK FOR PARSE</span>
+        <label for="result4">Result:</label>
+        <input type="text" id="result4" class="long"/>
+    </div>
+</body>
+</html>
