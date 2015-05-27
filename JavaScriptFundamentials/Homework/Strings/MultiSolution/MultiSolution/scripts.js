@@ -133,6 +133,7 @@ function parseTags(str) {
         var tempStr = changeCasing((str.substr(openTagIndex, closeTagIndex - openTagIndex)), 'UP');
 
         /*upStr = upStr + (str.substr(openTagIndex, closeTagIndex - openTagIndex)).toUpperCase();*/
+
         upStr = upStr + tempStr;
         str = str.substr(closeTagIndex + upEnd.length, str.length - closeTagIndex - upEnd.length);
 
@@ -258,3 +259,100 @@ function randomCaps(char) {
 
     return result;
 }
+
+/*
+ Problem 5. nbsp
+
+ Write a function that replaces non breaking white-spaces in a text with &nbsp;
+ */
+
+function startReplacingSpaces() {
+
+    var str = document.getElementById('string6').value;
+    document.getElementById('result5').value = replaceSpace(str);
+}
+
+function replaceSpace(str) {
+
+  var line = String(str).replace(/(\s)/g, '&nbsp');
+
+    return line;
+}
+
+/*
+ Problem 6. Extract text from HTML
+
+ Write a function that extracts the content of a html page given as text.
+ The function should return anything that is in a tag, without the tags.
+ */
+
+function startExtract() {
+
+    var str = document.getElementById('string7').value;
+    document.getElementById('result6').value = extractWithRegex(str);
+    document.getElementById('result7').value = extractHTMLContent(str);
+}
+
+String.prototype.trim = function () {
+    return this.replace(/^\s*/, "").replace(/\s*$/, "");
+}
+
+function extractWithRegex(str) {
+   return String(str).replace(/(<([^>]+)>)/ig, '');
+}
+
+
+function extractHTMLContent(str) {
+
+    var text = '';
+    var closeTagIndex = str.indexOf('>');
+    var openTagIndex = str.indexOf('<', 1);
+
+    while (openTagIndex >= 0) {
+
+        var tempText = str.substring(closeTagIndex + 1, openTagIndex);
+
+        if (tempText.replace(/\s/g, '').length) {
+
+            tempText.trim();
+            text += tempText;
+        }
+
+        str = str.substr(openTagIndex, str.length - openTagIndex);
+
+        closeTagIndex = str.indexOf('>');
+        openTagIndex = str.indexOf('<', 1);
+    }
+
+    return text;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
