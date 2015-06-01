@@ -1,12 +1,6 @@
+function(x){return x[0]<0?(x[1]<0?2:0):(x[1]<0?3:1)}
 
-(function(x,y)){
-    a=0
-    if(x){
-        if(y){
-            a=1
-        }
-        a=2
-    }
-    else a=3
-   console.log(a)
-}
+
+
+console.log(a(-999, -999));
+
