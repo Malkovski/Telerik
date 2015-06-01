@@ -133,8 +133,11 @@ function parseTags(str) {
         var tempStr = changeCasing((str.substr(openTagIndex, closeTagIndex - openTagIndex)), 'UP');
 
         /*upStr = upStr + (str.substr(openTagIndex, closeTagIndex - openTagIndex)).toUpperCase();*/
+
         upStr = upStr + tempStr;
         str = str.substr(closeTagIndex + upEnd.length, str.length - closeTagIndex - upEnd.length);
+
+        str = upStr + str;
 
         openTagIndex = str.indexOf(up);
         closeTagIndex = str.indexOf(upEnd);
@@ -194,24 +197,22 @@ function parseTags(str) {
 }
 
 function changeCasing(string, opt) {
-    var temp = '';
-    var closeTagndex = string.indexOf('>');
+    var temp = '',
+        openTagIndex = string.indexOf('<'),
+        closeTagIndex = string.indexOf('>');
+
 
     switch (opt) {
 
         case 'UP':
-            for (var i = 0; i < string.length; i++) {
-
-                if (string[i] !== '<') {
-                   temp += string[i].toUpperCase();
-                }
-                else {
-                    temp += string.substring(i, closeTagndex + 1);
-                    i = closeTagndex;
-                    closeTagndex = string.indexOf('>', closeTagndex);
-                }
-               
+            while (closeTagIndex >= 0) {
+                temp += string.substring(0, openTagIndex).toUpperCase();
+                temp += string.substring(openTagIndex, closeTagIndex + 1);
+                string = string.substr(closeTagIndex + 1, string.length - closeTagIndex);
+                openTagIndex = string.indexOf('<');
+                closeTagIndex = string.indexOf('>');
             }
+            temp += string.toUpperCase();
             break;
         case 'LOW':
             for (var i = 0; i < string.length; i++) {
@@ -220,8 +221,8 @@ function changeCasing(string, opt) {
                     string[i].toLowerCase();
                 }
                 else {
-                    i = closeTagndex;
-                    closeTagndex = string.indexOf('>', closeTagndex);
+                    i = closeTagIndex;
+                    closeTagIndex = string.indexOf('>', closeTagIndex);
                 }
                 
             }
@@ -233,8 +234,8 @@ function changeCasing(string, opt) {
                     randomCaps(string[i]);
                 }
                 else {
-                    i = closeTagndex;
-                    closeTagndex = string.indexOf('>', closeTagndex);
+                    i = closeTagIndex;
+                    closeTagIndex = string.indexOf('>', closeTagIndex);
                 }
                 
             }
@@ -259,40 +260,192 @@ function randomCaps(char) {
     return result;
 }
 
-/*Problem 5. nbsp
 
- Write a function that replaces non breaking white-spaces in a text with &nbsp; */
+/*
+ Problem 5. nbsp
+
+ Write a function that replaces non breaking white-spaces in a text with &nbsp;
+ */
+
+function startReplacingSpaces() {
+
+    var str = document.getElementById('string6').value;
+    document.getElementById('result5').value = replaceSpace(str);
+}
+
+function replaceSpace(str) {
+
+    return String(str).replace(/(\s)/g, '&nbsp');
+}
+
+/*
+ Problem 6. Extract text from HTML
+
+ Write a function that extracts the content of a html page given as text.
+ The function should return anything that is in a tag, without the tags.
+ */
+
+function startExtract() {
+
+    var str = document.getElementById('string7').value;
+    document.getElementById('result6').value = extractWithRegex(str);
+    document.getElementById('result7').value = extractHTMLContent(str);
+}
+
+String.prototype.trim = function () {
+    return this.replace(/^\s*/, "").replace(/\s*$/, "");
+};
+
+function extractWithRegex(str) {
+   return String(str).replace(/(<([^>]+)>)/ig, '');
+}
 
 
+function extractHTMLContent(str) {
+
+    var text = '';
+    var closeTagIndex = str.indexOf('>');
+    var openTagIndex = str.indexOf('<', 1);
+
+    while (openTagIndex >= 0) {
+
+        var tempText = str.substring(closeTagIndex + 1, openTagIndex);
+
+        if (tempText.replace(/\s/g, '').length) {
+
+            tempText.trim();
+            text += tempText;
+        }
+
+        str = str.substr(openTagIndex, str.length - openTagIndex);
+
+        closeTagIndex = str.indexOf('>');
+        openTagIndex = str.indexOf('<', 1);
+    }
+
+    return text;
+}
+
+/*
+ Problem 7. Parse URL
+
+ Write a script that parses an URL address given in the format: [protocol]://[server]/[resource] and extracts from it the [protocol], [server] and [resource] elements.
+ Return the elements in a JSON object.
+ Example:
+
+ URL	result
+ http://telerikacademy.com/Courses/Courses/Details/239	{ protocol: http,
+ server: telerikacademy.com
+ resource: /Courses/Courses/Details/239
+ */
+
+function startParseURL() {
+    var str = document.getElementById('string8').value;
+    document.getElementById('result8').value = parseURL(str);
+}
+
+function parseURL(str) {
+    var protocolIndex = str.indexOf('://'),
+        serverEndIndex = str.indexOf('/', protocolIndex + 3);
+
+    return JSON.stringify({ protocol: str.substring(0, protocolIndex),
+        server: str.substring(protocolIndex + 1, serverEndIndex),
+        resource: str.substr(serverEndIndex, str.length - serverEndIndex)});
+}
 
 
+/*
+ Problem 8. Replace tags
+
+ Write a JavaScript function that replaces in a HTML document given as string all the tags <a href="…">…</a> with corresponding tags [URL=…]…/URL].
+ Example:
+
+ input	output
+ <p>Please visit <a href="http://academy.telerik.com">our site</a> to choose a training course.
+ Also visit <a href="www.devbg.org">our forum</a> to discuss the courses.</p>
+ <p>Please visit [URL=http://academy.telerik.com]our site[/URL] to choose a training course.
+ Also visit [URL=www.devbg.org]our forum[/URL] to discuss the courses.</p>
+ */
 
 
+function startReplaceTags() {
+    var str = document.getElementById('string9').value;
+    document.getElementById('result9').value = replaceTags(str);
+}
+
+function replaceTags(str) {
+
+   return str.replace(/<a href="/g, '[URL=').replace(/">/g, ']').replace(/<\/a>/g, '/URL');
+}
+
+/*
+ Problem 9. Extract e-mails
+
+ Write a function for extracting all email addresses from given text.
+ All sub-strings that match the format @… should be recognized as emails.
+ Return the emails as array of strings.
+ */
+
+function startExtractEmails() {
+    var str = document.getElementById('string10').value;
+    document.getElementById('result10').value = extractEmails(str);
+}
+
+function extractEmails(str) {
+    var arr,
+        emails,
+        re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 
+    arr = str.split(' ');
+
+    for (var elem in arr) {
+
+        if (re.test(arr[elem])) {
+            emails.push(arr[elem]);
+        }
+    }
+
+    return emails.join(' --/-- ');
+}
+
+/*
+ Problem 10. Find palindromes
+
+ Write a program that extracts from a given text all palindromes, e.g. "ABBA", "lamal", "exe".
+ */
+
+function startPalindromeSearch() {
+    var str = document.getElementById('string11').value;
+    document.getElementById('result11').value = findPalindromes(str);
+}
+
+function findPalindromes(str) {
+    var arr,
+        palindromes = [];
+
+    arr = str.split(' ');
+
+    for (var i in arr) {
+
+        if (isPalindrome(arr[i])) {
+            palindromes.push(arr[i]);
+        }
+    }
+
+    return palindromes.join(', ');
+}
 
 
+function isPalindrome(str) {
+    var rev = str.split('').reverse().join('');
 
 
+    if(str.substr(0, str.length / 2 | 0) === rev.substr(0, rev.length / 2 | 0)) {
+        return true;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return false;
+}
 
 
