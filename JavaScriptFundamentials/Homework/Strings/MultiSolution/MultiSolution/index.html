@@ -55,27 +55,62 @@
         <label for="result4">Result:</label>
         <input type="text" id="result4" class="long"/>
     </div>
+    <h4>Problem 5. nbsp</h4>
+    <div>Example: Lorem ipsum some&nbsp;text or&nbsp;whatever!</div>
+    <label for="string6">Paste some text like the example above:</label>
+    <input type="text" id="string6" class="long" />
     <div>
-        <h4>Problem 5. nbsp</h4>
-        <div>Example: Lorem ipsum some&nbsp;text or&nbsp;whatever!</div>
-        <label for="string6">Paste some text like the example above:</label>
-        <input type="text" id="string6" class="long" />
-        <div>
-            <span class="click" onclick="startReplacingSpaces()">CLICK FOR PARSE</span>
-            <label for="result5">Result:</label>
-            <input type="text" id="result5" class="long"/>
+        <span class="click" onclick="startReplacingSpaces()">CLICK FOR PARSE</span>
+        <label for="result5">Result:</label>
+        <input type="text" id="result5" class="long"/>
     </div>
-        <div>
-            <h4>Problem 6. Extract text from HTML</h4>
-            <div>Example: &lt;div&gt;Here are some&lt;span&gt;words&lt;ul&gt;&lt;li&gt;and more words&lt;li&gt;&lt;li&gt;Useless words&lt;li&gt;&lt;ul&gt;Tatko Barba&lt;span&gt;&lt;/div&gt;</div>
-            <label for="string7">Paste some text like the example above:</label>
-            <input type="text" id="string7" class="long" />
-            <div>
-                <span class="click" onclick="startExtract()">CLICK FOR PARSE</span>
-                <label for="result6">Result with Regex:</label>
-                <input type="text" id="result6" class="long"/>
-                <label for="result7">Result with loop:</label>
-                <input type="text" id="result7" class="long"/>
-            </div>
+    <h4>Problem 6. Extract text from HTML</h4>
+    <div>Example: &lt;div&gt;Here are some&lt;span&gt;words&lt;ul&gt;&lt;li&gt;and more words&lt;li&gt;&lt;li&gt;Useless words&lt;li&gt;&lt;ul&gt;Tatko Barba&lt;span&gt;&lt;/div&gt;</div>
+    <label for="string7">Paste some text like the example above:</label>
+    <input type="text" id="string7" class="long" />
+    <div>
+        <span class="click" onclick="startExtract()">CLICK FOR PARSE</span>
+        <label for="result6">Result with Regex:</label>
+        <input type="text" id="result6" class="long"/>
+        <label for="result7">Result with loop:</label>
+        <input type="text" id="result7" class="long"/>
+    </div>
+    <h4>Problem 7. Parse URL</h4>
+    <div>Example: http://telerikacademy.com/Courses/Courses/Details/239</div>
+    <label for="string8">Paste some text like the example above:</label>
+    <input type="text" id="string8" class="long" />
+    <div>
+        <span class="click" onclick="startParseURL()">CLICK FOR PARSE</span>
+        <label for="result8">Result:</label>
+        <input type="text" id="result8" class="long"/>
+    </div>
+    <h4>Problem 8. Replace tags</h4>
+    <div>Example: &lt;p&gt;Please visit &lt;a href="http://academy.telerik.com"&gt;our site&lt;/a&gt; to choose a training course.
+        Also visit &lt;a href="www.devbg.org"&gt;our forum&lt;/a&gt; to discuss the courses.&lt;/p&gt;</div>
+    <label for="string9">Paste some text like the example above:</label>
+    <input type="text" id="string9" class="long" />
+    <div>
+        <span class="click" onclick="startReplaceTags()">CLICK FOR PARSE</span>
+        <label for="result9">Result:</label>
+        <input type="text" id="result9" class="long"/>
+    </div>
+    <h4>Problem 9. Extract e-mails</h4>
+    <div>Example:  Please contact us by phone (+359 222 222 222) or by email at exa_mple@abv.bg or at baj.ivan@yahoo.co.uk . This is not email: test@test. This also: @telerik.com. Neither this: a@a.b. But if u are not happy enough u can contact Oplachi_se_na@armenskiq.pop</div>
+    <label for="string10">Paste some text like the example above:</label>
+    <input type="text" id="string10" class="long" />
+    <div>
+        <span class="click" onclick=" startExtractEmails()">CLICK FOR PARSE</span>
+        <label for="result10">Result:</label>
+        <input type="text" id="result10" class="long"/>
+    </div>
+    <h4>Problem 10. Find palindromes</h4>
+    <div>Example: Some files are exe others not. Not is close to NaN but in a  different way. Many testtset has been made, but palindromes are AHAHAHA</div>
+    <label for="string11">Paste some text like the example above:</label>
+    <input type="text" id="string11" class="long" />
+    <div>
+        <span class="click" onclick=" startPalindromeSearch()">CLICK FOR PARSE</span>
+        <label for="result11">Result:</label>
+        <input type="text" id="result11" class="long"/>
+    </div>
 </body>
 </html>
