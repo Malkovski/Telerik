@@ -6,16 +6,16 @@ function solve(args) {
     var modelsCount = parseInt(args[0]);
     var models = args.slice(1, modelsCount + 1);
     var shaver = args.slice(modelsCount + 2);
-    var finalModel = {};
     var finalModels = [];
+    var finalSections = [];
     var result = [];
 
     for (var i = 0, len = models.length; i < len; i++) {
-
+        var finalModel = {};
         var parts = models[i].split(':');
         finalModel.key = parts[0];
 
-        if(parts[1].indexOf(',') > 0) {
+        if(parts[1].indexOf(',') >= 0) {
             finalModel.value = parts[1].split(',');
         }
         else {
@@ -25,21 +25,47 @@ function solve(args) {
         finalModels.push(finalModel);
     }
 
+    var index = shaver.indexOf('<!DOCTYPE html>');
+    var section = {};
+    var sectionValues = [];
+
+    for (var i = 0; i < index; i++) {
+
+        var hasSection = shaver[i].indexOf('@section ') >= 0;
+        var hasClosingBracket = shaver[i].indexOf('}') >= 0;
+
+        if (hasSection) {
+            section.key = shaver[i].split(' ')[1];
+        }
+
+        if (!hasClosingBracket && !hasSection) {
+            sectionValues.push(shaver[i]);
+            section.value = sectionValues;
+        }
+
+        if (hasClosingBracket) {
+            finalSections.push(section);
+            sectionValues = [];
+            section = {};
+        }
+    }
+
+
     executeShaver(shaver);
 
     function executeShaver(shaver) {
 
-        for (var i = 0, len = shaver.length; i < len; i++) {
+        for (var i = index, len = shaver.length; i < len; i++) {
 
             var line = shaver[i];
 
-            if (!line.indexOf('@') && !line.indexOf('{') && !line.indexOf('}')) {
+            if (!checkForEt(line)) {
 
-               result.push(line);
+                console.log(line);;
             }
             else {
 
-
+               checkForTags(line);
             }
 
         }
@@ -47,6 +73,84 @@ function solve(args) {
 
     }
 
+    function checkForTags(line) {
+
+        var parsedLine = '';
+
+        if (line.indexOf('<') >= 0) {
+
+            var openTagIndex = line.indexOf('<'),
+                closeTagIndex = line.indexOf('>');
+
+            while (closeTagIndex >= 0) {
+                var  part = '';
+                part += line.substring(0, openTagIndex);
+
+                if (checkForEt(part)) {
+
+                    if (checkForParenthesis(part)) {
+
+                        //TODO parse the command
+
+                    }
+                    else {
+                        var command = part.substr(1);
+                        parsedLine += finalModels[command].value;
+                    }
+                }
+                else {
+                    parsedLine += part;
+                }
+
+                parsedLine += line.substr(openTagIndex, closeTagIndex + 1);
+                line = line.substr(closeTagIndex + 1);
+
+                openTagIndex = line.indexOf('<');
+                closeTagIndex = line.indexOf('>');
+            }
+        }
+        else {
+
+           parsedLine =  parseCommands(line);
+        }
+
+        console.log(parsedLine);
+    }
+
+    function parseCommands(line) {
+
+        var openParIndex = line.indexOf('('),
+            closeParIndex = line.indexOf(')'),
+            commandPart = line.substring(1, openParIndex).trim(),
+            argumentsPart = line.substring(openParIndex + 1, closeParIndex);
+
+        switch (commandPart) {
+
+            case 'renderSection':
+                var currentArg = argumentsPart.substr(1, argumentsPart.length - 2);
+
+                for (var obj in finalSections) {
+
+                    if (obj.key == currentArg) {
+
+                        for (var item in this.value) {
+
+                            console.log(this.value);
+                        }
+                    }
+                }
+
+                break;
+        }
+    }
+
+    function checkForEt(line) {
+        return (line.indexOf('@') >= 0);
+    }
+
+    function checkForParenthesis(part) {
+        return (part.indexOf('(') >= 0);
+    }
 }
 
 
@@ -151,4 +255,4 @@ var args = [
 
 ];
 
-solve(args2);
+solve(args);
