@@ -5,34 +5,32 @@
 
 
 function solve(targetSum) {
-    var sumSets = [];
-    var numbers = [10, 4, 3];
-    var numberSets = powerset(numbers);
+    var truckWheels = 10,
+        carWheels = 4,
+        trikeWheels = 3,
+        targetSum = parseInt(targetSum[0], 10),
+        count = 0;
 
-    for (var i=0; i < numberSets.length; i++) {
-        var numberSet = numberSets[i];
-        if (sum(numberSet) == targetSum)
-            sumSets.push(numberSet);
-    }
-    return sumSets.length;
+    for (var i = 0, leni = targetSum / truckWheels; i <= leni; i += 1) {
 
-    function powerset(arr) {
-        var ps = [[]];
-        for (var i=0; i < arr.length; i++) {
-            for (var j = 0, len = ps.length; j < len; j++) {
-                ps.push(ps[j].concat(arr[i]));
+        for (var j = 0, lenj = targetSum / carWheels; j <= lenj; j += 1) {
+
+            for (var k = 0, lenk = targetSum / trikeWheels; k <= lenk; k += 1) {
+
+                var sum = i * truckWheels + j * carWheels + k * trikeWheels;
+
+                if (sum === targetSum) {
+
+                    count += 1;
+                }
             }
         }
-        return ps;
     }
 
-    function sum(arr) {
-        var total = 0;
-        for (var i = 0; i < arr.length; i++)
-            total += arr[i];
-        return total
-    }
+    return count;
 }
 
-
-console.log(solve(40));
+var params = [
+    '40'
+];
+console.log(solve(params));
