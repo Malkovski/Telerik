@@ -3,50 +3,49 @@
  */
 
 function solve(args) {
-    var modelsCount = parseInt(args[0]);
-    var models = args.slice(1, modelsCount + 1);
-    var shaver = args.slice(modelsCount + 2);
-    var finalModels = [];
-    var finalSections = [];
-    var result = [];
+    var modelsCount = parseInt(args[0]),
+        models = args.slice(1, modelsCount + 1),
+        shaver = args.slice(modelsCount + 2),
+        finalSections = [],
+        finalModel = {},
+        result = [];
 
     for (var i = 0, len = models.length; i < len; i++) {
-        var finalModel = {};
+
         var parts = models[i].split(':');
-        finalModel.key = parts[0];
+        var modelKey = parts[0];
 
         if(parts[1].indexOf(',') >= 0) {
-            finalModel.value = parts[1].split(',');
+            finalModel[modelKey] = parts[1].split(',');
         }
         else {
-            finalModel.value = parts[1];
+            finalModel[modelKey] = parts[1];
         }
-
-        finalModels.push(finalModel);
     }
 
     var index = shaver.indexOf('<!DOCTYPE html>');
     var section = {};
-    var sectionValues = [];
+    var sectionValues = [],
+        sectionName = '';
 
     for (var i = 0; i < index; i++) {
 
-        var hasSection = shaver[i].indexOf('@section ') >= 0;
-        var hasClosingBracket = shaver[i].indexOf('}') >= 0;
+        var hasSection = shaver[i].indexOf('@section ') >= 0,
+            hasClosingBracket = shaver[i].indexOf('}') >= 0;
+
 
         if (hasSection) {
-            section.key = shaver[i].split(' ')[1];
+            sectionName = shaver[i].split(' ')[1];
         }
 
         if (!hasClosingBracket && !hasSection) {
             sectionValues.push(shaver[i]);
-            section.value = sectionValues;
         }
 
         if (hasClosingBracket) {
+            section[sectionName] = sectionValues;
             finalSections.push(section);
             sectionValues = [];
-            section = {};
         }
     }
 
@@ -95,7 +94,7 @@ function solve(args) {
                     }
                     else {
                         var command = part.substr(1);
-                        parsedLine += finalModels[command].value;
+                        parsedLine += finalModel[command];
                     }
                 }
                 else {
@@ -129,15 +128,12 @@ function solve(args) {
             case 'renderSection':
                 var currentArg = argumentsPart.substr(1, argumentsPart.length - 2);
 
-                for (var obj in finalSections) {
+                for (var obj in section) {
 
-                    if (obj.key == currentArg) {
-
-                        for (var item in this.value) {
-
-                            console.log(this.value);
-                        }
+                    for (var i = 0, leni = section[obj].length; i < leni; i += 1) {
+                        console.log(section[obj][i]);
                     }
+
                 }
 
                 break;
@@ -192,13 +188,11 @@ var args = [
 '</head>',
 '<body>',
 '@renderSection("menu")',
-
 '<h1>@title</h1>',
 '@if (showSubtitle {',
     '<h2>@subTitle</h2>',
     '<div>@@JustNormalTextWithDoubleKliomba ;)</div>',
     '}',
-
 '<ul>',
 '@foreach (var student in students) {',
     '<li>',
@@ -212,47 +206,9 @@ var args = [
     '@marks',
     '</div>',
     '}',
-
 '@renderSection("footer")',
 '</body>',
 '</html>',
-'Output',
-'<!DOCTYPE html>',
-'<html>',
-'<head>',
-'<title>Telerik Academy</title>',
-'</head>',
-'<body>',
-'<ul id="menu">',
-'<li>Home</li>',
-'<li>About us</li>',
-'</ul>',
-
-'<h1>Telerik Academy</h1>',
-'<h2>Free training</h2>',
-'<div>@JustNormalTextWithDoubleKliomba ;)</div>',
-
-'<ul>',
-'<li>',
-'Pesho',
-'</li>',
-'<li>Multiline Telerik Academy</li>',
-'<li>',
-'Gosho',
-'</li>',
-'<li>Multiline Telerik Academy</li>',
-'<li>',
-'Ivan',
-'</li>',
-'<li>Multiline Telerik Academy</li>',
-'</ul>',
-
-'<footer>',
-'Copyright Telerik Academy 2014',
-'</footer>',
-'</body>',
-'</html>'
-
 ];
 
 solve(args);

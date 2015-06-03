@@ -50,7 +50,6 @@ function solve(params) {
         }
     };
 
-
     for (var i = 0, leni = rows; i < leni; i += 1) {
         matrix.push([]);
         for (var j = 0, lenj = cols; j < lenj; j += 1) {
