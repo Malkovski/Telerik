@@ -60,7 +60,7 @@ function solve(args) {
 
             if (!checkForEt(line)) {
 
-                console.log(line);;
+               result.push(line);
             }
             else {
 
@@ -68,8 +68,6 @@ function solve(args) {
             }
 
         }
-
-
     }
 
     function checkForTags(line) {
@@ -107,13 +105,13 @@ function solve(args) {
                 openTagIndex = line.indexOf('<');
                 closeTagIndex = line.indexOf('>');
             }
+
+            result.push(line);
         }
         else {
 
-           parsedLine =  parseCommands(line);
+            parseCommands(line);
         }
-
-        console.log(parsedLine);
     }
 
     function parseCommands(line) {
@@ -131,9 +129,19 @@ function solve(args) {
                 for (var obj in section) {
 
                     for (var i = 0, leni = section[obj].length; i < leni; i += 1) {
-                        console.log(section[obj][i]);
+                        result.push(section[obj][i]);
                     }
 
+                }
+
+                break;
+            case 'if':
+
+                for (var model in finalModel) {
+
+                    if (finalModel[argumentsPart] == true) {
+                        checkForTags()
+                    }
                 }
 
                 break;
@@ -147,6 +155,8 @@ function solve(args) {
     function checkForParenthesis(part) {
         return (part.indexOf('(') >= 0);
     }
+
+    console.log(result);
 }
 
 
