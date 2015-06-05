@@ -448,4 +448,71 @@ function isPalindrome(str) {
     return false;
 }
 
+/*
+ Problem 11. String format
 
+ Write a function that formats a string using placeholders.
+ The function should work with up to 30 placeholders and all types.
+ */
+
+if (!String.format) {
+    String.format = function () {
+        var formattedString = arguments[0];
+
+        for (var index = 0; index < arguments.length - 1; index++) {
+            var regex = new RegExp("\\{" + index + "\\}", "gm");
+            formattedString = formattedString.replace(regex, arguments[index + 1]);
+        }
+
+        return formattedString;
+    };
+}
+console.log(String.format('{0} {1} a {2}', 'This' , 'is', 'test!'));
+
+function startStringFormat() {
+    var firstEntry = document.getElementById('string12').value;
+    var secondEntry = document.getElementById('string13').value;
+    var thirdEntry = document.getElementById('string14').value;
+    document.getElementById('result12').value = String.format('{0} {1} {2}', firstEntry, secondEntry, thirdEntry);
+}
+
+/*
+ Problem 12. Generate list
+
+ Write a function that creates a HTML <ul> using a template for every HTML <li>.
+ The source of the list should be an array of elements.
+ Replace all placeholders marked with –{…}– with the value of the corresponding property of the object.
+ Example: HTML:
+
+ <div data-type="template" id="list-item">
+ <strong>-{name}-</strong> <span>-{age}-</span>
+ /div>
+ JavaScript:
+
+ var people = [{name: 'Peter', age: 14},…];
+ var tmpl = document.getElementById('list-item').innerHtml;
+ var peopleList = generateList(people, template);
+ //peopleList = '<ul><li><strong>Peter</strong> <span>14</span></li><li>…</li>…</ul>'
+ */
+
+function ulCreator() {
+    var people = [
+            { name: 'Peter', age: 14 },
+            { name: 'Mike', age: 13 },
+            { name: 'John', age: 22 },
+        ],
+        template = document.getElementById('list-item').innerHTML.valueOf(),
+        peopleList = generateList(people, template);
+    document.getElementById('display').innerHTML = peopleList;
+}
+function generateList(people, template) {
+    var list = '<ul>';
+    for (var i = 0; i < people.length; i++) {
+        list += '<li>';
+        list += template.replace('-{name}-', people[i]['name']);
+        list = list.replace('-{age}-', people[i]['age']);
+        list += '</li>';
+    }
+    list += '</ul>';
+    return list;
+}

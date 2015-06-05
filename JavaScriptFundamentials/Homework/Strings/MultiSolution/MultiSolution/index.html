@@ -6,6 +6,7 @@
     <style>
         .click {
             border: 2px solid red;
+            border-radius: 5px;
             background-color: cyan;
         }
 
@@ -21,19 +22,23 @@
         .long {
             width: 700px;
         }
+
+        .short {
+            width: 100px;
+        }
     </style>
 </head>
 <body>
     <h4>Problem 1. Reverse string</h4>
     <label for="string1">Enter string:</label>
     <input type="text" id="string1" />
-    <span class="click" onclick="startReverse()">CLICK FOR REVERSING</span>
+    <button class="click" onclick="startReverse()">CLICK FOR REVERSING</button>
     <label for="result1">Reversed:</label>
     <input type="text" id="result1" />
     <h4>Problem 2. Correct brackets</h4>
     <label for="string2">Enter expression:</label>
     <input type="text" id="string2" />
-    <span class="click" onclick="startBracketCheck()">CLICK FOR CHECK</span>
+    <button class="click" onclick="startBracketCheck()">CLICK FOR CHECK</button>
     <label for="result2">Reversed:</label>
     <input type="text" id="result2" />
     <h4>Problem 3. Sub-string in text</h4>
@@ -42,7 +47,7 @@
     <div>
         <label for="string4">Enter substring:</label>
         <input type="text" id="string4" />
-        <span class="click" onclick="startSubstrCount()">CLICK FOR COUNT</span>
+        <button class="click" onclick="startSubstrCount()">CLICK FOR COUNT</button>
         <label for="result3">Count:</label>
         <input type="text" id="result3" />
     </div>
@@ -51,7 +56,7 @@
     <label for="string5">Paste some text like the example above:</label>
     <input type="text" id="string5" class="long" />
     <div>
-        <span class="click" onclick="startParsing()">CLICK FOR PARSE</span>
+        <button class="click" onclick="startParsing()">CLICK FOR PARSE</button>
         <label for="result4">Result:</label>
         <input type="text" id="result4" class="long"/>
     </div>
@@ -60,7 +65,7 @@
     <label for="string6">Paste some text like the example above:</label>
     <input type="text" id="string6" class="long" />
     <div>
-        <span class="click" onclick="startReplacingSpaces()">CLICK FOR PARSE</span>
+        <button class="click" onclick="startReplacingSpaces()">CLICK FOR PARSE</button>
         <label for="result5">Result:</label>
         <input type="text" id="result5" class="long"/>
     </div>
@@ -69,7 +74,7 @@
     <label for="string7">Paste some text like the example above:</label>
     <input type="text" id="string7" class="long" />
     <div>
-        <span class="click" onclick="startExtract()">CLICK FOR PARSE</span>
+        <button class="click" onclick="startExtract()">CLICK FOR PARSE</button>
         <label for="result6">Result with Regex:</label>
         <input type="text" id="result6" class="long"/>
         <label for="result7">Result with loop:</label>
@@ -80,7 +85,7 @@
     <label for="string8">Paste some text like the example above:</label>
     <input type="text" id="string8" class="long" />
     <div>
-        <span class="click" onclick="startParseURL()">CLICK FOR PARSE</span>
+        <button class="click" onclick="startParseURL()">CLICK FOR PARSE</button>
         <label for="result8">Result:</label>
         <input type="text" id="result8" class="long"/>
     </div>
@@ -90,7 +95,7 @@
     <label for="string9">Paste some text like the example above:</label>
     <input type="text" id="string9" class="long" />
     <div>
-        <span class="click" onclick="startReplaceTags()">CLICK FOR PARSE</span>
+        <button class="click" onclick="startReplaceTags()">CLICK FOR PARSE</button>
         <label for="result9">Result:</label>
         <input type="text" id="result9" class="long"/>
     </div>
@@ -99,7 +104,7 @@
     <label for="string10">Paste some text like the example above:</label>
     <input type="text" id="string10" class="long" />
     <div>
-        <span class="click" onclick=" startExtractEmails()">CLICK FOR PARSE</span>
+        <button class="click" onclick=" startExtractEmails()">CLICK FOR PARSE</button>
         <label for="result10">Result:</label>
         <input type="text" id="result10" class="long"/>
     </div>
@@ -108,9 +113,39 @@
     <label for="string11">Paste some text like the example above:</label>
     <input type="text" id="string11" class="long" />
     <div>
-        <span class="click" onclick=" startPalindromeSearch()">CLICK FOR PARSE</span>
+        <button class="click" onclick=" startPalindromeSearch()">CLICK FOR PARSE</button>
         <label for="result11">Result:</label>
         <input type="text" id="result11" class="long"/>
+    </div>
+    <h4>Problem 11. String format</h4>
+    <div>Fill with desired words!</div>
+    <label for="string12">String.format('{0} {1} {2}',</label>
+    <input type="text" id="string12" class="short" />,
+    <input type="text" id="string13" class="short" />,
+    <input type="text" id="string14" class="short" />);
+    <div>
+        <button class="click" onclick=" startStringFormat()">CLICK FOR PARSE</button>
+        <label for="result12">Result:</label>
+        <input type="text" id="result12" class="long"/>
+    </div>
+    <h4>Problem 12. Generate list</h4>
+    <ul>
+        <li>&lt;div data-type='template' id='list-item'></li>
+        <li>&lt;strong>-{name}-&lt;/strong> &lt;span>-{age}-&lt;/span></li>
+        <li>&lt;/div></li>
+        <li> &nbsp</li>
+        <li>var people = [{name: 'Peter', age: 14},…];</li>
+        <li>var tmpl = document.getElementById('list-item').innerHtml;</li>
+        <li>var peopleList = generateList(people, template);</li>
+        <li>//peopleList = '&lt;ul>&lt;li>&lt;strong>Peter&lt;/strong> &lt;span>14&lt;/span>&lt;/li>&lt;li>…&lt;/li>…&lt;/ul>'</li>
+    </ul>
+    <div data-type='template' id='list-item' hidden = 'hidden' >
+        <strong>-{name}-</strong> <span>-{age}-</span>
+    </div>
+    <div>
+        <button class="click" onclick=" ulCreator()">CLICK FOR PARSE</button>
+        <div>Result:</div>
+        <div id='display'></div>
     </div>
 </body>
 </html>
