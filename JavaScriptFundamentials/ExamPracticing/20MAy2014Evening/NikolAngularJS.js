@@ -111,14 +111,16 @@ function solve(params) {
         }
 
         function parseModels(str, name) {
-            var currentModelName = name;
+            var currentModelName = name,
+                nkModelIndex = str.indexOf(nkModel),
+                nkModelEndIndex = str.indexOf(nkModelEnd);
 
             if (currentModelName == undefined) {
-                currentModelName = str.substring(str.indexOf(nkModel) + nkModel.length, str.indexOf(nkModelEnd));
-                return str.substring(0, str.indexOf(nkModel)) + models[currentModelName] + str.substr(str.indexOf(nkModelEnd) + nkModelEnd.length);
+                currentModelName = str.substring(nkModelIndex + nkModel.length, nkModelEndIndex);
+                return str.substring(0, nkModelIndex) + models[currentModelName] + str.substr(nkModelEndIndex + nkModelEnd.length);
             }
             else {
-                return str.substring(0, str.indexOf(nkModel)) + currentModelName + str.substr(str.indexOf(nkModelEnd) + nkModelEnd.length);
+                return str.substring(0, nkModelIndex) + currentModelName + str.substr(nkModelEndIndex + nkModelEnd.length);
             }
         }
 
@@ -148,6 +150,7 @@ function solve(params) {
             var currentLoopStatement = str.substring(str.indexOf(nkRepeat) + nkRepeat.length, str.indexOf('">')),
                 currentLoop = currentLoopStatement.split(' '),
                 currentItem = currentLoop[0],
+                currentItemIndex = params[i].indexOf(currentItem),
                 currentLoopItems = currentLoop[2],
                 currentIndex = i;
 
@@ -155,7 +158,7 @@ function solve(params) {
                 i += 1;
 
                 while (params[i] !== nkRepeatEnd) {
-                    if (params[i].indexOf(currentItem) >= 0) {
+                    if (currentItemIndex >= 0) {
                         parseLine(params[i], models[currentLoopItems][item]);
                     }
                     else {
