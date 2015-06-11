@@ -11,7 +11,7 @@ function solve(params) {
         cols = numbers[0][1],
         jumps = numbers[0][2],
         currentRow = numbers[1][0],
-        currentCol = numbers[1][0],
+        currentCol = numbers[1][1],
         currentPosition,
         moves = numbers.slice(2),
         count = 1,

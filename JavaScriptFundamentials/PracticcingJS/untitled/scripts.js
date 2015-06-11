@@ -3,9 +3,10 @@
  */
 function transformToSomeBase(params) {
 
+    //cutting string to equal parts if possible -  returns array of strings!
     var parts = params[0].match(/.{1,2}/g);
     var model = {};
-
+    console.log(parts);
     for (var el in parts) {
         model[parts[el]] = (el * 2).toString();
     }
@@ -22,4 +23,4 @@ function transformToSomeBase(params) {
 
 }
 
-transformToSomeBase(['asesrstsgscsxszs']);
+transformToSomeBase(['Some string to be cutted!']);
