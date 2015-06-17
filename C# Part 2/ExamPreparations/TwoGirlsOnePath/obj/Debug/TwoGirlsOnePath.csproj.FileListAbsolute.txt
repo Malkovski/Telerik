@@ -1,6 +1,0 @@
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\TwoGirlsOnePath\bin\Debug\TwoGirlsOnePath.exe.config
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\TwoGirlsOnePath\bin\Debug\TwoGirlsOnePath.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\TwoGirlsOnePath\bin\Debug\TwoGirlsOnePath.pdb
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\TwoGirlsOnePath\obj\Debug\TwoGirlsOnePath.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\TwoGirlsOnePath\obj\Debug\TwoGirlsOnePath.pdb
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\TwoGirlsOnePath\obj\Debug\TwoGirlsOnePath.csprojResolveAssemblyReference.cache

@@ -1,6 +1,0 @@
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\OddNumber\bin\Debug\OddNumber.exe.config
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\OddNumber\bin\Debug\OddNumber.exe
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\OddNumber\bin\Debug\OddNumber.pdb
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\OddNumber\obj\Debug\OddNumber.csprojResolveAssemblyReference.cache
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\OddNumber\obj\Debug\OddNumber.exe
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\OddNumber\obj\Debug\OddNumber.pdb

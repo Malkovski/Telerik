@@ -1,6 +1,0 @@
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task8ExtractSentences\bin\Debug\Task8ExtractSentences.exe.config
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task8ExtractSentences\bin\Debug\Task8ExtractSentences.exe
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task8ExtractSentences\bin\Debug\Task8ExtractSentences.pdb
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task8ExtractSentences\obj\Debug\Task8ExtractSentences.csprojResolveAssemblyReference.cache
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task8ExtractSentences\obj\Debug\Task8ExtractSentences.exe
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task8ExtractSentences\obj\Debug\Task8ExtractSentences.pdb

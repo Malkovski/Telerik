@@ -1,6 +1,0 @@
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task7EncodeDecode\bin\Debug\Task7EncodeDecode.exe.config
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task7EncodeDecode\bin\Debug\Task7EncodeDecode.exe
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task7EncodeDecode\bin\Debug\Task7EncodeDecode.pdb
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task7EncodeDecode\obj\Debug\Task7EncodeDecode.csprojResolveAssemblyReference.cache
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task7EncodeDecode\obj\Debug\Task7EncodeDecode.exe
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task7EncodeDecode\obj\Debug\Task7EncodeDecode.pdb

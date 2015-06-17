@@ -1,6 +1,0 @@
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\Trails3D\bin\Debug\Trails3D.exe.config
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\Trails3D\bin\Debug\Trails3D.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\Trails3D\bin\Debug\Trails3D.pdb
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\Trails3D\obj\Debug\Trails3D.csprojResolveAssemblyReference.cache
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\Trails3D\obj\Debug\Trails3D.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\Trails3D\obj\Debug\Trails3D.pdb

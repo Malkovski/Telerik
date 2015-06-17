@@ -1,6 +1,0 @@
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\TRES4Numbers\bin\Debug\TRES4Numbers.exe.config
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\TRES4Numbers\bin\Debug\TRES4Numbers.exe
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\TRES4Numbers\bin\Debug\TRES4Numbers.pdb
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\TRES4Numbers\obj\Debug\TRES4Numbers.csprojResolveAssemblyReference.cache
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\TRES4Numbers\obj\Debug\TRES4Numbers.exe
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\TRES4Numbers\obj\Debug\TRES4Numbers.pdb

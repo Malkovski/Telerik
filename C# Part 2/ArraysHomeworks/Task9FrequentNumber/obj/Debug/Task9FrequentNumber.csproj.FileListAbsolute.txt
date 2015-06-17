@@ -1,6 +1,0 @@
-C:\Users\Mastermind\Documents\Visual Studio 2013\Projects\ArraysHomeworks\Task9FrequentNumber\bin\Debug\Task9FrequentNumber.exe.config
-C:\Users\Mastermind\Documents\Visual Studio 2013\Projects\ArraysHomeworks\Task9FrequentNumber\bin\Debug\Task9FrequentNumber.exe
-C:\Users\Mastermind\Documents\Visual Studio 2013\Projects\ArraysHomeworks\Task9FrequentNumber\bin\Debug\Task9FrequentNumber.pdb
-C:\Users\Mastermind\Documents\Visual Studio 2013\Projects\ArraysHomeworks\Task9FrequentNumber\obj\Debug\Task9FrequentNumber.csprojResolveAssemblyReference.cache
-C:\Users\Mastermind\Documents\Visual Studio 2013\Projects\ArraysHomeworks\Task9FrequentNumber\obj\Debug\Task9FrequentNumber.exe
-C:\Users\Mastermind\Documents\Visual Studio 2013\Projects\ArraysHomeworks\Task9FrequentNumber\obj\Debug\Task9FrequentNumber.pdb

@@ -1,6 +1,0 @@
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\PermutationExample\bin\Debug\PermutationExample.exe.config
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\PermutationExample\bin\Debug\PermutationExample.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\PermutationExample\bin\Debug\PermutationExample.pdb
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\PermutationExample\obj\Debug\PermutationExample.csprojResolveAssemblyReference.cache
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\PermutationExample\obj\Debug\PermutationExample.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\PermutationExample\obj\Debug\PermutationExample.pdb

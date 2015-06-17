@@ -1,5 +1,0 @@
-D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Task2BinaryToDecimal\bin\Debug\Task2BinaryToDecimal.exe.config
-D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Task2BinaryToDecimal\bin\Debug\Task2BinaryToDecimal.exe
-D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Task2BinaryToDecimal\bin\Debug\Task2BinaryToDecimal.pdb
-D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Task2BinaryToDecimal\obj\Debug\Task2BinaryToDecimal.exe
-D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Task2BinaryToDecimal\obj\Debug\Task2BinaryToDecimal.pdb

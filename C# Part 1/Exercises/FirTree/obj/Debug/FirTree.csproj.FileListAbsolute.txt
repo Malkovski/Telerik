@@ -1,6 +1,0 @@
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\FirTree\bin\Debug\FirTree.exe.config
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\FirTree\bin\Debug\FirTree.exe
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\FirTree\bin\Debug\FirTree.pdb
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\FirTree\obj\Debug\FirTree.csprojResolveAssemblyReference.cache
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\FirTree\obj\Debug\FirTree.exe
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\FirTree\obj\Debug\FirTree.pdb

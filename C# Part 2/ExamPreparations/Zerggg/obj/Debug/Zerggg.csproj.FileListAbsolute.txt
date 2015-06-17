@@ -1,9 +1,0 @@
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\ExamPreparations\Zerggg\bin\Debug\Zerggg.exe.config
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\ExamPreparations\Zerggg\bin\Debug\Zerggg.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\ExamPreparations\Zerggg\bin\Debug\Zerggg.pdb
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\ExamPreparations\Zerggg\obj\Debug\Zerggg.csprojResolveAssemblyReference.cache
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\ExamPreparations\Zerggg\obj\Debug\Zerggg.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\ExamPreparations\Zerggg\obj\Debug\Zerggg.pdb
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\Zerggg\bin\Debug\Zerggg.exe.config
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\Zerggg\obj\Debug\Zerggg.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\Zerggg\obj\Debug\Zerggg.pdb

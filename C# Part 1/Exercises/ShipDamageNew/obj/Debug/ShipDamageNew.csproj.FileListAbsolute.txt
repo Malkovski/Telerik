@@ -1,6 +1,0 @@
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\Practice\ShipDamageNew\bin\Debug\ShipDamageNew.exe.config
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\Practice\ShipDamageNew\bin\Debug\ShipDamageNew.exe
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\Practice\ShipDamageNew\bin\Debug\ShipDamageNew.pdb
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\Practice\ShipDamageNew\obj\Debug\ShipDamageNew.csprojResolveAssemblyReference.cache
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\Practice\ShipDamageNew\obj\Debug\ShipDamageNew.exe
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\Practice\ShipDamageNew\obj\Debug\ShipDamageNew.pdb

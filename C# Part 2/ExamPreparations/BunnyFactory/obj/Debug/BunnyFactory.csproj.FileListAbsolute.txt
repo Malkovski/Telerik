@@ -1,6 +1,0 @@
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\BunnyFactory\bin\Debug\BunnyFactory.exe.config
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\BunnyFactory\bin\Debug\BunnyFactory.exe
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\BunnyFactory\bin\Debug\BunnyFactory.pdb
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\BunnyFactory\obj\Debug\BunnyFactory.csprojResolveAssemblyReference.cache
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\BunnyFactory\obj\Debug\BunnyFactory.exe
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\BunnyFactory\obj\Debug\BunnyFactory.pdb

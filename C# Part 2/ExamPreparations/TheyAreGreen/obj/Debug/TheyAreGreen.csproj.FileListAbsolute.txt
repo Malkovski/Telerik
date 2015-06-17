@@ -1,6 +1,0 @@
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\TheyAreGreen\bin\Debug\TheyAreGreen.exe.config
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\TheyAreGreen\bin\Debug\TheyAreGreen.exe
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\TheyAreGreen\bin\Debug\TheyAreGreen.pdb
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\TheyAreGreen\obj\Debug\TheyAreGreen.csprojResolveAssemblyReference.cache
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\TheyAreGreen\obj\Debug\TheyAreGreen.exe
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\TheyAreGreen\obj\Debug\TheyAreGreen.pdb

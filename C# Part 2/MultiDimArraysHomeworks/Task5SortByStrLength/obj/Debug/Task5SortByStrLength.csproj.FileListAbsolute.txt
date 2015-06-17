@@ -1,6 +1,0 @@
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task5SortByStrLength\bin\Debug\Task5SortByStrLength.exe.config
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task5SortByStrLength\bin\Debug\Task5SortByStrLength.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task5SortByStrLength\bin\Debug\Task5SortByStrLength.pdb
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task5SortByStrLength\obj\Debug\Task5SortByStrLength.csprojResolveAssemblyReference.cache
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task5SortByStrLength\obj\Debug\Task5SortByStrLength.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task5SortByStrLength\obj\Debug\Task5SortByStrLength.pdb

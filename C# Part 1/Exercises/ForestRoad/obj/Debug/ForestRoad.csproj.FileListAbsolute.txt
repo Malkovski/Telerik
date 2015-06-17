@@ -1,6 +1,0 @@
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\ExercicesLevel-3\ForestRoad\bin\Debug\ForestRoad.exe.config
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\ExercicesLevel-3\ForestRoad\bin\Debug\ForestRoad.exe
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\ExercicesLevel-3\ForestRoad\bin\Debug\ForestRoad.pdb
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\ExercicesLevel-3\ForestRoad\obj\Debug\ForestRoad.csprojResolveAssemblyReference.cache
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\ExercicesLevel-3\ForestRoad\obj\Debug\ForestRoad.exe
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\ExercicesLevel-3\ForestRoad\obj\Debug\ForestRoad.pdb

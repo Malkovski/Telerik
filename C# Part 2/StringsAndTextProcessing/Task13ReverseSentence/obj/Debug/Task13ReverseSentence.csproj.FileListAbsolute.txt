@@ -1,6 +1,0 @@
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task13ReverseSentence\bin\Debug\Task13ReverseSentence.exe.config
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task13ReverseSentence\bin\Debug\Task13ReverseSentence.exe
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task13ReverseSentence\bin\Debug\Task13ReverseSentence.pdb
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task13ReverseSentence\obj\Debug\Task13ReverseSentence.csprojResolveAssemblyReference.cache
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task13ReverseSentence\obj\Debug\Task13ReverseSentence.exe
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task13ReverseSentence\obj\Debug\Task13ReverseSentence.pdb

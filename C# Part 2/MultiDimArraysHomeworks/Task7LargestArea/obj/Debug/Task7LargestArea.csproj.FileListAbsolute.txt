@@ -1,6 +1,0 @@
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task7LargestArea\bin\Debug\Task7LargestArea.exe.config
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task7LargestArea\bin\Debug\Task7LargestArea.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task7LargestArea\bin\Debug\Task7LargestArea.pdb
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task7LargestArea\obj\Debug\Task7LargestArea.csprojResolveAssemblyReference.cache
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task7LargestArea\obj\Debug\Task7LargestArea.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task7LargestArea\obj\Debug\Task7LargestArea.pdb

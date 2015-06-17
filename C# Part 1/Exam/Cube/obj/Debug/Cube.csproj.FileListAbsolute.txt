@@ -1,6 +1,0 @@
-c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\Cube\bin\Debug\Cube.exe.config
-c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\Cube\bin\Debug\Cube.exe
-c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\Cube\bin\Debug\Cube.pdb
-c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\Cube\obj\Debug\Cube.csprojResolveAssemblyReference.cache
-c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\Cube\obj\Debug\Cube.exe
-c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\Cube\obj\Debug\Cube.pdb

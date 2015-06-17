@@ -1,6 +1,0 @@
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task4BinSearch\bin\Debug\Task4BinSearch.exe.config
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task4BinSearch\bin\Debug\Task4BinSearch.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task4BinSearch\bin\Debug\Task4BinSearch.pdb
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task4BinSearch\obj\Debug\Task4BinSearch.csprojResolveAssemblyReference.cache
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task4BinSearch\obj\Debug\Task4BinSearch.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\MultidimArraysHomeworks\Task4BinSearch\obj\Debug\Task4BinSearch.pdb

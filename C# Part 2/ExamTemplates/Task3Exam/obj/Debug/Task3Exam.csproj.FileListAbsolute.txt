@@ -1,6 +1,0 @@
-D:\Malkie\Telerik\C# Part 2\ExamTemplates\Task3Exam\bin\Debug\Task3Exam.exe.config
-D:\Malkie\Telerik\C# Part 2\ExamTemplates\Task3Exam\bin\Debug\Task3Exam.exe
-D:\Malkie\Telerik\C# Part 2\ExamTemplates\Task3Exam\bin\Debug\Task3Exam.pdb
-D:\Malkie\Telerik\C# Part 2\ExamTemplates\Task3Exam\obj\Debug\Task3Exam.exe
-D:\Malkie\Telerik\C# Part 2\ExamTemplates\Task3Exam\obj\Debug\Task3Exam.pdb
-D:\Malkie\Telerik\C# Part 2\ExamTemplates\Task3Exam\obj\Debug\Task3Exam.csprojResolveAssemblyReference.cache

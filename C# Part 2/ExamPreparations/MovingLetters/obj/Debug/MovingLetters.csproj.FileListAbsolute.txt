@@ -1,6 +1,0 @@
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\MovingLetters\bin\Debug\MovingLetters.exe.config
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\MovingLetters\bin\Debug\MovingLetters.exe
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\MovingLetters\bin\Debug\MovingLetters.pdb
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\MovingLetters\obj\Debug\MovingLetters.exe
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\MovingLetters\obj\Debug\MovingLetters.pdb
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\MovingLetters\obj\Debug\MovingLetters.csprojResolveAssemblyReference.cache

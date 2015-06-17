@@ -1,6 +1,0 @@
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task16DateDifference\bin\Debug\Task16DateDifference.exe.config
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task16DateDifference\bin\Debug\Task16DateDifference.exe
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task16DateDifference\bin\Debug\Task16DateDifference.pdb
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task16DateDifference\obj\Debug\Task16DateDifference.csprojResolveAssemblyReference.cache
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task16DateDifference\obj\Debug\Task16DateDifference.exe
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task16DateDifference\obj\Debug\Task16DateDifference.pdb

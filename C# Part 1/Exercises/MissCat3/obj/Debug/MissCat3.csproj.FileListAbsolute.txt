@@ -1,6 +1,0 @@
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercisesLevel2\MissCat3\bin\Debug\MissCat3.exe.config
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercisesLevel2\MissCat3\bin\Debug\MissCat3.exe
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercisesLevel2\MissCat3\bin\Debug\MissCat3.pdb
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercisesLevel2\MissCat3\obj\Debug\MissCat3.csprojResolveAssemblyReference.cache
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercisesLevel2\MissCat3\obj\Debug\MissCat3.exe
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercisesLevel2\MissCat3\obj\Debug\MissCat3.pdb

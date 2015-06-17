@@ -1,6 +1,0 @@
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\Solution3\Sevenland\bin\Debug\Sevenland.exe.config
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\Solution3\Sevenland\obj\Debug\Sevenland.csprojResolveAssemblyReference.cache
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\Solution3\Sevenland\bin\Debug\Sevenland.exe
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\Solution3\Sevenland\bin\Debug\Sevenland.pdb
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\Solution3\Sevenland\obj\Debug\Sevenland.exe
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\Solution3\Sevenland\obj\Debug\Sevenland.pdb

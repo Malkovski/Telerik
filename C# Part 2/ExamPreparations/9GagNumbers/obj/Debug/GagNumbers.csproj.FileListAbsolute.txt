@@ -1,6 +1,0 @@
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\9GagNumbers\bin\Debug\9GagNumbers.exe.config
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\9GagNumbers\bin\Debug\9GagNumbers.exe
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\9GagNumbers\bin\Debug\9GagNumbers.pdb
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\9GagNumbers\obj\Debug\9GagNumbers.exe
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\9GagNumbers\obj\Debug\9GagNumbers.pdb
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\9GagNumbers\obj\Debug\GagNumbers.csprojResolveAssemblyReference.cache

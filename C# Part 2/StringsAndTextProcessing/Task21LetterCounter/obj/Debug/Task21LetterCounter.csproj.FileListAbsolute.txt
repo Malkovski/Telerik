@@ -1,6 +1,0 @@
-E:\Telerik\gitHub\Telerik\C# Part 2\StringsAndTextProcessing\Task21LetterCounter\bin\Debug\Task21LetterCounter.exe.config
-E:\Telerik\gitHub\Telerik\C# Part 2\StringsAndTextProcessing\Task21LetterCounter\bin\Debug\Task21LetterCounter.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\StringsAndTextProcessing\Task21LetterCounter\bin\Debug\Task21LetterCounter.pdb
-E:\Telerik\gitHub\Telerik\C# Part 2\StringsAndTextProcessing\Task21LetterCounter\obj\Debug\Task21LetterCounter.csprojResolveAssemblyReference.cache
-E:\Telerik\gitHub\Telerik\C# Part 2\StringsAndTextProcessing\Task21LetterCounter\obj\Debug\Task21LetterCounter.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\StringsAndTextProcessing\Task21LetterCounter\obj\Debug\Task21LetterCounter.pdb

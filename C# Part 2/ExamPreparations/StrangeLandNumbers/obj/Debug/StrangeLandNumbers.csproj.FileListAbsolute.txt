@@ -1,6 +1,0 @@
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\StrangeLandNumbers\bin\Debug\StrangeLandNumbers.exe.config
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\StrangeLandNumbers\bin\Debug\StrangeLandNumbers.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\StrangeLandNumbers\bin\Debug\StrangeLandNumbers.pdb
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\StrangeLandNumbers\obj\Debug\StrangeLandNumbers.csprojResolveAssemblyReference.cache
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\StrangeLandNumbers\obj\Debug\StrangeLandNumbers.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamPreparations\StrangeLandNumbers\obj\Debug\StrangeLandNumbers.pdb

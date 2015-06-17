@@ -1,9 +1,0 @@
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\StringsAndTextProcessing\Task6StringLength\bin\Debug\Task6StringLength.exe.config
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\StringsAndTextProcessing\Task6StringLength\bin\Debug\Task6StringLength.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\StringsAndTextProcessing\Task6StringLength\bin\Debug\Task6StringLength.pdb
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\StringsAndTextProcessing\Task6StringLength\obj\Debug\Task6StringLength.csprojResolveAssemblyReference.cache
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\StringsAndTextProcessing\Task6StringLength\obj\Debug\Task6StringLength.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\StringsAndTextProcessing\Task6StringLength\obj\Debug\Task6StringLength.pdb
-E:\Telerik\gitHub\Telerik\C# Part 2\StringsAndTextProcessing\Task6StringLength\bin\Debug\Task6StringLength.exe.config
-E:\Telerik\gitHub\Telerik\C# Part 2\StringsAndTextProcessing\Task6StringLength\obj\Debug\Task6StringLength.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\StringsAndTextProcessing\Task6StringLength\obj\Debug\Task6StringLength.pdb

@@ -1,6 +1,0 @@
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamTemplates\DynamicOpt-Trees\bin\Debug\DynamicOpt-Trees.exe.config
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamTemplates\DynamicOpt-Trees\bin\Debug\DynamicOpt-Trees.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamTemplates\DynamicOpt-Trees\bin\Debug\DynamicOpt-Trees.pdb
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamTemplates\DynamicOpt-Trees\obj\Debug\DynamicOpt-Trees.csprojResolveAssemblyReference.cache
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamTemplates\DynamicOpt-Trees\obj\Debug\DynamicOpt-Trees.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamTemplates\DynamicOpt-Trees\obj\Debug\DynamicOpt-Trees.pdb

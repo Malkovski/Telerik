@@ -1,6 +1,0 @@
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamTemplates\DynamicOpt-Subsequence\bin\Debug\DynamicOpt-Subsequence.exe.config
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamTemplates\DynamicOpt-Subsequence\bin\Debug\DynamicOpt-Subsequence.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamTemplates\DynamicOpt-Subsequence\bin\Debug\DynamicOpt-Subsequence.pdb
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamTemplates\DynamicOpt-Subsequence\obj\Debug\DynamicOpt-Subsequence.csprojResolveAssemblyReference.cache
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamTemplates\DynamicOpt-Subsequence\obj\Debug\DynamicOpt-Subsequence.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\ExamTemplates\DynamicOpt-Subsequence\obj\Debug\DynamicOpt-Subsequence.pdb

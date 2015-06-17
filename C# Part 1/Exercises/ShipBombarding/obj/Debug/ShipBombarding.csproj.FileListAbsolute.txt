@@ -1,6 +1,0 @@
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\Solution2\ShipBombarding\bin\Debug\ShipBombarding.exe.config
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\Solution2\ShipBombarding\bin\Debug\ShipBombarding.exe
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\Solution2\ShipBombarding\bin\Debug\ShipBombarding.pdb
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\Solution2\ShipBombarding\obj\Debug\ShipBombarding.csprojResolveAssemblyReference.cache
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\Solution2\ShipBombarding\obj\Debug\ShipBombarding.exe
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\Solution2\ShipBombarding\obj\Debug\ShipBombarding.pdb

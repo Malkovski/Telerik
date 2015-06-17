@@ -1,1 +1,0 @@
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\IntroToCSharp\IntroToCSharp\bin\Debug\IntroToCSharp.exe.config

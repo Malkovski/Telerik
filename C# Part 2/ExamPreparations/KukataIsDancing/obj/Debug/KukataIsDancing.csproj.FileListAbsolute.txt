@@ -1,6 +1,0 @@
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\KukataIsDancing\bin\Debug\KukataIsDancing.exe.config
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\KukataIsDancing\bin\Debug\KukataIsDancing.exe
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\KukataIsDancing\bin\Debug\KukataIsDancing.pdb
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\KukataIsDancing\obj\Debug\KukataIsDancing.csprojResolveAssemblyReference.cache
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\KukataIsDancing\obj\Debug\KukataIsDancing.exe
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\KukataIsDancing\obj\Debug\KukataIsDancing.pdb

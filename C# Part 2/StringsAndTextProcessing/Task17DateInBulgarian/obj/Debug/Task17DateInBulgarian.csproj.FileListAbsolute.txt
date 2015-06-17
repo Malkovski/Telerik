@@ -1,6 +1,0 @@
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task17DateInBulgarian\bin\Debug\Task17DateInBulgarian.exe.config
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task17DateInBulgarian\bin\Debug\Task17DateInBulgarian.exe
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task17DateInBulgarian\bin\Debug\Task17DateInBulgarian.pdb
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task17DateInBulgarian\obj\Debug\Task17DateInBulgarian.csprojResolveAssemblyReference.cache
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task17DateInBulgarian\obj\Debug\Task17DateInBulgarian.exe
-D:\Malkie\Telerik\C# Part 2\StringsAndTextProcessing\Task17DateInBulgarian\obj\Debug\Task17DateInBulgarian.pdb

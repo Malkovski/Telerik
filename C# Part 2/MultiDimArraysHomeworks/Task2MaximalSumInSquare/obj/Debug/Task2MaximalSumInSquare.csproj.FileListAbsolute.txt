@@ -1,6 +1,0 @@
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\Solution1\Task2MaximalSumInSquare\bin\Debug\Task2MaximalSumInSquare.exe.config
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\Solution1\Task2MaximalSumInSquare\bin\Debug\Task2MaximalSumInSquare.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\Solution1\Task2MaximalSumInSquare\bin\Debug\Task2MaximalSumInSquare.pdb
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\Solution1\Task2MaximalSumInSquare\obj\Debug\Task2MaximalSumInSquare.csprojResolveAssemblyReference.cache
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\Solution1\Task2MaximalSumInSquare\obj\Debug\Task2MaximalSumInSquare.exe
-E:\Telerik\gitHub\Telerik\C# Part 2\MultiDimArraysHomeworks\Solution1\Task2MaximalSumInSquare\obj\Debug\Task2MaximalSumInSquare.pdb

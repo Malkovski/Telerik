@@ -1,6 +1,0 @@
-c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\TextToNumber\bin\Debug\TextToNumber.exe.config
-c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\TextToNumber\bin\Debug\TextToNumber.exe
-c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\TextToNumber\bin\Debug\TextToNumber.pdb
-c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\TextToNumber\obj\Debug\TextToNumber.csprojResolveAssemblyReference.cache
-c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\TextToNumber\obj\Debug\TextToNumber.exe
-c:\Users\mastermind\documents\visual studio 2013\Projects\Solution1\TextToNumber\obj\Debug\TextToNumber.pdb

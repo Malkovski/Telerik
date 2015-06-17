@@ -1,6 +1,0 @@
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\ElementsInLine\ElementsInLine\bin\Debug\ElementsInLine.exe.config
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\ElementsInLine\ElementsInLine\bin\Debug\ElementsInLine.exe
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\ElementsInLine\ElementsInLine\bin\Debug\ElementsInLine.pdb
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\ElementsInLine\ElementsInLine\obj\Debug\ElementsInLine.csprojResolveAssemblyReference.cache
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\ElementsInLine\ElementsInLine\obj\Debug\ElementsInLine.exe
-c:\users\geogi malkovski\documents\visual studio 2013\Projects\ElementsInLine\ElementsInLine\obj\Debug\ElementsInLine.pdb

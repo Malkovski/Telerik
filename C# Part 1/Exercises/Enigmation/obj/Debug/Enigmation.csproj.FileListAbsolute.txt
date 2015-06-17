@@ -1,6 +1,0 @@
-E:\Telerik\gitHub\Telerik\C# Part 1\Exercises\Enigmation\bin\Debug\Enigmation.exe.config
-E:\Telerik\gitHub\Telerik\C# Part 1\Exercises\Enigmation\bin\Debug\Enigmation.exe
-E:\Telerik\gitHub\Telerik\C# Part 1\Exercises\Enigmation\bin\Debug\Enigmation.pdb
-E:\Telerik\gitHub\Telerik\C# Part 1\Exercises\Enigmation\obj\Debug\Enigmation.csprojResolveAssemblyReference.cache
-E:\Telerik\gitHub\Telerik\C# Part 1\Exercises\Enigmation\obj\Debug\Enigmation.exe
-E:\Telerik\gitHub\Telerik\C# Part 1\Exercises\Enigmation\obj\Debug\Enigmation.pdb

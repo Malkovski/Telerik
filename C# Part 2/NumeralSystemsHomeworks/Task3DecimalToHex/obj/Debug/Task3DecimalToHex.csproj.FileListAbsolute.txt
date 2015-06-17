@@ -1,5 +1,0 @@
-D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Task3DecimalToHex\bin\Debug\Task3DecimalToHex.exe.config
-D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Task3DecimalToHex\bin\Debug\Task3DecimalToHex.exe
-D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Task3DecimalToHex\bin\Debug\Task3DecimalToHex.pdb
-D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Task3DecimalToHex\obj\Debug\Task3DecimalToHex.exe
-D:\Malkie\Telerik\C# Part 2\NumeralSystemsHomeworks\Task3DecimalToHex\obj\Debug\Task3DecimalToHex.pdb

@@ -1,6 +1,0 @@
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\DogeCoins\bin\Debug\DogeCoins.exe.config
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\DogeCoins\bin\Debug\DogeCoins.exe
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\DogeCoins\bin\Debug\DogeCoins.pdb
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\DogeCoins\obj\Debug\DogeCoins.csprojResolveAssemblyReference.cache
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\DogeCoins\obj\Debug\DogeCoins.exe
-D:\Malkie\Telerik\C# Part 2\ExamPreparations\DogeCoins\obj\Debug\DogeCoins.pdb

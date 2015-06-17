@@ -1,7 +1,0 @@
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\Poker\bin\Debug\Poker.exe.config
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\Poker\bin\Debug\Poker.exe
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\Poker\bin\Debug\Poker.pdb
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\Poker\obj\Debug\Poker.csprojResolveAssemblyReference.cache
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\Poker\obj\Debug\Poker.exe
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\Poker\obj\Debug\Poker.pdb
-C:\Users\Geogi Malkovski\Documents\Visual Studio 2013\Projects\ExercicesLevel-3\ForestRoad\bin\Debug\Poker.exe.config
