@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c886bdd6-f052-4d03-a057-7c5ea3b4a4b9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestingOOP.js" />
-    </list>
+    <list default="true" id="c886bdd6-f052-4d03-a057-7c5ea3b4a4b9" name="Default" comment="" />
     <ignored path="Testing.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,12 +21,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TestingOOP.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestingOOP.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TestingOOP.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.50406504">
+            <state vertical-scroll-proportion="0.0">
               <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hidden-functions-testing.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hidden-functions-testing.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.0243902">
+              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#54#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -49,6 +59,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/TestingOOP.js" />
+        <option value="$PROJECT_DIR$/hidden-functions-testing.js" />
       </list>
     </option>
   </component>
@@ -118,9 +129,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Node.js.TestingOOP.js">
+  <component name="RunManager" selected="Node.js.hidden-functions-testing.js">
     <configuration default="false" name="TestingOOP.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="C:/Program Files/nodejs/node" path-to-js-file="TestingOOP.js" working-dir="$PROJECT_DIR$">
+      <method />
+    </configuration>
+    <configuration default="false" name="hidden-functions-testing.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="C:/Program Files/nodejs/node" path-to-js-file="hidden-functions-testing.js" working-dir="$PROJECT_DIR$">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -161,12 +176,14 @@
       <envs />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Node.js.TestingOOP.js" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.hidden-functions-testing.js" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.TestingOOP.js" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Node.js.hidden-functions-testing.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.TestingOOP.js" />
       </list>
     </recent_temporary>
   </component>
@@ -232,9 +249,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TestingOOP.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50406504">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestingOOP.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hidden-functions-testing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0243902">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#54#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
