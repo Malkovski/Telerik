@@ -5,8 +5,7 @@ var Infestation = (function () {
 
     function isCreatedTarget(targetName) {
         return createdUnits.some(function (target) {
-            var isIt = target._name === targetName;
-            return isIt;
+            return  target._name === targetName;
         });
     }
 
@@ -20,6 +19,12 @@ var Infestation = (function () {
         return SUPPLEMENT_TYPES.some(function (type) {
             return type === supplementType;
         });
+    }
+
+    function validateUnitName(name) {
+        if (!name.match(/^[0-9A-z_]+$/)) {
+            throw new Error('Unit name must be alpha-numeric!');
+        }//
     }
 
     function getSupplementEffect(unit, currentSupplement) {
@@ -82,24 +87,21 @@ var Infestation = (function () {
                 }
 
                 switch (unitKind) {
-                    case 'Dog': currentUnit = Object.create(Dog.init(unitName));
-                        createdUnits.push(currentUnit);
+                    case 'Dog': currentUnit = Object.create(Dog).init(unitName);
                         break;
-                    case 'Tank': currentUnit = Object.create(Tank.init(unitName));
-                        createdUnits.push(currentUnit);
+                    case 'Tank': currentUnit = Object.create(Tank).init(unitName);
                         break;
-                    case 'Marine': currentUnit = Object.create(Marine.init(unitName));
-                        createdUnits.push(currentUnit);
+                    case 'Marine': currentUnit = Object.create(Marine).init(unitName);
                         break;
-                    case 'Parasite': currentUnit = Object.create(Parasite.init(unitName));
-                        createdUnits.push(currentUnit);
+                    case 'Parasite': currentUnit = Object.create(Parasite).init(unitName);
                         break;
-                    case 'Queen': currentUnit = Object.create(Queen.init(unitName));
-                        createdUnits.push(currentUnit);
+                    case 'Queen': currentUnit = Object.create(Queen).init(unitName);
                         break;
 
                     default : break;
                 }
+
+                createdUnits.push(currentUnit);
             },
             supplement: function (supplementType, targetUnitName) {
                 var currentSupplement;
@@ -113,18 +115,17 @@ var Infestation = (function () {
                 }
 
                 switch (supplementType) {
-                    case 'PowerCatalyst' : currentSupplement = new PowerCatalyst.init();
+                    case 'PowerCatalyst' : currentSupplement = Object.create(PowerCatalyst).init();
                         break;
-                    case 'HealthCatalyst' : currentSupplement = new HealthCatalyst.init();
+                    case 'HealthCatalyst' : currentSupplement = Object.create(HealthCatalyst).init();
                         break;
-                    case 'AggressionCatalyst' : currentSupplement = new AggressionCatalyst.init();
+                    case 'AggressionCatalyst' : currentSupplement = Object.create(AggressionCatalyst).init();
                         break;
                     case 'Weapon' : currentSupplement = new Weapon.init();
                         break;
 
                     default : break;
                 }
-
 
                 createdUnits.forEach(function (unit) {
                     if (unit._name === targetUnitName) {
@@ -135,24 +136,43 @@ var Infestation = (function () {
             },
             proceed: function () {
                 createdUnits.forEach(function (unit) {
-
-                    var currentAction = unit.interact(unit, createdUnits);
-                    console.log(currentAction);
-                        var attackType = currentAction[1],
+                    var currentAction = unit.interact(unit, createdUnits),
+                        attackType = currentAction[1],
                         victim = currentAction[0];
 
-                    switch (attackType) {
-                        case 'attack': calculateDamageDealt(unit, victim);
-                            break;
-                        case 'infest': calculateInfestation(unit, victim);
-                            break;
+                    if (victim !== undefined) {
+                        console.log(unit._name + ' ' + attackType + 's  ' + victim._name);
+                        switch (attackType) {
+                            case 'attack': calculateDamageDealt(unit, victim);
+                                break;
+                            case 'infest': calculateInfestation(unit, victim);
+                                break;
 
-                        default : break;
+                            default : break;
+                        }
                     }
                 });
             },
-            report: function () {
+            status: function () {
+                createdUnits.forEach(function (unit) {
+                    var report = unit.id + ' ' + unit._name + ': ' + 'health:' + unit._baseHealth + ' power:' +
+                        unit._basePower + ' aggression:' + unit._baseAggro + ' Supplements added:' +
+                        unit._supplements.length;
 
+                    if (unit._supplements.length > 0) {
+                        var supplementNames = '';
+
+                        unit._supplements.forEach(function (supplement) {
+                            supplementNames += supplement.id + ', ';
+                        });
+
+                        supplementNames = supplementNames.trim().slice(0, supplementNames.length - 2);
+
+                        report += ' - [' + supplementNames + ']';
+                    }
+
+                    console.log(report);
+                });
             }
         };
 
@@ -162,7 +182,8 @@ var Infestation = (function () {
     var Unit = (function () {
         var unit = {
             init: function (name, type, baseHealth, basePower, baseAggro) {
-                //TODO validate arguments!
+                validateUnitName(name);
+
                 this._name = name;
                 this._type = type;
                 this._baseHealth = baseHealth || 5;
@@ -171,8 +192,6 @@ var Infestation = (function () {
                 this._supplements = [];
 
                 return this;
-            },
-            interact: function() {
             }
         };
 
@@ -182,12 +201,19 @@ var Infestation = (function () {
     var Dog = (function (parent) {
         var dog = {
             init: function (name) {
-                parent.init.call(this, name, 'Biological', 2, 2, 2);
+                parent.init.call(this, name, 'Biological', 1, 1, 2);
+                this.id = 'Dog';
 
                 return this;
             },
-            interact: function() {
+            interact: function(unit, enemies) {
+                var possibleEnemies = enemies.filter(function(enemy) {
+                    return enemy._name !== unit._name;
+                }).sort(function (a, b) {
+                    return b._baseAggro - a._baseAggro;
+                });
 
+                return [possibleEnemies[0], 'attack'];
             }
         };
 
@@ -198,11 +224,20 @@ var Infestation = (function () {
         var tank = {
             init: function (name) {
                 parent.init.call(this, name, 'Mechanical', 20, 25, 25);
+                this.id = 'Tank';
 
                 return this;
             },
-            interact: function() {
+            interact: function(unit, enemies) {
+                var possibleEnemies = enemies.filter(function(enemy) {
+                    return enemy._name !== unit._name;
+                }).sort(function (a, b) {
+                    return b._baseAggro - a._baseAggro;
+                }).sort(function (a, b) {
+                    return b._baseHealth - a._baseHealth;
+                });
 
+                return [possibleEnemies[0], 'attack'];
             }
         };
 
@@ -213,12 +248,12 @@ var Infestation = (function () {
         var marine = {
             init: function (name) {
                 parent.init.call(this, name, 'Human');
+                this.id = 'Marine';
                 this._supplements = [new WeaponrySkill.init()];
 
                 return this;
             },
             interact: function(unit, enemies) {
-                //console.log(enemies);
                 var possibleEnemies = enemies.filter(function(enemy) {
                     return enemy._name !== unit._name;
                 }).filter(function (enemy) {
@@ -226,14 +261,8 @@ var Infestation = (function () {
                 }).sort(function (a, b) {
                     return a._baseHealth - b._baseHealth;
                 });
-                console.log(possibleEnemies);
-                if (possibleEnemies.length > 0) {
-                    return [possibleEnemies[0], 'attack'];
-                }
-                else {
-                    return [0, 0];
-                }
 
+                return [possibleEnemies[0], 'attack'];
             }
         };
 
@@ -244,6 +273,7 @@ var Infestation = (function () {
         var parasite = {
             init: function (name) {
                 parent.init.call(this, name, 'Biological', 1, 1, 1);
+                this.id = 'Parasite';
 
                 return this;
             },
@@ -252,9 +282,9 @@ var Infestation = (function () {
                     return enemy._name !== unit._name;
                 }).sort(function (a, b) {
                     return a._baseHealth - b._baseHealth;
-                }).splice(0, 1);
+                });
 
-                return [possibleEnemies, 'infest'];
+                return [possibleEnemies[0], 'infest'];
             }
         };
 
@@ -265,6 +295,7 @@ var Infestation = (function () {
         var queen = {
             init: function (name) {
                 parent.init.call(this, name, 'Psionic', 30, 1, 1);
+                this.id = 'Queen';
 
                 return this;
             },
@@ -273,9 +304,9 @@ var Infestation = (function () {
                     return enemy._name !== unit._name;
                 }).sort(function (a, b) {
                     return a._baseHealth - b._baseHealth;
-                }).splice(0, 1);
+                });
 
-                return [possibleEnemies, 'infest'];
+                return [possibleEnemies[0], 'infest'];
             }
         };
 
@@ -286,7 +317,6 @@ var Infestation = (function () {
 
         var supplement = {
             init: function (healthBonus, powerBonus, aggroBonus) {
-                //TODO validate bonuses!
                 this._healthBonus = healthBonus || 0;
                 this._powerBonus = powerBonus || 0;
                 this._aggroBonus = aggroBonus || 0;
@@ -373,18 +403,23 @@ var Infestation = (function () {
             }
         };
 
-        return infestationSpores  ;
+        return infestationSpores;
     })(Supplement);
 
     HoldingPen.insert('Marine', 'Gosho');
-    HoldingPen.insert('Dog', 'maro');
-    HoldingPen.insert('Tank', 'T72');
-    HoldingPen.insert('Parasite', 'ebola');
+   // HoldingPen.insert('Dog', 'maro');
+   // HoldingPen.insert('Tank', 'T72');
+   // HoldingPen.insert('Parasite', 'ebola');
     HoldingPen.insert('Queen', 'Ant');
    // HoldingPen.supplement('Weapon', 'Gosho');
-    //console.log(createdUnits);
+   // HoldingPen.supplement('PowerCatalyst', 'Gosho');
+   // HoldingPen.supplement('HealthCatalyst', 'Gosho');
+   // HoldingPen.supplement('AggressionCatalyst', 'Gosho');
+   // HoldingPen.supplement('Weapon', 'Gosho');
+   // HoldingPen.supplement('Weapon', 'T72');
     HoldingPen.proceed();
-    //console.log(createdUnits);
+    HoldingPen.status();
+
 })();
 
 
