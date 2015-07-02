@@ -138,6 +138,33 @@ function solve() {
         return false;
     }
 
+    function isValidExamResult(result, studentsCount) {
+        var uniqueStudentIDs = [];
+
+        for (var i = 0, leni = result.length; i < leni; i += 1) {
+            if (uniqueStudentIDs[result[i]]) {
+                throw new Error();
+            }
+            else {
+                uniqueStudentIDs.push(result[i]);
+            }
+
+            if (result[i].StudentID < 1 && result[i].StudentID > studentsCount) {
+                throw  new Error();
+            }
+
+            if (!isNumber(result[i].Score)) {
+                throw new Error();
+            }
+        }
+
+        return uniqueStudentIDs;
+    }
+
+    function isCorrectID(id, maxID) {
+        return id > 0 && id < maxID;
+    }
+
     var Course = {
         get title() {
             return this._title;
@@ -157,7 +184,7 @@ function solve() {
             if (areValidPresentations(value)) {
                 this._presentations = value;
             }
-            else{
+            else {
                 throw new Error('Invalid title!');
             }
         },
@@ -171,6 +198,8 @@ function solve() {
             this.title = title;
             this.presentations = presentations;
             this.students = [];
+
+            return this;
         },
         addStudent: function(name) {
             if (isValidName(name)) {
@@ -194,8 +223,7 @@ function solve() {
             }
         },
         getAllStudents: function() {
-            var list = this.students;
-            return list;
+            return this.students.slice();
         },
         submitHomework: function(studentID, homeworkID) {
            var studentsCount = this.students.length,
@@ -204,10 +232,35 @@ function solve() {
             if (!(isRealStudentID(studentID, studentsCount)) || !(isRealHomeworkID(homeworkID, presentationCount))) {
                 throw new Error("Invalid ID's!")
             }
+
+            this._homeworks = [];
         },
         pushExamResults: function(results) {
+            isValidExamResult(results, this.students.length);
+
+            this._results = results.map(function(result) {
+                return isCorrectID(result.StudentID, this.students.length)
+                ?
+                result
+                : {
+                StudentID: result.StudentID,
+                Score: 0
+                };
+            });
+
+            return this;
         },
         getTopStudents: function() {
+            var sortedScores = this._results.sort(function(a, b) {
+                return a.Score - b.Score;
+            });
+
+            if (sortedScores.length < 10) {
+                return sortedScores;
+            }
+            else {
+                return sortedScores.slice(0, 9);
+            }
         }
     };
 
