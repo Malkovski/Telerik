@@ -82,10 +82,10 @@ var Infestation = (function () {
                 }
 
                 switch (unitKind) {
-                    case 'Dog': currentUnit = Object.create (Dog.init(unitName));
+                    case 'Dog': currentUnit = Object.create(Dog.init(unitName));
                         createdUnits.push(currentUnit);
                         break;
-                    case 'Tank': currentUnit = Object.create (Tank.init(unitName));
+                    case 'Tank': currentUnit = Object.create(Tank.init(unitName));
                         createdUnits.push(currentUnit);
                         break;
                     case 'Marine': currentUnit = Object.create(Marine.init(unitName));
@@ -137,9 +137,9 @@ var Infestation = (function () {
                 createdUnits.forEach(function (unit) {
 
                     var currentAction = unit.interact(unit, createdUnits);
-
-                        var attackType = currentAction[1] || null,
-                        victim = currentAction[0] || null;
+                    console.log(currentAction);
+                        var attackType = currentAction[1],
+                        victim = currentAction[0];
 
                     switch (attackType) {
                         case 'attack': calculateDamageDealt(unit, victim);
@@ -214,26 +214,24 @@ var Infestation = (function () {
             init: function (name) {
                 parent.init.call(this, name, 'Human');
                 this._supplements = [new WeaponrySkill.init()];
+
                 return this;
             },
             interact: function(unit, enemies) {
+                //console.log(enemies);
                 var possibleEnemies = enemies.filter(function(enemy) {
-                    var a = enemy._name !== unit._name;
-                    console.log(a);
-                    return a;
+                    return enemy._name !== unit._name;
                 }).filter(function (enemy) {
-                    var a =  enemy._basePower <= this._baseAggro;
-                    console.log(a);
-                    return a;
+                    return  enemy._basePower <= unit._baseAggro;
                 }).sort(function (a, b) {
                     return a._baseHealth - b._baseHealth;
                 });
-
+                console.log(possibleEnemies);
                 if (possibleEnemies.length > 0) {
                     return [possibleEnemies[0], 'attack'];
                 }
                 else {
-                    return [];
+                    return [0, 0];
                 }
 
             }
@@ -383,10 +381,11 @@ var Infestation = (function () {
     HoldingPen.insert('Tank', 'T72');
     HoldingPen.insert('Parasite', 'ebola');
     HoldingPen.insert('Queen', 'Ant');
-    HoldingPen.supplement('Weapon', 'Gosho');
-    console.log(createdUnits);
+   // HoldingPen.supplement('Weapon', 'Gosho');
+    //console.log(createdUnits);
     HoldingPen.proceed();
-    console.log(createdUnits);
+    //console.log(createdUnits);
 })();
+
 
 
