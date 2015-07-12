@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Task 1.ClassChef-CSharp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Task 2.RefactorIfStatements.cs" />
+    <Compile Include="Task 3.RefactorLoop.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

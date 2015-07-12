@@ -485,15 +485,25 @@ function solve(){
 
         return {
             getBook: function (name, isbn, genre, description) {
+                validator.validateIfUndefined(name);
+                validator.validateIfUndefined(isbn);
+                validator.validateIfUndefined(genre);
+                validator.validateIfUndefined(description);
                 return Object.create(book).init(name, isbn, genre, description)
             },
             getMedia: function (name, rating, duration, description) {
+                validator.validateIfUndefined(name);
+                validator.validateIfUndefined(rating);
+                validator.validateIfUndefined(duration);
+                validator.validateIfUndefined(description);
                 return Object.create(media).init(name, rating, duration, description);
             },
             getBookCatalog: function (name) {
+                validator.validateIfUndefined(name);
                 return Object.create(bookCatalog).init(name);
             },
             getMediaCatalog: function (name) {
+                validator.validateIfUndefined(name);
                 return Object.create(mediaCatalog).init(name);
             }
         }
