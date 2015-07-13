@@ -1,12 +1,26 @@
-var allDivsInDivs = document.querySelectorAll('#qq div');
-var allInnerDivs = document.getElementsByClassName('main');
-var result = allInnerDivs.getElementsByTagName('div');
+function showCountOfNestedDivsWithQuerry() {
+    var allDivsInDivs = document.querySelectorAll('div div');
+    var p = document.getElementsByTagName('p')[0];
+    var nestedDivCount = allDivsInDivs.length;
 
-console.log(allInnerDivs);
-console.log(allDivsInDivs);
-console.log(result);
+    p.innerText = 'result with querrySelectorAll:';
+    p.innerText += ' ' + nestedDivCount;
+}
 
-var p = document.getElementsByTagName('p');
-p.innerText += allDivsInDivs.length;
+function showCountOfNestedDivsByTag() {
 
+    var allInnerDivs = document.getElementsByTagName('div'),
+        nestedDivCount = 0;
 
+    for (var i = 0, len = allInnerDivs.length; i < len; i++) {
+
+        var currentChild = allInnerDivs[i].getElementsByTagName('div');
+        if (currentChild.length !== 0) {
+            nestedDivCount += 1;
+        }
+    }
+
+    var p = document.getElementById('by-tag-name');
+    p.innerText = 'result with getElementsByTagName:';
+    p.innerText += ' ' + nestedDivCount;
+}
