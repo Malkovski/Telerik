@@ -65,6 +65,18 @@ function solve(){
                         ' and ' + 40 + ' symbols');
                 }
             },
+            validateCatalogName: function (val, name) {
+                name = name || 'Value';
+
+                if (typeof val !== 'string') {
+                    throw new Error(name + ' must be a string');
+                }
+
+                if (val.length < 2 || 40 < val.length) {
+                    throw new Error(name + ' must be between ' + 2 +
+                        ' and ' + 40 + ' symbols');
+                }
+            },
             validateGenre: function (val, name) {
                 name = name || 'Value';
 
@@ -79,15 +91,15 @@ function solve(){
             },
             validateISBN: function (val) {
 
-                this.validateIfNumber(val);
-                
+                //this.validateIfNumber(val);
+
                 if (val.length !== 10 && val.length !== 13) {
                     throw new Error('Invalid ISBN')
                 }
             },
             validateDuration: function (val) {
 
-               this.validateIfNumber(val);
+                this.validateIfNumber(val);
 
                 if (val.length <= 0) {
                     throw new Error('Duration cant be negative or zero')
@@ -129,7 +141,7 @@ function solve(){
                 },
                 set: function (value) {
                     validator.validateIfUndefined(value);
-                    validator.validateItemName(value);
+                    validator.validateCatalogName(value);
                     this._name = value;
                 }
             });
@@ -142,7 +154,7 @@ function solve(){
 
             Object.defineProperty(catalog, 'add', {
                 value: function (obj) {
-                   // var obj = [].slice.call(arguments);
+                    // var obj = [].slice.call(arguments);
                     validator.validateIfUndefined(obj);
 
                     var currentArray = obj[0];
@@ -228,7 +240,7 @@ function solve(){
 
                     return this._items.filter(function (item) {
                         var wholeInfo = item.name + item.description;
-                            return wholeInfo.toLowerCase().indexOf(pattern.toLowerCase()) >= 0
+                        return wholeInfo.toLowerCase().indexOf(pattern.toLowerCase()) >= 0
                     });
                 }
             });
@@ -288,7 +300,7 @@ function solve(){
                         if (!genres.some(function (element) {
                                 return element === currentGenre;
                             })) {
-                           genres.push(currentGenre);
+                            genres.push(currentGenre);
                         }
                     }
 
@@ -370,9 +382,10 @@ function solve(){
 
             Object.defineProperty(item, 'init', {
                 value: function (description, name) {
-                    this.description = description;
-                    this.name = name;
                     this._id = ++currentItemId;
+                    this.name = name;
+                    this.description = description;
+
                     return this;
                 }
             });
@@ -478,7 +491,7 @@ function solve(){
                     this._rating = value;
                 }
             });
-            
+
             return media;
         })(item);
 
@@ -513,26 +526,4 @@ function solve(){
     return academyCatalog;
 }
 
-var module = solve();
-var catalog = module.getBookCatalog('John\'s catalog');
-
-var book1 = module.getBook('The secrets of the JavaScript Ninja', '1234567890', 'IT', 'A book about JavaScript');
-var book2 = module.getBook('JavaScript: The Good Parts', '0123456789', 'IT', 'A good book about JS');
-catalog.add(book1);
-catalog.add([book2, book1]);
-
-console.log(catalog.find(book1.id));
-//returns book1
-
-console.log(catalog.find({id: book2.id, genre: 'IT'}));
-//returns book2
-
-console.log(catalog.search('js'));
-// returns book2
-
-console.log(catalog.search('javascript'));
-//returns book1 and book2
-
-console.log(catalog.search('Te sa zeleni'))
-//returns []
-console.log(catalog.getGenres());
+module.exports = solve;
