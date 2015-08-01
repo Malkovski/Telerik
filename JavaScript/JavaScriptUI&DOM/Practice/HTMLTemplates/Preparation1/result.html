@@ -29,11 +29,10 @@
 		</ul>
 	</div>
 	<script id="books-list-template" type='text/x-handlebars-template'>
-		<!--content -->
-		<ul class="book-list">
+		<ul class="books-list">
 			{{#each books}}
 			<li class="book-item">
-				<a href="#" data-id="{{this.id}}">
+				<a href="#" data-id={{this.id}}>
 					<strong class="book-title">{{this.title}}</strong><span class="author">by {{this.author}}</span>
 				</a>
 			</li>
@@ -41,8 +40,6 @@
 		</ul>
 	</script>
 	<script id="book-details-template" type='text/x-handlebars-template'>
-		<!--content -->
-		{{#each books}}
 		<div class="book-details">
 			<h2 class="book-title">
 				{{this.title}}
@@ -51,7 +48,6 @@
 			<p>Published on <span class="publish-date">{{this.publicationDate}}</span> by <strong class="author">{{this.author}}</strong></p>
 			<p class="description">{{this.description}}</p>
 		</div>
-		{{/each}}
 	</script>
 	<div id="book-details-container">
 		<div class="book-details">
