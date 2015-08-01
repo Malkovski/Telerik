@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="..\node_modules\jquery\dist\jquery.min.js"></script>
+    <script src="..\handlebars\handlebars-v3.0.3.js"></script>
+    <script src="task-3.js"></script>
+</head>
+<body>
+<script>
+    var data,
+            justTableHTML,
+            justTable,
+            books;
+
+    books = [{id: 1,
+      title: 'JavaScript: The Good Parts'
+    },
+    { id: 2,
+      title: 'Secrets of the JavaScript Ninja'
+    },
+    { id: 3,
+      title: 'Core HTML5 Canvas'
+    },
+    { id: 4,
+      title: 'JavaScript Patterns'
+    }];
+
+    /*------------------------------TASK 1--------------------------*/
+    /*data = {
+     headers: ['Vendor', 'Model', 'OS'],
+     items: [{
+     col1: 'Nokia',
+     col2: 'Lumia 920',
+     col3: 'Windows Phone'
+     }, {
+     col1: 'LG',
+     col2: 'Nexus 5',
+     col3: 'Android'
+     }, {
+     col1: 'Apple',
+     col2: 'iPhone 6',
+     col3: 'iOS'
+     }]
+     };*/
+
+    /*------------------------------TASK 2--------------------------*/
+    /*var data = {
+     animals: [{
+     name: 'Lion',
+     url: 'https://susanmcmovies.files.wordpress.com/2014/12/the-lion-king-wallpaper-the-lion-king-2-simbas-pride-4685023-1024-768.jpg'
+     }, {
+     name: 'Turtle',
+     url: 'http://www.enkivillage.com/s/upload/images/a231e4349b9e3f28c740d802d4565eaf.jpg'
+     }, {
+     name: 'Dog'
+     }, {
+     name: 'Cat',
+     url: 'http://i.imgur.com/Ruuef.jpg'
+     }, {
+     name: 'Dog Again'
+     }]
+     };*/
+
+   /* justTableHTML = document.getElementById('just-table').innerHTML;
+    justTable = Handlebars.compile(justTableHTML);
+    document.getElementById('root').innerHTML = justTable(data);*/
+</script>
+
+<ul id="books-list" data-template="book-item-template"></ul>
+
+<script id="book-item-template" type="…">
+  <li class="book-item">
+    <a href="/#books/{{id}}">
+      <strong>{{title}}</strong>
+    </a>
+  </li>
+</script>
+<script>
+    //solve();
+    $('#books-list').listview(books);
+</script>
+
+<div id="root"></div>
+
+<script type="text/x-handlebars-template" id="just-table">
+<!------------------------------TASK 1--------------------------->
+    <!--<table class="items-table">
+        <thead>
+        <tr>
+            <th>#</th>
+            {{#each headers}}
+            <th>{{this}}</th>
+            {{/each}}
+        </tr>
+        </thead>
+        <tbody>
+        {{#each items}}
+        <tr>
+            <td>{{@index}}</td>
+            {{#each this}}
+            <td>{{this}}</td>
+            {{/each}}
+        </tr>
+        {{/each}}
+
+        </tbody>
+    </table>-->
+
+<!------------------------------TASK 2--------------------------->
+
+    <!--<div class="container">
+        <h1>Animals</h1>
+        <ul class="animals-list">
+            {{#each animals}}
+            <li>
+                {{#if this.url}}
+                <a href={{this.url}}>See a {{this.name}}</a>
+                    {{else}}
+                    <a href="http://cdn.playbuzz.com/cdn/3170bee8-985c-47bc-bbb5-2bcb41e85fe9/d8aa4750-deef-44ac-83a1-f2b5e6ee029a.jpg">No link for {{this.name}}, here is Batman!"</a>
+                {{/if}}
+            </li>
+            {{/each}}
+        </ul>
+    </div>-->
+
+<!------------------------------TASK 3--------------------------->
+</script>
+
+</body>
+</html>

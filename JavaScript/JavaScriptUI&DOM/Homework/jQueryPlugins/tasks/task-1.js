@@ -7,14 +7,7 @@ function solve(){
             $containerDiv,
             $div = $('<div/>');
 
-        if (typeof selector === 'string') {
-            if (selector === 'select') {
-                $select = $(selector);
-            }
-            else {
-             throw new Error('Selector must be "select"!');
-            }
-        }
+        $select = $(selector)
 
         $select.css('display', 'none');
         $options = $select.find('option');
@@ -28,11 +21,15 @@ function solve(){
 
 
         for (var i = 0, len = $options.length; i < len; i++) {
-            var $currentOption = $options[i],
-                $divOption = $div.clone().addClass('dropdown-option').attr('data-value', $currentOption.value())
+            var $currentOption = $($options[i]),
+                $divOption;
+
+            $divOption = $div.clone().addClass('dropdown-item').attr('data-value', $currentOption.val())
                     .attr('data-index', i).html($currentOption.html());
             $containerDiv.append($divOption);
         }
+
+        $currentDiv.html('Select Value...');
 
         $mainDiv.on('click', '.current', function () {
             $containerDiv.css('display') === 'none' ?
@@ -43,8 +40,8 @@ function solve(){
 
         $mainDiv.on('click', '.dropdown-item', function () {
            var $this = $(this);
-            $currentDiv.html($this.html()).attr('data-value', $this.value());
-            $select.value($this.attr('data-value'));
+            $currentDiv.html($this.html()).attr('data-value', $this.val());
+            $select.val($this.attr('data-value'));
             $containerDiv.hide();
         });
 
