@@ -10,41 +10,35 @@
  *   The second parameter is not an array or an array-like object
  */
 
-function solve() {
-    var divSample = document.createElement('div');
+module.exports = function () {
 
-    function clearContent(element) {
-        console.log(element);
-        element.innerHTML = '';
-        /*while (element.firstChild) {
+    return function (element, contents) {
+        var divSample = document.createElement('div');
 
-            element.removeChild(element.firstChild);
-        }*/
-    }
-    
-    var replacer = function(container, contents) {
-        if (container === undefined || contents === undefined) {
+        function clearContent(element) {
+            element.innerHTML = '';
+        }
+
+        if (element === undefined || contents === undefined) {
             throw new Error('Parameters cannot be undefined!');
         }
 
-        if (container === null || contents === null) {
+        if (element === null || contents === null) {
             throw new Error('Parameters cannot be null!');
         }
 
-        if (typeof container === 'string') {
-            container = document.getElementById(container);
+        if (typeof element === 'string') {
+            element = document.getElementById(element);
         }
 
-        if (!(container instanceof HTMLElement)) {
+        if (!(element instanceof HTMLElement)) {
             throw new Error('There is no such element in the DOM');
         }
-
-        clearContent(container);
 
         var fragment = document.createDocumentFragment();
 
         contents.forEach(function (content) {
-            if (typeof content !== 'string' && typeof content !== 'number') {
+            if (!(typeof content === 'string') && !(typeof content === 'number')) {
                 throw new Error('Content cannot be other than number or string!')
             }
 
@@ -52,15 +46,9 @@ function solve() {
             fragment.appendChild(divSample.cloneNode(true));
         });
 
-        container.appendChild(fragment);
+        clearContent(element);
+        element.appendChild(fragment);
     };
-    
-    return replacer;
-}
+};
 
-module.export = solve;
 
-function change() {
-    var a = solve();
-    a('p', [1, 2, 3, 4, 5]);
-}

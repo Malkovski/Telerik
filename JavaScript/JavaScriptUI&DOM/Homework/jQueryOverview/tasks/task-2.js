@@ -33,28 +33,26 @@ function solve() {
             $container = $(selector);
         }
 
-        if (!$container.length) {
+        if (!($container.length)) {
             throw new Error('No such element in DOM!');
         }
 
         $buttons = $('.button');
+        $buttons.css('display', '');
         $buttons.html('hide');
         $container.on('click', '.button', buttonClick);
 
         function buttonClick() {
             var $this = $(this),
-                $nextContent = $this.nextAll('.content').first(),
-                isVisible;
+                $nextContent = $this.nextAll('.content').first();
 
-            isVisible = $nextContent.css('display') === '';
-
-            if (isVisible) {
-                $nextContent.css('display', 'none');
-                $this.html('show');
-            }
-            else {
+            if ($nextContent.css('display') === 'none') {
                 $nextContent.css('display', '');
                 $this.html('hide');
+            }
+            else {
+                $nextContent.css('display', 'none');
+                $this.html('show');
             }
         }
     };
