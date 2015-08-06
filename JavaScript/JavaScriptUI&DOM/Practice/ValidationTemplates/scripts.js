@@ -1,5 +1,5 @@
-var selector = {},
-    $container = [{},{}],
+var selector = '',
+    $container = [],
     count = '6',
     element = '',
     content = '',
@@ -23,8 +23,8 @@ if (!(typeof selector === 'object')) {
     throw new Error('Item must be an object');
 }
 
-// Check if parameter has .length -  array-like object
-if (!($container.length)) {
+// Check if parameter is array-like object
+if (!(Array.isArray($container))) {
     throw new Error('Selected element must be array-like object');
 }
 
