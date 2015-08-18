@@ -66,6 +66,9 @@ $.fn.gallery = function (count) {
             $previous,
             $newPrevious;
 
+
+
+
         $this.empty();
         $gallery.find('.current-image').empty();
         $gallery.find('.next-image').empty();
