@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script src="index.js"></script>
+    <script src="jquery-1.11.3.min.js"></script>
+<script>
+    var url = 'package.json';
+
+    var data = {
+        'name': 'ico',
+        'age': '14'
+    };
+
+    $.ajax({
+        url: url,
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        success: function (data) {
+            console.log(data);
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+</script>
+</body>
+</html>
