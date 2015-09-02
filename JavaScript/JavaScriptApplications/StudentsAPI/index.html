@@ -3,11 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
 </head>
 <body>
-    <script src="libs/require.js" data-main="scripts/app"></script>
-
     <nav id="navigation-menu"></nav>
     <div id="main-content"></div>
+
+    <script src="bower_components/system.js/dist/system.js"></script>
+    <script src="config.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/sammy/lib/sammy.js"></script>
+    <script src="bower_components/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+
+    <script>
+        System.import('scripts/app.js');
+    </script>
 </body>
 </html>

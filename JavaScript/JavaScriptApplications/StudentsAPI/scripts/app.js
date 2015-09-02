@@ -1,4 +1,4 @@
-(function () {
+/*(function () {
     require.config({
         paths: {
             jquery: "../libs/jquery.min",
@@ -15,7 +15,7 @@
         }
     });
 
-    require(['sammy', 'ui'], function (sammy, ui) {
+    require(['sammy', 'ui', 'templates'], function (sammy, ui, templates) {
         var app =  sammy('#main-content', function () {
             this.get('#/', function () {
                 ui.getHomePage();
@@ -36,5 +36,31 @@
 
         app.run('#/');
     });
-})();
+})();*/
 
+import sammy from "bower_components/sammy/lib/sammy.js";
+import ui from "scripts/ui.js";
+import "scripts/templates.js";
+import "scripts/events.js";
+
+(function () {
+    var app =  sammy('#main-content', function () {
+        this.get('#/', function () {
+            ui.getHomePage();
+        });
+
+        this.get('#/all-students', function () {
+            ui.getAllStudents();
+        });
+
+        this.get('#/get-student-by-id', function () {
+            ui.getStudentById();
+        });
+
+        this.get('#/add-new-student', function () {
+            ui.getAllStudents();
+        })
+    });
+
+    app.run('#/');
+})();

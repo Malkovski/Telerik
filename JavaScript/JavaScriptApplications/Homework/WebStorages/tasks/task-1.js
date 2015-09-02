@@ -8,9 +8,16 @@ function solve() {
     function init(playerName, endCallback) {
         game = true;
 
+        if (winCondition) {
+            game = false;
+        }
+
         currentPlayerName = playerName;
         highScoreList.push({name: playerName, score: 0});
-        console.log(highScoreList);
+
+        localStorage.setItem(playerName, 0);
+
+        //console.log(highScoreList);
         while(numberToGuess.length < 4) {
             var randomNumber = Math.ceil(Math.random() * 9);
             var found = false;
@@ -27,7 +34,7 @@ function solve() {
                 numberToGuess[numberToGuess.length] = randomNumber;
             }
         }
-        console.log(numberToGuess);
+        //console.log(numberToGuess);
     }
 
 
@@ -44,23 +51,19 @@ function solve() {
         var currentResult = checkForSheepAndRams(suggestion);
 
         if (winCondition) {
-           var player = _.find(highScoreList, function (item) {
-                return item.name === currentPlayerName
-            });
-
-            player.score += 1;
-            console.log(player);
+            var currentScore = Number(localStorage[currentPlayerName]);
+            localStorage[currentPlayerName] = currentScore + 1;
+            this.init(currentPlayerName)
         }
-        console.log(currentResult);
+        //console.log(currentResult);
         return currentResult;
-
     }
 
     function checkForSheepAndRams(suggestion) {
         var rams = 0,
             sheep = 0;
-        console.log(suggestion);
-        console.log(numberToGuess);
+        //console.log(suggestion);
+        //console.log(numberToGuess);
         for (var i = 0, leni = suggestion.length; i < leni; i += 1) {
             var currentDigit = suggestion[i];
 

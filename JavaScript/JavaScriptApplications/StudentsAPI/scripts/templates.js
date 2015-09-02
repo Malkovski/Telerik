@@ -1,27 +1,58 @@
-define(['jquery', 'handlebars'], function () {
+/*
+ define(['jquery', 'handlebars'], function ($, handlebars) {
 
-    var templates = function () {
+ var templates = function () {
+ console.log('HERE too');
 
-        function get(name) {
-            var promise = new Promise(function(resolve, reject){
-                var url = `.././templates/${name}.html`;
-                $.ajax({
-                    url: url,
-                    method: 'GET',
-                    success: function (templateHtml) {
-                        var currentTemplate = Handlebars.compile(templateHtml);
-                        resolve(currentTemplate);
-                    }
+ var get = function (name) {
+ var promise = new Promise(function(resolve, reject){
+ var url = `.././templates/${name}.html`;
+ $.ajax({
+ url: url,
+ method: 'GET',
+ success: function (templateHtml) {
+ var currentTemplate = handlebars.compile(templateHtml);
+ resolve(currentTemplate);
+ }
+ })
+ });
 
-                })
-            });
+ return promise;
+ };
 
-            return promise;
-        }
+ return {
+ get: get
+ }
+ };
+ return templates;
+ });
+ */
 
-        return {
-            get
-        }
+import $ from "bower_components/jquery/dist/jquery.js";
+import handlebars from "bower_components/handlebars/handlebars.js";
+import "scripts/events.js";
+
+var templates = (function () {
+
+    var get = function (name) {
+        var promise = new Promise(function(resolve, reject){
+            var url = `templates/${name}.html`;
+            $.ajax({
+                url: url,
+                method: 'GET',
+                success: function (templateHtml) {
+                    var currentTemplate = handlebars.compile(templateHtml);
+                    resolve(currentTemplate);
+                }
+            })
+        });
+
+        return promise;
     };
-    return templates;
-});
+
+    return {
+        get: get
+    }
+}());
+
+export default templates;
