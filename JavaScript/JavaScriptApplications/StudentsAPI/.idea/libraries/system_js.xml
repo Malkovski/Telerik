@@ -1,0 +1,8 @@
+<component name="libraryTable">
+  <library name="system.js" type="javaScript">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/bower_components/system.js/dist/system.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
