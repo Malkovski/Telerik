@@ -1,3 +1,29 @@
-{
-  "name": "Georgi"
-}
+[
+  {
+    "ID": 2,
+    "name": "Georgi",
+    "EGN": 1000
+  },
+  {
+    "ID": 1,
+    "name": "Toni",
+    "EGN": 999
+  },
+  {
+    "ID": 4,
+    "name": "Georgi",
+    "EGN": 1000444
+  },
+  {
+    "ID": 23,
+    "name": "Peter",
+    "EGN": 156785
+  },
+  {
+    "ID": 6,
+    "name": "John",
+    "EGN": 100
+  }
+]
+
+

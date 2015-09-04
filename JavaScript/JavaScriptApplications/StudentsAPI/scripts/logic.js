@@ -13,14 +13,37 @@ var logic = (function () {
                 success: function (data) {
                     resolve(data);
                 }
-            })
+            });
+        });
+
+        return promise;
+    }
+
+    function addData() {
+        var data = {
+            name: 'toshko',
+            EGN: 222,
+            ID: 192
+        };
+        var promise = new Promise(function (resolve, reject) {
+            $.ajax({
+                url: url,
+                method: 'POST',
+                contentType: 'application/json',
+                acceptType: 'application/json',
+                data: JSON.stringify(data),
+                success: function (data) {
+                    resolve(data);
+                }
+            });
         });
 
         return promise;
     }
 
     return {
-        get: getData
+        get: getData,
+        add: addData
     }
 }());
 

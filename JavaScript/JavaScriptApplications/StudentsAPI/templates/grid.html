@@ -1,1 +1,10 @@
-<strong>{{name}}</strong>
+<table class="table table-hover table table-bordered">
+    {{#each this}}
+    <tr class="active">
+        <td class="success">{{name}}</td>
+        <td class="success">{{ID}}</td>
+        <td class="success">{{EGN}}</td>
+    </tr>
+
+    {{/each}}
+</table>

@@ -58,7 +58,7 @@ import "scripts/events.js";
         });
 
         this.get('#/add-new-student', function () {
-            ui.getAllStudents();
+            ui.getAddStudents();
         })
     });
 
