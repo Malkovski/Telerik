@@ -1,0 +1,24 @@
+{
+  "name": "bower",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Malkovski/Telerik",
+  "authors": [
+    "Malkovski <malkovski.georgi@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "cryptojs": "*",
+    "handlebars": "~4.0.2",
+    "sammy": "~0.7.6",
+    "system.js": "~0.18.17",
+    "sha1": "http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha1.js"
+  }
+}

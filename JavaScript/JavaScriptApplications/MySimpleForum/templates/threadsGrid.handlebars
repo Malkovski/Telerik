@@ -1,0 +1,18 @@
+<table class="table table-hover table table-bordered">
+    <thead>
+    <tr>
+        <th class="alert-danger">Title</th>
+        <th class="alert-danger">ID</th>
+        <th class="alert-danger">User</th>
+        <th class="alert-danger">Post date</th>
+    </tr>
+    </thead>
+    {{#each this}}
+        <tr class="active">
+            <td class="success col-sm-2"><strong>{{title}}</strong></td>
+            <td class="success col-sm-2">{{id}}</td>
+            <td class="success col-sm-2">{{user.username}} with ID: {{user.id}}</td>
+            <td class="success col-sm-2">{{postDate}}</td>
+        </tr>
+    {{/each}}
+</table>
