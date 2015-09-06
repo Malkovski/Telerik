@@ -7,11 +7,11 @@
         <th class="alert-danger">Post date</th>
     </tr>
     </thead>
-    {{#each this}}
+    {{#each result}}
         <tr class="active">
             <td class="success col-sm-2"><strong>{{title}}</strong></td>
             <td class="success col-sm-2">{{id}}</td>
-            <td class="success col-sm-2">{{user.username}} with ID: {{user.id}}</td>
+            <td class="success col-sm-2"><strong>{{user.username}}</strong> <!--with ID: {{user.id}}--></td>
             <td class="success col-sm-2">{{postDate}}</td>
         </tr>
     {{/each}}

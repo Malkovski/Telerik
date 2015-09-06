@@ -9,6 +9,5 @@
   },
   "_source": "git://github.com/gwjjeff/cryptojs.git",
   "_target": "*",
-  "_originalSource": "cryptojs",
-  "_direct": true
+  "_originalSource": "cryptojs"
 }
