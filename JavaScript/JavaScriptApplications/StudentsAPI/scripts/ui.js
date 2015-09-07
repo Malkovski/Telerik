@@ -62,6 +62,7 @@ var ui = (function () {
             });
         logic.get()
             .then(function (data) {
+                console.log(data);
                 ui.showStudentsGrid(data);
             });
     }

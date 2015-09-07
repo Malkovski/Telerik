@@ -2,15 +2,22 @@ import $ from "bower_components/jquery/dist/jquery.js";
 
 var logic = (function () {
 
-    var url = 'data/data.json';
+    var url = 'http://persontest.apphb.com/api/',
+    contentType = "application/x-www-form-urlencoded; charset=utf-8",
+        acceptType = 'application/json';
+
 
     function getData() {
+        var searchURL = url + 'Person/Get';
+
         var promise = new Promise(function (resolve, reject) {
             $.ajax({
-                url: url,
+                url: searchURL,
                 method: 'GET',
-                contentType: 'application/json',
+                contentType: contentType,
+               // dataType: 'json',
                 success: function (data) {
+                    console.log(data);
                     resolve(data);
                 }
             });
@@ -29,8 +36,8 @@ var logic = (function () {
             $.ajax({
                 url: url,
                 method: 'POST',
-                contentType: 'application/json',
-                acceptType: 'application/json',
+                contentType: contentType,
+                acceptType: acceptType,
                 data: JSON.stringify(data),
                 success: function (data) {
                     resolve(data);

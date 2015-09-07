@@ -10,35 +10,36 @@
  *   The second parameter is not an array or an array-like object
  */
 
-module.exports = function () {
+function solve() {
+    var divSample = document.createElement('div');
 
-    return function (element, contents) {
-        var divSample = document.createElement('div');
-
-        function clearContent(element) {
-            element.innerHTML = '';
-        }
-
-        if (element === undefined || contents === undefined) {
+    function clearContent(element) { 
+        element.innerHTML = '';
+    }
+    
+    var replacer = function(container, contents) {
+        if (container === undefined || contents === undefined) {
             throw new Error('Parameters cannot be undefined!');
         }
 
-        if (element === null || contents === null) {
+        if (container === null || contents === null) {
             throw new Error('Parameters cannot be null!');
         }
 
-        if (typeof element === 'string') {
-            element = document.getElementById(element);
+        if (typeof container === 'string') {
+            container = document.getElementById(container);
         }
 
-        if (!(element instanceof HTMLElement)) {
+        if (!(container instanceof HTMLElement)) {
             throw new Error('There is no such element in the DOM');
         }
+
+        clearContent(container);
 
         var fragment = document.createDocumentFragment();
 
         contents.forEach(function (content) {
-            if (!(typeof content === 'string') && !(typeof content === 'number')) {
+            if (typeof content !== 'string' && typeof content !== 'number') {
                 throw new Error('Content cannot be other than number or string!')
             }
 
@@ -46,9 +47,15 @@ module.exports = function () {
             fragment.appendChild(divSample.cloneNode(true));
         });
 
-        clearContent(element);
-        element.appendChild(fragment);
+        container.appendChild(fragment);
     };
-};
+    
+    return replacer;
+}
 
+module.export = solve;
 
+function change() {
+    var a = solve();
+    a('p', [1, 2, 3, 4, 5]);
+}
