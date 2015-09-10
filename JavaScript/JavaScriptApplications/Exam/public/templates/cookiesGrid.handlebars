@@ -1,0 +1,35 @@
+<div class="well">
+    Fortune Cookies
+    <div class="form-group">
+        <table class="table table-hover table table-bordered">
+            <thead>
+            <tr>
+                <th class="alert-danger">Text</th>
+                <th class="alert-danger">Category</th>
+                <th class="alert-danger">ID</th>
+                <th class="alert-danger">Shared at</th>
+                <th class="alert-danger">From user ID</th>
+                <th class="alert-danger">Likes</th>
+                <th class="alert-danger">Dislikes</th>
+                <th class="alert-danger">Link</th>
+                <th class="alert-danger">Time left</th>
+            </tr>
+            </thead>
+            {{#each result}}
+                <tr class="active">
+                    <td class="success col-sm-2"><strong>{{text}}</strong></td>
+                    <td class="success col-sm-2">{{category}}</td>
+                    <td class="success col-sm-2" id="selected-cookie-id" data-id="{{id}}">{{id}}</td>
+                    <td class="success col-sm-2">{{shareDate}}</td>
+                    <td class="success col-sm-2">{{userId}}</td>
+                    <td class="success col-sm-2">{{likes}}</td>
+                    <td class="success col-sm-2">{{dislikes}}</td>
+                    <td class="success col-sm-2">{{img}}</td>
+                    <td class="success col-sm-2">{{hours}}</td>
+                    <td class="success col-sm-2 member"><button id="like">Like</button></td>
+                    <td class="success col-sm-2 member"><button id="dislike">Dislike</button></td>
+                </tr>
+            {{/each}}
+        </table>
+    </div>
+</div>

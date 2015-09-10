@@ -1,0 +1,17 @@
+<div class="well">
+    Fortune Cookie Categories
+    <div class="form-group">
+        <table class="table table-hover table table-bordered">
+            <thead>
+            <tr>
+                <th class="alert-danger">Categories</th>
+            </tr>
+            </thead>
+            {{#each result}}
+                <tr class="active">
+                    <td class="success col-sm-2">{{this}}</td>
+                </tr>
+            {{/each}}
+        </table>
+    </div>
+</div>

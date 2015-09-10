@@ -1,0 +1,74 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fortune Coockie Exam</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css"/>
+    <link href="styles/SpaceLab.css" rel="stylesheet" />
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/system.js/dist/system.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/sammy/lib/sammy.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-default" id="menu">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#/" class="navbar-brand">Fortune Cookies</a>
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="" id="themes">Users<span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="themes">
+                            <li><a href="#/register">Register</a></li>
+                            <li><a href="#/login">Login</a></li>
+                            <li><a href="#/logout">Logout</a></li>
+                            <li><a href="#/listUsers">List users</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="vouchersMenu">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="" id="themes">Cookies<span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="themes">
+                            <li><a href="#/createCookie" class="member">Share new cookie</a></li>
+                            <li><a href="#/pickCookie" class="member">Fortune cookie</a></li>
+                            <li><a href="#/listCookies" class="company">List cookies</a></li>
+                            <li><a href="#/filterCookies" class="company">Filter cookies</a></li>
+                            <li><a href="#/categories">Cookie categories</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div id="login-status" style="position: fixed; right: 1%"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main"></div>
+
+    <script>
+        System.config({
+            transpiler: 'babel',
+            map: {
+                babel: 'node_modules/babel-core/browser.js',
+                jquery: 'bower_components/jquery/dist/jquery.js',
+                sammy: 'bower_components/sammy/lib/sammy.js',
+                handlebars: 'bower_components/handlebars/handlebars.js',
+                toastr: 'bower_components/toastr/toastr.js',
+                CryptoJS: 'bower_components/sha1/index.js',
+                moment: 'bower_components/moment/moment.js'
+            }
+        })
+    </script>
+
+    <script>
+            System.import('app.js');
+    </script>
+</body>
+</html>

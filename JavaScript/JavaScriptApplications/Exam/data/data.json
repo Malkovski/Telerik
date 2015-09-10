@@ -1,0 +1,238 @@
+{
+  "users": [
+    {
+      "username": "Minkov",
+      "passHash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+      "usernameToLower": "minkov",
+      "id": "16655985-e510-43d4-ad1c-2388c76d1ef6",
+      "authKey": "16655985-e510-43d4-ad1c-2388c76d1ef6FwHCPd*bP:.;Fu&:evl)RPGg"
+    },
+    {
+      "username": "Minkov3",
+      "passHash": "1234567890123456789012345678901234567890",
+      "usernameToLower": "minkov3",
+      "id": "bd04b3b8-5586-47ad-bf8f-db6c531dbb73",
+      "authKey": "bd04b3b8-5586-47ad-bf8f-db6c531dbb73erxSIAJyVOzIEIrpMFbanscO"
+    },
+    {
+      "username": "georgia",
+      "passHash": "7c4a8d09ca3762af61e59520943dc26494f8941b",
+      "usernameToLower": "georgia",
+      "id": "c2eb48f4-d848-4dff-a9a6-8cfe69f6308b",
+      "authKey": "c2eb48f4-d848-4dff-a9a6-8cfe69f6308bAmMDTRrYonsKGoOkIlNmONSD"
+    },
+    {
+      "username": "gogo",
+      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
+      "usernameToLower": "gogo",
+      "id": "06fc3d13-ca09-410e-835a-2b39d245c735",
+      "authKey": "06fc3d13-ca09-410e-835a-2b39d245c735KBlAyTZpDTlwviXenwyewIbF"
+    },
+    {
+      "username": "georgi",
+      "passHash": "7c4a8d09ca3762af61e59520943dc26494f8941b",
+      "usernameToLower": "georgi",
+      "id": "89b4a5e4-9544-4c71-bb3d-28ff91a42084"
+    },
+    {
+      "username": "aaa",
+      "passHash": "6216f8a75fd5bb3d5f22b6f9958cdede3fc086c2",
+      "usernameToLower": "aaa",
+      "id": "abd7d5d4-7e3d-4e4c-96c4-027eb749736d"
+    },
+    {
+      "username": "sss",
+      "passHash": "1c6637a8f2e1f75e06ff9984894d6bd16a3a36a9",
+      "usernameToLower": "sss",
+      "id": "d671cefc-0463-4842-9492-ff0aa2e363da",
+      "authKey": "d671cefc-0463-4842-9492-ff0aa2e363daXluUkmJWTxAEwdBDeUmtSHtZ",
+      "myCookies": [
+        {
+          "text": "May the Force with you",
+          "category": "WOrk",
+          "userId": "16655985-e510-43d4-ad1c-2388c76d1ef6",
+          "likes": 24,
+          "dislikes": 15,
+          "img": "https://dayinthelifeofapurpleminion.files.wordpress.com/2014/12/batman-exam.jpg",
+          "shareDate": "2015-09-09T14:53:56.482Z",
+          "id": "e2fdbf82-54c3-488f-add4-9af3262c2572",
+          "hours": 15
+        },
+        {
+          "text": "May the Force with you",
+          "category": "WOrk",
+          "userId": "16655985-e510-43d4-ad1c-2388c76d1ef6",
+          "likes": 24,
+          "dislikes": 15,
+          "img": "https://dayinthelifeofapurpleminion.files.wordpress.com/2014/12/batman-exam.jpg",
+          "shareDate": "2015-09-09T14:53:56.482Z",
+          "id": "e2fdbf82-54c3-488f-add4-9af3262c2572",
+          "hours": 15
+        },
+        {
+          "text": "May the Force with you",
+          "category": "WOrk",
+          "userId": "16655985-e510-43d4-ad1c-2388c76d1ef6",
+          "likes": 24,
+          "dislikes": 15,
+          "img": "https://dayinthelifeofapurpleminion.files.wordpress.com/2014/12/batman-exam.jpg",
+          "shareDate": "2015-09-09T14:53:56.482Z",
+          "id": "e2fdbf82-54c3-488f-add4-9af3262c2572",
+          "hours": 15
+        },
+        {
+          "text": "May the Force with you",
+          "category": "WOrk",
+          "userId": "16655985-e510-43d4-ad1c-2388c76d1ef6",
+          "likes": 24,
+          "dislikes": 15,
+          "img": "https://dayinthelifeofapurpleminion.files.wordpress.com/2014/12/batman-exam.jpg",
+          "shareDate": "2015-09-09T14:53:56.482Z",
+          "id": "e2fdbf82-54c3-488f-add4-9af3262c2572",
+          "hours": 15
+        },
+        {
+          "text": "May the Force with you",
+          "category": "WOrk",
+          "userId": "16655985-e510-43d4-ad1c-2388c76d1ef6",
+          "likes": 24,
+          "dislikes": 15,
+          "img": "https://dayinthelifeofapurpleminion.files.wordpress.com/2014/12/batman-exam.jpg",
+          "shareDate": "2015-09-09T14:53:56.482Z",
+          "id": "e2fdbf82-54c3-488f-add4-9af3262c2572",
+          "hours": 15
+        },
+        {
+          "text": "May the Force with you",
+          "category": "WOrk",
+          "userId": "16655985-e510-43d4-ad1c-2388c76d1ef6",
+          "likes": 24,
+          "dislikes": 15,
+          "img": "https://dayinthelifeofapurpleminion.files.wordpress.com/2014/12/batman-exam.jpg",
+          "shareDate": "2015-09-09T14:53:56.482Z",
+          "id": "e2fdbf82-54c3-488f-add4-9af3262c2572",
+          "hours": 15
+        }
+      ]
+    },
+    {
+      "username": "eee",
+      "passHash": "9a3e61b6bcc8abec08f195526c3132d5a4a98cc0",
+      "usernameToLower": "eee",
+      "id": "4f32eeda-e273-4b24-848b-0274a4fb6772"
+    }
+  ],
+  "cookies": [
+    {
+      "text": "Test",
+      "category": "Home",
+      "userId": "16655985-e510-43d4-ad1c-2388c76d1ef6",
+      "likes": 10,
+      "dislikes": 15,
+      "img": "https://dayinthelifeofapurpleminion.files.wordpress.com/2014/12/batman-exam.jpg",
+      "shareDate": "2015-09-09T14:53:30.290Z",
+      "id": "2dae28aa-ee64-4bc1-8591-29284d88c9e9"
+    },
+    {
+      "text": "May the Force with you",
+      "category": "WOrk",
+      "userId": "16655985-e510-43d4-ad1c-2388c76d1ef6",
+      "likes": 24,
+      "dislikes": 15,
+      "img": "https://dayinthelifeofapurpleminion.files.wordpress.com/2014/12/batman-exam.jpg",
+      "shareDate": "2015-09-09T14:53:56.482Z",
+      "id": "e2fdbf82-54c3-488f-add4-9af3262c2572",
+      "hours": 15
+    },
+    {
+      "text": "Hello!",
+      "category": "Home",
+      "userId": "bd04b3b8-5586-47ad-bf8f-db6c531dbb73",
+      "likes": 11,
+      "dislikes": 9,
+      "img": "https://dayinthelifeofapurpleminion.files.wordpress.com/2014/12/batman-exam.jpg",
+      "shareDate": "2015-09-10T06:24:18.743Z",
+      "id": "ea91a233-bcf3-48b6-933f-05857f4aea87"
+    },
+    {
+      "name": "another cookie added now",
+      "category": "HOTEL",
+      "img": "ssssssssssssssssssssssssssssssssssssss",
+      "userId": "d671cefc-0463-4842-9492-ff0aa2e363da",
+      "likes": 0,
+      "dislikes": 0,
+      "shareDate": "2015-09-10T08:53:40.808Z",
+      "id": "d261c158-a258-4c97-8285-b5bef34fed53"
+    },
+    {
+      "text": "testing to add cookie",
+      "category": "HOTEL",
+      "img": "sssssssssssssssssssssssssssssssss",
+      "userId": "d671cefc-0463-4842-9492-ff0aa2e363da",
+      "likes": 0,
+      "dislikes": 0,
+      "shareDate": "2015-09-10T08:56:40.100Z",
+      "id": "5b6856ae-948b-4d2c-a7a8-faf2876faab8"
+    },
+    {
+      "text": "another test 2",
+      "category": "HOTEL",
+      "img": "ekee",
+      "userId": "d671cefc-0463-4842-9492-ff0aa2e363da",
+      "likes": 0,
+      "dislikes": 0,
+      "shareDate": "2015-09-10T08:58:10.948Z",
+      "id": "2a1b7375-dc6d-4772-afe9-9d1437502851"
+    },
+    {
+      "text": "test 4",
+      "category": "HOTEL",
+      "img": "iiiii",
+      "userId": "d671cefc-0463-4842-9492-ff0aa2e363da",
+      "likes": 0,
+      "dislikes": 0,
+      "shareDate": "2015-09-10T08:59:25.546Z",
+      "id": "d0f453f1-d656-4906-b158-1b2357f5a275"
+    },
+    {
+      "text": "test 5",
+      "category": "HOTEL",
+      "img": "iiiii",
+      "userId": "d671cefc-0463-4842-9492-ff0aa2e363da",
+      "likes": 0,
+      "dislikes": 0,
+      "shareDate": "2015-09-10T09:01:04.816Z",
+      "id": "732ebd9b-d0e8-43be-9988-e5cbe72a5ec0"
+    },
+    {
+      "text": "test 6",
+      "category": "HOTEL",
+      "img": "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+      "userId": "d671cefc-0463-4842-9492-ff0aa2e363da",
+      "likes": 0,
+      "dislikes": 0,
+      "shareDate": "2015-09-10T09:01:26.310Z",
+      "id": "71004368-1895-4df7-8f1d-e78cd88cc4c6"
+    },
+    {
+      "text": "s",
+      "category": "i",
+      "img": "i",
+      "userId": "d671cefc-0463-4842-9492-ff0aa2e363da",
+      "likes": 0,
+      "dislikes": 0,
+      "shareDate": "2015-09-10T11:49:09.423Z",
+      "id": "4e057a72-a986-42d7-8cb0-f361249e62f9"
+    },
+    {
+      "text": "ttttttttt",
+      "category": "ttttt",
+      "img": "http://dodododo.ffff.ddd",
+      "userId": "d671cefc-0463-4842-9492-ff0aa2e363da",
+      "likes": 0,
+      "dislikes": 0,
+      "shareDate": "2015-09-10T11:54:45.012Z",
+      "id": "a9eb98f3-f181-4c34-bdf7-5e2e24c91318"
+    }
+  ]
+}

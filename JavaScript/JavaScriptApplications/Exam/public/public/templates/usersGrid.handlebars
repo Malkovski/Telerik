@@ -1,0 +1,21 @@
+<table class="table table-hover table table-bordered">
+    <thead>
+    <tr>
+        <th class="alert-danger">Username
+            <button id="sortA-by-username-btn">&#9650</button>
+            <button id="sortD-by-username-btn">&#9660</button>
+        </th>
+        <th class="alert-danger">ID
+            <button id="sortA-by-userID-btn">&#9650</button>
+            <button id="sortD-by-userID-btn">&#9660</button>
+        </th>
+    </tr>
+    </thead>
+    {{#each result}}
+        <tr class="active">
+            <td class="success col-sm-2">{{username}}</td>
+            <td class="success col-sm-2">{{id}}</td>
+        </tr>
+
+    {{/each}}
+</table>
