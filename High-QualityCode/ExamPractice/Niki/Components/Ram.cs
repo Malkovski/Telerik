@@ -1,16 +1,16 @@
-﻿using System;
-using System.Linq;
-using Computers.Interfaces;
-
-namespace Computers.Components
+﻿namespace Computers.Components
 {
+    using System;
+    using System.Linq;
+    using Computers.Interfaces;
+
     internal class Ram : IRam
     {
         private int value;
 
-        internal Ram(int a)
+        internal Ram(int amount)
         {
-            this.Amount = a;
+            this.Amount = amount;
         }
 
         public int Amount { get; set; }

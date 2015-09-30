@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Computers.Interfaces;
-
-namespace Computers.Components
+﻿namespace Computers.Components
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Computers.Interfaces;
+
     internal class HardDrive : IHardDrive
     {
         private readonly bool isInRaid;
@@ -50,6 +50,7 @@ namespace Computers.Components
                     {
                         return 0;
                     }
+
                     return this.hds.First().Capacity;
                 }
                 else

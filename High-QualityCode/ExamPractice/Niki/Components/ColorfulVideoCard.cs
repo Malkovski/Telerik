@@ -1,17 +1,16 @@
-﻿using Computers.Interfaces;
-using System;
-using System.Linq;
-using C = System.Console;
-
-namespace Computers.Components
+﻿namespace Computers.Components
 {
+    using System;
+    using System.Linq;
+    using Computers.Interfaces;
+
     internal class ColorfulVideoCard : IVideoCard
     {
         public void Draw(string message)
         {
-            C.ForegroundColor = ConsoleColor.Green;
-            C.WriteLine(message);
-            C.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(message);
+            Console.ResetColor();
         }
     }
 }

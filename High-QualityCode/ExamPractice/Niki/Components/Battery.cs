@@ -1,14 +1,14 @@
-﻿using Computers.Interfaces;
-
-namespace Computers.Components
+﻿namespace Computers.Components
 {
+    using Computers.Interfaces;
+
     internal class Battery : IBattery
     {
-        private readonly int initialCharge = 50;
+        private const int InitialCharge = 50;
 
         internal Battery()
         {
-            this.Percentage = this.initialCharge;
+            this.Percentage = InitialCharge;
         }
 
         public int Percentage { get; set; }
@@ -16,10 +16,12 @@ namespace Computers.Components
         public void Charge(int p)
         {
             this.Percentage += p;
+
             if (this.Percentage > 100)
             {
                 this.Percentage = 100;
             }
+
             if (this.Percentage < 0)
             {
                 this.Percentage = 0;

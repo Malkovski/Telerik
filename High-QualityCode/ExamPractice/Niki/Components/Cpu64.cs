@@ -1,12 +1,12 @@
-﻿using System;
-using System.Linq;
-using Computers.Interfaces;
-
-namespace Computers.Components
+﻿namespace Computers.Components
 {
+    using System;
+    using System.Linq;
+    using Computers.Interfaces;
+
     internal class Cpu64 : ICpu
     {
-        public Random random = new Random();
+        private readonly Random random = new Random();
 
         internal Cpu64(byte numberOfCores)
         {

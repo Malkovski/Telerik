@@ -1,9 +1,9 @@
-﻿using System;
-using System.Linq;
-using Computers.Interfaces;
-
-namespace Computers.Components
+﻿namespace Computers.Components
 {
+    using System;
+    using System.Linq;
+    using Computers.Interfaces;
+
     public class Motherboard : IMotherboard
     {
         private const int MinPlayRange = 1;
@@ -32,16 +32,6 @@ namespace Computers.Components
             this.battery = battery;
         }
 
-        private void SaveToRam(int newValue)
-        {
-            this.ram.SaveValue(newValue);
-        }
-
-        private int LoadFromRam()
-        {
-            return this.ram.LoadValue();
-        }
-
         public void Play(int guessNumber)
         {
             this.SaveToRam(this.cpu.GetRandomValue(MinPlayRange, MaxPlayRange));
@@ -67,22 +57,32 @@ namespace Computers.Components
 
         public void Charge(int percent)
         {
-            battery.Percentage += percent;
+            this.battery.Percentage += percent;
             
-            if (battery.Percentage > 100)
+            if (this.battery.Percentage > 100)
             {
-                battery.Percentage = 100;
-                this.video.Draw(string.Format("Battery status: {0}", this.battery.Percentage));
+                this.battery.Percentage = 100;
+                this.video.Draw(string.Format("Battery status: {0}%", this.battery.Percentage));
             }
-            else if (battery.Percentage < 0)
+            else if (this.battery.Percentage < 0)
             {
-                battery.Percentage = 0;
-                this.video.Draw(string.Format("Battery status: {0}", this.battery.Percentage));
+                this.battery.Percentage = 0;
+                this.video.Draw(string.Format("Battery status: {0}%", this.battery.Percentage));
             }
             else
             {
-                this.video.Draw(string.Format("Battery status: {0}", this.battery.Percentage));
+                this.video.Draw(string.Format("Battery status: {0}%", this.battery.Percentage));
             }
+        }
+
+        private void SaveToRam(int newValue)
+        {
+            this.ram.SaveValue(newValue);
+        }
+
+        private int LoadFromRam()
+        {
+            return this.ram.LoadValue();
         }
     }
 }

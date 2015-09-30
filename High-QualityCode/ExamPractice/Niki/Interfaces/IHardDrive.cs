@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Computers.Interfaces
+﻿namespace Computers.Interfaces
 {
+    using System;
+    using System.Linq;
+
     public interface IHardDrive
     {
         int Capacity { get; }

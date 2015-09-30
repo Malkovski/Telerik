@@ -7,8 +7,8 @@
     <ProjectGuid>{920382DC-166F-4C55-8AF7-70D668191107}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Computers.UI.Console</RootNamespace>
-    <AssemblyName>Computers.UI.Console</AssemblyName>
+    <RootNamespace>Computers</RootNamespace>
+    <AssemblyName>Computers</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,10 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
+    <StartupObject>Computers.ComputersEntryPoint</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\Computers\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Collections.Generic">
       <HintPath>Properties\System.Collections.Generic.dll</HintPath>
@@ -44,12 +47,17 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\Cpu128.cs" />
     <Compile Include="Components\Cpu32.cs" />
     <Compile Include="Components\Cpu64.cs" />
-    <Compile Include="Factory\Computer.cs" />
-    <Compile Include="Factory\DellLaptop.cs" />
-    <Compile Include="Factory\DellPC.cs" />
-    <Compile Include="Factory\DellServer.cs" />
+    <Compile Include="CoreModels\Computer.cs" />
+    <Compile Include="Factory\ComputerFactory.cs" />
+    <Compile Include="CoreModels\Laptop.cs" />
+    <Compile Include="CoreModels\PC.cs" />
+    <Compile Include="CoreModels\Server.cs" />
+    <Compile Include="Factory\DellComputers.cs" />
+    <Compile Include="Factory\HpComputers.cs" />
+    <Compile Include="Factory\LenovoComputers.cs" />
     <Compile Include="Interfaces\IBattery.cs" />
     <Compile Include="Interfaces\IHardDrive.cs" />
     <Compile Include="Components\MonochromeVideoCard.cs" />
@@ -67,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
