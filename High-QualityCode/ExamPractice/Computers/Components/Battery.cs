@@ -13,9 +13,9 @@
 
         public int Percentage { get; set; }
 
-        public void Charge(int p)
+        public void Charge(int percent)
         {
-            this.Percentage += p;
+            this.Percentage += percent;
 
             if (this.Percentage > 100)
             {

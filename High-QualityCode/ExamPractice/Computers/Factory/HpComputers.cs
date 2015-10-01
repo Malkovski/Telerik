@@ -9,7 +9,7 @@
 
     internal class HpComputers : ComputerFactory
     {
-        private readonly Battery battery = new Battery();
+        private readonly IBattery battery = new Battery();
 
         private ICpu cpu;
         private IRam ram;
@@ -23,13 +23,13 @@
             this.raid = new HardDrive(500, false, 0);
             this.video = new ColorfulVideoCard();
 
-            var laptopBoard = new Motherboard(this.cpu, this.ram, this.raid, this.video, this.battery);
-            var laptop = new Laptop(laptopBoard);
+            var laptopBoard = new Motherboard(this.cpu, this.ram, this.raid, this.video);
+            var laptop = new Laptop(laptopBoard, battery);
 
             return laptop;
         }
 
-        public override PC ManufacturePC()
+        public override Desktop ManufactureDesktop()
         {
             this.cpu = new Cpu32(2);
             this.ram = new Ram(2);
@@ -37,7 +37,7 @@
             this.video = new ColorfulVideoCard();
 
             var board = new Motherboard(this.cpu, this.ram, this.raid, this.video);
-            var pc = new PC(board);
+            var pc = new Desktop(board);
 
             return pc;
         }

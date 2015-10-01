@@ -4,11 +4,11 @@
     using System.Linq;
     using Computers.Interfaces;
 
-    internal class Cpu64 : ICpu
+    public class Cpu64 : ICpu
     {
         private readonly Random random = new Random();
 
-        internal Cpu64(byte numberOfCores)
+        public Cpu64(byte numberOfCores)
         {
             this.NumberOfCores = numberOfCores;
         }

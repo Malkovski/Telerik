@@ -33,7 +33,7 @@
 
             laptop = factory.ManufactureLaptop();
             server = factory.ManufactureServer();
-            pc = factory.ManufacturePC();
+            pc = factory.ManufactureDesktop();
 
             while (true)
             {

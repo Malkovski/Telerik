@@ -9,7 +9,7 @@
 
     public class DellComputers : ComputerFactory
     {
-        private readonly Battery battery = new Battery();
+        private readonly IBattery battery = new Battery();
 
         private ICpu cpu;
         private IRam ram;
@@ -23,13 +23,13 @@
             this.raid = new HardDrive(1000, false, 0);
             this.video = new ColorfulVideoCard();
        
-            var dellLaptopBoard = new Motherboard(this.cpu, this.ram, this.raid, this.video, this.battery);
-            var laptop = new Laptop(dellLaptopBoard);
+            var dellLaptopBoard = new Motherboard(this.cpu, this.ram, this.raid, this.video);
+            var laptop = new Laptop(dellLaptopBoard, battery);
 
             return laptop;
         }
 
-        public override PC ManufacturePC()
+        public override Desktop ManufactureDesktop()
         {
             this.cpu = new Cpu64(4);
             this.ram = new Ram(8);
@@ -37,7 +37,7 @@
             this.video = new ColorfulVideoCard();
 
             var dellPCBoard = new Motherboard(this.cpu, this.ram, this.raid, this.video);
-            var pc = new PC(dellPCBoard);
+            var pc = new Desktop(dellPCBoard);
 
             return pc;
         }

@@ -1,9 +1,10 @@
 ﻿namespace Computers.CoreModels
 {
+    using Computers.Interfaces;
     using System;
     using System.Linq;
 
-    public abstract class Computer
+    public abstract class Computer : ILaptop, IDesktop, IServer
     {
         public virtual void Play(int number)
         {

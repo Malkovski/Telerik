@@ -3,7 +3,8 @@
     using System;
     using System.Linq;
 
-    internal interface IMotherboard
+    public interface IServer
     {
+        void Process(int data);
     }
 }

@@ -8,7 +8,7 @@
     {
         public abstract Laptop ManufactureLaptop();
 
-        public abstract PC ManufacturePC();
+        public abstract Desktop ManufactureDesktop();
 
         public abstract Server ManufactureServer();
     }
