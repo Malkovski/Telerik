@@ -2,11 +2,11 @@
 {
     using Computers.Interfaces;
 
-    internal class Battery : IBattery
+    public class Battery : IBattery
     {
         private const int InitialCharge = 50;
 
-        internal Battery()
+        public Battery()
         {
             this.Percentage = InitialCharge;
         }
