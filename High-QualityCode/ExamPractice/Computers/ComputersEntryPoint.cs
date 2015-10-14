@@ -3,12 +3,15 @@
     using System;
     using CoreModels;
     using Factory;
+    using Computers.Interfaces;
 
     public class ComputersEntryPoint
     {
         private static ComputerFactory factory;
 
-        private static Computer pc, laptop, server;
+        private static Computer pc, server;
+        private static ILaptop laptop;
+            
 
         public static void Main()
         {

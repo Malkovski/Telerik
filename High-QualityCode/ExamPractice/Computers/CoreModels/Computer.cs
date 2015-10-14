@@ -4,7 +4,7 @@
     using System;
     using System.Linq;
 
-    public abstract class Computer : ILaptop, IDesktop, IServer
+    public abstract class Computer : IDesktop, IServer
     {
         public virtual void Play(int number)
         {
