@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindDbContext", "NorthwindDbContext\NorthwindDbContext.csproj", "{535CD38F-3C92-4A90-B82B-5BAC471AA503}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindDbContext.Tests", "NorthwindDbContext.Tests\NorthwindDbContext.Tests.csproj", "{C2C93860-A239-492E-AAA9-9985A43CFA21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{535CD38F-3C92-4A90-B82B-5BAC471AA503}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{535CD38F-3C92-4A90-B82B-5BAC471AA503}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{535CD38F-3C92-4A90-B82B-5BAC471AA503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2C93860-A239-492E-AAA9-9985A43CFA21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2C93860-A239-492E-AAA9-9985A43CFA21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2C93860-A239-492E-AAA9-9985A43CFA21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2C93860-A239-492E-AAA9-9985A43CFA21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

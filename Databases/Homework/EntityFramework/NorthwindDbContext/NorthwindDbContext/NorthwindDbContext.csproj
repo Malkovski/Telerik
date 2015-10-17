@@ -66,6 +66,7 @@
     <Compile Include="Employee.cs">
       <DependentUpon>NorthwindEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="ExtendedEmployee.cs" />
     <Compile Include="NorthwindEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
