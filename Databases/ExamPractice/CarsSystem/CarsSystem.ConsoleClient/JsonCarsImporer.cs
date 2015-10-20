@@ -1,19 +1,20 @@
 ﻿namespace CarsSystem.ConsoleClient
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
     using CarsViewModels;
+    using CarsSystem.Data;
     using CarsSystem.Models;
-using CarsSystem.Data;
+    using Newtonsoft.Json;
 
     public static class JsonCarsImporer
     {
         public static void Import()
         {
-            var carsToAdd = Directory.GetFiles(Directory.GetCurrentDirectory() + "/JsonFiles/")
+            List<CarViewModel> carsToAdd = Directory
+                .GetFiles(string.Format("{0}/JsonFiles/", Directory.GetCurrentDirectory()))
                 .Where(f => f.EndsWith(".json"))
                 .Select(fs => File.ReadAllText(fs))
                 .SelectMany(str => JsonConvert.DeserializeObject<ICollection<CarViewModel>>(str))
@@ -24,12 +25,15 @@ using CarsSystem.Data;
 
             var db = new CarsDbContext();
             db.Configuration.AutoDetectChangesEnabled = false;
+            db.Configuration.ValidateOnSaveEnabled = false;
 
-            var addedCars = 0;
+            int addedCars = 0;
 
-            foreach (var car in carsToAdd)
+            Console.WriteLine("Adding cars");
+
+            foreach (CarViewModel car in carsToAdd)
             {
-                var cityName = car.Dealer.City;
+                string cityName = car.Dealer.City;
 
                 if (!addedCities.ContainsKey(cityName))
                 {
@@ -39,9 +43,9 @@ using CarsSystem.Data;
                     });
                 }
 
-                var cityToAdd = addedCities[cityName];
+                City cityToAdd = addedCities[cityName];
 
-                var manufaturer = car.ManufacturerName;
+                string manufaturer = car.ManufacturerName;
 
                 if (!addedManufacturers.ContainsKey(manufaturer))
                 {
@@ -51,7 +55,7 @@ using CarsSystem.Data;
                     });
                 }
 
-                var manufacturerToAdd = addedManufacturers[manufaturer];
+                Manufacturer manufacturerToAdd = addedManufacturers[manufaturer];
 
                 var dealerToAdd = new Dealer
                 {
@@ -68,25 +72,31 @@ using CarsSystem.Data;
                     Transmission = (TransmissionType)car.TransmissionType,
                     Manufacturer = manufacturerToAdd,
                     Dealer = dealerToAdd
-
                 };
-
-                db.Cars.Local.Add(carToAdd);
+              
+                db.Cars.Add(carToAdd);
 
                 if (addedCars % 100 == 0)
                 {
-                    db.SaveChanges();
-                    db.Dispose();
-                    db = new CarsDbContext();
-                    db.Configuration.AutoDetectChangesEnabled = false;
+                    Console.Write("_");
                 }
+
+                //if (addedCars % 100 == 0)
+                //{
+                //    db.SaveChanges();
+                //    db.Dispose();
+                //    db = new CarsDbContext();
+                //    db.Configuration.AutoDetectChangesEnabled = false;
+                //    db.Configuration.ValidateOnSaveEnabled = false;
+                //}
 
                 addedCars++;
             }
 
+            Console.WriteLine();
             db.SaveChanges();
             db.Configuration.AutoDetectChangesEnabled = true;
+            db.Configuration.ValidateOnSaveEnabled = true;
         }
-
     }
 }

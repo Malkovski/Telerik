@@ -2,7 +2,6 @@
 {
     using System;
     using System.Linq;
-    using CarsSystem.Models;
 
     public class CarViewModel
     {
