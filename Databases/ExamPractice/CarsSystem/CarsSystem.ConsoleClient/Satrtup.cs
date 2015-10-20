@@ -2,8 +2,6 @@
 {
     using System;
     using System.Linq;
-    using CarsSystem.Data;
-    using CarsSystem.Models;
 
     public class Satrtup
     {

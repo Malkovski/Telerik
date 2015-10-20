@@ -13,11 +13,11 @@
 
 
         [Required]
-        [MaxLength(11)]
+        [MaxLength(30)]
         public string Model { get; set; }
 
         [Required]
-        public DateTime Year { get; set; }
+        public int Year { get; set; }
 
         [Required]
         public TransmissionType Transmission { get; set; }

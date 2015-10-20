@@ -58,7 +58,7 @@ namespace CarsSystem.Data.Migrations
                 var car = new Car
                 {
                     Model = "Model" + i + i,
-                    Year = DateTime.Now,
+                    Year = 1111,
                     Price = 20000 + (1250 * i),
                     DealerId = 1,
                     ManufacturerId = 1,

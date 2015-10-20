@@ -54,6 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarsViewModels\CarViewModel.cs" />
+    <Compile Include="CarsViewModels\DealerViewModel.cs" />
     <Compile Include="JsonCarsImporer.cs" />
     <Compile Include="Satrtup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
