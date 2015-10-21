@@ -9,12 +9,12 @@
     using CarsSystem.Models;
     using Newtonsoft.Json;
 
-    public static class JsonCarsImporer
+    internal static class JsonCarsImporer
     {
-        public static void Import()
+        public static void Import(CarsDbContext db, string contentFolderName)
         {
             List<CarViewModel> carsToAdd = Directory
-                .GetFiles(string.Format("{0}/JsonFiles/", Directory.GetCurrentDirectory()))
+                .GetFiles(string.Format("{0}/{1}/", Directory.GetCurrentDirectory(), contentFolderName))
                 .Where(f => f.EndsWith(".json"))
                 .Select(fs => File.ReadAllText(fs))
                 .SelectMany(str => JsonConvert.DeserializeObject<ICollection<CarViewModel>>(str))
@@ -22,11 +22,7 @@
 
             var addedManufacturers = new Dictionary<string, Manufacturer>();
             var addedCities = new Dictionary<string, City>();
-
-            var db = new CarsDbContext();
-            db.Configuration.AutoDetectChangesEnabled = false;
-            db.Configuration.ValidateOnSaveEnabled = false;
-
+           
             int addedCars = 0;
 
             Console.WriteLine("Adding cars");
@@ -79,24 +75,15 @@
                 if (addedCars % 100 == 0)
                 {
                     Console.Write("_");
+                    //db.SaveChanges();
                 }
 
-                //if (addedCars % 100 == 0)
-                //{
-                //    db.SaveChanges();
-                //    db.Dispose();
-                //    db = new CarsDbContext();
-                //    db.Configuration.AutoDetectChangesEnabled = false;
-                //    db.Configuration.ValidateOnSaveEnabled = false;
-                //}
 
                 addedCars++;
             }
 
             Console.WriteLine();
             db.SaveChanges();
-            db.Configuration.AutoDetectChangesEnabled = true;
-            db.Configuration.ValidateOnSaveEnabled = true;
         }
     }
 }

@@ -6,7 +6,7 @@
     using CarsSystem.Models;
     using CarsSystem.Data.Migrations;
 
-    public class CarsDbContext : DbContext
+    public class CarsDbContext : DbContext, ICarsDbContext
     {
         public CarsDbContext() 
             : base("CarsDb")
@@ -14,12 +14,27 @@
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<CarsDbContext, Configuration>());
         }
 
-        public virtual DbSet<City> Cities { get; set; }
+        public IDbSet<City> Cities { get; set; }
                  
-        public virtual DbSet<Car> Cars { get; set; }
+        public IDbSet<Car> Cars { get; set; }
                  
-        public virtual DbSet<Manufacturer> Manufacturers { get; set; }
+        public IDbSet<Manufacturer> Manufacturers { get; set; }
                  
-        public virtual DbSet<Dealer> Dealers { get; set; }
+        public IDbSet<Dealer> Dealers { get; set; }
+
+        public new IDbSet<T> Set<T>() where T : class
+        {
+            return base.Set<T>();
+        }
+
+        public new void SaveChanges()
+        {
+            base.SaveChanges();
+        }
+
+        public new void Dispose()
+        {
+            base.Dispose();
+        }
     }
 }

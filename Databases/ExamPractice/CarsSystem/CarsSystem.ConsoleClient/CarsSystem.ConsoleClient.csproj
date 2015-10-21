@@ -56,13 +56,16 @@
   <ItemGroup>
     <Compile Include="CarsViewModels\CarViewModel.cs" />
     <Compile Include="CarsViewModels\DealerViewModel.cs" />
+    <Compile Include="SetupContext\ContextConfigurator.cs" />
+    <Compile Include="Factory\CarsDbFactory.cs" />
     <Compile Include="JsonCarsImporer.cs" />
     <Compile Include="XmlCarConverter.cs" />
-    <Compile Include="XmlCarViewModels\QueriesQuery.cs" />
-    <Compile Include="XmlCarViewModels\QueriesQueryWhereClause.cs" />
+    <Compile Include="XmlCarViewModels\Query.cs" />
+    <Compile Include="XmlCarViewModels\WhereClause.cs" />
     <Compile Include="Satrtup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XmlCarViewModels\Queries.cs" />
+    <Compile Include="XmlCarViewModels\WhereTypes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -96,6 +99,7 @@
   <ItemGroup>
     <Content Include="XmlFiles\Queries.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

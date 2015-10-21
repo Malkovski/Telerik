@@ -4,14 +4,14 @@ namespace CarsSystem.ConsoleClient.XmlCarViewModels
     /// <remarks/>
 
     [XmlTypeAttribute(AnonymousType = true)]
-    public partial class QueriesQuery
+    public partial class Query
     {
         /// <remarks/>
         public string OrderBy { get; set; }
 
         /// <remarks/>
         [XmlArrayItemAttribute("WhereClause", IsNullable = false)]
-        public QueriesQueryWhereClause[] WhereClauses { get; set; }
+        public WhereClause[] WhereClauses { get; set; }
 
         /// <remarks/>
         [XmlAttributeAttribute()]

@@ -9,6 +9,6 @@
     {
         /// <remarks/>
         [XmlElementAttribute("Query")]
-        public QueriesQuery[] Query { get; set; }
+        public Query[] Query { get; set; }
     }
 }
