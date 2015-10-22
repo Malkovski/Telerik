@@ -2,22 +2,24 @@
 {
     using System;
     using System.Linq;
+    using CompanySampleDataImporter.Data;
     using CompanySampleDataImporter.Importer.Importers;
 
     public class Satrtup
     {
-        private static readonly DepartmentImporter departments = new DepartmentImporter();
-        private static readonly EmployeeImporter employees = new EmployeeImporter();
-        private static readonly ProjectImporter projects = new ProjectImporter();
-        private static readonly ReportsImporter reports = new ReportsImporter();
+        private const int NumberOfDepartments = 10;//100
+        private const int NumberOfEmployees = 50;//5000
+        private const int NumberOfProjects = 100;//1000
 
         public static void Main()
         {
-            departments.Import();
-            employees.Import();
-            projects.Import();
-            reports.Import();
+            var db = new CompanyEntities();
+            var sampleImporter = new SampleDataImporter(db);
 
+            sampleImporter.Import("Department", NumberOfDepartments);
+            sampleImporter.Import("Employee", NumberOfEmployees);
+            sampleImporter.Import("Project", NumberOfProjects);
+            sampleImporter.Import("Report", 0);
         }
     }
 }

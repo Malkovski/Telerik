@@ -8,14 +8,17 @@
 
     public class ProjectImporter : IImporter
     {
-        private const int NumberOfProjects = 1000;//1000
+        private CompanyEntities db;
 
         private readonly RandomGenerator generator = new RandomGenerator();
 
-        public void Import()
+        public ProjectImporter(CompanyEntities db)
         {
-            var db = new CompanyEntities();
+            this.db = db;
+        }
 
+        public CompanyEntities Import(string entryType, int count)
+        {
             List<int> allEmployeesIds = db.EMPLOYEES
                                           .OrderBy(e => Guid.NewGuid())
                                           .Select(e => e.Id)
@@ -25,7 +28,7 @@
 
             Console.WriteLine("Generating projects: ");
 
-            for (int i = 0; i < NumberOfProjects; i++)
+            for (int i = 0; i < count; i++)
             {
                 var currentProject = new PROJECT
                 {
@@ -66,11 +69,15 @@
                     db.SaveChanges();
                     db.Dispose();
                     db = new CompanyEntities();
+                    db.Configuration.AutoDetectChangesEnabled = false;
+                    db.Configuration.ValidateOnSaveEnabled = false;
                 }
             }
 
             Console.WriteLine();
             db.SaveChanges();
+
+            return db;
         }
     }
 }

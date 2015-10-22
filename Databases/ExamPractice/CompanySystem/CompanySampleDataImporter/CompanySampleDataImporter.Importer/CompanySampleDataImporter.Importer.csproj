@@ -54,7 +54,8 @@
     <Compile Include="Importers\EmployeeImporter.cs" />
     <Compile Include="Importers\IImporter.cs" />
     <Compile Include="Importers\ProjectImporter.cs" />
-    <Compile Include="Importers\ReportsImporter.cs" />
+    <Compile Include="Importers\ReportImporter.cs" />
+    <Compile Include="Importers\SampleDataImporter.cs" />
     <Compile Include="RandomGenerators\RandomGenerator.cs" />
     <Compile Include="Satrtup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,7 +1,9 @@
 namespace CompanySampleDataImporter.Importer.Importers
 {
+    using CompanySampleDataImporter.Data;
+
     public interface IImporter
     {
-        void Import();
+        CompanyEntities Import(string entryType, int count);
     }
 }

@@ -8,14 +8,17 @@
 
     public class EmployeeImporter : IImporter
     {
-        private const int NumberOfEmployees = 5000;//5000
+        private CompanyEntities db;
 
         private readonly RandomGenerator generator = new RandomGenerator();
 
-        public void Import()
+        public EmployeeImporter(CompanyEntities db)
         {
-            var db = new CompanyEntities();
+            this.db = db;
+        }
 
+        public CompanyEntities Import(string entryType, int count)
+        {
             var allDepartmentsIds = db.DEPARTMENTS
                 .OrderBy(d => Guid.NewGuid())
                 .Select(d => d.Id)
@@ -23,7 +26,7 @@
 
             Console.Write("Generating employees: ");
 
-            for (int i = 0; i < NumberOfEmployees; i++)
+            for (int i = 0; i < count; i++)
             {
                 var randomDepartmentIndex = generator.RandomNumber(0, allDepartmentsIds.Count - 1);
 
@@ -47,6 +50,8 @@
                     db.SaveChanges();
                     db.Dispose();
                     db = new CompanyEntities();
+                    db.Configuration.AutoDetectChangesEnabled = false;
+                    db.Configuration.ValidateOnSaveEnabled = false;
                 }
             }
 
@@ -100,10 +105,14 @@
                 db.SaveChanges();
                 db.Dispose();
                 db = new CompanyEntities();
+                db.Configuration.AutoDetectChangesEnabled = false;
+                db.Configuration.ValidateOnSaveEnabled = false;
             }
 
             Console.WriteLine();
             db.SaveChanges();
+
+            return db;
         }
     }
 }

@@ -6,14 +6,19 @@
     using CompanySampleDataImporter.Data;
     using CompanySampleDataImporter.Importer.RandomGenerators;
 
-    public class ReportsImporter : IImporter
+    public class ReportImporter : IImporter
     {
+        private CompanyEntities db;
+
         private readonly RandomGenerator generator = new RandomGenerator();
 
-        public void Import()
+        public ReportImporter(CompanyEntities db)
         {
-            var db = new CompanyEntities();
+            this.db = db;
+        }
 
+        public CompanyEntities Import(string entryType, int count)
+        {
             List<int> allEmployeesIds = db.EMPLOYEES
                                           .OrderBy(e => Guid.NewGuid())
                                           .Select(e => e.Id)
@@ -46,11 +51,15 @@
                     db.SaveChanges();
                     db.Dispose();
                     db = new CompanyEntities();
+                    db.Configuration.AutoDetectChangesEnabled = false;
+                    db.Configuration.ValidateOnSaveEnabled = false;
                 }
             }
 
             Console.WriteLine();
             db.SaveChanges();
+
+            return db;
         }
     }
 }

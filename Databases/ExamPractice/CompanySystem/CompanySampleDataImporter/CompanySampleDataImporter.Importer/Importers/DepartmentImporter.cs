@@ -7,19 +7,22 @@
 
     public class DepartmentImporter : IImporter
     {
-        private const int NumberOfDepartments = 100; //100
-
         private readonly RandomGenerator generator = new RandomGenerator();
 
-        public void Import()
-        {
-            var db = new CompanyEntities();
+        private CompanyEntities db;
 
+        public DepartmentImporter(CompanyEntities db)
+        {
+            this.db = db;
+        }
+
+        public CompanyEntities Import(string name, int count)
+        {
             Console.WriteLine("Generating departments: ");
 
-            for (int i = 0; i < NumberOfDepartments; i++)
+            for (int i = 0; i < count; i++)
             {
-                db.DEPARTMENTS.Add(new DEPARTMENT
+                this.db.DEPARTMENTS.Add(new DEPARTMENT
                 {
                     Name = this.generator.RandomString(10, 50)
                 });
@@ -31,14 +34,18 @@
 
                 if (i % 100 == 0)
                 {
-                    db.SaveChanges();
-                    db.Dispose();
-                    db = new CompanyEntities();
+                    this.db.SaveChanges();
+                    this.db.Dispose();
+                    this.db = new CompanyEntities();
+                    db.Configuration.AutoDetectChangesEnabled = false;
+                    db.Configuration.ValidateOnSaveEnabled = false;
                 }
             }
 
             Console.WriteLine();
-            db.SaveChanges();
+            this.db.SaveChanges();
+
+            return db;
         }
     }
 }

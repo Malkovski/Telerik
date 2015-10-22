@@ -6,7 +6,7 @@
 
     public class RandomGenerator
     {
-        private Random Random = new Random();
+        private readonly Random random = new Random();
 
         private const string AlphaNumerics = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
 
@@ -18,7 +18,7 @@
 
             for (int i = 0; i < currentLen; i++)
             {
-                int currentIndex = this.Random.Next(0, AlphaNumerics.Length);
+                int currentIndex = this.random.Next(0, AlphaNumerics.Length);
                 sb.Append(AlphaNumerics[currentIndex]);
             }
 
@@ -27,7 +27,7 @@
 
         public int RandomNumber(int min, int max)
         {
-            return this.Random.Next(min, max + 1);
+            return this.random.Next(min, max + 1);
         }
 
         public DateTime RandomDate(DateTime? after = null, DateTime? before = null)
