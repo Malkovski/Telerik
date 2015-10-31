@@ -60,6 +60,8 @@
     <Compile Include="Factory\CarsDbFactory.cs" />
     <Compile Include="JsonCarsImporer.cs" />
     <Compile Include="XmlCarConverter.cs" />
+    <Compile Include="XmlCarViewModels\XmlCar.cs" />
+    <Compile Include="XmlCarViewModels\XmlDealer.cs" />
     <Compile Include="XmlCarViewModels\Query.cs" />
     <Compile Include="XmlCarViewModels\WhereClause.cs" />
     <Compile Include="Satrtup.cs" />
@@ -68,7 +70,9 @@
     <Compile Include="XmlCarViewModels\WhereTypes.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="JsonFiles\data.0.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

@@ -15,7 +15,7 @@ namespace CarsSystem.ConsoleClient.XmlCarViewModels
         public string Type { get; set; }
 
         [XmlIgnore]
-        public WhereTypes WhereType
+        public WhereTypes TypeAsEnum
         {
             get
             {
