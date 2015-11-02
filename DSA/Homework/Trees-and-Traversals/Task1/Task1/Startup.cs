@@ -31,6 +31,7 @@
             var theRoot = FindTheRoot(nodes);
             Console.WriteLine("The root is {0}", theRoot.Value);
             Console.WriteLine("--------------------------------");
+
             var leaves = FindAllLeafs(nodes);
             foreach (var item in leaves)
             {
@@ -48,6 +49,86 @@
 
             Console.WriteLine();
             Console.WriteLine("--------------------------------");
+
+            var longestPath = FindLongestPathInTree(FindTheRoot(nodes));
+            Console.WriteLine("Longest path in the tree is {0}", longestPath);
+
+            Console.WriteLine();
+            Console.WriteLine("--------------------------------");
+
+            var sumPath = FindSum(theRoot, 8, new List<Node<int>>());
+        }
+
+        private static List<Node<int>> FindSum(Node<int> node, int sum, List<Node<int>> result)
+        {
+            int currentSum = 0;
+            result.Add(node);
+
+            foreach (var item in result)
+            {
+                currentSum += item.Value;
+            }
+
+            if (currentSum == sum)
+            {
+                return result;
+            }
+
+            var len = node.Children.Count;
+            var childs = node.Children;
+            for (var i = 0; i < len; i++)
+            {
+                currentSum += childs[i].Value;
+
+                if (currentSum == sum)
+                {
+                    result.Add(childs[i]);
+                    return result;
+                }
+                else if (currentSum > sum)
+                {
+                    if (i == len - 1)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        result.RemoveAt(result.Count - 1);
+                        FindSum(node, sum, result);
+                    }                  
+                }
+                else
+                {
+                    FindSum(childs[i], sum, result);
+                }
+            }
+
+            if (currentSum == sum)
+            {
+                return result;
+            }
+            else
+            {
+                throw new ArgumentException("No matching path sum!");
+
+            }
+            
+        }
+
+        private static int FindLongestPathInTree(Node<int> root)
+        {
+            if (root.Children.Count == 0)
+            {
+                return 0;
+            }
+
+            var maxPath = 0;
+            foreach (var child in root.Children)
+            {
+                maxPath = Math.Max(maxPath, FindLongestPathInTree(child));
+            }
+
+            return maxPath + 1;
         }
 
         private static List<Node<int>> FindAllMiddleNodes(Node<int>[] nodes)
