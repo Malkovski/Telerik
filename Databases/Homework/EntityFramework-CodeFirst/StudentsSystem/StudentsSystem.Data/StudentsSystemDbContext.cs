@@ -5,7 +5,8 @@
 
     public class StudentsSystemDbContext : DbContext, IStudentsSystemDbContext
     {
-        public StudentsSystemDbContext() : base("StudentsSystemDatabase")
+        public StudentsSystemDbContext()
+            : base("DefaultConnection")
         {
         }
 
