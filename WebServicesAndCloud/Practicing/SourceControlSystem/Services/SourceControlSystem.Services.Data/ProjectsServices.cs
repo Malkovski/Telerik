@@ -12,11 +12,11 @@
         private readonly IRepository<SoftwareProject> projects;
         private readonly IRepository<User> users;
 
-        public ProjectsServices()
+        public ProjectsServices(IRepository<SoftwareProject> projectRepo, IRepository<User> usersRepo)
         {
-            var db = new SourceControlSystemDbContext();
-            this.users = new EfGenericRepository<User>(db);
-            this.projects = new EfGenericRepository<SoftwareProject>(db);
+            this.projects = projectRepo;
+            this.users = usersRepo;
+
         }
 
         public IQueryable<SoftwareProject> All(int page = 1, int pageSize = UtilityConstants.PageSize)

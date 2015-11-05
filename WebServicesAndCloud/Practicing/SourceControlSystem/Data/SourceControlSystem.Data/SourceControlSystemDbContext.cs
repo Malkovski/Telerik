@@ -6,7 +6,7 @@
     using System.Data.Entity;
     using System.Linq;
 
-    public class SourceControlSystemDbContext : IdentityDbContext<User>
+    public class SourceControlSystemDbContext : IdentityDbContext<User>, ISourceControlSystemDbContext
     {
         public SourceControlSystemDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

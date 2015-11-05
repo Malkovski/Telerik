@@ -3,25 +3,32 @@
     using System;
     using System.Linq;
     using System.Web.Http;
-    using SourceControlSystem.Api.Models.Projects;
+    using Models.Projects;
     using Constants.UtilityConstants;
     using SourceControlSystem.Services.Data.Contracts;
-    using SourceControlSystem.Services.Data;
+    using AutoMapper.QueryableExtensions;
+    using System.Web.Http.Cors;
+    using SourceControlSystem.Api.Infrastucture;
 
     public class ProjectsController : ApiController
     {
         private readonly IProjectsServices projects;
 
-        public ProjectsController()
+        public ProjectsController(IProjectsServices projectServices)
         {
-            this.projects = new ProjectsServices();
+            this.projects = projectServices;
         }
 
+        [EnableCors("*", "*", "*")]
         public IHttpActionResult Get()
         {
+            //Getting instanve if needed!!!!!!!!!!!
+           // ObjectFactory.Get<IProjectsServices>();
+
             var result = this.projects
                 .All(page: 1)
-                .Select(SoftwareProjectsDetailsResponseModel.FromModel).ToList();
+                .ProjectTo<SoftwareProjectsDetailsResponseModel>()
+                .ToList();
 
             return this.Ok(result);
         }
@@ -36,7 +43,7 @@
 
             var result = this.projects.All()
                                 .Where(pr => pr.Name == id && (!pr.Private || (pr.Private && pr.Users.Any(c => c.UserName == this.User.Identity.Name))))
-                                .Select(SoftwareProjectsDetailsResponseModel.FromModel)
+                                .ProjectTo<SoftwareProjectsDetailsResponseModel>()
                                 .FirstOrDefault();
 
             if (result == null)
@@ -52,7 +59,7 @@
         {
             var result = this.projects
                 .All(page, pageSize)
-                .Select(SoftwareProjectsDetailsResponseModel.FromModel)
+                .ProjectTo<SoftwareProjectsDetailsResponseModel>()
                 .ToList();
 
             return this.Ok(result);
