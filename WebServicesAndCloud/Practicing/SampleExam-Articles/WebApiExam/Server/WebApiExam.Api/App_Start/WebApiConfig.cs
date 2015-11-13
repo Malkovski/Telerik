@@ -18,12 +18,14 @@ namespace WebApiExam.Api
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}/{comments}",
-                defaults: new { id = RouteParameter.Optional,
-                comments = RouteParameter.Optional });
+                name: "CommentAddRoute",
+                routeTemplate: "api/articles/{id}/comments",
+                defaults: new { controller = "comments", action = "POST", id = RouteParameter.Optional });
 
-           
+            config.Routes.MapHttpRoute(
+                name: "DefaultApi",
+                routeTemplate: "api/{controller}/{id}",
+                defaults: new { id = RouteParameter.Optional });
         }
     }
 }

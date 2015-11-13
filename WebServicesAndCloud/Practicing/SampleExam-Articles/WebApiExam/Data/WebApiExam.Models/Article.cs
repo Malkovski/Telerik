@@ -27,7 +27,11 @@
 
         public DateTime CreatedOn { get; set; }
 
-        public string Category { get; set; }
+        //public string Category { get; set; }
+
+        public int CategoryId { get; set; }
+
+        public virtual Category Category { get; set; }
 
         public int UserId { get; set; }
 

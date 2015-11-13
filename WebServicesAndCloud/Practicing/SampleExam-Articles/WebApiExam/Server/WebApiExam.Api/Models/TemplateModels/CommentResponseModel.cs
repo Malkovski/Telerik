@@ -2,8 +2,10 @@
 {
     using System;
     using System.Linq;
+    using WebApiExam.Api.Infrastructure.Mappings;
+    using WebApiExam.Models;
 
-    public class CommentResponseModel
+    public class CommentResponseModel : IMapFrom<Comment>
     {
         public int Id { get; set; }
 

@@ -25,9 +25,6 @@
         [AllowAnonymous]
         public IHttpActionResult Get()
         {
-            //Getting instance if needed!!!!!!!!!!!
-            //ObjectFactory.Get<ITemplateService>();
-
             var result = this.article
                 .All()
                 .ProjectTo<ArticleResponseModel>()
@@ -45,9 +42,8 @@
 
             var current = int.Parse(id);
 
-            var result = this.article.All()
-                                .Where(a => a.Id == current)
-                                .Select(ArticleWithCommentsResponseModel.FromGameWithDetails)
+            var result = this.article.GetById(current)
+                                .ProjectTo<ArticleWithCommentsResponseModel>()
                                 .FirstOrDefault();
 
             if (result == null)
@@ -58,19 +54,49 @@
             return this.Ok(result);
         }
 
-        public IHttpActionResult GetByCategoryName(string categoryName)
+        //GET:api/articles?category=[categoryName] -> Gets top 10 articles in category “categoryName”,sorted by their date of creation
+        public IHttpActionResult GetByCategoryName(string category)
         {
-            var parms = this.RequestContext.Url.ToString(); 
-
-            if (string.IsNullOrEmpty(categoryName))
+            if (string.IsNullOrEmpty(category))
             {
                 return this.BadRequest("Article id cannot be null or empty!");
             }
 
-            
+            var result = this.article.All(page:1, pageSize: int.MaxValue - 1)
+                                .Where(a => a.Category.Name == category)
+                                .OrderByDescending(x => x.CreatedOn)
+                                .Take(10)
+                                .ProjectTo<ArticleResponseModel>()
+                                .ToList();
 
-            var result = this.article.All()
-                                .Where(a => a.Category == categoryName)
+            if (result == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.Ok(result);
+        }
+
+        public IHttpActionResult GetInRangeByCategoryName(string category, string page)
+        {
+            if (string.IsNullOrEmpty(category))
+            {
+                return this.BadRequest("Article category cannot be null or empty!");
+            }
+
+            if (string.IsNullOrEmpty(page))
+            {
+                return this.BadRequest("Article page cannot be null or empty!");
+            }
+
+            var pages = int.Parse(page);
+
+            var result = this.article.All(page: 1, pageSize: int.MaxValue - 1)
+                                .Where(a => a.Category.Name == category)
+                                .OrderByDescending(x => x.CreatedOn)
+                                .AsQueryable()
+                                .Skip(pages * 10)
+                                .Take(10)
                                 .ProjectTo<ArticleResponseModel>()
                                 .ToList();
 
@@ -96,7 +122,7 @@
         }
 
         //POST:api/articles -> Creates a new thread, returns the article created so it can be loaded in the UI
-        //[HttpPost]
+        [HttpPost]
         public IHttpActionResult Post(ArticleSaveToDbRequestModel model)
         {
             if (!this.ModelState.IsValid)
@@ -107,29 +133,13 @@
             var createdArticle = this.article.Add(model.Title, model.Content, model.Category, model.Tags);
 
             var result = this.article
-                .All()
-                .Where(a => a.Id == createdArticle)
+                .GetById(createdArticle)
                 .ProjectTo<ArticleResponseModel>()
                 .ToList();
 
             return this.Ok(result);
         }
 
-        //POST:api/articles/id/comments -> adds new commentt to article
-        [Route("api/articles/id/comments")]
-        [HttpPost]
-        public IHttpActionResult PostComment(int id, string comment, CommentSaveToDbRequestModel model)
-        {
-            var comments = ObjectFactory.Get<ICommentService>();
-
-            if (!this.ModelState.IsValid)
-            {
-                return this.BadRequest(this.ModelState);
-            }
-
-            var createdComment = comments.Add(model.Content, this.User.Identity.Name, id);
-
-            return this.Ok(createdComment);
-        }
+       
     }
 }

@@ -206,6 +206,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -218,6 +220,7 @@
     <Compile Include="Models\TemplateModels\ArticleResponseModel.cs" />
     <Compile Include="Models\TemplateModels\ArticleSaveToDbRequestModel.cs" />
     <Compile Include="Models\TemplateModels\ArticleWithCommentsResponseModel.cs" />
+    <Compile Include="Models\TemplateModels\CategoryResponseModel.cs" />
     <Compile Include="Models\TemplateModels\CommentResponseModel.cs" />
     <Compile Include="Models\TemplateModels\CommentSaveToDbRequestModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

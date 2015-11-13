@@ -31,20 +31,22 @@
 
         public int Add(string content,  string creator, int articleId)
         {
-            User currentUser = this.users.All().FirstOrDefault(u => u.UserName == creator);
-
             var newComment = new Comment
             {
                 Content = content,
                 DateCreated = DateTime.Now,
-                AuthorName = currentUser.UserName,
+                AuthorName = creator
             };
 
-            //this.comments.Add(newComment);
             this.articles.All().Where(x => x.Id == articleId).FirstOrDefault().Comments.Add(newComment);
             this.articles.SaveChanges();
 
             return newComment.Id;
+        }
+
+        public IQueryable<Comment> GetById(int id)
+        {
+            return this.comments.All().Where(x => x.Id == id);
         }
     }
 }

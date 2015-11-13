@@ -10,6 +10,8 @@
     {
         IQueryable<Article> All(int page = 1, int pageSize = UtilityConstants.DefaultPageSize);
 
+        IQueryable<Article> GetById(int id);
+
         int Add(string title, string content, string category, ICollection<Tag> tags);
     }
 }
