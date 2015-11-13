@@ -29,20 +29,20 @@
                 .Take(pageSize);
         }
 
-        public int Add(string content,  string creator)
+        public int Add(string content,  string creator, int articleId)
         {
-
             User currentUser = this.users.All().FirstOrDefault(u => u.UserName == creator);
 
             var newComment = new Comment
             {
                 Content = content,
                 DateCreated = DateTime.Now,
-                AuthorName = currentUser.UserName
+                AuthorName = currentUser.UserName,
             };
 
-            this.comments.Add(newComment);
-            this.comments.SaveChanges();
+            //this.comments.Add(newComment);
+            this.articles.All().Where(x => x.Id == articleId).FirstOrDefault().Comments.Add(newComment);
+            this.articles.SaveChanges();
 
             return newComment.Id;
         }

@@ -16,9 +16,9 @@
     {
         private readonly IArticleService article;
 
-        public ArticlesController(IArticleService templateService)
+        public ArticlesController(IArticleService articleService)
         {
-            this.article = templateService;
+            this.article = articleService;
         }
 
         //GET:api/articles/ -> Gets top 10 articles, sorted by their date of creation
@@ -96,7 +96,7 @@
         }
 
         //POST:api/articles -> Creates a new thread, returns the article created so it can be loaded in the UI
-        [HttpPost]
+        //[HttpPost]
         public IHttpActionResult Post(ArticleSaveToDbRequestModel model)
         {
             if (!this.ModelState.IsValid)
@@ -113,6 +113,23 @@
                 .ToList();
 
             return this.Ok(result);
+        }
+
+        //POST:api/articles/id/comments -> adds new commentt to article
+        [Route("api/articles/id/comments")]
+        [HttpPost]
+        public IHttpActionResult PostComment(int id, string comment, CommentSaveToDbRequestModel model)
+        {
+            var comments = ObjectFactory.Get<ICommentService>();
+
+            if (!this.ModelState.IsValid)
+            {
+                return this.BadRequest(this.ModelState);
+            }
+
+            var createdComment = comments.Add(model.Content, this.User.Identity.Name, id);
+
+            return this.Ok(createdComment);
         }
     }
 }

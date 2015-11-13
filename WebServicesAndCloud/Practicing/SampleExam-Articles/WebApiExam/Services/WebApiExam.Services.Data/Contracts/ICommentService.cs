@@ -9,6 +9,6 @@
     {
         IQueryable<Comment> All(int page = 1, int pageSize = UtilityConstants.DefaultPageSize);
 
-        int Add(string content, string creator);
+        int Add(string content, string creator, int articleId);
     }
 }
