@@ -1,5 +1,6 @@
 ﻿namespace WebApiExam.Api.Models.TemplateModels
 {
+    using AutoMapper;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -18,11 +19,13 @@
 
         public DateTime DateCreated { get; set; }
 
-        public ICollection<Tag> Tags { get; set; }
+        public IEnumerable<TagResponseModel> Tags { get; set; }
 
         public IEnumerable<CommentResponseModel> Comments { get; set; }
 
-        public void CreateMappings(AutoMapper.IConfiguration config)
+        public IEnumerable<LikeResponseModel> Likes { get; set; }
+
+        public void CreateMappings(IConfiguration config)
         {
             config.CreateMap<Article, ArticleWithCommentsResponseModel>()
                 .ForMember(s => s.Category, opt => opt.MapFrom(s => s.Category.Name));

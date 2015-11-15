@@ -18,7 +18,7 @@
 
         public DateTime DateCreated { get; set; }
 
-        public IEnumerable<Tag> Tags { get; set; }
+        public IEnumerable<TagResponseModel> Tags { get; set; }
 
         public void CreateMappings(AutoMapper.IConfiguration config)
         {

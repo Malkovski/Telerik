@@ -5,6 +5,8 @@
     using System.Web.Http;
     using WebApiExam.Api.Infrastructure.ObjectFactory;
     using WebApiExam.Api.Models.TemplateModels;
+    using WebApiExam.Data;
+    using WebApiExam.Models;
     using WebApiExam.Services.Data.Contracts;
 
     [Authorize]
@@ -22,16 +24,21 @@
         [HttpPost]
         public IHttpActionResult Post(int id, CommentSaveToDbRequestModel model)
         {
-           // var comments = ObjectFactory.Get<ICommentService>();
+            var currentArticles = ObjectFactory.Get<IRepository<Article>>();
+
+            if (!currentArticles.All().Any(x => x.Id == id))
+            {
+                return this.NotFound();
+            }
 
             if (!this.ModelState.IsValid)
             {
                 return this.BadRequest(this.ModelState);
             }
 
-            var createdComment = comment.Add(model.Content, this.User.Identity.Name, id);
+            var createdCommentId = comment.Add(model.Content, this.User.Identity.Name, id);
 
-            return this.Ok(createdComment);
+            return this.Ok(createdCommentId);
         }
     }
 }

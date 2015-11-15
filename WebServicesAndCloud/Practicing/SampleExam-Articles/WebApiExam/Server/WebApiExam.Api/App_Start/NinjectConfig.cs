@@ -13,6 +13,7 @@ namespace WebApiExam.Api.App_Start
     using WebApiExam.Data;
     using WebApiExam.GlobalConstants;
     using Ninject.Extensions.Conventions;
+    using WebApiExam.Api.Infrastructure.ObjectFactory;
 
     public static class NinjectConfig 
     {
@@ -27,19 +28,12 @@ namespace WebApiExam.Api.App_Start
             DynamicModuleUtility.RegisterModule(typeof(NinjectHttpModule));
             bootstrapper.Initialize(CreateKernel);
         }
-        
-        /// <summary>
-        /// Stops the application.
-        /// </summary>
+
         public static void Stop()
         {
             bootstrapper.ShutDown();
         }
         
-        /// <summary>
-        /// Creates the kernel that will manage your application.
-        /// </summary>
-        /// <returns>The created kernel.</returns>
         private static IKernel CreateKernel()
         {
             var kernel = new StandardKernel();
@@ -48,6 +42,7 @@ namespace WebApiExam.Api.App_Start
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
+                ObjectFactory.Initialize(kernel);
                 RegisterServices(kernel);
                 return kernel;
             }
@@ -58,10 +53,6 @@ namespace WebApiExam.Api.App_Start
             }
         }
 
-        /// <summary>
-        /// Load your modules or register your services here!
-        /// </summary>
-        /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IApplicationDbContext>().To<ApplicationDbContext>().InRequestScope();
