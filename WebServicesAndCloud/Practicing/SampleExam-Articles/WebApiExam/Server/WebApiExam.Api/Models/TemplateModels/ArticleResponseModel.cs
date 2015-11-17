@@ -3,8 +3,10 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using WebApiExam.Api.Infrastructure.Mappings;
+    using WebApiExam.Models;
 
-    public class ArticleResponseModel 
+    public class ArticleResponseModel : IMapFrom<Article>, IHaveCustomMappings
     {
         public int Id { get; set; }
 
@@ -16,6 +18,15 @@
 
         public DateTime DateCreated { get; set; }
 
-        public List<string> Tags { get; set; }
+        public IEnumerable<TagResponseModel> Tags { get; set; }
+
+        public void CreateMappings(AutoMapper.IConfiguration config)
+        {
+            config.CreateMap<Article, ArticleResponseModel>()
+                .ForMember(s => s.Category, opt => opt.MapFrom(s => s.Category.Name));
+
+            config.CreateMap<Article, ArticleResponseModel>()
+                .ForMember(s => s.DateCreated, opt => opt.MapFrom(s => s.CreatedOn));
+        }
     }
 }

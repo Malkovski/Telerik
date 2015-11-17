@@ -5,14 +5,14 @@
     using WebApiExam.Api.Infrastructure.Mappings;
     using WebApiExam.Models;
 
-    public class CommentResponseModel : IMapFrom<Comment>
+    public class AlertResponseModel : IMapFrom<Alert>
     {
         public int Id { get; set; }
 
-        public string Content { get; set; }
+        public string Message { get; set; }
 
-        public DateTime DateCreated { get; set; }
+        public DateTime CreatedOn { get; set; }
 
-        public string AuthorName { get; set; }
+        public DateTime ExpireOn { get; set; }
     }
 }

@@ -11,12 +11,12 @@
     public class ArticleService : IArticleService
     {
         private readonly IRepository<Article> articles;
-        private readonly IRepository<User> users;
+        private readonly IRepository<Category> categories;
 
-        public ArticleService(IRepository<Article> model1Repo, IRepository<User> usersRepo)
+        public ArticleService(IRepository<Article> articleRepo, IRepository<Category> categoriesRepo)
         {
-            this.articles = model1Repo;
-            this.users = usersRepo;
+            this.articles = articleRepo;
+            this.categories = categoriesRepo;
         }
 
         public IQueryable<Article> All(int page = 1, int pageSize = UtilityConstants.DefaultPageSize)
@@ -31,24 +31,40 @@
         // The logic here can be different ofc - parameters depends ...!!!!!!!! 
         public int Add(string title, string content, string category, ICollection<Tag> tags)
         {
-           // User currentUser = this.users.All().FirstOrDefault(u => u.UserName == creator);
-
             var newArticle = new Article
             {
                 Title = title,
                 Content = content,
-                Category = category,
                 CreatedOn = DateTime.Now,
                 Tags = tags
             };
 
-            
-            //newProject.Users.Add(currentUser);
+            var existingCategory = this.categories.All().Where(x => x.Name == category).FirstOrDefault();
+
+            if (existingCategory != null)
+            {
+                newArticle.CategoryId = existingCategory.Id;
+            }
+            else
+            {
+                var newCategory = new Category
+                {
+                    Name = category
+                };
+
+                categories.Add(newCategory);
+                //categories.SaveChanges();
+            }
 
             this.articles.Add(newArticle);
             this.articles.SaveChanges();
 
             return newArticle.Id;
+        }
+
+        public IQueryable<Article> GetById(int id)
+        {
+            return this.articles.All().Where(x => x.Id == id);
         }
     }
 }

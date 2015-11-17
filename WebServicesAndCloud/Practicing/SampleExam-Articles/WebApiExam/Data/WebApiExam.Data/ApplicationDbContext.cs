@@ -22,6 +22,7 @@
 
         public IDbSet<Tag> Tags { get; set; }
 
+        public IDbSet<Alert> Alerts { get; set; }
 
         public IDbSet<Category> Categories { get; set; }
 

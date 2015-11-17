@@ -8,11 +8,13 @@
     {
         private ICollection<Comment> comments;
         private ICollection<Tag> tags;
+        private ICollection<Like> likes;
 
         public Article()
         {
             this.comments = new List<Comment>();
             this.tags = new List<Tag>();
+            this.likes = new List<Like>();
         }
 
         public int Id { get; set; }
@@ -21,13 +23,11 @@
 
         public string Content { get; set; }
 
-        public int Likes { get; set; }
-
-        public int Dislikes { get; set; }
-
         public DateTime CreatedOn { get; set; }
 
-        public string Category { get; set; }
+        public int CategoryId { get; set; }
+
+        public virtual Category Category { get; set; }
 
         public int UserId { get; set; }
 
@@ -43,6 +43,12 @@
         {
             get { return this.tags; }
             set { this.tags = value; }
+        }
+
+        public ICollection<Like> Likes
+        {
+            get { return this.likes; }
+            set { this.likes = value; }
         }
     }
 }
