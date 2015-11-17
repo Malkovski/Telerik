@@ -14,10 +14,12 @@
         }
 
         // Replace model with real one!!!!!!!
-        public IDbSet<Model1> Commits { get; set; }
+        public IDbSet<Model1> Models1 { get; set; }
 
         // Replace model with real one!!!!!!!
-        public IDbSet<Model2> SoftwareProjects { get; set; }
+        public IDbSet<Model2> Models2 { get; set; }
+
+        public IDbSet<Model3> Models3 { get; set; }
 
         public static ApplicationDbContext Create()
         {
