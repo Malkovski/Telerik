@@ -21,7 +21,6 @@
             this.threads = threadService;
         }
 
-        [EnableCors("*", "*", "*")]
         public IHttpActionResult Get()
         {
             //Getting instance if needed!!!!!!!!!!!
@@ -29,6 +28,32 @@
 
             var result = this.threads
                 .All(page: 1)
+                .ProjectTo<ThreadResponseModel>()
+                .ToList();
+
+            return this.Ok(result);
+        }
+
+        public IHttpActionResult GetByCategory(string category)
+        {
+            var result = this.threads
+                .All(page: 1, pageSize: int.MaxValue)
+                .Where(x => x.Categories.Any(z => z.Name == category))
+                .OrderByDescending(x => x.DateCreated)
+                .ProjectTo<ThreadResponseModel>()
+                .ToList();
+
+            return this.Ok(result);
+        }
+
+        public IHttpActionResult GetByPages(string page, string count)
+        {
+            var p = int.Parse(page);
+            var c = int.Parse(count);
+
+            var result = this.threads
+                .All(p, c)
+                .OrderByDescending(x => x.DateCreated)
                 .ProjectTo<ThreadResponseModel>()
                 .ToList();
 

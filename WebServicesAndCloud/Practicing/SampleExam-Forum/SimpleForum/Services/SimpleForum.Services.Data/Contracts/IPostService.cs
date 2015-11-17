@@ -9,6 +9,12 @@
     {
         IQueryable<Post> All(int page = 1, int pageSize = UtilityConstants.DefaultPageSize);
 
-        int Add(string title, string userId);
+        IQueryable<Post> GetPostById(int id);
+
+        int Add(string title, int threadId, string userId);
+
+        int Vote(int postId);
+
+        int AddComment(int id, string text);
     }
 }

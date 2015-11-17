@@ -19,7 +19,7 @@
         {
             config.CreateMap<Post, PostResponseModel>()
                 .ForMember(x => x.postedBy, opt => opt.MapFrom(x => x.User.UserName))
-                .ForMember(x => x.rating, opt => opt.MapFrom(x => x.Rating + "\\" + x.Rating));   
+                .ForMember(x => x.rating, opt => opt.MapFrom(x => x.Rating.ToString() + "/" + x.Rating.ToString()));   
         }
     }
 }

@@ -18,8 +18,13 @@ namespace SimpleForum.Api
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
+                name: "MyRoute",
+                routeTemplate: "api/threads/{id}/posts",
+                defaults: new { controller = "posts", method = "GET", action = "GetByThreadId", id = RouteParameter.Optional });
+
+            config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "api/{controller}",
                 defaults: new { id = RouteParameter.Optional });
         }
     }

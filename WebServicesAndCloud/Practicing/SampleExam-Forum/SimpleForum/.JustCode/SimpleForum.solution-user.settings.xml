@@ -54,6 +54,30 @@
         <IgnoredElement>
           <TextualIdentifier>11882822691632265035</TextualIdentifier>
         </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>12678767105190256641</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>17170059710492866256</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>4074556220477015146</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>17424125868066681207</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>5493987459101496377</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>3453434291931467913</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>13399865927488434689</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>397840664895775721</TextualIdentifier>
+        </IgnoredElement>
       </FilePath>
       <FilePath>
         <FileRelativePath>Server/SimpleForum.Api/Models/Accounts/AccountBindingModels.cs</FileRelativePath>
@@ -205,6 +229,9 @@
         <ProjectRelativePath>Server/SimpleForum.Api/SimpleForum.Api.csproj</ProjectRelativePath>
         <IgnoredElement>
           <TextualIdentifier>12287596151785290516</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>14311312971528482694</TextualIdentifier>
         </IgnoredElement>
       </FilePath>
       <FilePath>
