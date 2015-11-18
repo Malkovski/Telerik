@@ -19,7 +19,7 @@
 
         public string createdBy { get; set; }
 
-        public IEnumerable<CategoryResponseModel> categories { get; set; }
+        public IEnumerable<string> categories { get; set; }
 
         public IEnumerable<PostResponseModel> posts { get; set; }
 
@@ -28,6 +28,9 @@
             config.CreateMap<Thread, ThreadResponseModel>()
                  .ForMember(x => x.createdBy, opt => opt.MapFrom(x =>
                      x.User.Email));
+
+            config.CreateMap<Category, String>()
+                .ProjectUsing(x => x.Name);
         }
     }
 }

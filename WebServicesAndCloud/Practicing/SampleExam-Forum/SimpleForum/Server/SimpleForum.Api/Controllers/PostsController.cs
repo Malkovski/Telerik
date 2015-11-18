@@ -55,16 +55,16 @@
         }
 
         [Authorize]
-        [Route("create")]
+        [Route("{id}/create")]
         [HttpPost]
-        public IHttpActionResult Create(PostSaveDbRequestModel model)
+        public IHttpActionResult Create(int id, PostSaveDbRequestModel model)
         {
             if (!this.ModelState.IsValid)
             {
                 return this.BadRequest(this.ModelState);
             }
 
-            var newPostId = this.posts.Add(model.Content, model.ThreadId, this.User.Identity.GetUserId());
+            var newPostId = this.posts.Add(model.Content, id, this.User.Identity.GetUserId());
 
             return this.Ok(string.Format("New post with id {0} created", newPostId));
         }

@@ -6,7 +6,7 @@
     using SimpleForum.Api.Infrastructure.Mappings;
     using SimpleForum.Models;
 
-    public class ThreadSaveToDbRequestModel : IMapFrom<Thread>, IHaveCustomMappings
+    public class ThreadSaveToDbRequestModel : IMapFrom<Thread>
     {
         public int Id { get; set; }
 
@@ -15,12 +15,5 @@
         public string Content { get; set; }
 
         public string Category { get; set; }
-
-        // logic for multi mapping
-        public void CreateMappings(IConfiguration config)
-        {
-            config.CreateMap<Thread, ThreadResponseModel>();
-                //.ForMember(s => s.TotalUsers, opt => opt.MapFrom(s => s.Users.Count()));
-        }
     }
 }

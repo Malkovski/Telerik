@@ -10,5 +10,7 @@
         IQueryable<Thread> All(int page = 1, int pageSize = UtilityConstants.DefaultPageSize);
 
         int Add(string title, string content, string catgory, string userId);
+
+        int AddCategory(int id, string category);
     }
 }

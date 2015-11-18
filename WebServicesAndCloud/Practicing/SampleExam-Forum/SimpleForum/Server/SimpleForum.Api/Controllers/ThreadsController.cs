@@ -106,5 +106,23 @@
 
             return this.Ok(string.Format("Created thread with id {0}", createdThreadId));
         }
+
+        [Authorize]
+        [HttpPost]
+        [Route("{id}/AddTo")]
+        public IHttpActionResult AddCategory(int id, string category)
+        {
+            //VALIDATE!!!!
+            var exists = this.threads.All(1, int.MaxValue).Where(x => x.Id == id).FirstOrDefault();
+
+            if (exists == null)
+            {
+                return this.NotFound();
+            }
+
+            var current = this.threads.AddCategory(id, category);
+
+            return this.Ok(string.Format("Added new category for thread {0}", current));
+        }
     }
 }

@@ -8,7 +8,5 @@
     public class PostSaveDbRequestModel : IMapFrom<Post>
     {
         public string Content { get; set; }
-
-        public int ThreadId { get; set; }
     }
 }

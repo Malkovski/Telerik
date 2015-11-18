@@ -60,5 +60,29 @@
 
             return newThread.Id;
         }
+
+        public int AddCategory(int id, string category)
+        {
+            var existingThread = this.threads.All().Where(x => x.Id == id).FirstOrDefault();
+            var existingCategory = this.categories.All().Where(x => x.Name == category).FirstOrDefault();
+
+            if (existingCategory != null)
+            {
+                existingThread.Categories.Add(existingCategory);
+            }
+            else
+            {
+                var newCategory = new Category
+                {
+                    Name = category
+                };
+
+                this.categories.Add(newCategory);
+                newCategory.Threads.Add(existingThread);
+            }
+
+            this.categories.SaveChanges();
+            return existingThread.Id;
+        }
     }
 }
