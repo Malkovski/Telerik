@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<JustCodeSettings Version="0.0" Timestamp="5bfddadc-4be7-4699-bc5a-ee8e6cc1c917">
+  <IgnoredErrorsAndWarningsSettings xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <IgnoredErrorsAndWarnings Version="2">
+      <FilePath>
+        <FileRelativePath>Server/BullsAndCows.Api/Controllers/AccountController.cs</FileRelativePath>
+        <ProjectRelativePath>Server/BullsAndCows.Api/BullsAndCows.Api.csproj</ProjectRelativePath>
+        <IgnoredElement>
+          <TextualIdentifier>5901427634058680841</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>4793910266808599511</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>8448972602423376946</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>12235026830824384520</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>13010059528399744536</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>10374460671898538841</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>2552509475071738560</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>9688788049643834488</TextualIdentifier>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <FileRelativePath>Server/BullsAndCows.Api/Providers/ApplicationOAuthProvider.cs</FileRelativePath>
+        <ProjectRelativePath>Server/BullsAndCows.Api/BullsAndCows.Api.csproj</ProjectRelativePath>
+        <IgnoredElement>
+          <TextualIdentifier>14900436840307351267</TextualIdentifier>
+        </IgnoredElement>
+      </FilePath>
+    </IgnoredErrorsAndWarnings>
+  </IgnoredErrorsAndWarningsSettings>
+</JustCodeSettings>
