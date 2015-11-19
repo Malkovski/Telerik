@@ -18,5 +18,9 @@
         bool GameIsAvailable(int id, string userId);
 
         string JoinGame(int id, string userId, string number);
+
+        int MakeGuess(Game game, int id, string number, string userId);
+
+        bool CanMakeGuess(Game game, string userId);
     }
 }

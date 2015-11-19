@@ -11,15 +11,19 @@
     using BullsAndCows.Models;
 
     [EnableCors("*", "*", "*")]
+    [RoutePrefix("api/games")]
     public class GamesController : ApiController
     {
         private readonly IGameService games;
+        private readonly IGuessService guesses;
 
-        public GamesController(IGameService gameService)
+        public GamesController(IGameService gameService, IGuessService guessService)
         {
             this.games = gameService;
+            this.guesses = guessService;
         }
 
+        //--------------------GET--------------------------
         public IHttpActionResult Get()
         {
             return this.DefaultGet();
@@ -30,6 +34,7 @@
             return this.DefaultGet(page);
         }
 
+        [HttpGet]
         public IHttpActionResult DefaultGet(string p =  null)
         {
             //Validate!!
@@ -74,8 +79,10 @@
         }
 
         [Authorize]
+        [Route("{id}")]
         public IHttpActionResult Get(int id)
         {
+            //Validate!!
             var userId = this.User.Identity.GetUserId();
 
             if (!this.games.UserIsPartOfGame(id, userId))
@@ -97,6 +104,7 @@
 
         //--------------------POST--------------------------
         [Authorize]
+        [HttpPost]
         public IHttpActionResult Post(GameSaveToDbRequestModel model)
         {
             if (!this.ModelState.IsValid)
@@ -114,8 +122,49 @@
            return this.Created("", result);
         }
 
+        [Authorize]
+        public IHttpActionResult Play(int id, JoinRequestModel model)
+        {
+            //VAliedate pls!!!!!!
+
+            var userId = this.User.Identity.GetUserId();
+            var gamePlayed = this.games.GetGameById(id).FirstOrDefault(); 
+
+            if (gamePlayed.GameState == GameState.Finished)
+            {
+                return this.BadRequest("Game has already finished!");
+            }
+
+            if (!this.games.CanMakeGuess(gamePlayed, userId))
+            {
+                return this.BadRequest("Not your turn!");
+            }
+
+            var guessId = this.games.MakeGuess(gamePlayed, id, model.Number, userId);
+
+            var result = this.guesses
+                .GetById(guessId)
+                .ProjectTo<GuessResponseModel>()
+                .FirstOrDefault();
+                
+            return this.Ok(result);
+        }
+
+        //--------------------PUT--------------------------
+        [Route("{id}")]
+        [HttpPut]
         public IHttpActionResult Put(int id, JoinRequestModel model)
         {
+            if (model == null)
+            {
+                return this.BadRequest("Enter your number please!");
+            }
+
+            if (this.games.GetGameById(id).FirstOrDefault() == null)
+            {
+                return this.NotFound();
+            }
+
             var userId = this.User.Identity.GetUserId();
 
             if (!this.games.GameIsAvailable(id, userId))

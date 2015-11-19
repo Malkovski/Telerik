@@ -18,8 +18,13 @@ namespace BullsAndCows.Api
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
+                name: "De",
+                routeTemplate: "api/games/{id}/guess",
+                defaults: new {controller = "games", method = "POST", action = "Play", id = RouteParameter.Optional });
+
+            config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "api/{controller}",
                 defaults: new { id = RouteParameter.Optional });
         }
     }

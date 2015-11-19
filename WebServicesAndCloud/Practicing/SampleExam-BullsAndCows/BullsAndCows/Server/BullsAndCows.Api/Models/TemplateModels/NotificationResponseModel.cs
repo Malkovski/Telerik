@@ -1,9 +1,11 @@
-﻿namespace BullsAndCows.Models
+﻿namespace BullsAndCows.Api.Models.TemplateModels
 {
-    using System;
-    using System.Linq;
+    using BullsAndCows.Api.Infrastructure.Mappings;
+using BullsAndCows.Models;
+using System;
+using System.Linq;
 
-    public class Notification
+    public class NotificationResponseModel : IMapFrom<Notification>
     {
         public int Id { get; set; }
 
@@ -16,11 +18,5 @@
         public State State { get; set; }
 
         public int GameId { get; set; }
-
-        public virtual Game Game { get; set; }
-
-        public string UserId { get; set; }
-
-        public virtual User User { get; set; }
     }
 }

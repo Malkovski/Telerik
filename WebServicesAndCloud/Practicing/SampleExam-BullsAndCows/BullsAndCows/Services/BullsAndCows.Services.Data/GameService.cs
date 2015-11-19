@@ -11,11 +11,13 @@
     {
         private readonly IRepository<Game> games;
         private readonly IRepository<User> users;
+        private readonly IRepository<Notification> notifications;
 
-        public GameService(IRepository<Game> gamesRepo, IRepository<User> usersRepo)
+        public GameService(IRepository<Game> gamesRepo, IRepository<User> usersRepo, IRepository<Notification> notificationRepo)
         {
             this.games = gamesRepo;
             this.users = usersRepo;
+            this.notifications = notificationRepo;
         }
 
         public IQueryable<Game> All(int page = 1, int pageSize = UtilityConstants.DefaultPageSize)
@@ -56,12 +58,25 @@
         public string JoinGame(int id, string userId, string number)
         {
             var gameToJoin = this.games.GetById(id);
+            var currentUser = this.users.GetById(userId);
+
             var rand = RandomGenerator.GetRandomNumber(1, 2);
 
             gameToJoin.BlueUserId = userId;
             gameToJoin.GameState = (GameState)rand;
             gameToJoin.BlueNumber = number;
 
+            var notify = new Notification
+            {
+                Message = string.Format("{0} joined your game", currentUser.UserName),
+                DateCreated = DateTime.UtcNow,
+                Type = NotificationType.GameJoined,
+                State = State.Unread,
+                GameId = id,
+                UserId = gameToJoin.RedUserId
+            };
+
+            this.notifications.Add(notify);
             this.games.SaveChanges();
 
             return gameToJoin.Name;
@@ -78,6 +93,152 @@
         {
             return this.games.All().Any(x => x.Id == id &&
                 (x.RedUserId == userId || x.BlueUserId == userId));
+        }
+
+        public bool CanMakeGuess(Game game, string userId)
+        {
+            if ((game.GameState == GameState.RedInTurn && game.RedUserId == userId) ||
+                ((game.GameState == GameState.BlueInTurn) && game.BlueUserId == userId))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public int MakeGuess(Game game, int id, string number, string userId)
+        {
+            var newGuess = new Guess
+            {
+                Number = number,
+                DateMade = DateTime.UtcNow,
+                GameId = game.Id,
+                UserId = userId
+            };
+
+            this.CalculateResult(newGuess, game, number, userId);
+            this.ChangeGameState(game, userId, newGuess.BullsCount);
+
+            if (newGuess.BullsCount == 4)
+            {
+                this.UpdateRanks(game.BlueUserId, game.RedUserId, userId);
+                var winnerName = game.BlueUserId == userId ? game.BlueUser.Email : game.RedUser.Email;
+                var loserName = game.BlueUserId == userId ? game.RedUser.Email : game.BlueUser.Email;
+
+                var winnerId = game.BlueUserId == userId ? game.BlueUserId : game.RedUserId;
+                var loserId = game.BlueUserId == userId ? game.RedUserId : game.BlueUserId;
+
+                var winNote = new Notification
+                {
+                    Message = string.Format("You beat {0} in game\\{1}", loserName, game.Name),
+                    DateCreated = DateTime.UtcNow,
+                    Type = NotificationType.GameWon,
+                    State = State.Unread,
+                    GameId = id,
+                    UserId = winnerId
+                };
+
+                var loseNote = new Notification
+                {
+                    Message = string.Format("{0} beat you in game\\{1}", winnerName, game.Name),
+                    DateCreated = DateTime.UtcNow,
+                    Type = NotificationType.GameLost,
+                    State = State.Unread,
+                    GameId = id,
+                    UserId = loserId
+                };
+
+                this.notifications.Add(winNote);
+                this.notifications.Add(loseNote);
+            }
+            else
+            {
+                var turnNote = new Notification
+                {
+                    Message = string.Format("It is your turn in game\\{0}", game.Name),
+                    DateCreated = DateTime.UtcNow,
+                    Type = NotificationType.YourTurn,
+                    State = State.Unread,
+                    GameId = id,
+                    UserId = userId
+                };
+
+                this.notifications.Add(turnNote);
+            }
+            
+            game.Guesses.Add(newGuess);
+            this.games.SaveChanges();
+
+            return newGuess.Id;
+        }
+
+        private void UpdateRanks(string blueId, string redId, string userId)
+        {
+            if (blueId == userId)
+            {
+                this.users.GetById(blueId).Rank += 100;
+                this.users.GetById(redId).Rank += 15;
+            }
+            else
+            {
+                this.users.GetById(redId).Rank += 100;
+                this.users.GetById(blueId).Rank += 15;
+            }
+        }
+
+        private string GetPlayerNumber(Game game, string userId)
+        {
+            if (game.BlueUserId == userId)
+            {
+                return game.RedNumber;
+            }
+
+            return game.BlueNumber;
+        }
+
+        private void CalculateResult(Guess newGuess, Game gamePlayed, string number, string userId)
+        {
+            string playerNumber = this.GetPlayerNumber(gamePlayed, userId);
+            int cows = 0;
+            int bulls = 0;
+
+            for (int i = 0; i < playerNumber.Length; i++)
+            {
+                if (playerNumber[i] == number[i])
+                {
+                    bulls++;
+                }
+            }
+
+            for (int j = 0; j < playerNumber.Length; j++)
+            {
+                for (int i = 0; i < playerNumber.Length; i++)
+                {
+                    if ((playerNumber[i] == number[j]) && (i != j))
+                    {
+                        cows++;
+                    }
+                }
+            }
+
+            newGuess.BullsCount = bulls;
+            newGuess.CowsCount = cows;
+        }
+
+        private void ChangeGameState(Game game, string userId, int bulls)
+        {
+            if (bulls == 4)
+            {
+                game.GameState = GameState.Finished;
+            }
+            else if (game.BlueUserId == userId)
+            {
+                game.GameState = GameState.RedInTurn;
+            }
+            else 
+            {
+                game.GameState = GameState.BlueInTurn;
+            }
         }
     }
 }
