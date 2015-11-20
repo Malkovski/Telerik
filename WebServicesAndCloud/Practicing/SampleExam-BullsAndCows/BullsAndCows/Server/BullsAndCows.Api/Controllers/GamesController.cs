@@ -37,7 +37,6 @@
 
         private List<CreatedGameResponseModel> DefaultTake(string p = null)
         {
-            //Validate!!
             int pageInt;
             if (string.IsNullOrEmpty(p))
             {
@@ -45,7 +44,16 @@
             }
             else
             {
-                pageInt = int.Parse(p);
+                var isNumber = int.TryParse(p, out pageInt);
+
+                if (isNumber)
+                {
+                    pageInt = int.Parse(p);   
+                }
+                else
+                {
+                    return null;
+                }
             }
 
             var isAuthorized = this.User.Identity.IsAuthenticated;
@@ -67,10 +75,6 @@
                     .Where(x => (x.BlueUserId == current || 
                         x.RedUserId == current && (x.GameState != GameState.Finished)) ||
                         x.GameState == GameState.WaitingForOpponent)
-                    .OrderBy(x => x.GameState)
-                    .ThenBy(x => x.Name)
-                    .ThenBy(x => x.DateCreated)
-                    .ThenBy(x => x.RedUser.UserName)
                     .ProjectTo<CreatedGameResponseModel>()
                     .ToList();
 
@@ -82,8 +86,13 @@
         [Route("{id}")]
         public IHttpActionResult Get(int id)
         {
-            //Validate!!
+            var currentGame = this.games.GetGameById(id).FirstOrDefault();
             var userId = this.User.Identity.GetUserId();
+
+            if (currentGame == null)
+            {
+                return this.NotFound();
+            }
 
             if (!this.games.UserIsPartOfGame(id, userId))
             {
@@ -125,10 +134,18 @@
         [Authorize]
         public IHttpActionResult Play(int id, JoinRequestModel model)
         {
-            //VAliedate pls!!!!!!
+            if (!this.ModelState.IsValid)
+            {
+                return this.BadRequest(this.ModelState);
+            }
 
             var userId = this.User.Identity.GetUserId();
-            var gamePlayed = this.games.GetGameById(id).FirstOrDefault(); 
+            var gamePlayed = this.games.GetGameById(id).FirstOrDefault();
+
+            if (gamePlayed == null)
+            {
+                return this.NotFound();
+            }
 
             if (gamePlayed.GameState == GameState.Finished)
             {
@@ -155,17 +172,23 @@
         [HttpPut]
         public IHttpActionResult Put(int id, JoinRequestModel model)
         {
+            if (!this.ModelState.IsValid)
+            {
+                return this.BadRequest(this.ModelState);
+            }
+
             if (model == null)
             {
                 return this.BadRequest("Enter your number please!");
             }
 
-            if (this.games.GetGameById(id).FirstOrDefault() == null)
+            var userId = this.User.Identity.GetUserId();
+            var currentGame = this.games.GetGameById(id).FirstOrDefault();
+
+            if (currentGame == null)
             {
                 return this.NotFound();
             }
-
-            var userId = this.User.Identity.GetUserId();
 
             if (!this.games.GameIsAvailable(id, userId))
             {

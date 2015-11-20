@@ -254,7 +254,7 @@
     </ProjectReference>
     <ProjectReference Include="..\..\Services\BullsAndCows.Services.Data\BullsAndCows.Services.Data.csproj">
       <Project>{9e4de0c5-e031-42b1-98af-44b72df63222}</Project>
-      <Name>WebApiExam.Services.Data</Name>
+      <Name>BullsAndCows.Services.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -9,6 +9,10 @@
 
     public class User : IdentityUser
     {
+        public int Wins { get; set; }
+
+        public int Losses { get; set; }
+
         public int Rank { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager, string authenticationType)
