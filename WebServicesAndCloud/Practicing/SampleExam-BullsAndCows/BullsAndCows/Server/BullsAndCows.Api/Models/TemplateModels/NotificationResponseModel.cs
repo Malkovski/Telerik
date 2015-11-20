@@ -1,11 +1,12 @@
 ﻿namespace BullsAndCows.Api.Models.TemplateModels
 {
+    using AutoMapper;
     using BullsAndCows.Api.Infrastructure.Mappings;
-using BullsAndCows.Models;
-using System;
-using System.Linq;
+    using BullsAndCows.Models;
+    using System;
+    using System.Linq;
 
-    public class NotificationResponseModel : IMapFrom<Notification>
+    public class NotificationResponseModel : IMapFrom<Notification>, IHaveCustomMappings
     {
         public int Id { get; set; }
 
@@ -13,10 +14,24 @@ using System.Linq;
 
         public DateTime DateCreated { get; set; }
 
-        public NotificationType Type { get; set; }
+        public string Type { get; set; }
 
-        public State State { get; set; }
+        public string State { get; set; }
 
         public int GameId { get; set; }
+
+        public void CreateMappings(IConfiguration config)
+        {
+            config.CreateMap<State, String>()
+                .ProjectUsing(x => x.ToString());
+
+            config.CreateMap<NotificationType, String>()
+                .ProjectUsing(x => x.ToString());
+
+            config.CreateMap<Notification, NotificationResponseModel>()
+                .ForMember(x => x.Type, opt => opt.MapFrom(x => x.Type))
+                .ForMember(x => x.State, opt => opt.MapFrom(x => x.State));
+                
+        }
     }
 }

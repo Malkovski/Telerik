@@ -7,7 +7,9 @@
     using Microsoft.AspNet.Identity;
     using AutoMapper.QueryableExtensions;
     using BullsAndCows.Api.Models.TemplateModels;
+    using System.Net;
 
+    [RoutePrefix("api/notifications")]
     public class NotificationsController : ApiController
     {
         private readonly INotificationService notes;
@@ -34,6 +36,27 @@
                 .ProjectTo<NotificationResponseModel>()
                 .ToList();
 
+            return this.Ok(result);
+        }
+
+        [Route("next")]
+        [HttpGet]
+        public IHttpActionResult Next()
+        {
+            var result = this.notes
+                .Next(this.User.Identity.GetUserId());
+
+            if (result.Count() != 0)
+	        {
+                result
+                    .ProjectTo<NotificationResponseModel>()
+                        .FirstOrDefault();
+	        }
+            else
+            {
+                return this.StatusCode(HttpStatusCode.NotModified);
+            }
+                
             return this.Ok(result);
         }
     }

@@ -9,6 +9,7 @@
     using AutoMapper.QueryableExtensions;
     using Microsoft.AspNet.Identity;
     using BullsAndCows.Models;
+    using System.Collections.Generic;
 
     [EnableCors("*", "*", "*")]
     [RoutePrefix("api/games")]
@@ -26,16 +27,15 @@
         //--------------------GET--------------------------
         public IHttpActionResult Get()
         {
-            return this.DefaultGet();
+            return this.Ok(this.DefaultTake());
         }
 
         public IHttpActionResult Get(string page)
         {
-            return this.DefaultGet(page);
+            return this.Ok(this.DefaultTake(page));
         }
 
-        [HttpGet]
-        public IHttpActionResult DefaultGet(string p =  null)
+        private List<CreatedGameResponseModel> DefaultTake(string p = null)
         {
             //Validate!!
             int pageInt;
@@ -58,7 +58,7 @@
                 .ProjectTo<CreatedGameResponseModel>()
                 .ToList();
 
-                return this.Ok(result);
+                return result;
             }
             else
             {
@@ -74,7 +74,7 @@
                     .ProjectTo<CreatedGameResponseModel>()
                     .ToList();
 
-                return this.Ok(result);
+                return result;
             }  
         }
 
