@@ -47,11 +47,11 @@
                 .Next(this.User.Identity.GetUserId());
 
             if (result.Count() != 0)
-	        {
+            {
                 result
                     .ProjectTo<NotificationResponseModel>()
                         .FirstOrDefault();
-	        }
+            }
             else
             {
                 return this.StatusCode(HttpStatusCode.NotModified);

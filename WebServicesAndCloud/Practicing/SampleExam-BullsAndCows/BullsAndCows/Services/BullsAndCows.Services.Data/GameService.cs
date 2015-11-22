@@ -2,10 +2,12 @@
 {
     using System;
     using System.Linq;
+    using System.Web;
     using BullsAndCows.Data;
     using BullsAndCows.GlobalConstants;
     using BullsAndCows.Models;
     using BullsAndCows.Services.Data.Contracts;
+    using Microsoft.AspNet.Identity;
 
     public class GameService : IGameService
     {
@@ -20,8 +22,10 @@
             this.notifications = notificationRepo;
         }
 
-        public IQueryable<Game> All(int page = 1, int pageSize = UtilityConstants.DefaultPageSize, string userId = null)
+        public IQueryable<Game> All(int page = 1, int pageSize = UtilityConstants.DefaultPageSize)
         {
+           var userId = HttpContext.Current.User.Identity.GetUserId();
+
             return this.games
                 .All()
                 .Where(x => (x.BlueUserId == userId ||

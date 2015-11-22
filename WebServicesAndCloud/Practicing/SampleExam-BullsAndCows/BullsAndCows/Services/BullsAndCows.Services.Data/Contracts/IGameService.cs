@@ -7,7 +7,7 @@
 
     public interface IGameService
     {
-        IQueryable<Game> All(int page = 1, int pageSize = UtilityConstants.DefaultPageSize, string userId = null);
+        IQueryable<Game> All(int page = 1, int pageSize = UtilityConstants.DefaultPageSize);
 
         IQueryable<Game> GetGameById(int id);
 
