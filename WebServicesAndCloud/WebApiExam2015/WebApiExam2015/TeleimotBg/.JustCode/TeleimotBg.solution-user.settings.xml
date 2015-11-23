@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<JustCodeSettings Version="0.0" Timestamp="53f09389-e521-47dc-98ef-b9a8ad8a32d9">
+  <IgnoredErrorsAndWarningsSettings xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <IgnoredErrorsAndWarnings Version="2">
+      <FilePath>
+        <FileRelativePath>Server/TeleimotBg.Api/Controllers/AccountController.cs</FileRelativePath>
+        <ProjectRelativePath>Server/TeleimotBg.Api/TeleimotBg.Api.csproj</ProjectRelativePath>
+        <IgnoredElement>
+          <TextualIdentifier>5260689864366416715</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>12972825850680128997</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>12772686137408365108</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>2553461584149204150</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>6507391006365121094</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>8709984072096639515</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>2611776100825167150</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>12610011899970947302</TextualIdentifier>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <FileRelativePath>Server/TeleimotBg.Api/Providers/ApplicationOAuthProvider.cs</FileRelativePath>
+        <ProjectRelativePath>Server/TeleimotBg.Api/TeleimotBg.Api.csproj</ProjectRelativePath>
+        <IgnoredElement>
+          <TextualIdentifier>1004974973353566417</TextualIdentifier>
+        </IgnoredElement>
+      </FilePath>
+    </IgnoredErrorsAndWarnings>
+  </IgnoredErrorsAndWarningsSettings>
+</JustCodeSettings>
