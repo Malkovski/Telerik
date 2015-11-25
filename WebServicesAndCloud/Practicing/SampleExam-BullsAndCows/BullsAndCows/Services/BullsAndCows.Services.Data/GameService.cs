@@ -2,10 +2,12 @@
 {
     using System;
     using System.Linq;
+    using System.Web;
     using BullsAndCows.Data;
     using BullsAndCows.GlobalConstants;
     using BullsAndCows.Models;
     using BullsAndCows.Services.Data.Contracts;
+    using Microsoft.AspNet.Identity;
 
     public class GameService : IGameService
     {
@@ -22,8 +24,13 @@
 
         public IQueryable<Game> All(int page = 1, int pageSize = UtilityConstants.DefaultPageSize)
         {
+           var userId = HttpContext.Current.User.Identity.GetUserId();
+
             return this.games
                 .All()
+                .Where(x => (x.BlueUserId == userId ||
+                        x.RedUserId == userId && (x.GameState != GameState.Finished)) ||
+                        x.GameState == GameState.WaitingForOpponent)
                 .OrderBy(x => x.GameState)
                 .ThenBy(x => x.Name)
                 .ThenBy(x => x.DateCreated)
@@ -174,15 +181,22 @@
 
         private void UpdateRanks(string blueId, string redId, string userId)
         {
+            var blue = this.users.GetById(blueId);
+            var red = this.users.GetById(redId);
+
             if (blueId == userId)
             {
-                this.users.GetById(blueId).Rank += 100;
-                this.users.GetById(redId).Rank += 15;
+                blue.Rank += 100;
+                blue.Wins++;
+                red.Rank += 15;
+                red.Losses++;
             }
             else
             {
-                this.users.GetById(redId).Rank += 100;
-                this.users.GetById(blueId).Rank += 15;
+                red.Rank += 100;
+                red.Wins++;
+                blue.Rank += 15;
+                blue.Losses++;
             }
         }
 
