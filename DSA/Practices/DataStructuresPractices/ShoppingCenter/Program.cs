@@ -1,23 +1,24 @@
 ﻿namespace ShoppingCenter
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using Wintellect.PowerCollections;
 
     public class Program
     {
-       // private static readonly OrderedDictionary<int, Product> main = new OrderedDictionary<int, Product>();
-        private static readonly OrderedMultiDictionary<string, Product> byName = new OrderedMultiDictionary<string, Product>(true);
-        private static readonly OrderedMultiDictionary<string, string> byProducer = new OrderedMultiDictionary<string, string>(false);
-        private static readonly OrderedMultiDictionary<double, string> byPrice = new OrderedMultiDictionary<double, string>(false);
-             
+        private static readonly MultiDictionary<string, Product> byNameAndProduct = new MultiDictionary<string, Product>(true);
+        private static readonly MultiDictionary<string, Product> byName = new MultiDictionary<string, Product>(true);
+        private static readonly MultiDictionary<string, Product> byProducer = new MultiDictionary<string, Product>(true);
+        private static readonly OrderedMultiDictionary<decimal, Product> byPrice = new OrderedMultiDictionary<decimal, Product>(true);
+        
+     
         private static readonly StringBuilder result = new StringBuilder();
 
         static void Main()
         {
             var n = int.Parse(Console.ReadLine());
-            var index = 0;
 
             for (int i = 0; i < n; i++)
             {
@@ -30,39 +31,40 @@
                 if (command == "AddProduct")
                 {
                     var name = details[0];
-                    var price = double.Parse(details[1]);
                     var producer = details[2];
+                    var mixed = name + ";" + producer;
+                    var price = decimal.Parse(details[1]);
 
-                    var product = new Product
+                    var newProduct = new Product
                     {
                         Name = name,
-                        Prducer = producer,
+                        Producer = producer,
                         Price = price
                     };
 
-                    //main.Add(index, product);
-
-                    byName.Add(name, product);
-                    byPrice.Add(price, name);
-                    byProducer.Add(producer, name);
-
-                    index++;
+                    byName.Add(name, newProduct);
+                    byProducer.Add(producer, newProduct);
+                    byNameAndProduct.Add(mixed, newProduct);
+                    byPrice.Add(price, newProduct);
 
                     result.AppendLine("Product added");
                 }
                 else if (command == "FindProductsByName")
                 {
-                    var searchedName = details[0];
+                    var nameToFind = details[0];
 
-                    if (byName.ContainsKey(searchedName))
+                    if (byName.ContainsKey(nameToFind))
                     {
-                        foreach (var item in byName[searchedName])
+                        var builder = new StringBuilder();
+                        var list = new List<Product>(byName[nameToFind]);
+                        list.Sort();
+
+                        foreach (var item in list)
                         {
-                            if (!item.IsDeleted)
-                            {
-                                result.AppendLine("{" + item.Name + ";" + item.Prducer + ";" + item.Price.ToString("0.00") + "}");   
-                            }
+                            builder.AppendLine(item.ToString());
                         }
+                        var text = builder.ToString().TrimEnd();
+                        result.AppendLine(text);
                     }
                     else
                     {
@@ -71,20 +73,20 @@
                 }
                 else if (command == "FindProductsByProducer")
                 {
-                    var searchedProducer = details[0];
+                    var producerToFind = details[0];
 
-                    if (byProducer.ContainsKey(searchedProducer))
+                    if (byProducer.ContainsKey(producerToFind))
                     {
-                        foreach (var item in byProducer[searchedProducer])
+                        var builder = new StringBuilder();
+                        var list = new List<Product>(byProducer[producerToFind]);
+                        list.Sort();
+                        foreach (var item in list)
                         {
-                            foreach (var name in byName[item])
-                            {
-                                if (!name.IsDeleted)
-                                {
-                                    result.AppendLine("{" + name.Name + ";" + name.Prducer + ";" + name.Price.ToString("0.00") + "}");   
-                                }   
-                            }
+                            builder.AppendLine(item.ToString());
                         }
+
+                        var text = builder.ToString().TrimEnd();
+                        result.AppendLine(text);
                     }
                     else
                     {
@@ -93,128 +95,118 @@
                 }
                 else if (command == "FindProductsByPriceRange")
                 {
-                    var from = double.Parse(details[0]);
-                    var to = double.Parse(details[1]);
-                    var cnt = 0;
+                    var from = decimal.Parse(details[0]);
+                    var to = decimal.Parse(details[1]);
 
-                    foreach (var price in byPrice)
-                    {
-                        
-                        if (price.Key >= from && price.Key <= to)
-                        {
-                            cnt++;
-                            foreach (var name in price.Value)
-                            {
-                                foreach (var item in byName[name])
-                                {
-                                    if (!item.IsDeleted)
-                                    {
-                                        result.AppendLine("{" + item.Name + ";" + item.Prducer + ";" + item.Price.ToString("0.00") + "}");    
-                                    }  
-                                }
-                            }
-                        }
-                    }
+                    var range = byPrice.Range(from, true, to, true).Values;
 
-                    if (cnt == 0)
+                    if (range.Count == 0)
                     {
                         result.AppendLine("No products found");
                     }
+                    else
+                    {
+                        var builder = new StringBuilder();
+                        var members = new List<Product>(range);
+                        members.Sort();
+
+                        foreach (var item in members)
+                        {
+                            builder.AppendLine(item.ToString());
+                        }
+
+                        var text = builder.ToString().TrimEnd();
+                        result.AppendLine(text);
+                    }
                 }
-                else if (command == "DeleteProducts")
+                else
                 {
+                    //Deletes
                     if (details.Count() > 1)
                     {
-                        var name = details[0];
-                        var producer = details[1];
-                        var count = 0;
+                        var keyToDelete = details[0] + ";" + details[1];
 
-                        if (byName.ContainsKey(name))
-                        {
-                            foreach (var product in byName[name])
-                            {
-                                if (product.Prducer == producer)
-                                {
-                                    product.IsDeleted = true;
-                                    count++;
-                                }
-                            }
-
-                            if (byName[name].Count() == 0)
-                            {
-                                byName.Remove(name);
-                            }
-
-                            if (count > 0)
-                            {
-                                result.AppendLine(string.Format("{0} products deleted", count));
-                            }
-                            else
-                            {
-                                result.AppendLine("No products found");
-                            }
-                        }
-                        else
+                        if (!byNameAndProduct.ContainsKey(keyToDelete))
                         {
                             result.AppendLine("No products found");
                         }
+                        else
+                        {
+                            var list = byNameAndProduct[keyToDelete];
+
+                            foreach (var item in list)
+                            {
+                                byName.Remove(details[0]);
+                                byProducer.Remove(details[1]);
+                                byPrice.Remove(item.Price, item);
+                            }
+
+                            var count = list.Count;
+                            byNameAndProduct.Remove(keyToDelete);
+
+                            result.AppendLine(string.Format("{0} products deleted", count));
+                        }
+
                     }
                     else
                     {
-                        var producerName = details[0];
-                        var count = 0;
+                        var producerTODelete = details[0];
 
-                        if (byProducer.ContainsKey(producerName))
+                        if (!byProducer.ContainsKey(producerTODelete))
                         {
-                            foreach (var item in byProducer[producerName])
-                            {
-
-                                foreach (var element in byName[item])
-                                {
-                                    if (element.Prducer == producerName)
-                                    {
-                                        element.IsDeleted = true;
-                                        count++;
-                                    }
-                                }
-                            }
-
-                            byProducer.Remove(producerName);
-
-                            if (count > 0)
-                            {
-                                result.AppendLine(string.Format("{0} products deleted", count));
-                            }
-                            else
-                            {
-                                result.AppendLine("No products found");
-                            }
+                            result.AppendLine("No products found");
                         }
                         else
                         {
-                            result.AppendLine("No products found");
+                            var list = byProducer[producerTODelete];
+
+                            foreach (var item in list)
+                            {
+                                byName.Remove(item.Name, item);
+                                byPrice.Remove(item.Price, item);
+                                byNameAndProduct.Remove(inputParts[1], item);
+                            }
+
+                            var count = list.Count;
+                            byProducer.Remove(producerTODelete);
+
+                            result.AppendLine(string.Format("{0} products deleted", count));
                         }
                     }
                 }
             }
-
-            Console.WriteLine(result.ToString());
+            
+            Console.Write(result);
         }
 
-        public class Product : IComparable
+        public class Product : IComparable<Product>
         {
             public string Name { get; set; }
 
-            public double Price { get; set; }
+            public decimal Price { get; set; }
 
-            public string Prducer { get; set; }
+            public string Producer { get; set; }
 
-            public bool IsDeleted { get; set; }
-
-            public int CompareTo(object obj)
+            public override string ToString()
             {
-                var current = obj as Product;
-                return this.Name.CompareTo(current.Name);
+                string toString = "{" + this.Name + ";" + this.Producer + ";" + this.Price.ToString("0.00") + "}";
+                return toString;
+            }
+
+            public int CompareTo(Product current)
+            {
+                var compareResult = this.Name.CompareTo(current.Name);
+
+                if (compareResult == 0)
+                {
+                    compareResult = this.Producer.CompareTo(current.Producer);
+                }
+                if (compareResult == 0)
+                {
+                    compareResult = this.Price.CompareTo(current.Price);
+                }
+
+                return compareResult;
             }
         }
     }
