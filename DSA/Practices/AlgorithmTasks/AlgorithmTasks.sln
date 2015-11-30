@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmTasks", "AlgorithmTasks\AlgorithmTasks.csproj", "{38C740CB-24C1-4076-8A87-2211519C9502}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Election", "Election\Election.csproj", "{99EE5F47-ACC3-47EB-9442-CDBFED3AF63C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortestPath", "ShortestPath\ShortestPath.csproj", "{28835A56-3C73-40A2-9A96-C8AADC14B862}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38C740CB-24C1-4076-8A87-2211519C9502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38C740CB-24C1-4076-8A87-2211519C9502}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38C740CB-24C1-4076-8A87-2211519C9502}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38C740CB-24C1-4076-8A87-2211519C9502}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99EE5F47-ACC3-47EB-9442-CDBFED3AF63C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99EE5F47-ACC3-47EB-9442-CDBFED3AF63C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99EE5F47-ACC3-47EB-9442-CDBFED3AF63C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99EE5F47-ACC3-47EB-9442-CDBFED3AF63C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28835A56-3C73-40A2-9A96-C8AADC14B862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28835A56-3C73-40A2-9A96-C8AADC14B862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28835A56-3C73-40A2-9A96-C8AADC14B862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28835A56-3C73-40A2-9A96-C8AADC14B862}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
