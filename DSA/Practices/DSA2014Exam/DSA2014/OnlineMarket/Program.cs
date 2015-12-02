@@ -1,10 +1,10 @@
 ﻿namespace OnlineMarket
 {
     using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Wintellect.PowerCollections;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using Wintellect.PowerCollections;
 
     public class Program
     {

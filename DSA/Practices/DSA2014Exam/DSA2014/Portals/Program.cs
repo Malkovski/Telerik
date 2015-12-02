@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Portals
+﻿namespace Portals
 {
-    class Program
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    public class Program
     {
-        private static HashSet<int> results = new HashSet<int>();
+        private static SortedSet<int> results = new SortedSet<int>();
         private static string[,] matrix;
         private static int top;
 
-        static void Main(string[] args)
+        static void Main()
         {
             var startPos = Console.ReadLine().Split(' ');
             var row = int.Parse(startPos[0]);
@@ -35,7 +33,7 @@ namespace Portals
             }
 
             Teleport(row, col);
-            Console.WriteLine(results.First());
+            Console.WriteLine(results.LastOrDefault());
         }
 
         public static void Teleport(int row, int col)
@@ -65,6 +63,8 @@ namespace Portals
             {
                 Teleport(row, + col - current);
             }
+
+            top -= current;
         }
     }
 }

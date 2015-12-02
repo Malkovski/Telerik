@@ -1,36 +1,47 @@
 ﻿namespace ShortestPath
 {
-    using Facet.Combinatorics;
     using System;
+    using System.Collections.Generic;
     using System.Linq;
 
     public class Program
     {
-        static void Main()
+        private static char[] map;
+        private static readonly SortedSet<string> result = new SortedSet<string>();
+
+        public static void Main()
         {
-            var input = Console.ReadLine();
-            var parts = input.Split(new char[] {'*'}, StringSplitOptions.RemoveEmptyEntries);
+            map = Console.ReadLine().ToCharArray();
 
-            for (int i = 0; i < input.Length; i++)
+            Find(0);
+
+            Console.WriteLine(result.Count);
+
+            foreach (var item in result)
             {
-                if (input[i] == "*")
-                {
-                }
+                Console.WriteLine(item);
             }
+        }
 
-            var letters = new string[] { "L", "S", "R" };
-
-            var a = new Combinations<string>(letters, input.Length, GenerateOption.WithoutRepetition);
-
-            Console.WriteLine(Math.Pow(3, parts.Length - 1));
-
-            foreach (var item in a)
+        private static void Find(int index)
+        {
+            if (index == map.Length)
             {
-                foreach (var ss in item)
-                {
-                    Console.Write(string.Format("{0}", ss));
-                }
-                Console.WriteLine();
+                result.Add(new string(map));
+            }
+            else if (map[index] != '*')
+            {
+                Find(index + 1);
+            }
+            else
+            {
+                map[index] = 'L';
+                Find(index + 1);
+                map[index] = 'R';
+                Find(index + 1);
+                map[index] = 'S';
+                Find(index + 1);
+                map[index] = '*';
             }
         }
     }

@@ -35,6 +35,11 @@
                     if (mask[j] == true)
                     {
                         sum += list[j];
+                        if (sum >= k)
+                        {
+                            
+                            break;
+                        }
                     }
                 }
 
