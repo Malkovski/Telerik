@@ -1,0 +1,17 @@
+<div class="container" ng-controller="TripByIdCtrl">
+    <div ng-hide="!tripByIdInfo.hasOwnProperty('driverName')">
+        <div calss="row">
+            <div class="col-md-10"> <h2>{{tripByIdInfo.driverName}} - {{tripByIdInfo.departureDate}}</h2></div>
+            <div class="col-md-2"><a class="btn btn-info btn-md pull-right" ng-click="JoinCurrentTrip(tripByIdInfo.id)" href="">Join Trip</a></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">From:<strong>{{tripByIdInfo.from}}</strong></div>
+            <div class="col-md-4">To:<strong>{{tripByIdInfo.to}}</strong></div>
+            <div class="col-md-4">Number of free seats:<strong>{{tripByIdInfo.numberOfFreeSeats}}</strong></div>
+        </div>
+        <div class="row text-center">Passengers:
+            {{passengers}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="bs-component text-center" ng-controller="TripsCtrl">
+    <div style="z-index: 100" ng-if="allTrips.length === 0"><h1>No results!</h1></div>
+    <table class="table table-bordered table-striped table-hover" ng-if="allTrips.length > 0">
+        <thead>
+        <tr>
+            <th class="text-center">Driver</th>
+            <th class="text-center">From</th>
+            <th class="text-center">To</th>
+            <th class="text-center">Departure time</th>
+            <th ng-show="ident.isAuthenticated()" class="text-center">Is Mine</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="trip in allTrips">
+            <td><a href="#/drivers/{{trip.driverId}}">{{trip.driverName}}</a></td>
+            <td>{{trip.from}}</td>
+            <td>{{trip.to}}</td>
+            <td><a href="#/trips/{{trip.id}}">{{trip.departureDate}}</a></td>
+            <td ng-show="ident.isAuthenticated();" class="text-center"><img ng-src="{{trip.isMine | isMine}}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

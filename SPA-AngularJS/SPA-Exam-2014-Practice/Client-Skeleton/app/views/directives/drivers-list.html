@@ -1,0 +1,19 @@
+<div class="bs-component" ng-controller="DriversCtrl">
+    <div style="z-index: 100" ng-if="allDrivers.length === 0"><h1>No results!</h1></div>
+    <table class="table table-bordered table-striped table-hover" ng-if="allDrivers.length > 0">
+        <thead>
+        <tr>
+            <th class="text-center">Name</th>
+            <th class="text-center">Upcoming Trips</th>
+            <th class="text-center">Total Trips</th>
+        </tr>
+        </thead>
+        <tbody >
+        <tr ng-repeat="driver in allDrivers">
+            <td><a href="#/drivers/{{driver.id}}">{{driver.name}}</a></td>
+            <td>{{driver.numberOfUpcomingTrips}}</td>
+            <td>{{driver.numberOfTotalTrips}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

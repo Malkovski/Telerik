@@ -1,0 +1,43 @@
+<div class="container" ng-controller="CreateNewTripCtrl">
+    <form class="form-horizontal" name="createTripForm">
+        <fieldset>
+            <legend>Create New Trip</legend>
+            <div class="form-group">
+                <label for="From" class="col-lg-2 control-label">From</label>
+                <div class="col-lg-10">
+                    <select id="From" class="form-control" ng-model="request.from" required="required">
+                        <option ng-repeat="city in cities">{{city}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="To" class="col-lg-2 control-label">To</label>
+                <div class="col-lg-10">
+                    <select id="To" class="form-control" ng-model="request.to" required="required">
+                        <option ng-repeat="city in cities">{{city}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Seats" class="col-lg-2 control-label">Available seats</label>
+                <div class="col-lg-10">
+                     <input id="Seats" type="number" class="form-control" ng-model="request.availableSeats" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="TimeDep" class="col-lg-2 control-label">Departure time</label>
+                <div class="col-lg-10">
+                    <input id="TimeDep" type="text" class="form-control" date-picker ng-model="request.departureTime" required="required">
+
+
+                </div>
+            </div>
+            <div class="pull-right">
+                <button ng-click="createNewTrip(request)" ng-disabled="createTripForm.$invalid" class="btn btn-primary">
+                    Create
+                </button>
+                <a href="#/trips" class="btn btn-primary">Cancel</a>
+            </div>
+        </fieldset>
+    </form>
+</div>

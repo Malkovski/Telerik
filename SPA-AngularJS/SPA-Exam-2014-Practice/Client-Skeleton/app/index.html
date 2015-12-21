@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>TripExchange</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="./css/toastr.min.css" />
+    <link rel="stylesheet" href="lib/jquery/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="lib/jquery/jquery-ui-timepicker-addon.css">
+    <link rel="stylesheet" href="./css/app.css" />
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/jquery/jquery-ui/jquery-ui.min.js"></script>
+    <script src="lib/jquery/jquery.timepicker.min.js"></script>
+    <script src="lib/jquery/jquery-ui-timepicker-addon.js"></script>
+    <script src="lib/toastr/toastr.min.js"></script>
+    <script src="lib/bootstrap/bootstrap.min.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-resource.min.js"></script>
+    <script src="lib/angular/angular-route.min.js"></script>
+    <script src="lib/angular/angular-cookies.min.js"></script>
+    <script src="js/app.js"></script>
+
+</head>
+<body ng-app="myApp" ng-cloak>
+<div class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#/" class="navbar-brand">Trip Exchange</a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#/trips">Trips</a>
+                </li>
+                <li>
+                    <a href="#/drivers">Drivers</a>
+                </li>
+            </ul>
+            <div ng-include="'views/partials/login.html'"></div>
+        </div>
+    </div>
+</div>
+
+<div ng-view>
+</div>
+
+<hr />
+<footer class="text-center" ng-cloak>
+    <strong>Copyright:</strong> <small><a href="http://telerikacademy.com/" target="_blank">Telerik Academy 2015</a></small>
+	<br />
+	<strong>Powered by:</strong><small><a href="http://angularjs.org/" target="_blank">AngularJS</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a></small>
+</footer>
+<hr />
+
+<script src="js/controllers/account/RegisterController.js"></script>
+<script src="js/controllers/account/LoginController.js"></script>
+<script src="js/controllers/HomeController.js"></script>
+<script src="js/controllers/DriversCtrl.js"></script>
+<script src="js/controllers/TripsCtrl.js"></script>
+<script src="js/controllers/CreateNewTripCtrl.js"></script>
+<script src="js/controllers/IsDriverCtrl.js"></script>
+<script src="js/controllers/UserInfoCtrl.js"></script>
+<script src="js/controllers/DriverByIdCtrl.js"></script>
+<script src="js/controllers/TripByIdCtrl.js"></script>
+
+
+<script src="js/services/common/data.js"></script>
+<script src="js/services/account/auth.js"></script>
+<script src="js/services/account/identity.js"></script>
+<script src="js/services/account/authorization.js"></script>
+<script src="js/services/common/notifier.js"></script>
+<script src="js/services/driver/drivers.js"></script>
+<script src="js/services/trips/trips.js"></script>
+<script src="js/services/trips/createTrip.js"></script>
+<script src="js/services/account/getCurrentUserData.js"></script>
+<script src="js/services/common/statistics.js"></script>
+<script src="js/services/driver/driverDataById.js"></script>
+<script src="js/services/trips/tripDataById.js"></script>
+<script src="js/services/trips/joinTrip.js"></script>
+
+<script src="js/directives/searchDrivers.js"></script>
+<script src="js/directives/datePicker.js"></script>
+<script src="js/directives/driversDirective.js"></script>
+<script src="js/directives/tripsDirective.js"></script>
+<script src="js/directives/integer.js"></script>
+
+<script src="js/filters/isMine.js"></script>
+<script src="js/filters/isDriver.js"></script>
+<script src="js/filters/haveRights.js"></script>
+</body>
+</html>
