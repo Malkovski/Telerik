@@ -1,0 +1,56 @@
+doctype html
+html
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-theme.min.css')
+    script(src='/javascripts/jquery.min.js')
+    script(src='/javascripts/bootstrap.min.js')
+  body
+      .navbar.navbar-default
+          .container
+              .navbar-header
+                  a.navbar-brand(href='#') Welcome!
+                  button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-main')
+                      span.sr-only Toggle navigation
+                      span.icon-bar
+                      span.icon-bar
+                      span.icon-bar
+              #navbar-main.navbar-collapse.collapse
+                  ul.nav.navbar-nav
+                      li.dropdown
+                          a.dropdown-toggle(href='#', data-toggle='dropdown')
+                              | Home
+                              span.caret
+                          ul.dropdown-menu(role='menu')
+                              li
+                                  a(href='#') Action
+                              li
+                                  a(href='#') Another action
+                              li
+                                  a(href='#') Something else here
+                              li.divider
+                              li.dropdown-header Nav header
+                              li
+                                  a(href='#') Separated link
+                              li
+                                  a(href='#') One more separated link
+                      li
+                          a(href='#about') About
+                      li
+                          a(href='#contact') Contact
+                  .nav.navbar-nav.navbar-right
+                      form.navbar-form
+                          .form-group
+                              input.form-control(type="text", required, placeholder="E-mail")
+                              input.form-control( type="password", required, placeholder="Password")
+                              button.btn.btn-primary Login
+                              a.btn.btn-primary(href="#/register") Register
+      block content
+
