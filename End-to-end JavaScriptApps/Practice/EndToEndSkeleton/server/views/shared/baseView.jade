@@ -1,0 +1,83 @@
+doctype
+html
+    head
+        title Telerik File Upload System
+        link(rel="stylesheet" href="/lib/bootstrap-3.2.0/css/bootstrap.min.css")
+        link(rel="stylesheet" href="/lib/bootstrap-3.2.0/css/bootstrap-theme.min.css")
+        link(rel="stylesheet" href="/css/site.css")
+    body
+        .navbar.navbar-default
+            .container
+                .navbar-header
+                    a.navbar-brand(href='/') Home
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-main')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                #navbar-main.navbar-collapse.collapse
+                    ul.nav.navbar-nav
+                        li
+                            a(href='/about') About
+                        li
+                            a(href='/contacts') Contacts
+                        li
+                        if (currentUser)
+                            li.dropdown
+                                a.dropdown-toggle(href='', data-toggle='dropdown')
+                                    | Upload files
+                                    span.caret
+                                ul.dropdown-menu(role='menu')
+                                    li
+                                        a(href='/upload') Upload
+                                    li
+                                        a(href='/download') Download
+                                    li.divider
+                                    li.dropdown-header User information
+                                    li
+                                        a(href='/profile') Profile
+                                    li
+                                        a(href='/list-users') Members
+                    ul.nav.navbar-nav.pull-right
+                        if (currentUser)
+                            li.dropdown
+                                a.dropdown-toggle(href='', data-toggle='dropdown')
+                                    | #{currentUser.username}
+                                    span.caret
+                                ul.dropdown-menu(role='menu')
+                                    li
+                                        a(href='/profile') Personal Info
+                                    li.divider
+                                    li
+                                        a(href='/logout') Logout
+                        else
+                            .nav.navbar-nav.navbar-right
+                                form.navbar-form(method="post", action="/login")
+                                    .form-group
+                                        input.form-control.input-md(id="username", type="text", required, placeholder="E-mail", name="username")
+                                        input.form-control.input-md(id="password", type="password", required, placeholder="Password", name="password")
+                                        input(type="submit", class="btn btn-md btn-primary" value="Login")
+                                        a.btn.btn-primary.btn-md(href="/register") Register
+        if (usersCount)
+            .container
+                table.table.table-striped.table-bordered.table-hover
+                    thead
+                        th.text-center Total users
+                        th.text-center Uploaded files
+                        th.text-center Downloaded files
+                    tbody
+                        tr.warning
+                            td.text-center #{usersCount}
+                            td.text-center #{usersCount}
+                            td.text-center #{usersCount}
+        .container
+            if (errorMessage)
+                .alert.alert-danger #{errorMessage}
+
+            block main-content
+
+        footer
+            p.text-center
+                | &copy; Telerik Academy 2014
+
+        include scripts

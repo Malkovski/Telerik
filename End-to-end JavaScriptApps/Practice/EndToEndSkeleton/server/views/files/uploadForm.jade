@@ -1,0 +1,8 @@
+extends ../shared/baseView
+
+block main-content
+    form(method="post")
+        label(for="file") Choose file
+        input(id="file", class="form-control", type="file", name="file")
+        br
+        input(type="submit", class="btn btn-md btn-primary", value="Upload")

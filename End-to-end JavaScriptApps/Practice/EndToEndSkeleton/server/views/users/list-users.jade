@@ -1,0 +1,16 @@
+extends ../shared/baseView
+
+block main-content
+    .container.text-center
+        h2 REGISTERED USERS
+        table.table.table-striped.table-bordered.table-hover
+            thead
+                th.text-center Username
+                th.text-center ID
+            tbody
+            for u in usersList
+                tr
+                    td #{u.username}
+                    td #{u.id}
+
+
