@@ -1,0 +1,21 @@
+doctype html
+html(lang='en')
+    head
+        title
+            | Phone Market
+    body
+        #wrapper
+            header
+                h1 Simple phone market
+                nav#main-nav: ul
+                    each item in nav
+                        li.nav-item
+                            a(href='#{item.url}')
+                                = item.title
+            div
+                h2 Greetings earthlings.....
+                div
+                    p= content
+            block main-content
+            footer
+                p Telerik Academy Inc

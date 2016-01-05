@@ -1,0 +1,12 @@
+extends index
+
+block main-content
+    table
+        thead
+            th Product name
+            th Price
+        tbody
+            each pr in products
+                tr
+                    td #{pr.name}
+                    td #{pr.price}
