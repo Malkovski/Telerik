@@ -1,5 +1,6 @@
-var encryption = require('../utilities/encryption');
-var users = require('../data/users');
+var encryption = require('../utilities/encryption'),
+    users = require('../data/users'),
+    uploading = require('../utilities/uploading');
 
 var CONTROLLER_NAME = 'users';
 
@@ -24,6 +25,9 @@ module.exports = {
                     console.log('Failed to register new user: ' + err);
                     return;
                 }
+
+                //creating dir for the current user
+                uploading.createDir('/', user.username);
 
                 req.logIn(user, function(err) {
                     if (err) {

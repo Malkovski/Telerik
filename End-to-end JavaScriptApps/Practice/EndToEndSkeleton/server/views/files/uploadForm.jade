@@ -1,8 +1,16 @@
 extends ../shared/baseView
 
 block main-content
-    form(method="post")
-        label(for="file") Choose file
-        input(id="file", class="form-control", type="file", name="file")
+    button(id="add-input-file") Add file
+    br
+    br
+    form(method="post", enctype="multipart/form-data", id="form-upload")
+        input(class="form-control", type="file", name="file_0")
+        br
+        input(class="col-md-1", type="checkbox", name="private_0")
+        span Private
+        br
         br
         input(type="submit", class="btn btn-md btn-primary", value="Upload")
+block page-scripts
+    script(src="js/upload.js")
