@@ -2,8 +2,8 @@ var File = require('mongoose').model('File');
 
 module.exports = {
     addFiles: function (files) {
-        for (var file in files) {
-            File.create(file);
-        }
+        console.log('here');
+        console.log(files);
+        File.collection.insert(files, {});
     }
 };

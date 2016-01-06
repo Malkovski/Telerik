@@ -13,8 +13,8 @@ module.exports = function(app) {
     app.get('/profile/:id', controllers.users.getById);
     app.get('/profile', controllers.users.getById);
 
-    app.get('/upload', controllers.files.getUpload);
-    app.post('/upload', controllers.files.postUpload);
+    app.get('/upload', auth.isAuthenticated, controllers.files.getUpload);
+    app.post('/upload', auth.isAuthenticated, controllers.files.postUpload);
     app.post('/uploaded-files', controllers.files.getResults);
 
     app.get('/', controllers.stats.getUsersCount);
