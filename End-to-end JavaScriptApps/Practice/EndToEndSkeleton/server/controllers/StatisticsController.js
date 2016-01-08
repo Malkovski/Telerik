@@ -14,6 +14,7 @@ module.exports = {
                 return;
             }
 
+<<<<<<< HEAD
             usersCount = count;
         });
 
@@ -28,5 +29,12 @@ module.exports = {
         });
 
         res.render('index', {usersCount: usersCount, filesCount: filesCount, currentUser: req.user});
+=======
+            res.render('index', {usersCount: count});
+        })
+    },
+    getAll: function (req, res, next) {
+
+>>>>>>> 7a03fc90d89e696839a6c9ba32385d82ea13d3e1
     }
 };

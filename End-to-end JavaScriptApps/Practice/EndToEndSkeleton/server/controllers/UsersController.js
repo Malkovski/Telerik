@@ -53,7 +53,9 @@ module.exports = {
         res.render(CONTROLLER_NAME + '/login');
     },
     getAll: function (req, res, next) {
-        var query = users.getAll();
+        var options = req.body;
+       // console.log('opt : ' + options.contains + " " + options.orderType + " " + options.orderBy + " " + options.private);
+        var query = users.getAll(options);
         query.exec(function (err, results) {
             if (err) {
                 req.session.error = err;
@@ -66,7 +68,7 @@ module.exports = {
                 usersList.push(result);
             });
 
-            res.render(CONTROLLER_NAME + '/list-users', { usersList: usersList, currentUser: req.user })
+            res.render(CONTROLLER_NAME + '/list-users', { usersList: usersList })
         });
     },
     getById: function (req, res, next) {
@@ -85,8 +87,12 @@ module.exports = {
                 return;
             }
 
+<<<<<<< HEAD
             searchedUser = result;
             res.redirect('/details');
+=======
+            res.render(CONTROLLER_NAME + '/detailed-user', { current: result })
+>>>>>>> 7a03fc90d89e696839a6c9ba32385d82ea13d3e1
         });
     },
     getUserDetails: function (req, res, next) {

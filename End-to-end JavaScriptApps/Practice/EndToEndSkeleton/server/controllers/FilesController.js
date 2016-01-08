@@ -10,6 +10,7 @@ var uploadedFiles = [];
 
 module.exports = {
     getUpload: function (req, res, next) {
+<<<<<<< HEAD
         res.render(CONTROLLER_NAME + '/uploadForm', {currentUser: req.user});
     },
     postUpload: function (req, res, next) {
@@ -79,6 +80,9 @@ module.exports = {
 
             res.render(CONTROLLER_NAME + '/uploaded-list', { files: filesList, host: host, currentUser: req.user })
         })
+=======
+        res.render(CONTROLLER_NAME + '/uploadForm');
+>>>>>>> 7a03fc90d89e696839a6c9ba32385d82ea13d3e1
     }
 };
 

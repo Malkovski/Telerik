@@ -28,5 +28,13 @@ module.exports = function(app, config) {
 
         next();
     });
+<<<<<<< HEAD
 
+=======
+    app.use(function (req, res, next) {
+       app.locals.currentUser = req.user;
+
+        next();
+    });
+>>>>>>> 7a03fc90d89e696839a6c9ba32385d82ea13d3e1
 };

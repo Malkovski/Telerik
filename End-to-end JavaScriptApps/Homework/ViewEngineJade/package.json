@@ -1,0 +1,17 @@
+{
+  "name": "jade-homework",
+  "version": "1.1.1",
+  "description": "Jade homework Telerik",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jade": "^1.11.0"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
