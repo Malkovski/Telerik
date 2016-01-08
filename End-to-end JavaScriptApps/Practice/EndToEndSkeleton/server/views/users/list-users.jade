@@ -10,7 +10,9 @@ block main-content
             tbody
             for u in usersList
                 tr
-                    td #{u.username}
-                    td #{u.id}
+                    td
+                        a(href="/profile/#{u._id}") #{u.username}
+                    td
+                        a(href="/profile/#{u._id}") #{u.id}
 
 

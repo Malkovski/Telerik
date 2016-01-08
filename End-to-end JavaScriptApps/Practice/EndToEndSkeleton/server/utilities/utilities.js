@@ -14,5 +14,14 @@ module.exports = {
         }
 
         return dd + '-' + mm + '-' + yyyy;
+    },
+    queryToArray: function (query) {
+        var  array = [];
+
+        for(var item in query) {
+            array.push(query[item]);
+        }
+
+        return array;
     }
 };

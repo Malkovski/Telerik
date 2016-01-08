@@ -49,6 +49,70 @@ module.exports = {
         });
     },
     getResults: function (req, res, next) {
-        res.redirect('/');
+        var host = req.get('host');
+        var results = uploadedFiles[req.user.username];
+
+        var  filesList = utils.queryToArray(results);
+
+        uploadedFiles[req.user.username] = undefined;
+
+        res.render(CONTROLLER_NAME + '/uploaded-list', { files: filesList, host: host, currentUser: req.user });
+    },
+    downloadFile: function (req, res, next) {
+        var url = req.params.id;
+        var decryptedUrl = encryption.decrypt(url, URL_PASSWORD);
+
+        res.download(__dirname + '/../../files' + decryptedUrl);
+    },
+    getAll: function (req, res, next) {
+        var host = req.get('host');
+        var filesQuery = files.getAll()
+            .limit(10)
+            .sort('-uploadingDate')
+            .exec(function (err, results) {
+            if (err) {
+                req.session.error = err;
+                return;
+            }
+
+            var  filesList = utils.queryToArray(results);
+
+            res.render(CONTROLLER_NAME + '/uploaded-list', { files: filesList, host: host, currentUser: req.user })
+        })
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

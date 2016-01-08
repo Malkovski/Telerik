@@ -1,24 +1,28 @@
+"use strict";
+
 var mongoose = require('mongoose'),
-    encryption = require('../../utilities/encryption');
+    encryption = require('../../utilities/encryption'),
+    Schema = mongoose.Schema,
+    User;
 
 module.exports.init = function() {
-    var userSchema = mongoose.Schema({
-        username: { type: String, require: '{PATH} is required', unique: true },
-        salt: String,
+     var userSchema = new Schema({
+        //_creator: { type: String, ref: 'File'},
+        username: { type: String, required: true, unique: true },
         hashPass: String,
+        salt: String,
         points: Number
     });
 
     userSchema.method({
         authenticate: function(password) {
-            if (encryption.generateHashedPassword(this.salt, password) === this.hashPass) {
-                return true;
-            }
-            else {
-                return false;
-            }
+            return (encryption.generateHashedPassword(this.salt, password) === this.hashPass);
         }
     });
 
-    var User = mongoose.model('User', userSchema);
+    userSchema.path('username').validate(function (v) {
+         return v.length >= 3 && v.length < 25;
+    });
+
+    User = mongoose.model('User', userSchema);
 };

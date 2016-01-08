@@ -1,0 +1,16 @@
+extends ../shared/baseView
+
+block main-content
+    .text-center
+        table.table.table-bordered
+            thead
+                th.col-lg-4 Filename
+                th.col-lg-4 Private
+                th.col-lg-4 Download Link
+            tbody
+                each file in files
+                    tr
+                        td.col-lg-4 #{file.fileName}
+                        td.col-lg-4 #{file.isPrivate ? 'PRIVATE' : 'PUBLIC'}
+                        td.col-lg-4
+                            a(href="/files/download/#{file.url}") http://#{host}/files/download/#{file.fileName}

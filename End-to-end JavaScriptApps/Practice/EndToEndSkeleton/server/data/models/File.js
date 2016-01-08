@@ -3,11 +3,12 @@ var mongoose = require('mongoose'),
 
 module.exports.init = function() {
     var fileSchema = mongoose.Schema({
+        //_id: String,
         url: { type: String, required: true, unique: true },
         uploadingDate: { type: Date, default: new Date() },
-        //owner: { type: mongoose.Schema.UserId, ref: 'User'},
+        //owner: { type: mongoose.Schema.ObjectId, ref: 'User'},
         fileName: String,
-        isPrivate: Boolean
+        isPrivate: {type: Boolean, default: false }
     });
 
     var File = mongoose.model('File', fileSchema);

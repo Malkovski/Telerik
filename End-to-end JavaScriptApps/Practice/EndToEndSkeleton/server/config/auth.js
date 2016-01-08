@@ -23,7 +23,7 @@ module.exports = {
     },
     isAuthenticated: function(req, res, next) {
         if (!req.isAuthenticated()) {
-            res.redirect('/login');
+            res.render('../views/shared/unauthorized');
         }
         else {
             next();

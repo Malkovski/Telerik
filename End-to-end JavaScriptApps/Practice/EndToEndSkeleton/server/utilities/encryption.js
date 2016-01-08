@@ -9,13 +9,13 @@ module.exports = {
         return hmac.update(pwd).digest('hex');
     },
     encrypt: function (text, key) {
-        var cipher = crypto.createCipher('aes192', key);
-        cipher.update(text, 'bynary', 'hex');
-        return cipher.final('hex');
+        var cipher = crypto.createCipher('aes256', key);
+        var encr = cipher.update(text, 'binary', 'hex');
+        return (encr + cipher.final('hex'));
     },
     decrypt: function (cipher, key) {
-        var decipher = crypto.createDecipher('aes192', key);
-        decipher.update(cipher, 'hex', 'binary');
-        return decipher.final('binary');
+        var decipher = crypto.createDecipher('aes256', key);
+        var decr = decipher.update(cipher, 'hex', 'binary');
+        return (decr + decipher.final('binary'));
     }
 };

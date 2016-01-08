@@ -3,6 +3,7 @@ var encryption = require('../utilities/encryption'),
     uploading = require('../utilities/uploading');
 
 var CONTROLLER_NAME = 'users';
+var searchedUser = {};
 
 module.exports = {
     getRegister: function(req, res, next) {
@@ -20,7 +21,13 @@ module.exports = {
             newUserData.hashPass = encryption.generateHashedPassword(newUserData.salt, newUserData.password);
             users.create(newUserData, function(err, user) {
                 if (err) {
-                    req.session.error = 'Register failed';
+                    if (err.message == 'User validation failed') {
+                        req.session.error = 'Register failed! Username or password too short!';
+                    }
+                    else{
+                        req.session.error = 'Register failed';
+                    }
+
                     res.redirect('/register');
                     console.log('Failed to register new user: ' + err);
                     return;
@@ -28,6 +35,7 @@ module.exports = {
 
                 //creating dir for the current user
                 uploading.createDir('/', user.username);
+
 
                 req.logIn(user, function(err) {
                     if (err) {
@@ -77,7 +85,14 @@ module.exports = {
                 return;
             }
 
-            res.render(CONTROLLER_NAME + '/detailed-user', { current: result, currentUser: req.user })
+            searchedUser = result;
+            res.redirect('/details');
         });
+    },
+    getUserDetails: function (req, res, next) {
+        var current = searchedUser;
+        searchedUser = undefined;
+
+        res.render(CONTROLLER_NAME + '/detailed-user', { current: current, currentUser: req.user})
     }
 };

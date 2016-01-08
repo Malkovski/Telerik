@@ -9,6 +9,10 @@ module.exports = {
     },
     saveFile: function (file, path, fileName) {
         if (!fs.existsSync(FILES_DIR + path)) {
+            var pathParts = path.split('/');
+            if (!fs.existsSync((FILES_DIR + '/' + pathParts[1]))) {
+                this.createDir('/' + pathParts[1]);
+            }
             this.createDir(path);
         }
 

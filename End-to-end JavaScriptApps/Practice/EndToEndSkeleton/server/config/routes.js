@@ -9,15 +9,20 @@ module.exports = function(app) {
     app.post('/login', auth.login);
     app.get('/logout', auth.isAuthenticated, auth.logout);
 
-    app.get('/list-users', controllers.users.getAll);
-    app.get('/profile/:id', controllers.users.getById);
-    app.get('/profile', controllers.users.getById);
+    app.get('/list-users', auth.isAuthenticated, controllers.users.getAll);
+    app.get('/profile/:id', auth.isAuthenticated, controllers.users.getById);
+    app.get('/profile', auth.isAuthenticated, controllers.users.getById);
+    app.get('/details', auth.isAuthenticated, controllers.users.getUserDetails);
 
     app.get('/upload', auth.isAuthenticated, controllers.files.getUpload);
     app.post('/upload', auth.isAuthenticated, controllers.files.postUpload);
-    app.post('/uploaded-files', controllers.files.getResults);
+    app.get('/uploaded-files', controllers.files.getResults);
 
-    app.get('/', controllers.stats.getUsersCount);
+    app.get('/downloads', auth.isAuthenticated, controllers.files.getAll)
 
-    app.get('*', controllers.stats.getUsersCount);
+    app.get('/files/download/:id', auth.isAuthenticated, controllers.files.downloadFile);
+
+    app.get('/', controllers.stats.getStatistics);
+
+    app.get('*', controllers.stats.getStatistics);
 };
