@@ -7,13 +7,14 @@ module.exports = function(app) {
 
     app.get('/login', controllers.users.getLogin);
     app.post('/login', auth.login);
-    app.get('/logout', auth.logout);
+    app.get('/logout', auth.isAuthenticated, auth.logout);
 
-    app.get('/list-users', controllers.users.getAll);
-    app.get('/profile/:id?', controllers.users.getById);
-    app.get('/profile', controllers.users.getById);
+    app.get('/list-users', auth.isAuthenticated, controllers.users.getAll);
+    app.post('/filter-users', auth.isAuthenticated, controllers.users.getAll);
+    app.get('/profile/:id?', auth.isAuthenticated, controllers.users.getById);
+    app.get('/profile', auth.isAuthenticated, controllers.users.getById);
 
-    app.get('/upload', controllers.files.getUpload);
+    app.get('/upload', auth.isAuthenticated, controllers.files.getUpload);
 
     app.get('/', controllers.stats.getUsersCount);
 

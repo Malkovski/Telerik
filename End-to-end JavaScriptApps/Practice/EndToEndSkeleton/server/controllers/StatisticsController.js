@@ -9,7 +9,10 @@ module.exports = {
                 return;
             }
 
-            res.render('index', {usersCount: count, currentUser: req.user});
+            res.render('index', {usersCount: count});
         })
+    },
+    getAll: function (req, res, next) {
+
     }
 };

@@ -19,6 +19,7 @@ module.exports = {
     },
     logout: function(req, res, next) {
         req.logout();
+        //req.locals.currentUser = undefined;
         res.redirect('/');
     },
     isAuthenticated: function(req, res, next) {
