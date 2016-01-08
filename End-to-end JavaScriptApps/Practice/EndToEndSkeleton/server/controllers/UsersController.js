@@ -54,7 +54,6 @@ module.exports = {
     },
     getAll: function (req, res, next) {
         var options = req.body;
-       // console.log('opt : ' + options.contains + " " + options.orderType + " " + options.orderBy + " " + options.private);
         var query = users.getAll(options);
         query.exec(function (err, results) {
             if (err) {
@@ -87,18 +86,18 @@ module.exports = {
                 return;
             }
 
-<<<<<<< HEAD
+
             searchedUser = result;
             res.redirect('/details');
-=======
+
             res.render(CONTROLLER_NAME + '/detailed-user', { current: result })
->>>>>>> 7a03fc90d89e696839a6c9ba32385d82ea13d3e1
+
         });
     },
     getUserDetails: function (req, res, next) {
         var current = searchedUser;
         searchedUser = undefined;
 
-        res.render(CONTROLLER_NAME + '/detailed-user', { current: current, currentUser: req.user})
+        res.render(CONTROLLER_NAME + '/detailed-user', { current: current })
     }
 };

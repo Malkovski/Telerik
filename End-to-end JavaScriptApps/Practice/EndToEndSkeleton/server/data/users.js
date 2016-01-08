@@ -16,8 +16,6 @@ module.exports = {
             sortType = '-';
         }
 
-        console.log(sortType + sortBy);
-
         return User.find({})
             .where({ username: new RegExp(template, "i") })
             .sort(sortType + sortBy);

@@ -10,8 +10,7 @@ var uploadedFiles = [];
 
 module.exports = {
     getUpload: function (req, res, next) {
-<<<<<<< HEAD
-        res.render(CONTROLLER_NAME + '/uploadForm', {currentUser: req.user});
+        res.render(CONTROLLER_NAME + '/uploadForm');
     },
     postUpload: function (req, res, next) {
         req.pipe(req.busboy);
@@ -57,7 +56,7 @@ module.exports = {
 
         uploadedFiles[req.user.username] = undefined;
 
-        res.render(CONTROLLER_NAME + '/uploaded-list', { files: filesList, host: host, currentUser: req.user });
+        res.render(CONTROLLER_NAME + '/list-files', { files: filesList, host: host });
     },
     downloadFile: function (req, res, next) {
         var url = req.params.id;
@@ -66,10 +65,17 @@ module.exports = {
         res.download(__dirname + '/../../files' + decryptedUrl);
     },
     getAll: function (req, res, next) {
+        var options;
+
+        if (utils.isEmptyObj(req.query)) {
+            options = req.body;
+        }
+        else {
+            options = req.query;
+        }
+
         var host = req.get('host');
-        var filesQuery = files.getAll()
-            .limit(10)
-            .sort('-uploadingDate')
+        files.getAll(options)
             .exec(function (err, results) {
             if (err) {
                 req.session.error = err;
@@ -78,11 +84,8 @@ module.exports = {
 
             var  filesList = utils.queryToArray(results);
 
-            res.render(CONTROLLER_NAME + '/uploaded-list', { files: filesList, host: host, currentUser: req.user })
-        })
-=======
-        res.render(CONTROLLER_NAME + '/uploadForm');
->>>>>>> 7a03fc90d89e696839a6c9ba32385d82ea13d3e1
+            res.render(CONTROLLER_NAME + '/list-files', { files: filesList, host: host })
+        });
     }
 };
 
