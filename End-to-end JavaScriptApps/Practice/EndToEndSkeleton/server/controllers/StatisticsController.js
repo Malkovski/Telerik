@@ -16,7 +16,7 @@ module.exports = {
                 return;
             }
 
-            usersCount = count;
+            usersCount = count || 0;
         });
 
         var filesQuery = files.count();
@@ -26,7 +26,7 @@ module.exports = {
                 return;
             }
 
-            filesCount = count;
+            filesCount = count || 0;
         });
 
         res.render('index', { usersCount: usersCount, filesCount: filesCount });

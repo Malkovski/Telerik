@@ -1,12 +1,30 @@
 var File = require('mongoose').model('File');
+var User = require('mongoose').model('User');
+var userService = require('./users');
 
 module.exports = {
-    addFiles: function (files) {
+    addFiles: function (files, userId) {
+
         for (var file in files) {
-            File.create(files[file]);
+            var current = files[file];
+            current.owner = userId;
+
+            File.create(current, function (err, createdFile) {
+                if (err) {
+                    throw err;
+                }
+                else {
+                    var condition = { _id: userId };
+                    var option = { $push: { filesOwned: createdFile._id } };
+                    userService.update(condition, option);
+                }
+            });
         }
     },
-    getAll: function (options) {
+    byId: function (id) {
+        return File.findOne({_id: id});
+    },
+    getAll: function (options, currentUser) {
         var take = options.pageSize || 15;
         take = take * 1;
         if (take < 0) {
@@ -42,13 +60,49 @@ module.exports = {
             sortType = '-';
         }
 
-        return File.find(condition)
-            .where({ fileName: new RegExp(template, "i") })
-            .sort(sortType + sortBy)
-            .skip(skip)
-            .limit(take);
+        if (options.onlyMine == 'on') {
+            return File.find({ owner: currentUser._id})
+                .find(condition)
+                .where({ fileName: new RegExp(template, "i") })
+                .sort(sortType + sortBy)
+                .skip(skip)
+                .limit(take);
+        }
+        else {
+            return File.find(condition)
+                .where({ fileName: new RegExp(template, "i") })
+                .sort(sortType + sortBy)
+                .skip(skip)
+                .limit(take);
+        }
+    },
+    getUserFiles: function (id) {
+         return File.find({ owner: id });
     },
     count: function () {
         return File.count({});
+    },
+    delete: function (id) {
+        File.findByIdAndRemove(id, function (err, file) {
+            if (err) {
+                throw err;
+            }
+
+            var param = { filesOwned: file._id };
+            var user = userService.findOne(param);
+
+            user.exec(function (err, founded) {
+                if (err) {
+                    throw err;
+                }
+                else {
+                    var condition = { _id: founded._id };
+                    var option = { $pull: { filesOwned: id } };
+                    userService.update(condition, option);
+                }
+            });
+
+            return file;
+        })
     }
 };

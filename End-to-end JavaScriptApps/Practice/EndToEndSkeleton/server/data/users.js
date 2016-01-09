@@ -25,5 +25,18 @@ module.exports = {
     },
     count: function () {
         return User.count({});
+    },
+    update: function (condition, option) {
+        User.update(condition, option, function (err, raw) {
+            if (err) {
+                throw err;
+            }
+            else {
+                console.log('User populated successfully!');
+            }
+        })
+    },
+    findOne: function (param) {
+        return User.findOne(param);
     }
 };

@@ -3,15 +3,17 @@
 var mongoose = require('mongoose'),
     encryption = require('../../utilities/encryption'),
     Schema = mongoose.Schema,
+    ObjectId = Schema.ObjectId,
     User;
 
 module.exports.init = function() {
      var userSchema = new Schema({
-        //_creator: { type: String, ref: 'File'},
-        username: { type: String, required: true, unique: true },
-        hashPass: String,
-        salt: String,
-        points: Number
+         id: ObjectId,
+         username: { type: String, required: true, unique: true },
+         hashPass: String,
+         salt: String,
+         points: Number,
+         filesOwned: [ { type: mongoose.Schema.ObjectId, ref: 'File'} ]
     });
 
     userSchema.method({

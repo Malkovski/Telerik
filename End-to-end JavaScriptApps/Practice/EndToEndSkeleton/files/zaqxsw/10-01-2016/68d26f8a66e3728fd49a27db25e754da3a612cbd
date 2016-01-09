@@ -1,0 +1,43 @@
+Design pattern: Factory Method
+ * 
+
+Design pattern: Strategy
+ * Class ResponseProvider is accepting interface instance in Process method
+ * Class Static|FileHandler taking interface instance in CanHandle method
+ * Most parameters in the code are interfaces
+
+
+Design pattern: Template Method
+ * Creating class ResultProvider to hold template method, and Content/Json(ActionResult) override it.
+ * 
+
+Design pattern: Chain of Responsibility
+ * 
+
+Design pattern: Decorator
+ * 
+
+Found bugs:
+ * Main method was accepting unnecessary parameters
+ * AddHeader method in HttpRequest was unnecessary creating Collection-List inside Collection - HashSet
+ * 
+
+Found bottleneck:
+ * Removed useless StringBuilder in WebServerConsole class which was leading to unnecessary stream reading when parsing the string.
+
+Single responsibility principle
+ * HttpRequest class must not take care of Parsing and Creating so I moved them to Modifyer class
+* Responce provider splitted in two classes so Responce Processor is concerned with processing
+
+Open/closed principle
+	* 
+
+Liskov substitution principle
+	* 
+
+Interface segregation principle
+	* 
+
+Dependency inversion principle
+	* 
+

@@ -44,7 +44,8 @@ module.exports = {
         });
 
         req.busboy.on('finish', function() {
-            files.addFiles(uploadedFiles[username]);
+            console.log(uploadedFiles[username]);
+            files.addFiles(uploadedFiles[username], req.user._id);
             res.redirect('/uploaded-files');
         });
     },
@@ -75,7 +76,7 @@ module.exports = {
         }
 
         var host = req.get('host');
-        files.getAll(options)
+        files.getAll(options, req.user)
             .exec(function (err, results) {
             if (err) {
                 req.session.error = err;
@@ -84,8 +85,30 @@ module.exports = {
 
             var  filesList = utils.queryToArray(results);
 
+
             res.render(CONTROLLER_NAME + '/list-files', { files: filesList, host: host })
         });
+    },
+    getById: function (req, res, next) {
+
+    },
+    deleteFile: function (req, res, next) {
+        var id = req.params.id;
+        var query = files.byId(id);
+        query.exec(function (err, result) {
+            if (err) {
+                req.session.error = err;
+                return;
+            }
+
+            var url = result.url;
+            var decryptedUrl = encryption.decrypt(url, URL_PASSWORD);
+            uploading.deleteFile(decryptedUrl);
+        });
+
+        files.delete(id);
+
+        res.redirect('/downloads')
     }
 };
 

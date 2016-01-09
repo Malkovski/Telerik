@@ -18,5 +18,9 @@ module.exports = {
 
         var fsStream = fs.createWriteStream(FILES_DIR + path + fileName);
         file.pipe(fsStream);
+    },
+    deleteFile: function (path) {
+        fs.unlink(FILES_DIR + path, function () {
+        });
     }
 };
