@@ -1,0 +1,36 @@
+extends ../shared/baseView
+
+block main-content
+    .container.well
+        .row.table
+            .col-lg-6 Username
+            .col-lg-6 #{current.username}
+        .row.table
+            .col-lg-6 Id
+            .col-lg-6 #{current._id}
+        .row
+            .col-lg-3
+                a.delete(href="/downloads") See all uploaded files
+            .col-lg-3.pull-right
+                a.delete(href="/list-users") See users list
+        .row
+            include ../files/list
+            //table.table.table-bordered
+            //    thead
+            //        th.col-lg-4 Filename
+            //        th.col-lg-4 Owner
+            //        th.col-lg-4 Private
+            //        th.col-lg-4 Download Link
+            //        th.col-lg-4 #
+            //    tbody
+            //        each file in files
+            //            tr
+            //                td.col-lg-4 #{file.fileName}
+            //                td.col-lg-4
+            //                    a(href="/profile/#{file.owner}") #{file.owner}
+            //                td.col-lg-4 #{file.isPrivate ? 'PRIVATE' : 'PUBLIC'}
+            //                td.col-lg-4
+            //                    a(href="/files/download/#{file.url}") http://#{host}/files/download/#{file.fileName}
+            //                td
+            //                    if file.owner.toString() === currentUser._id.toString()
+            //                        a.delete(href="/remove/" + file._id) Delete

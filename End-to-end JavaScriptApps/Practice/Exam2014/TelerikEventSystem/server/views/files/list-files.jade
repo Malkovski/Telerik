@@ -1,0 +1,60 @@
+extends ../shared/baseView
+
+block main-content
+    .text-center
+        form(method="post", action="/filter-files")
+            .row
+                .col-md-3.text-left
+                    label(for="orderBy") &nbsp;Order by&nbsp;
+                    select(id="orderBy", name="orderBy")
+                        option(value="_id") Id
+                        option(value="fileName") Filename
+                        option(value="url") Url
+                        option(value="uploadedDate") Date
+                .col-md-3.text-left
+                    label(for="orderType") &nbsp;Order type&nbsp;
+                    select(id="orderType", name="orderType")
+                        option(value="asc") Ascending
+                        option(value="desc") Descending
+                .col-md-3.text-left
+                    label(for="contains") &nbsp;Search&nbsp;
+                    input(id="contains", type="text", name="contains")
+                .col-md-3.text-left
+                    div
+                        input(type="checkbox", name="isPrivate")
+                        span &nbsp;Include private
+                    div
+                        input(type="checkbox", name="onlyMine")
+                        span &nbsp;Only mine
+            .row(style="height: 10px")
+            .row
+                .col-md-3.text-left
+                    label(for="page") &nbsp;Page&nbsp;
+                    input(id="page", type="number", name="page", value="1")
+                .col-md-3.text-left
+                    label(for="pageSize") &nbsp;Page size&nbsp;
+                    input(id="pageSize", type="number", name="pageSize")
+                .col-md-3
+                .col-md-3.pull-right
+                    input(type="submit", class="btn btn-md btn-info", value="Filter")
+            .row(style="height: 10px")
+        include list
+        //table.table.table-bordered
+        //    thead
+        //        th.col-lg-4 Filename
+        //        th.col-lg-4 Owner
+        //        th.col-lg-4 Private
+        //        th.col-lg-4 Download Link
+        //        th.col-lg-4 #
+        //    tbody
+        //        each file in files
+        //            tr
+        //                td.col-lg-4 #{file.fileName}
+        //                td.col-lg-4
+        //                    a(href="/profile/#{file.owner}") #{file.owner}
+        //                td.col-lg-4 #{file.isPrivate ? 'PRIVATE' : 'PUBLIC'}
+        //                td.col-lg-4
+        //                    a(href="/files/download/#{file.url}") http://#{host}/files/download/#{file.fileName}
+        //                td
+        //                    if file.owner.toString() === currentUser._id.toString()
+        //                        a.delete(href="/remove/" + file._id) Delete
