@@ -1,0 +1,15 @@
+extends ../shared/baseView
+
+block main-content
+    .container.well
+        .row.table
+            .col-lg-6 Username
+            .col-lg-6 #{current.username}
+        .row.table
+            .col-lg-6 Id
+            .col-lg-6 #{current._id}
+        .row
+            .col-lg-3
+                a.delete(href="/profile-update") Update profile
+            .col-lg-3.pull-right
+                a.delete(href="/fun") Fun
