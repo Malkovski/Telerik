@@ -1,0 +1,51 @@
+extends ../shared/baseView
+
+block main-content
+    form(method="post", id="form-upload")
+        label(for="title") Title
+        input(id="title", class="form-control", type="text", name="title")
+        br
+        .row
+            .col-lg-10
+                label(for="category", class="col-lg-2 control-label") Category
+                select(class="form-control", name="category", id="category")
+                    option Free time
+                    option Homework
+                    option Teamwork
+                    option Preparation
+                    option Exam
+        br
+        label(for="description") Description
+        input(id="description", class="form-control", type="text", name="description")
+        br
+        label(for="date") Date
+        input(id="date", class="form-control", type="text", name="date", date-picker="")
+        br
+        .row
+        span Latitude
+        input(type="number", name="latitude")
+        span Longitude
+        input(type="number", name="longitude")
+        br
+        .row
+            .col-lg-10
+                label(for="initiatives", class="col-lg-2 control-label") Initiative
+                select(class="form-control", name="initiative", id="initiatives")
+                    option Software Academy
+                    option Algo Academy
+                    option School Academy
+                    option Kids Academy
+        br
+        .row(style="height: 10px")
+        .row
+            .col-lg-10
+                label(for="seasons", class="col-lg-2 control-label") Season
+                select(class="form-control", name="season", id="seasons")
+                    option Started 2010
+                    option Started 2011
+                    option Started 2012
+                    option Started 2013
+        br
+        input(type="submit", class="btn btn-md btn-primary", value="Create")
+block page-scripts
+    script(src="js/upload.js")

@@ -5,7 +5,7 @@ var mongoose = require('mongoose'),
     ObjectId = Schema.ObjectId,
     Comment;
 
-var init = function() {
+module.exports.init = function() {
     var commentSchema = new Schema({
         id: ObjectId,
         content: { type: String },
@@ -13,8 +13,4 @@ var init = function() {
     });
 
     Comment = mongoose.model('Comment', commentSchema);
-};
-
-module.exports = {
-    init: init
 };

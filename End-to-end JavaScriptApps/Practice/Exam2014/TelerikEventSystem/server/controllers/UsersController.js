@@ -1,6 +1,5 @@
 var encryption = require('../utilities/encryption'),
     users = require('../data/users'),
-    files = require('../data/events'),
     uploading = require('../utilities/uploading');
 
 var CONTROLLER_NAME = 'users';
@@ -93,15 +92,6 @@ module.exports = {
     },
     getUserDetails: function (req, res, next) {
         var current = searchedUser;
-        searchedUser = undefined;
-        files.getUserFiles(current._id)
-            .exec(function (err, filesOwned) {
-                if (err) {
-                    req.session.error = err;
-                    return;
-                }
-
-                res.render(CONTROLLER_NAME + '/detailed-user', { current: current, files: filesOwned });
-            });
+        res.render(CONTROLLER_NAME + '/detailed-user', { current: current });
     }
 };

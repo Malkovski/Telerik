@@ -16,6 +16,8 @@ module.exports = function(app) {
     app.post('/filter-users', auth.isAuthenticated, controllers.users.getAll);
     app.get('/list-users', auth.isAuthenticated, controllers.users.getAll);
 
+    app.get('/create-event', auth.isAuthenticated, controllers.events.getCreate);
+    app.post('/create-event', auth.isAuthenticated, controllers.events.create);
     //app.get('/upload', auth.isAuthenticated, controllers.files.getUpload);
     //app.post('/upload', auth.isAuthenticated, controllers.files.postUpload);
     //app.get('/remove/:id', auth.isAuthenticated, controllers.files.deleteFile);

@@ -2,8 +2,9 @@ doctype
 html
     head
         title Telerik Event System
+        link(rel="stylesheet", href="/lib/jquery-ui.css")
+        link(rel="stylesheet", href="/lib/jquery-ui-timepicker-addon.css")
         link(rel="stylesheet", href="/lib/bootstrap-3.2.0/css/bootstrap.min.css")
-        link(rel="stylesheet", href="/css/stylus.css")
     body
         .navbar.navbar-default
             .container
@@ -17,22 +18,26 @@ html
                 #navbar-main.navbar-collapse.collapse
                     ul.nav.navbar-nav
                         li
-                            a(href='/about') About
-                        li
-                            a(href='/contacts') Contacts
-                        li
                         if (currentUser)
                             li.dropdown
                                 a.dropdown-toggle(href='', data-toggle='dropdown')
-                                    | Upload files
+                                    | Event management
                                     span.caret
                                 ul.dropdown-menu(role='menu')
+                                    li.dropdown-header List
                                     li
-                                        a(href='/upload') Upload
+                                        a(href='/upload') Active events
                                     li
-                                        a(href='/downloads') Downloads
+                                        a(href='/downloads') Past events
                                     li.divider
-                                    li.dropdown-header User information
+                                    li.dropdown-header Create
+                                    li
+                                        a(href='/create-event') Create new event
+                            li.dropdown
+                                a.dropdown-toggle(href='', data-toggle='dropdown')
+                                    | User management
+                                    span.caret
+                                ul.dropdown-menu(role='menu')
                                     li
                                         a(href='/profile') Profile
                                     li
