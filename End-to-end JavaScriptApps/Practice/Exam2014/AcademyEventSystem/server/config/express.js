@@ -37,12 +37,10 @@ module.exports = function(app, config) {
         else {
             app.locals.errorMessage = undefined;
         }
-
         next();
     });
     app.use(function (req, res, next) {
         app.locals.currentUser = req.user;
-
         next();
     });
 };

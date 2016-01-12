@@ -1,5 +1,6 @@
 var encryption = require('../utilities/encryption'),
     users = require('../data/users'),
+    utils = require('../utilities/utilities'),
     uploading = require('../utilities/uploading');
 
 var CONTROLLER_NAME = 'users';
@@ -75,11 +76,7 @@ module.exports = {
                 return;
             }
 
-            var usersList = [];
-
-            results.forEach(function (result) {
-                usersList.push(result);
-            });
+            var usersList = utils.queryToArray(results);
 
             res.render(CONTROLLER_NAME + '/list-users', { usersList: usersList })
         });
@@ -107,16 +104,25 @@ module.exports = {
     getUserDetails: function (req, res, next) {
         res.render(CONTROLLER_NAME + '/detailed-user', { current: searchedUser });
     },
+    getEditProfile: function (req, res, next) {
+        res.render(CONTROLLER_NAME + '/edit-user', { current: searchedUser })
+    },
     updateProfile: function (req, res, next) {
         var newData = req.body;
-        console.log(newData);
+
+        for (var i in newData) {
+            if (newData[i] === null || newData[i] === undefined || newData[i] === '') {
+                delete newData[i];
+            }
+        }
+
         users.update({ _id: req.user._id }, newData, function (err, result) {
             if (err) {
                 throw err;
             }
             else {
                 console.log('User populated successfully! - ' + result);
-                res.redirect('/details');
+                res.redirect('/edit-user');
             }
         });
     }

@@ -1,0 +1,37 @@
+extends detailed-user
+
+block edit-user-content
+    form.form-horizontal(method="post", action="/details", id="editProfileForm")
+        fieldset
+            legend Edit profile
+            .form-group
+                label(for="phone", class="col-lg-2 control-label") Phone number
+                .col-lg-10
+                    input(id="phone", class="form-control", type="text", name="phone", placeholder="phone number")
+            .form-group
+                label(for="picture", class="col-lg-2 control-label") Avatar
+                .col-lg-10
+                    input(id="picture", class="form-control", type="file", name="picture", placeholder="Link to avatar")
+            .form-group
+                label(for="google", class="col-lg-2 control-label") Google+
+                .col-lg-10
+                    input(id="google", class="form-control", type="text", name="google", placeholder="Google+")
+            .form-group
+                label(for="linkedln", class="col-lg-2 control-label") Linkedln
+                .col-lg-10
+                    input(id="linkedln", class="form-control", type="text", name="linkedln", placeholder="Linkedln")
+            .form-group
+                label(for="twitter", class="col-lg-2 control-label") Twitter
+                .col-lg-10
+                    input(id="twitter", class="form-control", type="text", name="twitter", placeholder="Twitter")
+            .form-group
+                label(for="facebook", class="col-lg-2 control-label") Facebook
+                .col-lg-10
+                    input(id="facebook", class="form-control", type="text", name="facebook", placeholder="Facebook")
+            .form-group
+                .col-lg-10.col-lg-offset-2
+                    .col-lg-1
+                        button(type="reset", class="btn btn-danger") Cancel
+                    .col-lg-1
+                        button(type="submit", class="btn btn-success") Save changes
+                    a(href="/details", class="btn btn-info pull-right") Close

@@ -2,60 +2,62 @@
 extends ../shared/baseView
 
 block main-content
-    form(method="post")
-        label(for="username") Username
-        input(id="username", class="form-control", type="text", name="username", placeholder="Username")
-        br
-        label(for="password") Password
-        input(id="password", class="form-control", type="password", name="password", placeholder="Password")
-        br
-        label(for="confirm-password") Confirm Password
-        input(id="confirm-password", class="form-control", type="password", name="confirmPassword", placeholder="Confirm password")
-        br
-        label(for="firstname") First name
-        input(id="firstname", class="form-control", type="text", name="firstName", placeholder="First name")
-        br
-        label(for="lastname") Last name
-        input(id="lastname", class="form-control", type="text", name="lastName", placeholder="Last name")
-        br
-        label(for="email") Email address
-        input(id="email", class="form-control", type="email", name="email", placeholder="email")
-        br
-        label(for="phone") Phone number
-        input(id="phone", class="form-control", type="text", name="phone", placeholder="phone number")
-        br
-        .row
-            .col-lg-10
-                label(for="initiatives", class="col-lg-2 control-label") Initiatives
-                select(multiple="", class="form-control", name="initiatives", id="initiatives")
-                    option Software Academy
-                    option Algo Academy
-                    option School Academy
-                    option Kids Academy
-        br
-        .row(style="height: 10px")
-        .row
-            .col-lg-10
-                label(for="seasons", class="col-lg-2 control-label") Seasons
-                select(multiple="", class="form-control", name="seasons", id="seasons")
-                    option Started 2010
-                    option Started 2011
-                    option Started 2012
-                    option Started 2013
-        br
-        label(for="picture") Avatar
-        input(id="picture", class="form-control", type="file", name="picture", placeholder="Link to avatar")
-        br
-        label(for="google") Google+
-        input(id="google", class="form-control", type="text", name="google", placeholder="Google+")
-        br
-        label(for="linkedln") Linkedln
-        input(id="linkedln", class="form-control", type="text", name="linkedln", placeholder="Linkedln")
-        br
-        label(for="twitter") Twitter
-        input(id="twitter", class="form-control", type="text", name="twitter", placeholder="Twitter")
-        br
-        label(for="facebook") Facebook
-        input(id="facebook", class="form-control", type="text", name="facebook", placeholder="Facebook")
-        br
-        input(type="submit", class="btn btn-lg", value="Register")
+    .well
+        form(method="post")
+            label(for="username") Username
+            input(id="username", class="form-control", type="text", name="username", placeholder="Username")
+            br
+            label(for="password") Password
+            input(id="password", class="form-control", type="password", name="password", placeholder="Password")
+            br
+            label(for="confirm-password") Confirm Password
+            input(id="confirm-password", class="form-control", type="password", name="confirmPassword", placeholder="Confirm password")
+            br
+            label(for="firstname") First name
+            input(id="firstname", class="form-control", type="text", name="firstName", placeholder="First name")
+            br
+            label(for="lastname") Last name
+            input(id="lastname", class="form-control", type="text", name="lastName", placeholder="Last name")
+            br
+            label(for="email") Email address
+            input(id="email", class="form-control", type="email", name="email", placeholder="email")
+            br
+            label(for="phone") Phone number
+            input(id="phone", class="form-control", type="text", name="phone", placeholder="phone number")
+            br
+            .row
+                .col-lg-10
+                    label(for="initiatives", class="col-lg-2 control-label") Initiatives
+                    select(multiple="", class="form-control", name="initiatives", id="initiatives")
+                        option Software Academy
+                        option Algo Academy
+                        option School Academy
+                        option Kids Academy
+            br
+            .row(style="height: 10px")
+            .row
+                .col-lg-10
+                    label(for="seasons", class="col-lg-2 control-label") Seasons
+                    select(multiple="", class="form-control", name="seasons", id="seasons")
+                        option Started 2010
+                        option Started 2011
+                        option Started 2012
+                        option Started 2013
+            br
+            label(for="picture") Avatar
+            input(id="picture", class="form-control", type="file", name="picture", placeholder="Link to avatar")
+            br
+            label(for="google") Google+
+            input(id="google", class="form-control", type="text", name="google", placeholder="Google+")
+            br
+            label(for="linkedln") Linkedln
+            input(id="linkedln", class="form-control", type="text", name="linkedln", placeholder="Linkedln")
+            br
+            label(for="twitter") Twitter
+            input(id="twitter", class="form-control", type="text", name="twitter", placeholder="Twitter")
+            br
+            label(for="facebook") Facebook
+            input(id="facebook", class="form-control", type="text", name="facebook", placeholder="Facebook")
+            br
+            button(type="reset", class="btn btn-danger") Cancel
+            input(type="submit", class="btn btn-md btn-primary", value="Register")

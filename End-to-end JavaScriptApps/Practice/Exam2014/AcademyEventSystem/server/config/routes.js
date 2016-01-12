@@ -14,12 +14,19 @@ module.exports = function(app) {
     app.get('/details', auth.isAuthenticated, controllers.users.getUserDetails);
     app.post('/details', auth.isAuthenticated, controllers.users.updateProfile);
 
+    app.get('/edit-user', auth.isAuthenticated, controllers.users.getEditProfile);
+    app.post('/edit-user', auth.isAuthenticated, controllers.users.getEditProfile);
     app.post('/filter-users', auth.isAuthenticated, controllers.users.getAll);
     app.get('/list-users', auth.isAuthenticated, controllers.users.getAll);
 
+    app.get('/active-events', auth.isAuthenticated, controllers.events.getActive);
+    app.get('/past-events', auth.isAuthenticated, controllers.events.getPast);
+
     app.get('/create-event', auth.isAuthenticated, controllers.events.getCreate);
     app.post('/create-event', auth.isAuthenticated, controllers.events.create);
-    app.post('/filter-events', auth.isAuthenticated, controllers.events.create);
+    app.get('/delete-event/:id', auth.isAuthenticated, controllers.events.delete);
+
+    app.post('/filter-events', auth.isAuthenticated, controllers.events.getOwnedEvents);
 
     app.get('/', controllers.stats.getStatistics);
     app.get('*', controllers.stats.getStatistics);
