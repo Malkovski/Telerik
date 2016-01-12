@@ -6,21 +6,8 @@ module.exports = {
     create: function(user, callback) {
         User.create(user, callback);
     },
-    getAll: function (options) {
-        var template = options.contains;
-        var sortBy = '_id';
-        if (options.orderBy === 'Name') {
-            sortBy = 'username';
-        }
-
-        var sortType = '';
-        if (options.orderType === 'Descending') {
-            sortType = '-';
-        }
-
+    getAll: function () {
         return User.find({})
-            .where({ username: new RegExp(template, "i") })
-            .sort(sortType + sortBy);
     },
     byId: function (id) {
         return User.findOne({_id: id});
@@ -28,17 +15,10 @@ module.exports = {
     count: function () {
         return User.count({});
     },
-    update: function (condition, option) {
-        User.update(condition, option, function (err, raw) {
-            if (err) {
-                throw err;
-            }
-            else {
-                console.log('User populated successfully!');
-            }
-        })
+    update: function (id, newData, callback) {
+        User.update(id, newData, callback);
     },
-    findOne: function (param) {
-        return User.findOne(param);
+    delete: function (id, callback) {
+        User.remove(id, callback);
     }
 };

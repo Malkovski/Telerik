@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-var FILES_DIR = __dirname + '/../../files';
+var FILES_DIR = __dirname + '/../../public/img';
 
 module.exports = {
     createDir: function (path, dirName) {

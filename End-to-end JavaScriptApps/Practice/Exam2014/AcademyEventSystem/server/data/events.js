@@ -11,11 +11,11 @@ module.exports = {
         var currentDate = utils.getDate();
 
         if (option < 0) {
-            return Event.find({"date": {"$lt": new Date(currentDate)}});
+            return Event.find({ "date": { "$lt": new Date(currentDate) } });
         }
         else if (option > 0) {
 
-            return Event.find({ 'date': {'$gte': new Date(currentDate) } });
+            return Event.find({ 'date': { '$gte': new Date(currentDate) } });
         }
         else {
             return Event.find({});

@@ -3,13 +3,48 @@ extends ../shared/baseView
 block main-content
     .container.well
         .row.table
-            .col-lg-6 Username
-            .col-lg-6 #{current.username}
-        .row.table
-            .col-lg-6 Id
-            .col-lg-6 #{current._id}
-        .row
-            .col-lg-3
-                a.delete(href="/profile-update") Update profile
-            .col-lg-3.pull-right
-                a.delete(href="/fun") Fun
+            strong.pull-left #{current.username}
+            img(src="/img/#{current.picture}", width="200", class="pull-right")
+        form(method="post", action="/filter-events")
+            .row
+                .col-md-3 Filter by
+                .col-md-3 Order type
+                .col-md-3 Search
+                .col-md-3
+            .row
+                .col-md-3
+                    select(name="orderBy")
+                        option Created by me
+                        option Joined by me
+                        option Passed
+                .col-md-3
+                    select(name="orderType")
+                        option Ascending
+                        option Descending
+                .col-md-3
+                    input(type="text", name="contains")
+                .col-md-3.pull-right
+                    input(type="submit", class="btn btn-md btn-info", value="Filter")
+            .row(style="height: 10px")
+        .row.text-center
+            h3 Edit profile
+        form(method="post")
+            label(for="phone") Phone number
+            input(id="phone", class="form-control", type="text", name="phone", placeholder="phone number")
+            br
+            label(for="picture") Avatar
+            input(id="picture", class="form-control", type="file", name="picture", placeholder="Link to avatar")
+            br
+            label(for="google") Google+
+            input(id="google", class="form-control", type="text", name="google", placeholder="Google+")
+            br
+            label(for="linkedln") Linkedln
+            input(id="linkedln", class="form-control", type="text", name="linkedln", placeholder="Linkedln")
+            br
+            label(for="twitter") Twitter
+            input(id="twitter", class="form-control", type="text", name="twitter", placeholder="Twitter")
+            br
+            label(for="facebook") Facebook
+            input(id="facebook", class="form-control", type="text", name="facebook", placeholder="Facebook")
+            br
+            input(type="submit", class="btn btn-lg", value="Save changes")

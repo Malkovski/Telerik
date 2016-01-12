@@ -12,21 +12,14 @@ module.exports = function(app) {
     app.get('/profile/:id', auth.isAuthenticated, controllers.users.getById);
     app.get('/profile', auth.isAuthenticated, controllers.users.getById);
     app.get('/details', auth.isAuthenticated, controllers.users.getUserDetails);
+    app.post('/details', auth.isAuthenticated, controllers.users.updateProfile);
 
     app.post('/filter-users', auth.isAuthenticated, controllers.users.getAll);
     app.get('/list-users', auth.isAuthenticated, controllers.users.getAll);
 
     app.get('/create-event', auth.isAuthenticated, controllers.events.getCreate);
     app.post('/create-event', auth.isAuthenticated, controllers.events.create);
-
-    //app.get('/upload', auth.isAuthenticated, controllers.files.getUpload);
-    //app.post('/upload', auth.isAuthenticated, controllers.files.postUpload);
-    //app.get('/remove/:id', auth.isAuthenticated, controllers.files.deleteFile);
-    //app.get('/uploaded-files', auth.isAuthenticated, controllers.files.getResults);
-    //
-    //app.get('/downloads', auth.isAuthenticated, controllers.files.getAll);
-    //app.post('/filter-files', auth.isAuthenticated, controllers.files.getAll);
-    //app.get('/files/download/:id', auth.isAuthenticated, controllers.files.downloadFile);
+    app.post('/filter-events', auth.isAuthenticated, controllers.events.create);
 
     app.get('/', controllers.stats.getStatistics);
     app.get('*', controllers.stats.getStatistics);

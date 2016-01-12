@@ -2,9 +2,10 @@
 
 var users = require('../data/users'),
     eventsService = require('../data/events'),
-    utils = require('../utilities/utilities');
+    utils = require('../utilities/utilities'),
+    Cache = require('node-cache');
 
-
+var statCache = new Cache({ stdTTL: 100, checkperiod: 120 });
 var usersCount = 0,
     eventsCount = 0,
     passedEvents = [];
@@ -12,36 +13,79 @@ var usersCount = 0,
 module.exports = {
     getStatistics: function (req, res, next) {
 
-        var usersQuery = users.count();
-        usersQuery.exec(function (err, count) {
-            if (err) {
-                req.session.error = err;
-                return;
-            }
+        statCache.get('usersCount', function (err, result) {
+            if (!err) {
+                if (result == undefined) {
+                    users.count()
+                        .exec(function (err, count) {
+                            if (err) {
+                                req.session.error = err;
+                                return;
+                            }
 
-            usersCount = count || 0;
+                            statCache.set( "usersCount", count, function( err, success ){
+                                if( !err && success ){
+                                    //console.log( 'users:' );
+                                    //console.log( success );
+                                }
+                            });
+                        });
+                }
+                else {
+                    usersCount = result;
+                }
+            }
         });
 
-        eventsService.count()
-            .exec(function (err, count) {
-            if (err) {
-                req.session.error = err;
-                return;
-            }
+        statCache.get('eventsCount', function (err, result) {
+            if (!err) {
+                if (result == undefined) {
+                    eventsService.count()
+                        .exec(function (err, count) {
+                            if (err) {
+                                req.session.error = err;
+                                return;
+                            }
 
-            eventsCount = count || 0;
+                            statCache.set( "eventsCount", count, function( err, success ){
+                                if( !err && success ){
+                                    //console.log( 'events:' );
+                                    //console.log( success );
+                                }
+                            });
+                        });
+                }
+                else {
+                    eventsCount = result;
+                }
+            }
         });
 
-        eventsService.getAll(1)
-        .exec(function (err, eventList) {
-            if (err) {
-                req.session.error = err;
-                return;
-            }
+        statCache.get('passedEvents', function (err, result) {
+            if (!err) {
+                if (result == undefined) {
+                    eventsService.getAll(-1)
+                        .exec(function (err, eventList) {
+                            if (err) {
+                                req.session.error = err;
+                                return;
+                            }
 
-            passedEvents = utils.queryToArray(eventList);
+                            passedEvents = utils.queryToArray(eventList) || [];
+                            statCache.set( "passedEvents", passedEvents, function( err, success ){
+                                if( !err && success ){
+                                    //console.log( 'passed events:' );
+                                    //console.log( success );
+                                }
+                            });
+                        });
+                }
+                else {
+                    passedEvents =  result;
+                }
+            }
         });
 
-        res.render('index', { usersCount: usersCount, eventsCount: eventsCount, eventsList: passedEvents });
+        res.render('statistics', { usersCount: usersCount, eventsCount: eventsCount, eventsList: passedEvents });
     }
 };

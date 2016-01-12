@@ -34,7 +34,7 @@ module.exports = {
                 }
 
                 //creating dir for the current user
-               // uploading.createDir('/', user.username);
+                uploading.createDir('/', user.username);
 
 
                 req.logIn(user, function(err) {
@@ -54,8 +54,22 @@ module.exports = {
     },
     getAll: function (req, res, next) {
         var options = req.body;
-        var query = users.getAll(options);
-        query.exec(function (err, results) {
+
+        var template = options.contains;
+        var sortBy = '_id';
+        if (options.orderBy === 'Name') {
+            sortBy = 'username';
+        }
+
+        var sortType = '';
+        if (options.orderType === 'Descending') {
+            sortType = '-';
+        }
+
+        var query = users.getAll();
+        query.where({ username: new RegExp(template, "i") })
+            .sort(sortType + sortBy)
+            .exec(function (err, results) {
             if (err) {
                 req.session.error = err;
                 return;
@@ -91,7 +105,19 @@ module.exports = {
         });
     },
     getUserDetails: function (req, res, next) {
-        var current = searchedUser;
-        res.render(CONTROLLER_NAME + '/detailed-user', { current: current });
+        res.render(CONTROLLER_NAME + '/detailed-user', { current: searchedUser });
+    },
+    updateProfile: function (req, res, next) {
+        var newData = req.body;
+        console.log(newData);
+        users.update({ _id: req.user._id }, newData, function (err, result) {
+            if (err) {
+                throw err;
+            }
+            else {
+                console.log('User populated successfully! - ' + result);
+                res.redirect('/details');
+            }
+        });
     }
 };
