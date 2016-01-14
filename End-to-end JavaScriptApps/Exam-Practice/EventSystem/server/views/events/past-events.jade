@@ -1,0 +1,29 @@
+extends all-events
+
+block eventsList
+    table.table.table-striped.table-hover.table-bordered
+        thead
+            tr
+                th Title
+                th Category
+                th Creator
+                th Contacts
+                th Initiative
+                th Season
+                th Date
+                th Location
+                th Vote
+        tbody
+            each event in data.eventsList
+                tr
+                    td
+                        a(href="/event/#{event._id}") #{event.title}
+                    td #{event.category}
+                    td #{event.creatorName}
+                    td #{event.creatorPhone}
+                    td #{event.initiative}
+                    td #{event.season}
+                    td #{event.date}
+                    td #{event.latitude}/#{event.longitude}
+                    td
+                        a.btn.btn-sm.btn-warning(href="/event/#{event._id}/vote") Vote

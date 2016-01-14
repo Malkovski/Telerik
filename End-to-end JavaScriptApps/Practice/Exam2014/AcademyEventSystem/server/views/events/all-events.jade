@@ -2,15 +2,9 @@ extends ../shared/baseView
 
 block  main-content
     .well
-        form.form-inline(method="post", action="/filter-events")
+        form.form-inline(method="post", action="/#{groupName}-events")
             fieldset
-                legend.text-center #{groupName} EVENTS
-                .form-group
-                    label(for="filterBy") Filter by&nbsp;
-                    select(name="filterBy", id="filterBy")
-                        option(value="created") Created by me
-                        option(value="joined") Joined by me
-                        option(value="passed") Passed
+                legend.text-center(style="text-transform: uppercase") #{groupName} events
                 .form-group
                     label(for="sortBy") &nbsp;Sort by&nbsp;
                     select(name="sortBy", id="sortBy")

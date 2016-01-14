@@ -102,7 +102,7 @@ module.exports = {
         });
     },
     getUserDetails: function (req, res, next) {
-        res.render(CONTROLLER_NAME + '/detailed-user', { current: searchedUser });
+        res.render(CONTROLLER_NAME + '/detailed-user', { current: req.user });
     },
     getEditProfile: function (req, res, next) {
         res.render(CONTROLLER_NAME + '/edit-user', { current: searchedUser })

@@ -1,0 +1,71 @@
+extends ../shared/baseView
+
+block main-content
+    .well
+        div
+            .row
+                h2 #{current.title}
+            .row
+                .col-sm-2.table-bordered
+                    strong  Category
+                .col-sm-10.table-bordered #{current.category}
+            .row
+                .col-sm-2.table-bordered
+                    strong Description
+                .col-sm-10.table-bordered #{current.description}
+            .row
+                .col-sm-2.table-bordered
+                    strong Creator
+                .col-sm-10.table-bordered #{current.creatorName}
+            .row
+                .col-sm-2.table-bordered
+                    strong Contact
+                .col-sm-10.table-bordered #{current.creatorPhone}
+            .row
+                .col-sm-2.table-bordered
+                    strong Organization points
+                .col-sm-10.table-bordered #{current.organizationPoints}
+            .row
+                .col-sm-2.table-bordered
+                    strong Venue points
+                .col-sm-10.table-bordered #{current.venuePoints}
+            .row
+                .col-sm-2.table-bordered
+                    strong Initiative
+                .col-sm-10.table-bordered #{current.initiative}
+            .row
+                .col-sm-2.table-bordered
+                    strong Season
+                .col-sm-10.table-bordered #{current.season}
+            .row
+                .col-sm-2.table-bordered
+                    strong Date created
+                .col-sm-10.table-bordered #{current.date}
+            .row
+                .col-sm-2.table-bordered
+                    strong Location
+                .col-sm-10.table-bordered #{current.latitude} / #{current.longitude}
+            .row
+                .col-sm-2.table-bordered
+                    strong Comments
+                .col-sm-10.table-bordered #{current.comments}
+        .row(style="height: 20px")
+        .row
+            form.form-horizontal(method="post")
+                fieldset
+                    legend Voting menu
+                    .form-group
+                        label(for="description", class="col-lg-2 control-label") Description
+                        .col-lg-10
+                            input(id="description", class="form-control", required, type="number", name="organizationPoints")
+                    .form-group
+                        label(for="datePicker", class="col-lg-2 control-label") Date
+                        .col-lg-10
+                            input(id="datePicker", class="form-control", required, type="number", name="venuePoints")
+                    .form-group
+                        .col-lg-10.col-lg-offset-2
+                            .col-lg-1
+                                button(type="reset", class="btn btn-danger") Cancel
+                            .col-lg-1
+                                input(type="submit", class="btn btn-md btn-primary", value="Vote")
+                            a(href="/", class="btn btn-info pull-right") Close

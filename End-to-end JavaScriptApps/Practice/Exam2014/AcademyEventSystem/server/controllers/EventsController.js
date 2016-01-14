@@ -1,4 +1,6 @@
 var eventsService = require('../data/events'),
+    usersService = require('../data/users'),
+    processor = require('../data/processors/processors'),
     utils = require('../utilities/utilities');
 
 var CONTROLLER_NAME = 'events';
@@ -41,7 +43,8 @@ module.exports = {
         }
     },
     getPast: function (req, res, next) {
-        eventsService.getAll(-1)
+        var query = eventsService.getAll(-1);
+        processor.processQuery(req, query)
             .exec(function (err, results) {
                 if (err) {
                     req.session.error = 'Bad request';
@@ -50,11 +53,12 @@ module.exports = {
 
                 var eventsList = utils.queryToArray(results);
 
-                res.render(CONTROLLER_NAME + '/list-events', { eventsList: eventsList, current: req.user, groupName: 'PAST' });
-            })
+                res.render(CONTROLLER_NAME + '/past-events', { eventsList: eventsList, current: req.user, groupName: 'past' });
+            });
     },
     getActive: function (req, res, next) {
-        eventsService.getAll(1)
+        var query = eventsService.getAll(1);
+        processor.processQuery(req, query)
             .exec(function (err, results) {
                 if (err) {
                     req.session.error = 'Bad request';
@@ -63,65 +67,137 @@ module.exports = {
 
                 var eventsList = utils.queryToArray(results);
 
-                res.render(CONTROLLER_NAME + '/list-events', { eventsList: eventsList, current: req.user, groupName: 'ACTIVE' });
-            })
-    },
-    getOwnedEvents: function (req, res, next) {
-        var ownerName = req.user.username;
-        var ownerId = req.user._id;
-        var options = req.body;
-        var filter = options.filterBy;
-
-        var take = options.pageSize || 10;
-        take = take * 1;
-        if (take < 0) {
-            take = 10;
-        }
-
-        var skip = ((options.page * take) - take) || 0;
-        if (skip < 0) {
-            skip = 0;
-        }
-
-        var template = options.contains;
-
-        var sortBy = options.sortBy;
-        var sortType = '';
-        if (options.orderType === 'desc') {
-            sortType = '-';
-        }
-
-        function proceedRequest(data) {
-            data.or([{ title: new RegExp(template, "i") }, { description: new RegExp(template, "i") } ])
-            .sort(sortType + sortBy)
-            .skip(skip)
-            .limit(take)
-            .exec(function (err, results) {
-                if (err) {
-                    req.session.error = err;
-                    return;
-                }
-
-                var eventsList = utils.queryToArray(results);
-
-                res.render(CONTROLLER_NAME + '/owned-events-list', { eventsList: eventsList, current: req.user })
+                res.render(CONTROLLER_NAME + '/list-events', { eventsList: eventsList, current: req.user, groupName: 'active' });
             });
+    },
+    filterOwnedEvents: function (req, res, next) {
+        var params = processor.processRequestBody(req);
+
+        if (params.filter === 'past') {
+            proceedRequest(eventsService.getOwned(params.ownerName, true));
+        }
+        else if (params.filter === 'joined') {
+            proceedRequest(eventsService.getJoined(params.ownerId));
+        }
+        else {
+            proceedRequest(eventsService.getOwned(params.ownerName));
         }
 
-        if (filter === 'created') {
-            proceedRequest(eventsService.getOwned(ownerName));
-        }
-        else if (filter === 'joined') {
-            proceedRequest(eventsService.getJoined(ownerId));
-        }
-        else if (filter === 'passed') {
-            proceedRequest(eventsService.getOwned(ownerName, true));
+        function proceedRequest(query) {
+            processor.processQuery(req, query)
+                .exec(function (err, results) {
+                    if (err) {
+                        req.session.error = err;
+                        return;
+                    }
 
+                    var eventsList = utils.queryToArray(results);
+
+                    res.render(CONTROLLER_NAME + '/my-events', { eventsList: eventsList, current: req.user })
+                });
         }
+    },
+    getById: function (req, res, next) {
+        var id = req.params.id;
+        eventsService.getById(id, function (err, result) {
+            if (err) {
+                req.session.error = 'Event not found!';
+                return;
+            }
+
+            var prevUrl = req.get('referer').toString();
+            var url = prevUrl.split('/');
+            var index = url.length - 1;
+
+            res.render(CONTROLLER_NAME + '/event-details', { current: result, prev: url[index] })
+        })
+    },
+    getVote: function (req, res, next) {
+        var id = req.params.id;
+        eventsService.getById(id, function (err, result) {
+            if (err) {
+                req.session.error = 'Event not found!';
+                return;
+            }
+
+            var prevUrl = req.get('referer').toString();
+            var url = prevUrl.split('/');
+            var index = url.length - 1;
+
+            res.render(CONTROLLER_NAME + '/event-voting', {current: result, prev: url[3]})
+        })
+    },
+    vote: function (req, res, next) {
+        var id = req.params.id;
+        var newData = req.body;
+
+        eventsService.getById(id, function (err, result) {
+            if (err) {
+                req.session.error = 'Event not found !';
+                return;
+            }
+
+            console.log(result);
+            var organization = parseInt(result.organizationPoints);
+            var venue = parseInt(result.venuePoints);
+
+            result.venuePoints = venue + parseInt(newData.venuePoints);
+            result.organizationPoints =  organization + parseInt(newData.organizationPoints);
+
+            eventsService.update({ _id: id }, result, function (err, votedFor) {
+                if (err) {
+                    req.session.error = 'Vote failed!';
+                }
+                else {
+                    usersService.byName(result.creatorName, function (err, eventOwner) {
+                        if (err) {
+                            req.session.error = 'Owner not found !';
+                            return;
+                        }
+
+                        var points = parseInt(eventOwner.points);
+                        console.log(points);
+                        eventOwner.points = points + ((parseInt(result.organizationPoints) + parseInt(result.venuePoints)) /2);
+                        console.log(eventOwner.points);
+
+                        for (var i in eventOwner) {
+                            if (eventOwner[i] === null || eventOwner[i] === undefined || eventOwner[i] === '') {
+                                delete eventOwner[i];
+                            }
+                        }
+
+                        console.log(eventOwner);
+                        usersService.update({ _id: eventOwner._id }, eventOwner, function (err, result) {
+                            if (err) {
+                                req.session.error = 'Points not added!';
+
+                            }
+                            else {
+
+                                console.log('Updating user points successful!');
+                               // req['referer'] = 'xx/xx/xxx/past-events';
+                                res.redirect('/event/' + id);
+                            }
+                        })
+                    });
+                }
+            });
+        });
+    },
+    join: function (req, res, next) {
+        var id = req.params.id ;
+        var newMemberId = req.user._id;
+         eventsService.updateById({ _id: id }, { $push: {users: newMemberId } }, function (err, result) {
+             if (err) {
+                 req.session.error = 'Failed to add member!';
+             }
+
+             console.log('yeeee');
+             res.redirect('/');
+         })
     },
     delete: function (req, res, next) {
         var id = req.params.id;
-        console.log(id);
         eventsService.delete(id, function (err, result) {
             if (err) {
                 req.session.error = 'Deletion failed!';

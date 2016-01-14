@@ -9,6 +9,9 @@ module.exports = {
     create: function (event, callback) {
          Event.create(event, callback);
     },
+    getById: function (id, callback) {
+        return Event.findOne({ _id: id }, callback);
+    },
     getAll: function (option) {
 
         if (option < 0) {
@@ -36,6 +39,12 @@ module.exports = {
     },
     count: function () {
         return Event.count({});
+    },
+    updateById: function (id, data, callback) {
+        Event.findByIdAndUpdate(id, data, callback);
+    },
+    update: function (id, newData, callback) {
+        Event.update(id, newData, callback);
     },
     delete: function (id, callback) {
         Event.findByIdAndRemove(id, callback);

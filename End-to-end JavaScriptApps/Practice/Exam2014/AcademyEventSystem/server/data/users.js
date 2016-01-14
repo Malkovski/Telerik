@@ -12,6 +12,9 @@ module.exports = {
     byId: function (id) {
         return User.findOne({_id: id});
     },
+    byName: function (name, callback) {
+        return User.findOne({ username: name}, callback);
+    },
     count: function () {
         return User.count({});
     },

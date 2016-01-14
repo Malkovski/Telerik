@@ -6,6 +6,8 @@ block eventsList
             tr
                 th Title
                 th Category
+                th Creator
+                th Contacts
                 th Initiative
                 th Season
                 th Date
@@ -14,8 +16,10 @@ block eventsList
             each event in eventsList
                 tr
                     td
-                        a(href="/event-details/#{event._id}") #{event.title}
+                        a(href="/event/#{event._id}") #{event.title}
                     td #{event.category}
+                    td #{event.creatorName}
+                    td #{event.creatorPhone}
                     td #{event.initiative}
                     td #{event.season}
                     td #{event.date}

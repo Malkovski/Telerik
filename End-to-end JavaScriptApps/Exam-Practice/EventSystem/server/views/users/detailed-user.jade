@@ -1,0 +1,63 @@
+extends ../shared/baseView
+
+block main-content
+    .well
+        img(src="/img/#{current.picture}", width="200", class="pull-right")
+        div
+            .row
+                h2 #{current.username}
+            .row
+                .col-sm-2.table-bordered
+                    strong First name
+                .col-sm-10.table-bordered #{current.firstName}
+            .row
+                .col-sm-2.table-bordered
+                    strong Last name
+                .col-sm-10.table-bordered #{current.lastName}
+            .row
+                .col-sm-2.table-bordered
+                    strong Phone
+                .col-sm-10.table-bordered #{current.phone}
+            .row
+                .col-sm-2.table-bordered
+                    strong Email
+                .col-sm-10.table-bordered #{current.email}
+            .row
+                .col-sm-2.table-bordered
+                    strong Points
+                .col-sm-10.table-bordered #{current.points}
+            .row
+                .col-sm-2.table-bordered
+                    strong Initiatives
+                .col-sm-10.table-bordered #{current.initiatives}
+            .row
+                .col-sm-2.table-bordered
+                    strong Seasons
+                .col-sm-10.table-bordered #{current.seasons}
+            .row
+                .col-sm-2.table-bordered
+                    strong Google+ profile
+                .col-sm-10.table-bordered #{current.google}
+            .row
+                .col-sm-2.table-bordered
+                    strong Twitter profile
+                .col-sm-10.table-bordered #{current.twitter}
+            .row
+                .col-sm-2.table-bordered
+                    strong Linkedln profile
+                .col-sm-10.table-bordered #{current.linkedln}
+            .row
+                .col-sm-2.table-bordered
+                    strong Facebook profile
+                .col-sm-10.table-bordered #{current.facebook}
+        .row(style="height: 20px")
+        if (current._id.toString() === currentUser._id.toString())
+            .row
+                .col-lg-2
+                    a.btn.btn-md.btn-info(href="/edit-user") Edit profile
+                .col-lg-1
+                    a.btn.btn-md.btn-info(href="/my-events") My events
+        .row(style="height: 30px")
+        block edit-user-content
+        block eventsList
+
