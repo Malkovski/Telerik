@@ -1,0 +1,22 @@
+table.table.table-striped.table-hover.table-bordered
+    thead
+        tr
+            th Title
+            th Category
+            th Initiative
+            th Season
+            th Date
+            th Location
+            th #
+    tbody
+        each event in eventsList
+            tr
+                td
+                    a(href="/event/#{event._id}") #{event.title}
+                td #{event.category}
+                td #{event.initiative}
+                td #{event.season}
+                td #{event.date}
+                td #{event.latitude}/#{event.longitude}
+                td
+                    a(href="/delete-event/#{event._id}") Delete

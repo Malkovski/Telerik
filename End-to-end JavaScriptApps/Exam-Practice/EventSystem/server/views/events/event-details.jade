@@ -1,0 +1,57 @@
+extends ../shared/baseView
+
+block main-content
+    .well
+        div
+            .row
+                h2 #{current.title}
+            .row
+                .col-sm-2.table-bordered
+                    strong  Category
+                .col-sm-10.table-bordered #{current.category}
+            .row
+                .col-sm-2.table-bordered
+                    strong Description
+                .col-sm-10.table-bordered #{current.description}
+            .row
+                .col-sm-2.table-bordered
+                    strong Creator
+                .col-sm-10.table-bordered #{current.creatorName}
+            .row
+                .col-sm-2.table-bordered
+                    strong Contact
+                .col-sm-10.table-bordered #{current.creatorPhone}
+            .row
+                .col-sm-2.table-bordered
+                    strong Organization points
+                .col-sm-10.table-bordered #{current.organizationPoints}
+            .row
+                .col-sm-2.table-bordered
+                    strong Venue points
+                .col-sm-10.table-bordered #{current.venuePoints}
+            .row
+                .col-sm-2.table-bordered
+                    strong Initiative
+                .col-sm-10.table-bordered #{current.initiative}
+            .row
+                .col-sm-2.table-bordered
+                    strong Season
+                .col-sm-10.table-bordered #{current.season}
+            .row
+                .col-sm-2.table-bordered
+                    strong Date created
+                .col-sm-10.table-bordered #{current.date}
+            .row
+                .col-sm-2.table-bordered
+                    strong Location
+                .col-sm-10.table-bordered #{current.latitude} / #{current.longitude}
+            .row
+                .col-sm-2.table-bordered
+                    strong Comments
+                .col-sm-10.table-bordered #{current.comments}
+        .row(style="height: 20px")
+        .row
+            .col-lg-2
+                a.btn.btn-md.btn-info(href="/event/#{current._id}/join") Join
+            .col-lg-2
+                a.btn.btn-md.btn-info(href="/#{prev}") Back
