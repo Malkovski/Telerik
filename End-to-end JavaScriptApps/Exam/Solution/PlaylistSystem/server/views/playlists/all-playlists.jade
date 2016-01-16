@@ -1,0 +1,38 @@
+extends ../shared/baseView
+
+block  main-content
+    .well
+        if (currentUser)
+            form.form-inline(method="post", action="/#{data.groupName}-playlists")
+                fieldset
+                    legend.text-center(style="text-transform: uppercase") #{data.groupName} playlists
+                    .form-group
+                        label(for="sortBy") &nbsp;Sort by&nbsp;
+                        select(name="sortBy", id="sortBy")
+                            option(value="title") Title
+                            option(value="category") Category
+                            option(value="date") Date
+                            option(value="rating") Rating
+                    .form-group
+                        label(for="oderType") &nbsp;Order&nbsp;
+                        select(name="orderType", id="oderType")
+                            option(value="asc") Ascending
+                            option(value="desc") Descending
+                    .form-group
+                        label(for="page") &nbsp;Page&nbsp;
+                        input(id="page",type="number", name="page", value="1")
+                    .form-group
+                        label(for="pageSize") &nbsp;Page size&nbsp;
+                        input(id="pageSize", type="number", name="pageSize", value="10")
+                    .row(style="height: 30px")
+                    .form-group
+                        label(for="contains") &nbsp;Search&nbsp;
+                        input(id="contains", type="text", name="contains", placeholder="Search.....")
+                    ul.list-unstyled.list-inline.text-center
+                        - for(var i = 1; i <= data.total / data.pageSize; i++)
+                            li
+                                a.btn.btn-lf.btn-primary(href="/#{data.groupName}-playlists?page=#{i}&pageSize=#{data.pageSize}") #{i}
+                    .form-group.pull-right
+                        input(type="submit", class="btn btn-sm btn-success", value="Filter")
+        .row(style="height: 30px")
+        block eventsList

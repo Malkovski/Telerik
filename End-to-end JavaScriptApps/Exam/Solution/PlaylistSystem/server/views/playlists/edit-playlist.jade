@@ -1,0 +1,17 @@
+extends playlist-details
+
+block edit-playlist-content
+    form.form-horizontal(method="post", action="/playlist/#{current._id}", id="editProfileForm")
+        fieldset
+            legend Add videos
+            .form-group
+                label(for="link", class="col-lg-2 control-label") Link
+                .col-lg-10
+                    input(id="link", class="form-control", type="text", name="link", placeholder="add YouTube link ....")
+            .form-group
+                .col-lg-10.col-lg-offset-2
+                    .col-lg-1
+                        button(type="reset", class="btn btn-danger") Cancel
+                    .col-lg-1
+                        button(type="submit", class="btn btn-success") Save changes
+                    a(href="/details", class="btn btn-info pull-right") Close

@@ -1,0 +1,29 @@
+extends shared/baseView
+
+block main-content
+    .jumbotron.text-center.container-fluid
+        h2 Welcome to Telerik video playlist system!
+            h3 Enjoy and vote... :)
+    .container
+        p
+        | The site is under construction.......
+    .container
+        if (usersCount)
+            table.table.table-striped.table-bordered.table-hover
+                thead
+                    th.text-center Total users
+                    th.text-center Total events
+                tbody
+                    tr.warning
+                        td.text-center #{usersCount}
+                        td.text-center #{playlistCount}
+        .row.text-center PUBLIC LISTS
+        table.table.table-striped.table-bordered.table-hover
+            thead
+                th.text-center Title
+                th.text-center Rating
+            tbody
+                each playlist in playlists
+                    tr.warning
+                        td.text-center.small #{playlist.title}
+                        td.text-center.small #{playlist.rating}

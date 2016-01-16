@@ -1,0 +1,21 @@
+extends all-playlists
+
+block eventsList
+    table.table.table-striped.table-hover.table-bordered
+        thead
+            tr
+                th Title
+                th Category
+                th Creator
+                th Date
+                th Add fan
+        tbody
+            each playlist in data.eventsList
+                tr
+                    td
+                        a(href="/playlist/#{playlist._id}") #{playlist.title}
+                    td #{playlist.category}
+                    td #{playlist.creatorName}
+                    td #{playlist.date}
+                    td
+                        a.btn.btn-sm.btn-warning(href="/playlists/#{playlist._id}/add-fan") Add fan

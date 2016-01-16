@@ -1,0 +1,80 @@
+doctype
+html
+    head
+        title Telerik Event System
+        link(type="text/css" href="/lib/jquery-ui/jquery-ui.css" rel="stylesheet")
+        link(type="text/css" href="/lib/jquery-ui-timepicker-addon.css" rel="stylesheet")
+        link(rel="stylesheet", href="/lib/bootstrap-3.2.0/css/bootstrap.min.css")
+        link(rel="stylesheet", href="/lib/bootstrap-3.2.0/css/bootstrap-theme.min.css")
+
+    body
+        .navbar.navbar-default
+            .container
+                .navbar-header
+                    a.navbar-brand(href='/') Home
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-main')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                #navbar-main.navbar-collapse.collapse
+                    a.navbar-brand(href="/public-playlists") Public playlists
+                    ul.nav.navbar-nav
+                        li
+                        if (currentUser)
+                            li.dropdown
+                                a.dropdown-toggle(href='', data-toggle='dropdown')
+                                    | Playlist management
+                                    span.caret
+                                ul.dropdown-menu(role='menu')
+                                    li.dropdown-header Playlist
+                                    li
+                                        a(href='/private-playlists') My private playlists
+                                    li
+                                        a(href='/my-public-playlists') My public playlists
+                                    li.divider
+                                    li.dropdown-header Create
+                                    li
+                                        a(href='/create-playlist') Create new playlist
+                            li.dropdown
+                                a.dropdown-toggle(href='', data-toggle='dropdown')
+                                    | User management
+                                    span.caret
+                                ul.dropdown-menu(role='menu')
+                                    li
+                                        a(href='/profile') Profile
+                                    li
+                                        a(href='/list-users') Members
+                    ul.nav.navbar-nav.pull-right
+                        if (currentUser)
+                            li.dropdown
+                                a.dropdown-toggle(href='', data-toggle='dropdown')
+                                    | #{currentUser.username}
+                                    span.caret
+                                ul.dropdown-menu(role='menu')
+                                    li
+                                        a(href='/profile') Personal Info
+                                    li.divider
+                                    li
+                                        a(href='/logout') Logout
+                        else
+                            .nav.navbar-nav.navbar-right
+                                form.navbar-form(method="post", action="/login")
+                                    .form-group
+                                        input.form-control.input-md(id="username", type="text", required, placeholder="E-mail", name="username")
+                                        input.form-control.input-md(id="password", type="password", required, placeholder="Password", name="password")
+                                        input(type="submit", class="btn btn-md btn-primary" value="Login")
+                                        a.btn.btn-primary.btn-md(href="/register") Register
+        //block greet-content
+        .container
+            if (errorMessage)
+                .alert.alert-danger #{errorMessage}
+            if (successMessage)
+                .alert.alert-success #{successMessage}
+            block main-content
+            //include ../events/list-events
+        footer
+            p.text-center
+                | &copy; Telerik Academy 2016
+
+        include scripts

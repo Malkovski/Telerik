@@ -1,0 +1,33 @@
+extends ../shared/baseView
+
+block main-content
+    form.form-horizontal(method="post")
+        fieldset
+            legend Create new playlist
+            .form-group
+                label(for="title", class="col-lg-2 control-label") Title
+                .col-lg-10
+                    input(id="title", class="form-control", required, type="text", name="title")
+            .form-group
+                label(for="category", class="col-lg-2 control-label") Category
+                .col-lg-10
+                    select(class="form-control", required, name="category", id="category")
+                        each category in categories
+                            option(value="#{category}") #{category}
+            .form-group
+                label(for="description", class="col-lg-2 control-label") Description
+                .col-lg-10
+                    input(id="description", class="form-control", required, type="text", name="description")
+            .form-group
+                label(class="col-lg-2 control-label") Private
+                .col-lg-10
+                    input(id="latitude", type="checkbox", name="private")
+            .form-group
+                .col-lg-10.col-lg-offset-2
+                    .col-lg-1
+                        button(type="reset", class="btn btn-danger") Cancel
+                    .col-lg-1
+                        input(type="submit", class="btn btn-md btn-primary", value="Create")
+                    a(href="/", class="btn btn-info pull-right") Close
+block page-scripts
+    script(src="js/datepicker.js")

@@ -1,0 +1,64 @@
+extends ../shared/baseView
+
+block main-content
+    .well
+        div
+            .row
+                h2 #{current.title}
+            .row
+                .col-sm-2.table-bordered
+                    strong  Category
+                .col-sm-10.table-bordered #{current.category}
+            .row
+                .col-sm-2.table-bordered
+                    strong Description
+                .col-sm-10.table-bordered #{current.description}
+            .row
+                .col-sm-2.table-bordered
+                    strong Creator
+                .col-sm-10.table-bordered #{current.creatorName}
+            .row
+                .col-sm-2.table-bordered
+                    strong Date created
+                .col-sm-10.table-bordered #{current.date}
+            .row
+                .col-sm-2.table-bordered
+                    strong  Rating
+                .col-sm-10.table-bordered #{current.rating}
+            .row
+                .col-sm-2.table-bordered
+                    strong Videos
+                .col-sm-10.table-bordered #{current.videos}
+            .row
+                .col-sm-2.table-bordered
+                    strong Comments
+                .col-sm-10.table-bordered #{current.comments}
+        .row(style="height: 20px")
+        .row
+            form.form-horizontal(method="post", action="/playlist/#{current._id}/comment", id="editProfileForm")
+                .form-group
+                    .col-md-10
+                        textarea(class="form-control", rows="3", name="comments", placeholder="Let us know your opinion. Thank you!")
+                    .col-lg-1
+                        button(type="submit", class="btn btn-lg btn-success") Comment
+        .row(style="height: 20px")
+        .row
+            form.form-horizontal(method="post", action="/playlists/rate/#{current._id}", id="ratingForm")
+                .form-group
+                    .col-md-10
+                        select(type="text", class="form-control", name="rating")
+                            - for(var i = 1; i <= 5; i++)
+                                option(value="#{i}") #{i}
+                    .col-lg-1
+                        button(type="submit", class="btn btn-sm btn-success") Rate
+        .row
+            .col-lg-2
+                a.btn.btn-md.btn-info(href="/playlist/#{current._id}/videos/add") Add new video
+            .col-lg-2
+                a.btn.btn-md.btn-info(href="/playlist/#{current._id}/videos") List all videos
+            .col-lg-2
+                a.btn.btn-md.btn-danger(href="/playlist/delete/#{current._id}") Delete playlist
+            .col-lg-2.pull-right
+                a.btn.btn-md.btn-info(href="/#{prev}") Back
+        block edit-playlist-content
+        block videos-playlist-content

@@ -1,0 +1,14 @@
+extends playlist-details
+
+block videos-playlist-content
+    form.form-horizontal
+        fieldset
+            legend All videos
+                table.table-bordered.table-hover
+                    each video in current.videos
+                        tr.row
+                            td.col-md-8 #{video}
+                            td.col-md-4
+                                a(href="/delete-video/#{current._id}/#{video}") Delete
+                .col-lg-10.col-lg-offset-2
+                    a(href="/details", class="btn btn-info pull-right") Close

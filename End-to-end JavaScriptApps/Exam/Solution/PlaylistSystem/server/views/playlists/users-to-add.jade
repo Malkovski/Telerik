@@ -1,0 +1,27 @@
+extends ../shared/baseView
+
+block main-content
+    .well
+        .row
+            h2 #{playlist.title}
+            h2 #{playlist._id}
+        table.table.table-striped.table-bordered.table-hover
+            thead
+                th.text-center Username
+                th.text-center ID
+                th.text-center Add
+            tbody
+            for user in usersList
+                tr
+                    td
+                        a(href="/profile/#{user._id}") #{user.username}
+                    td #{user.email}
+                    td
+                        form.form-horizontal(method="post", action="/playlists/add-fan", id="editFanForm")
+                            .form-group
+                                .col-md-10.hidden
+                                    input(type="text", class="form-control", name="userId" value="#{user._id}")
+                                .col-md-10.hidden
+                                    input(type="text", class="form-control", name="playlistId" value="#{playlist._id}")
+                                .col-lg-1
+                                    button(type="submit", class="btn btn-sm btn-primary") Add
