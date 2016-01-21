@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escaping", "Escaping\Escapi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentsAndCourses", "StudentsAndCourses\StudentsAndCourses.csproj", "{4328D823-EBFF-4B31-A821-FA626C2AAA33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Calculator.csproj", "{BA683AD3-03E9-4A6C-8D9C-A188092478A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{4328D823-EBFF-4B31-A821-FA626C2AAA33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4328D823-EBFF-4B31-A821-FA626C2AAA33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4328D823-EBFF-4B31-A821-FA626C2AAA33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA683AD3-03E9-4A6C-8D9C-A188092478A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA683AD3-03E9-4A6C-8D9C-A188092478A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA683AD3-03E9-4A6C-8D9C-A188092478A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA683AD3-03E9-4A6C-8D9C-A188092478A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

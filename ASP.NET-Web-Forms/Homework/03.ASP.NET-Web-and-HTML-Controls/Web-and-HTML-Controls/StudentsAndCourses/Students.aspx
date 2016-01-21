@@ -1,58 +1,44 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Students.aspx.cs" Inherits="StudentsAndCourses.Students" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Students.aspx.cs" Inherits="StudentsAndCourses.Students" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        <asp:Label ID="lblFirstName" runat="server">First Name</asp:Label>
-        <br />
-        <asp:TextBox ID="tbFirstName" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="lblLastName" runat="server">Last Name</asp:Label>
-        <br />
-        <asp:TextBox ID="tbLastName" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="lblFacultyNumber" runat="server">Faculty Number</asp:Label>
-        <br />
-        <asp:TextBox ID="tbFacultyNumber" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="lblUniversities" runat="server">University</asp:Label>
-        <br />
-        <asp:DropDownList ID="ddUniversities" runat="server" AutoPostBack="True" Width="180">
-            <asp:ListItem Value="2">UNSS</asp:ListItem>
-            <asp:ListItem Value="1">SU</asp:ListItem>
-            <asp:ListItem Value="3">NBU</asp:ListItem>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="container">
+        <div class="form-group">
+        <asp:Label ID="lblFirstName" runat="server" CssClass="col-lg-2 control-label">First Name</asp:Label>    
+        <asp:TextBox ID="tbFirstName" runat="server" CssClass="form-control"></asp:TextBox>
+    </div>
+    <div class="form-group">
+        <asp:Label ID="lblLastName" runat="server" CssClass="col-lg-2 control-label">Last Name</asp:Label>
+        <asp:TextBox ID="tbLastName" runat="server" CssClass="form-control"></asp:TextBox>
+    </div>
+    <div class="form-group">
+         <asp:Label ID="lblFacultyNumber" runat="server" CssClass="col-lg-2 control-label">Faculty Number</asp:Label>
+        <asp:TextBox ID="tbFacultyNumber" runat="server" CssClass="form-control"></asp:TextBox>
+    </div>
+    <div class="form-group">
+         <asp:Label ID="lblUniversities" runat="server" CssClass="col-lg-2 control-label">University</asp:Label>
+        <asp:DropDownList ID="ddUniversities" runat="server" CssClass="form-control" AutoPostBack="False">
         </asp:DropDownList>
-        <br />
-        <asp:Label ID="lblSpecialty" runat="server">Specialty</asp:Label>
-        <br />
-        <asp:DropDownList ID="ddSpecialties" runat="server" AutoPostBack="True" Width="180">
-            <asp:ListItem Value="1">Ovcharche</asp:ListItem>
-            <asp:ListItem Value="2">Cowboyche</asp:ListItem>
-            <asp:ListItem Value="3">Kozarche</asp:ListItem>
+    </div>
+    <div class="form-group">
+        <asp:Label ID="lblSpecialty" runat="server" CssClass="col-lg-2 control-label">Specialty</asp:Label>
+        <asp:DropDownList ID="ddSpecialties" runat="server"  CssClass="form-control" AutoPostBack="False">
         </asp:DropDownList>
-        <br />
-        <asp:Label ID="lblCourses" runat="server">Courses</asp:Label>
-        <br />
-         <asp:ListBox ID="lbCourses" runat="server" AutoPostBack="True" Width="180" 
-             SelectionMode="Multiple" Height="56">
+    </div>
+    <div class="form-group">
+        <asp:Label ID="lblCourses" runat="server" CssClass="col-lg-2 control-label">Courses</asp:Label>
+        <asp:ListBox ID="lbCourses" runat="server" CssClass="form-control" AutoPostBack="False" SelectionMode="Multiple" DataTextField="Name" DataValueField="Id">
             <asp:ListItem Value="1">Pasha</asp:ListItem>
             <asp:ListItem Value="2">Prehodi</asp:ListItem>
             <asp:ListItem Value="3">Vodopoi</asp:ListItem>
-            <asp:ListItem Value="3">Doene</asp:ListItem>
+            <asp:ListItem Value="4">Doene</asp:ListItem>
         </asp:ListBox>
-        <br />
-        <hr />
-        <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Submit"/>
-        <br />
-        <hr />
+    </div>
+    <div class="form-group">
+        <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Submit" CssClass="btn btn-md btn-primary"/>
+    </div>
+     <hr />
+    <div class="well">
         <asp:Literal ID="LiteralResult" runat="server"></asp:Literal>
     </div>
-    </form>
-</body>
-</html>
+    </div>
+</asp:Content>
