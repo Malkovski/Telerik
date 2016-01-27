@@ -36,6 +36,8 @@
             <div class="row">
                 <div class="col-md-3">
                     <asp:TextBox Text="<%#: BindItem.Name %>" runat="server" ID="TextBoxInsertCategoryName" CssClass="input-sm"/>
+                    <asp:RequiredFieldValidator ErrorMessage="Required field!" ControlToValidate="TextBoxInsertCategoryName" runat="server"
+                         ID="TextBoxInsertCategoryNameValid" ForeColor="red"/>
                 </div>
                 <asp:LinkButton Text="Save" runat="server" ID="LinkButtonCategorysUpdate" CommandName="Update" CssClass="btn btn-info"/>
                 <asp:LinkButton Text="Cancel" runat="server" ID="LinkButtonCategorysCancelInsert" CommandName="Cancel" CssClass="btn btn-danger"/>
@@ -47,6 +49,8 @@
                 <div class="row">
                     <div class="col-md-3">
                         <asp:TextBox Text="<%#: BindItem.Name %>" runat="server" ID="TextBoxInsertCategoryName1" CssClass="input-sm"/>
+                        <asp:CustomValidator ErrorMessage="Required field!" ID="TextBoxInsertCategoryName1Validator" ControlToValidate="TextBoxInsertCategoryName1"
+                             runat="server" OnServerValidate="Unnamed_ServerValidate" ValidateEmptyText="false" ForeColor="red"/>  
                         <asp:RegularExpressionValidator Display = "Dynamic" ControlToValidate = "TextBoxInsertCategoryName1" ID="MaxLengthValidator"
                              ValidationExpression = "^[\s\S]{0,25}$" runat="server" ForeColor="Red" ErrorMessage="Maximum 25 characters allowed."/>
                     

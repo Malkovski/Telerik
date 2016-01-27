@@ -2,16 +2,17 @@
 {
     using NewsSystem.Models;
     using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Web;
-    using System.Web.UI;
+    using System.Linq.Dynamic;
     using System.Web.UI.WebControls;
     using Microsoft.AspNet.Identity;
+    using System.Web.UI;
+    using System.Collections.Generic;
 
-    public partial class Articles : System.Web.UI.Page
+    public partial class Articles : Page
     {
         private NewsDbContext content;
+        private int? flag;
 
         public Articles()
         {
@@ -29,9 +30,21 @@
         //     int startRowIndex
         //     out int totalRowCount
         //     string sortByExpression
-        public IQueryable<NewsSystem.Models.Article> ListViewArticles_GetData()
+        public IQueryable<Article> ListViewArticles_GetData(int? type)
         {
-            return this.content.Articles;
+            if (type == null)
+            {
+                return this.content.Articles.OrderBy(x => x.Id);    
+            }
+            else if (type == 1)
+            {
+                return this.content.Articles.OrderBy(x => x.Category.Name);
+            }
+            else
+            {
+                return this.content.Articles.OrderByDescending(x => x.Category.Name);
+            }
+            
         }
 
         // The id parameter name should match the DataKeyNames value set on the control
@@ -85,6 +98,11 @@
         public void FormViewInsertArticle_InsertItem()
         {
             var item = new Article();
+            if (item.Title == null || item.Content == null)
+            {
+               //TODO .................
+                return;
+            }
             item.UserId = this.User.Identity.GetUserId();
             item.DateCreated = DateTime.Now;
 
@@ -113,6 +131,45 @@
             {
                 this.CreateArticle.CssClass = "hidden";
                 this.LinkToCreateArticle.Text = "Insert new Article";
+            }
+        }
+
+        protected void TextBoxInsertArticleTitleValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (args.Value == null)
+            {
+                args.IsValid = false;
+            }
+            else
+            {
+                args.IsValid = true;
+            }
+        }
+
+        protected void TextBoxNewArticleBodyValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (args.Value == "")
+            {
+                args.IsValid = false;
+            }
+            else
+            {
+                args.IsValid = true;
+            }
+        }
+
+        protected void LinkButtonCaterory_Click1(object sender, EventArgs e)
+        {
+
+            if (flag != 1)
+            {
+                this.ListViewArticles_GetData(0);
+                flag = 1;
+            }
+            else
+            {
+                this.ListViewArticles_GetData(1);
+                flag = 0;
             }
         }
     }

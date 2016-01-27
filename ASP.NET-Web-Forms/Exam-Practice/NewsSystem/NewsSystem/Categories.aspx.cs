@@ -82,5 +82,17 @@
             this.content.Categories.Remove(item);
             this.content.SaveChanges();
         }
+
+        protected void Unnamed_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (args.Value == "")
+            {
+                args.IsValid = false;
+            }
+            else
+            {
+                args.IsValid = true;
+            }
+        }
     }
 }
