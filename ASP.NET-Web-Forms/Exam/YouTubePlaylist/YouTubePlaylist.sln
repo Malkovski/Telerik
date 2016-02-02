@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubePlaylist.Web", "YouTubePlaylist.Web\YouTubePlaylist.Web.csproj", "{50CB9DD1-6EDB-47D7-A9C2-785AB0A59ADE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubePlaylist.Data", "YouTubePlaylist.Data\YouTubePlaylist.Data.csproj", "{3DD36AD6-1F04-4434-A34F-37C0C7D92D8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubePlaylist.Models", "YouTubePlaylist.Models\YouTubePlaylist.Models.csproj", "{4E97FFD7-FA25-4398-82EA-8D097424B77D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50CB9DD1-6EDB-47D7-A9C2-785AB0A59ADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50CB9DD1-6EDB-47D7-A9C2-785AB0A59ADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50CB9DD1-6EDB-47D7-A9C2-785AB0A59ADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50CB9DD1-6EDB-47D7-A9C2-785AB0A59ADE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DD36AD6-1F04-4434-A34F-37C0C7D92D8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DD36AD6-1F04-4434-A34F-37C0C7D92D8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DD36AD6-1F04-4434-A34F-37C0C7D92D8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DD36AD6-1F04-4434-A34F-37C0C7D92D8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E97FFD7-FA25-4398-82EA-8D097424B77D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E97FFD7-FA25-4398-82EA-8D097424B77D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E97FFD7-FA25-4398-82EA-8D097424B77D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E97FFD7-FA25-4398-82EA-8D097424B77D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

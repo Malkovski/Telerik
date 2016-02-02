@@ -8,6 +8,7 @@
     using Microsoft.AspNet.Identity;
     using System.Web.UI;
     using System.Collections.Generic;
+    using System.Web.ModelBinding;
 
     public partial class Articles : Page
     {
@@ -30,21 +31,13 @@
         //     int startRowIndex
         //     out int totalRowCount
         //     string sortByExpression
-        public IQueryable<Article> ListViewArticles_GetData(int? type)
+        public IQueryable<Article> ListViewArticles_GetData([QueryString]string orderBy)
         {
-            if (type == null)
-            {
-                return this.content.Articles.OrderBy(x => x.Id);    
-            }
-            else if (type == 1)
-            {
-                return this.content.Articles.OrderBy(x => x.Category.Name);
-            }
-            else
-            {
-                return this.content.Articles.OrderByDescending(x => x.Category.Name);
-            }
-            
+            var result = this.content.Articles.AsQueryable();
+
+            result = string.IsNullOrEmpty(orderBy) ? result.OrderBy(x => x.Id) : result.OrderBy(orderBy + " Ascending");
+
+            return result; 
         }
 
         // The id parameter name should match the DataKeyNames value set on the control
@@ -119,21 +112,6 @@
             return this.content.Categories.OrderBy(x => x.Id);
         }
 
-        protected void LinkToCreateArticle_Click(object sender, EventArgs e)
-        {
-            var currentClass = this.CreateArticle.CssClass;
-            if (currentClass == "hidden")
-            {
-                this.CreateArticle.CssClass = "";
-                this.LinkToCreateArticle.Text = "Close";
-            }
-            else
-            {
-                this.CreateArticle.CssClass = "hidden";
-                this.LinkToCreateArticle.Text = "Insert new Article";
-            }
-        }
-
         protected void TextBoxInsertArticleTitleValidator_ServerValidate(object source, ServerValidateEventArgs args)
         {
             if (args.Value == null)
@@ -158,19 +136,19 @@
             }
         }
 
-        protected void LinkButtonCaterory_Click1(object sender, EventArgs e)
+        protected void btnInsertNewArticle_Click(object sender, EventArgs e)
         {
+            this.ListViewArticles.InsertItemPosition = InsertItemPosition.LastItem;
+        }
 
-            if (flag != 1)
-            {
-                this.ListViewArticles_GetData(0);
-                flag = 1;
-            }
-            else
-            {
-                this.ListViewArticles_GetData(1);
-                flag = 0;
-            }
+        protected void LinkButtonArticlesInsertCancel_Click(object sender, EventArgs e)
+        {
+            this.ListViewArticles.InsertItemPosition = InsertItemPosition.None;
+        }
+
+        protected void LinkButtonArticlesInsertCancel_Click1(object sender, EventArgs e)
+        {
+            this.ListViewArticles.InsertItemPosition = InsertItemPosition.None;
         }
     }
 }

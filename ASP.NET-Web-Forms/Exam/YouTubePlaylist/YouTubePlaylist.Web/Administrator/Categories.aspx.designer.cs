@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NewsSystem {
+namespace YouTubePlaylist.Web.Administrator {
     
     
-    public partial class Articles {
+    public partial class Categories {
         
         /// <summary>
-        /// ListViewArticles control.
+        /// ListViewCategories control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListViewArticles;
+        protected global::System.Web.UI.WebControls.ListView ListViewCategories;
     }
 }
