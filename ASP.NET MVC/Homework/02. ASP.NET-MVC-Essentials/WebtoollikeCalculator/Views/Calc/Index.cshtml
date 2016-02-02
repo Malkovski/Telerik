@@ -1,0 +1,52 @@
+﻿@model WebtoollikeCalculator.Models.Calculator
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Index", "Calc", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(x => x.Quantity)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.Quantity, new { @value = 1})
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Type)
+    </div>
+    <div>
+        @Html.EnumDropDownListFor(x => x.Type, new { @value = 1 })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Kilo)
+    </div>
+    <div>
+        @Html.EnumDropDownListFor(x => x.Kilo, new { @value = 1 })
+    </div>
+    <input type="submit" />
+}
+
+
+@foreach (int val in Enum.GetValues(typeof(WebtoollikeCalculator.Models.Type)))
+{
+    var name = Enum.GetName(typeof(WebtoollikeCalculator.Models.Type), val);
+
+    <tr>
+        <td>
+            @Html.DisplayName((String.Format("{0}", name)))
+
+        </td>
+        <td>
+            @(@val /((double)@Model.Type * (Math.Pow(2, (10 * (@val - 1))))))
+        </td>
+        <td>
+            <p>
+
+            </p>
+        </td>
+        <td></td>
+    </tr>
+}

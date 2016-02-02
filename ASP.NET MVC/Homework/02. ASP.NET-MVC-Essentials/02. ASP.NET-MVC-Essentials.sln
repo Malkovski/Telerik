@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleInformationSite", "SimpleInformationSite\SimpleInformationSite.csproj", "{9186880E-0021-4BF0-B1D5-24D14360F0BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebtoollikeCalculator", "WebtoollikeCalculator\WebtoollikeCalculator.csproj", "{D948256F-2AF6-4A3E-AFED-6F793D877225}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9186880E-0021-4BF0-B1D5-24D14360F0BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9186880E-0021-4BF0-B1D5-24D14360F0BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9186880E-0021-4BF0-B1D5-24D14360F0BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9186880E-0021-4BF0-B1D5-24D14360F0BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D948256F-2AF6-4A3E-AFED-6F793D877225}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D948256F-2AF6-4A3E-AFED-6F793D877225}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D948256F-2AF6-4A3E-AFED-6F793D877225}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D948256F-2AF6-4A3E-AFED-6F793D877225}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

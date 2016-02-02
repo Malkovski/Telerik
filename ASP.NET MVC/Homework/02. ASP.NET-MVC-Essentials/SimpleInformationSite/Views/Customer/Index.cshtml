@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="jumbotron">
+    <h2>@ViewBag.Greeting</h2>
+</div>
+
+@Html.ActionLink("Products", "Goods", null, new { @class = "btn btn-warning"})
+@Html.ActionLink("Shipping area", "Index", "Ship", new { Area = "Shipping" }, new { @class = "btn btn-success pull-right" })

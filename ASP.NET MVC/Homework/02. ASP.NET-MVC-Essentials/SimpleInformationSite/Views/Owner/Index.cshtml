@@ -1,0 +1,19 @@
+﻿@model SimpleInformationSite.Models.Owner
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section mystyles {
+    <style>
+        .col-md-5 {
+            color: palevioletred;
+        }
+    </style>
+}
+
+<h2>Index</h2>
+
+<p>Owner enters the shop!</p>
+
+@Html.Partial("_OwnerInfo", @Model)
