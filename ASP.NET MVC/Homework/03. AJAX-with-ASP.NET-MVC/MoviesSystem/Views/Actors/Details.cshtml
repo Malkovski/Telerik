@@ -1,0 +1,24 @@
+﻿@model MoviesSystem.Models.Actor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div id="actorInfo">
+    <h2>Details</h2>
+    <h3>@Html.DisplayTextFor(x => x.Name)</h3>
+    <p>He is @Html.DisplayTextFor(x => x.Age) years old.</p>
+
+
+    @Html.ActionLink("Update", "Update", new { id = Model.Id }, new { @class = "btn btn-primary" })
+    @Ajax.ActionLink("Delete", "Delete", "Actors", new { id = Model.Id },
+    new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, OnSuccess = "MyRedirect" },
+    new { @class = "btn btn-danger" })
+
+</div>
+
+<script>
+    function MyRedirect(data) {
+        window.location.href = data;
+    }
+</script>

@@ -1,0 +1,39 @@
+﻿@model MoviesSystem.Models.Actor
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Ajax.BeginForm("Create", "Actors", new AjaxOptions
+{
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "POST",
+    OnSuccess = "MyRedirect"
+}))
+{
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>Actor</legend>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Name, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-10">
+               @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Age, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-10">
+                @Html.TextBoxFor(x => x.Age, new { @class = "form-control", @type = "number"})
+            </div>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-default" />
+    </fieldset>
+}
+
+<script>
+    function MyRedirect(data) {
+        window.location.href = data;
+    }
+</script>

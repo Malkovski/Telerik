@@ -1,0 +1,12 @@
+﻿@model ICollection<MoviesSystem.Models.Actor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Html.Partial("_ActorsList", Model)
+
+
+@Html.ActionLink("Create new", "Create", "Actors", new { @class = "btn btn-lg btn-warning" })

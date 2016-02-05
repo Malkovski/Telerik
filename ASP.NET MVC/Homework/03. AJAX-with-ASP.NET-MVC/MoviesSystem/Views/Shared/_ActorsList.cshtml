@@ -1,0 +1,27 @@
+﻿@model ICollection<MoviesSystem.Models.Actor >
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var actor in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayTextFor(x => actor.Name)
+                </td>
+                <td>
+                    @Html.DisplayTextFor(x => actor.Age)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = actor.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
