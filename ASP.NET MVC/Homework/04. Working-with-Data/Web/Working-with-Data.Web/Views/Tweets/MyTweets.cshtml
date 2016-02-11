@@ -1,0 +1,9 @@
+﻿@model ICollection<Working_with_Data.Models.Tweet>
+
+@{
+    ViewBag.Title = "GetAllByUser";
+}
+
+<h2>@Model.First().User.UserName's Tweets</h2>
+
+@Html.Partial("_TweetsList")

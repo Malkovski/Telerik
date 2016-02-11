@@ -1,0 +1,28 @@
+﻿@model ICollection<Working_with_Data.Models.Tweet>
+
+<table class="table table-bordered table-condensed">
+    @foreach (var tweet in Model)
+    {
+
+        var content = tweet.Content.Split(' ');
+
+        for (int i = 0; i < content.Length; i++)
+        {
+            if (content[i].StartsWith("#"))
+            {
+                content[i] = "<a href=Taged?name=" + content[i].Substring(1) + ">" + content[i] + "</a>";
+            }
+        }
+
+        var newContent = string.Join(" ", content);
+
+
+
+        <tr class="form-group">
+            <td class="col-md-2">
+                @Html.Raw(newContent)
+                <small class="help-block">Created on:<i>@Html.DisplayFor(x => tweet.CreatedOn)</i></small>
+            </td>
+        </tr>
+    }
+</table>
