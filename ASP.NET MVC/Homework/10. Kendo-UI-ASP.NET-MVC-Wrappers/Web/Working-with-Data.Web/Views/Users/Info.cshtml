@@ -1,0 +1,54 @@
+﻿@model Working_with_Data.Models.ApplicationUser
+
+<div class="well">
+    <h2>@Model.UserName</h2>
+
+    <table class="table table-hover table-bordered">
+        <tr>
+            <td class="col-md-3">@Html.LabelFor(m => m, "Email")</td>
+            <td class="col-md-7">
+                @Html.DisplayFor(m => m.Email)
+                @Html.ValidationMessageFor(m => m, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td class="col-md-3">@Html.LabelFor(m => m, "Phone")</td>
+            <td class="col-md-7">
+                @Html.DisplayFor(m => m.PhoneNumber)
+                @Html.ValidationMessageFor(m => m, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+    </table>
+    @Html.ActionLink("Show tweets", "GetTweetsByUser", "Tweets", new { id = Model.Id }, new { id = "tweetsByUser" })
+    <table class="table" id="tweetsTable"></table>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#tweetsByUser').click(function () {
+                $.post(this.href, function (json) {
+                    $("#tweetsTable").empty();
+                    $(json).each(function (index, element) {
+                        
+                        var text = element["Content"];
+                        var parts = text.split(" ");
+                        for (var i = 0; i < parts.length; i++) {
+                            var part = parts[i];
+                            if (parts[i].startsWith("#"))
+                            {
+                                parts[i] = "<a href=?name=" + parts[i].substr(1) + ">" + parts[i] + "</a>";
+                            }
+                        }
+                        var newContent = parts.join(" ");
+
+                        var newElement = $("<tr class='tweet' style='display: none'><td>" + newContent +
+                            "<small class='help-block'>Created on: <i>" + new Date(parseInt(element.CreatedOn.substr(6))) + "</i></small></td></tr>");
+                        $("#tweetsTable").append(newElement);
+                        newElement.show(1500);
+                    })
+                });
+                return false;
+            });
+        });
+    </script>
+</div>
+

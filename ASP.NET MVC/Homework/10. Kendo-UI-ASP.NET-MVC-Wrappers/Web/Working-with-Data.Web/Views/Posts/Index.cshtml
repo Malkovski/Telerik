@@ -1,0 +1,51 @@
+﻿@model Working_with_Data.Models.Tweet
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Tweets</h2>
+<div>
+    @(Html.Kendo()
+        .Grid<Working_with_Data.Models.Tweet>()
+        .Name("grid")
+        .Columns(column =>
+        {
+            column.Bound(c => c.Id).Hidden();
+            column.Bound(c => c.Content);
+            column.Command(c => c.Edit());
+            column.Command(c => c.Destroy());
+
+        })
+        .DataSource(data =>
+        {
+            data
+            .Ajax()
+            .Model(x => x.Id(tweet => tweet.Id))
+            .Read(read => read.Action("Read", "Posts"))
+            .Create(create => create.Action("Create", "Posts"))
+            .Update(update => update.Action("Update", "Posts"))
+            .Destroy(destroy => destroy.Action("Destroy", "Posts"))
+            .PageSize(5);
+        })
+        .ColumnMenu()
+        .ToolBar(tools => tools.Create().Text("Create"))
+        .Editable(edit => edit.Mode(GridEditMode.PopUp))
+        .Pageable(page => page.Refresh(true))
+        .Pageable(page => page.ButtonCount(5))
+        .Groupable()
+        .Filterable()
+        .Sortable()
+    )
+</div>
+
+<div>
+    @(Html.Kendo()
+        .AutoCompleteFor(x => x.Content)
+        .DataSource(data =>
+        {
+            data.Read("AutocompleteData", "Posts");
+
+        })
+        .MinLength(2)
+    )
+</div>

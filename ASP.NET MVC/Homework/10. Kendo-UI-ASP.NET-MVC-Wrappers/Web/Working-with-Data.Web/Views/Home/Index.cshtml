@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    @Html.TextBox("Search", "", new { @id = "searchTag"})
+    @Html.ActionLink("Search", "Taged", "Tweets", null, new { @class = "btn btn-md btn-danger", @id = "searchBtn"})
+    <table class="table" id="tweetsTable"></table>
+</div>
+
+<ul>
+    @foreach (var user in Model)
+    { 
+
+    <li>
+        @Html.ActionLink((string)@user.UserName, "Info", "Users", new { id = (string)@user.Id}, new { @class = "btn"})
+    </li>
+
+    }
+</ul>
+
+<script type="text/javascript">
+    $("#searchBtn").on("click", function () { 
+            var tag = $('#searchTag').val();
+            tag = tag.substr(1);
+            $.post(this.href + '?name=' + tag, function (data) {
+                $('#tweetsTable').append(data);
+            })
+    })
+</script>

@@ -1,0 +1,258 @@
+﻿body {
+    padding-top: 70px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+#scroller {
+    position: relative;
+}
+
+    #scroller .innerScrollArea {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    #scroller ul {
+        padding: 0;
+        margin: 0;
+        position: relative;
+    }
+
+    #scroller li {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        position: absolute;
+    }
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.logo, .menu-logo, .login-logo {
+    margin: 0;
+    height: 100%;
+}
+
+    .menu-logo img {
+        height: 100px;
+    }
+
+    .login-logo img {
+        height: 400px;
+    }
+
+    .logo img {
+        margin-top: 30px;
+        height: 450px;
+    }
+
+.down {
+    margin-top: 15px;
+}
+
+.menu a.image {
+    margin-top: 20px;
+    display: block;
+    height: 130px;
+    text-indent: -9999px;
+}
+
+.menu a.rail-types {
+    background: url(Images/railTypes.jpg) no-repeat top;
+}
+
+.menu a.rail {
+    background: url(Images/rail.jpg) no-repeat top;
+}
+
+.menu a.fabric {
+    background: url(Images/fabric.jpg) no-repeat top;
+}
+
+.menu a.components {
+    background: url(Images/components.jpg) no-repeat top;
+}
+
+.menu a.galleryIcon {
+    background: url(Images/GalleryIcon.jpg) no-repeat top;
+}
+
+.menu a.link {
+    text-decoration: none;
+    color: black;
+}
+
+.vertical {
+    display: table;
+    height: 170px;
+}
+
+    .vertical p {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+.k-edit-form-container .form-control {
+    height: 20px;
+}
+
+.k-edit-form-container .large {
+    height: 200px;
+}
+
+.kendo-form {
+    margin-left: 20px;
+}
+
+.field-validation-error {
+    color: #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.actionLink {
+    width: 200px;
+}
+
+.view {
+    margin-top: 9px;
+    color: blue;
+}
+
+.sidebar {
+    width: 20%;
+    float: left;
+}
+
+.btn-danger, div.validation-error {
+    background-image: none;
+    background-color: #F44444;
+    border: 1px solid #F44444;
+}
+
+div.validation-error {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    color: #fff;
+    padding: 2px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    font-size: 12px;
+}
+
+    div.validation-error:empty, .alert.alert-danger:empty,
+    .form-group:empty {
+        display: none !important; /*overrides display block from jq validate*/
+    }
+
+    div.validation-error:after, div.validation-error:before {
+        bottom: 100%;
+        left: 4%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-bottom-color: #F44444;
+    }
+
+    div.validation-error:after {
+        border-color: rgba(136, 183, 213, 0);
+        border-width: 5px;
+        margin-left: -5px;
+    }
+
+    div.validation-error:before {
+        border-color: rgba(245, 234, 228, 0);
+        border-width: 7px;
+        margin-left: -7px;
+    }
+
+input.validation-error, select.validation-error, div.validation-error-border, textarea.validation-error {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: 3px solid #F44444;
+}
+
+div.preview-image-container {
+    float: right;
+}
+
+.preview-image {
+    height: 500px;
+}
+
+.preview-info {
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: center;
+}
+
+.preview-blindtype-name:first-child {
+    font-family: 'Courier New';
+    font-size: 40px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.preview-description {
+    font-size: 16px;
+    text-align: justify;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    display: inline-block;
+}
+
+.preview-price {
+    font-size: 30px;
+    color: coral;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    display: inline-block;
+    text-align: center;
+}
+
+.galleryItem {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+#scroller {
+    position: relative;
+}
+
+    #scroller .innerScrollArea {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    #scroller ul {
+        padding: 0;
+        margin: 0;
+        position: relative;
+    }
+
+    #scroller li {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        position: absolute;
+    }

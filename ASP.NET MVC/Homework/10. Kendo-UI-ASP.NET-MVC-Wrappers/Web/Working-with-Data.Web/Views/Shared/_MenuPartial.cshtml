@@ -1,0 +1,11 @@
+﻿<ul class="nav navbar-nav">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <li>@Html.ActionLink("Make tweet", "Create", "Tweets", null, null)</li>
+    }
+
+    @if (User.IsInRole("Admin"))
+    {
+        <li>@Html.ActionLink("Administration", "Admin", "Admin", new { area = "Administration" }, null)</li>
+    }
+</ul>
