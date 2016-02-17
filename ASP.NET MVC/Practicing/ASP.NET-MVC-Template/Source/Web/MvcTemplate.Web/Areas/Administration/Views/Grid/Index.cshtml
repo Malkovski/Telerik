@@ -1,0 +1,38 @@
+﻿
+<h2>Grid administration</h2>
+
+<div>
+    @(Html.Kendo()
+          .Grid<MvcTemplate.Web.Areas.Administration.Models.JokesViewModel>()
+          .Name("grid")
+          .Columns(columns =>
+          {
+              columns.Bound(c => c.Content);
+              columns.Bound(c => c.CreatedOn);
+              columns.Bound(c => c.Category);
+              columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
+          })
+          .ToolBar(toolbar =>
+          {
+              toolbar.Create();
+          })
+          .ColumnMenu()
+          .Editable(editable => editable.Mode(GridEditMode.PopUp).TemplateName("GridTemplate").Window(w => w.Title("Edit").Width(450)))
+          .Pageable(page => page.Refresh(true))
+          .Sortable(sortable =>
+          {
+              sortable.SortMode(GridSortMode.SingleColumn);
+          })
+          .Filterable()
+          .Groupable()
+          .Scrollable()
+          .DataSource(dataSource => dataSource
+              .Ajax()
+              .Model(model => model.Id(p => p.Id))
+              .Read(read => read.Action("JokesViewModels_Read", "Grid"))
+              .Create(create => create.Action("JokesViewModels_Create", "Grid"))
+              .Update(update => update.Action("JokesViewModels_Update", "Grid"))
+              .Destroy(destroy => destroy.Action("JokesViewModels_Destroy", "Grid"))
+          )
+    )
+</div>

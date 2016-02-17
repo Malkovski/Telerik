@@ -1,0 +1,51 @@
+﻿@model MvcTemplate.Web.ViewModels.Home.JokeViewModel
+@{
+    ViewBag.Title = "ById";
+}
+
+@section scripts {
+    <script type="text/javascript" src="@Url.Content("~/Scripts/ViewModelHelpers/JokesViewModel.js")"></script>
+}
+
+<div>
+    Category: @Model.Category
+</div>
+<hr />
+<div class="well">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="row" data-id="@Model.Id" data-action="up">
+                <span class="glyphicon glyphicon-thumbs-up"></span>
+            </div>
+            <div id="@Model.Id" data-id="@Model.Id" data-action="likesCount">@Model.LikesCount</div>
+            <div class="row" data-id="@Model.Id" data-action="down">
+                <span class="glyphicon glyphicon-thumbs-down"></span>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <span class="joke-content"> @Model.Content</span>
+        </div>
+    </div>
+</div>
+
+@*@section scripts {
+    <script>
+        $('div[data-action="up"]').on('click', function () {
+            var id = $(this).attr('data-id');
+            likeClick(1, id);
+        })
+
+        $('div[data-action="down"]').on('click', function () {
+            var id = $(this).attr('data-id');
+            likeClick(-1, id);
+        })
+
+        function likeClick(type, id) {
+            $.post("/Likes/Like/", { jokeId: id, likeType: type }, function (data) {
+                var likesCount = data.Count;
+                //$('div[data-action="likesCount"] [data-id]="' + id + '"]').html(likesCount);
+                $('#' + id).html(likesCount);
+            })
+        }
+    </script>
+}*@

@@ -1,0 +1,19 @@
+﻿@model MvcTemplate.Web.Areas.Administration.Models.JokesViewModel
+
+<div class="kendo-form">
+    @using (Html.BeginForm())
+    {
+        <div class="form-horizontal">
+            <fieldset>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Content, new { @class = "control-label col-md-3" })
+                    <div class="col-md-7">
+                        @Html.EditorFor(m => m.Content, "MultilineTemplate")
+                        @Html.ValidationMessageFor(m => m, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                @Html.EditorFor(m => m.Category, "CategoryTemplate", new { ListItems = ViewBag.CategoryNames })
+            </fieldset>
+        </div>
+    }
+</div>

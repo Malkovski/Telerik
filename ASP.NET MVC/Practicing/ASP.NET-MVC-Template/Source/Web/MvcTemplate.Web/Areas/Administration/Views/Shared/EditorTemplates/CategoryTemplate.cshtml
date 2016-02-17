@@ -1,0 +1,22 @@
+﻿@model MvcTemplate.Web.Areas.Administration.Models.JokesViewModel
+
+<div class="form-group">
+    @Html.LabelFor(m => m, htmlAttributes: new { @class = "control-label col-md-3" })
+    <div class="col-md-7">
+        @(Html.Kendo().AutoCompleteFor(x => x.Category).DataSource(data =>
+    {
+        data.Read(x => x.Action("GetCategoryNames", "Grid", null));
+    }
+        ).Name("Category"))
+    </div>
+</div>
+
+@*@model Enum*@
+
+@*<div class="form-group">
+        @Html.LabelFor(m => m, htmlAttributes: new { @class = "control-label col-md-3" })
+        <div class="col-md-7">
+            @Html.DropDownListFor(m => m, (IEnumerable<SelectListItem>)ViewBag.ListItems, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m, "", new { @class = "text-danger" })
+        </div>
+</div>*@
