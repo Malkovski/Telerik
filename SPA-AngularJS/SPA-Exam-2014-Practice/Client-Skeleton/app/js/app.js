@@ -45,4 +45,4 @@ var app = angular.module('myApp', ['ngRoute', 'ngResource', 'ngCookies']).
             .otherwise({ redirectTo: '/' });
     }])
     .value('toastr', toastr)
-    .constant('baseServiceUrl', 'http://spa2014.bgcoder.com');
+    .constant('baseServiceUrl', 'http://localhost:1337');

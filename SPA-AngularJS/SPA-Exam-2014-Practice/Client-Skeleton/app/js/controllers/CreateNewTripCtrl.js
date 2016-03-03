@@ -1,7 +1,8 @@
 (function () {
     'use strict';
 
-    app.controller('CreateNewTripCtrl', ['$scope', 'data', 'trips', 'createTrip', 'notifier', function ($scope, data, trips, createTrip, notifier) {
+    app.controller('CreateNewTripCtrl', ['$scope', '$location', 'data', 'trips', 'createTrip', 'notifier',
+        function ($scope, $location, data, trips, createTrip, notifier) {
         $scope.cities = [];
         $scope.isMine = true;
         $scope.createNewTrip = createNewTrip;
@@ -18,6 +19,7 @@
                 .then(function (success) {
                     if (success) {
                         notifier.success("Creating trip successful!");
+                        $location.path('/trips');
                     }
                 }, function (err) {
                     notifier.error(err.message)

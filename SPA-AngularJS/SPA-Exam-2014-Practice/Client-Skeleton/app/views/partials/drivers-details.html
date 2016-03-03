@@ -17,7 +17,8 @@
     </div>
 
     <div class="bs-component">
-        <table class="table table-striped table-hover ">
+        <div style="z-index: 100" ng-if="userByIdInfo.trips.length === 0"><h1>No results!</h1></div>
+        <table class="table table-striped table-hover"  ng-if="userByIdInfo.trips.length > 0">
             <thead>
             <tr>
                 <th class="text-center">Driver</th>
