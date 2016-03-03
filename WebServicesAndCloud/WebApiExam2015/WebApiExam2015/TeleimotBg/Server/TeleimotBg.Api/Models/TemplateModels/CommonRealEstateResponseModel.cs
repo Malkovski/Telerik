@@ -1,7 +1,5 @@
 ﻿namespace TeleimotBg.Api.Models.TemplateModels
 {
-    using System;
-    using System.Linq;
     using TeleimotBg.Api.Infrastructure.Mappings;
     using TeleimotBg.Models;
 

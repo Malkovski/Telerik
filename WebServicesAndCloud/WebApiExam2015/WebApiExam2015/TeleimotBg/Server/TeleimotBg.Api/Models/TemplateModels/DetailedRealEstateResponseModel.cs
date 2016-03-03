@@ -1,8 +1,9 @@
 ﻿namespace TeleimotBg.Api.Models.TemplateModels
 {
-    using AutoMapper;
     using System;
-    using System.Linq;
+
+    using AutoMapper;
+
     using TeleimotBg.Api.Infrastructure.Mappings;
     using TeleimotBg.Models;
 

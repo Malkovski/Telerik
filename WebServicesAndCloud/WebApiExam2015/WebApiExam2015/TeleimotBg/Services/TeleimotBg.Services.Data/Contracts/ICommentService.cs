@@ -1,11 +1,10 @@
 ﻿namespace TeleimotBg.Services.Data.Contracts
 {
-    using System;
     using System.Linq;
+
     using TeleimotBg.GlobalConstants;
     using TeleimotBg.Models;
 
-    
     public interface ICommentService
     {
         IQueryable<Comment> All(int id, int skip = UtilityConstants.DefaultSkipSize, int take = UtilityConstants.DefaultTakeSize);

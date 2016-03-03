@@ -3,6 +3,7 @@
     using System;
     using System.Linq;
     using System.Web;
+
     using TeleimotBg.Data;
     using TeleimotBg.Models;
     using TeleimotBg.Services.Data.Contracts;
@@ -27,7 +28,7 @@
                 take = 100;
             }
 
-            //Return only the top 10 real estates, after sorting them by date and time of creation in descending order.       
+            // Return only the top 10 real estates, after sorting them by date and time of creation in descending order.       
             return this.comments.All()
             .Where(x => x.RealEstateId == id)
             .OrderBy(x => x.CreatedOn)

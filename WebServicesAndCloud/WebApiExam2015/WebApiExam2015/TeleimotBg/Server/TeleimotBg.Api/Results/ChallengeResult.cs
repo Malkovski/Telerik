@@ -1,7 +1,5 @@
 ﻿namespace TeleimotBg.Api.Results
 {
-    using System;
-    using System.Linq;
     using System.Net;
     using System.Net.Http;
     using System.Threading;
@@ -17,6 +15,7 @@
         }
 
         public string LoginProvider { get; set; }
+
         public HttpRequestMessage Request { get; set; }
 
         public Task<HttpResponseMessage> ExecuteAsync(CancellationToken cancellationToken)

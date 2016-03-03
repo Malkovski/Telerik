@@ -1,9 +1,10 @@
 ﻿namespace TeleimotBg.Api.Models.TemplateModels
 {
-    using AutoMapper;
     using System;
     using System.Collections.Generic;
-    using System.Linq;
+
+    using AutoMapper;
+
     using TeleimotBg.Api.Infrastructure.Mappings;
     using TeleimotBg.Models;
 
@@ -22,6 +23,7 @@
         public string RealEstateType { get; set; }
 
         public string Description { get; set; }
+
         public int Id { get; set; }
 
         public string Title { get; set; }

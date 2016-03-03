@@ -8,12 +8,14 @@
     using System.Threading.Tasks;
     using System.Web;
     using System.Web.Http;
+
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
     using Microsoft.Owin.Security.Cookies;
     using Microsoft.Owin.Security.OAuth;
+
     using TeleimotBg.Api.Models;
     using TeleimotBg.Api.Providers;
     using TeleimotBg.Api.Results;
@@ -460,7 +462,7 @@
 
                 Claim providerKeyClaim = identity.FindFirst(ClaimTypes.NameIdentifier);
 
-                if (providerKeyClaim == null || String.IsNullOrEmpty(providerKeyClaim.Issuer) ||
+                if (providerKeyClaim == null || string.IsNullOrEmpty(providerKeyClaim.Issuer) ||
                     string.IsNullOrEmpty(providerKeyClaim.Value))
                 {
                     return null;

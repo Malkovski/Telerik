@@ -2,8 +2,8 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
-    using System.Linq;
-using TeleimotBg.GlobalConstants;
+
+    using TeleimotBg.GlobalConstants;
 
     public class Comment
     {

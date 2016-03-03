@@ -1,7 +1,5 @@
 ﻿namespace TeleimotBg.Api.Infrastructure.ObjectFactory
 {
-    using System;
-    using System.Linq;
     using Ninject;
 
     public class ObjectFactory

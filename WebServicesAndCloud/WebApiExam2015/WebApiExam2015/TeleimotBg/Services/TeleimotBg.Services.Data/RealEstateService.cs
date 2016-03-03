@@ -3,6 +3,7 @@
     using System;
     using System.Linq;
     using System.Web;
+
     using TeleimotBg.Data;
     using TeleimotBg.Models;
     using TeleimotBg.Services.Data.Contracts;
@@ -35,7 +36,6 @@
                 .Skip(skip * take)
                 .Take(take);
         }
-
 
         public IQueryable<RealEstate> GetEstateById(int id)
         {

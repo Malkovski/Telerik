@@ -5,6 +5,7 @@
     using System.Reflection;
     using System.Web;
     using System.Web.Http;
+
     using TeleimotBg.GlobalConstants;
 
     public class WebApiApplication : HttpApplication
@@ -17,7 +18,6 @@
         }
 
         // If enable corrs makes problems!!!!
-
         //protected void Application_BeginRequest(object sender, EventArgs e)
         //{
         //    this.Response.Headers.Add("Access-Control-Allow-Origin", "*");

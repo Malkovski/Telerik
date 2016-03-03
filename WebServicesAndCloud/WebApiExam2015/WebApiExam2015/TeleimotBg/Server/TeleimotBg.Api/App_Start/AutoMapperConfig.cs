@@ -1,10 +1,11 @@
 ﻿namespace TeleimotBg.Api
 {
-    using AutoMapper;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
+
+    using AutoMapper;
     using TeleimotBg.Api.Infrastructure.Mappings;
 
     public class AutoMapperConfig

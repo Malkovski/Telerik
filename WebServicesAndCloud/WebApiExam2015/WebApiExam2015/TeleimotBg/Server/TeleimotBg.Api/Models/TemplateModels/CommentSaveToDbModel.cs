@@ -1,8 +1,7 @@
 ﻿namespace TeleimotBg.Api.Models.TemplateModels
 {
-    using System;
     using System.ComponentModel.DataAnnotations;
-    using System.Linq;
+
     using TeleimotBg.GlobalConstants;
 
     public class CommentSaveToDbModel

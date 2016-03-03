@@ -1,8 +1,8 @@
 ﻿namespace TeleimotBg.Services.Data.Contracts
 {
-    using TeleimotBg.Models;
-    using System;
     using System.Linq;
+
+    using TeleimotBg.Models;
 
     public interface IUserService
     {

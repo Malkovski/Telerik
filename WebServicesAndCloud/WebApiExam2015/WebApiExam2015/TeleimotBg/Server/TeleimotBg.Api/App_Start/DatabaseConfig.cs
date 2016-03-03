@@ -1,8 +1,7 @@
 ﻿namespace TeleimotBg.Api
 {
-    using System;
     using System.Data.Entity;
-    using System.Linq;
+
     using TeleimotBg.Data;
     using TeleimotBg.Data.Migrations;
 

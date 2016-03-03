@@ -1,8 +1,8 @@
 ﻿namespace TeleimotBg.Api.Controllers
 {
-    using System;
     using System.Linq;
     using System.Web.Http;
+
     using TeleimotBg.Api.Models.TemplateModels;
     using TeleimotBg.Services.Data.Contracts;
 
@@ -16,9 +16,7 @@
             this.users = users;
         }
 
-        //---------------GET---------------
-
-        
+        //---------------GET---------------     
         public IHttpActionResult GetByUsername(string username)
         {
             var result = this.users.GetByUsername(username);
@@ -27,7 +25,6 @@
         }
 
         //---------------PUT--------------
-
         [Authorize]
         [Route("rate")]
         public IHttpActionResult Put(RateSaveModel model)

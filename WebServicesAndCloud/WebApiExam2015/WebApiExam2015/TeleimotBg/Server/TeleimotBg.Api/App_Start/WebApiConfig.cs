@@ -1,10 +1,9 @@
-﻿using System;
-using System.Linq;
-using System.Web.Http;
-using Microsoft.Owin.Security.OAuth;
-
-namespace TeleimotBg.Api
+﻿namespace TeleimotBg.Api
 {
+    using System.Web.Http;
+
+    using Microsoft.Owin.Security.OAuth;
+
     public static class WebApiConfig
     {
         public static void Register(HttpConfiguration config)
@@ -27,7 +26,7 @@ namespace TeleimotBg.Api
             config.Routes.MapHttpRoute(
                 name: "CustomRouteApi",
                 routeTemplate: "api/comments/ByUser/{username}",
-                defaults: new {controller = "comments", method = "GET", action = "GetByUsername", username = RouteParameter.Optional });
+                defaults: new { controller = "comments", method = "GET", action = "GetByUsername", username = RouteParameter.Optional });
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

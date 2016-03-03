@@ -1,12 +1,13 @@
 ﻿namespace TeleimotBg.Api
 {
     using System;
-    using System.Linq;
+
     using Microsoft.AspNet.Identity;
     using Microsoft.Owin;
     using Microsoft.Owin.Security.Cookies;
     using Microsoft.Owin.Security.OAuth;
     using Owin;
+
     using TeleimotBg.Api.Providers;
     using TeleimotBg.Data;
 

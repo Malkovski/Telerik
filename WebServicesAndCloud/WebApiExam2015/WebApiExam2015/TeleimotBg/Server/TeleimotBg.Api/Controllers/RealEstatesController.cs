@@ -1,12 +1,13 @@
 ﻿namespace TeleimotBg.Api.Controllers
 {
-    using System;
     using System.Linq;
     using System.Web.Http;
-    using TeleimotBg.Api.Models.TemplateModels;
-    using TeleimotBg.Services.Data.Contracts;
+
     using AutoMapper.QueryableExtensions;
+
+    using TeleimotBg.Api.Models.TemplateModels;
     using TeleimotBg.GlobalConstants;
+    using TeleimotBg.Services.Data.Contracts;
 
     public class RealEstatesController : ApiController
     {
@@ -18,7 +19,6 @@
         }
 
         //----------------GET----------------------
-
         public IHttpActionResult Get(int skip = UtilityConstants.DefaultSkipSize, int take = UtilityConstants.DefaultTakeSize)
         {
             var result = this.estates
@@ -54,7 +54,6 @@
         }
 
         //-----------POST-----------------------
-
         public IHttpActionResult Post(RealEstateSaveToDbRequestModel model)
         {
             if (!this.ModelState.IsValid)
@@ -68,14 +67,14 @@
             }
 
             var createdEstateId = this.estates.Add(model.Title, model.Description, model.Address, model.Contact,
-                model.ConstructionYear,model.SellingPrice , model.RentingPrice, model.Type);
+                model.ConstructionYear, model.SellingPrice, model.RentingPrice, model.Type);
 
             var result = this.estates
                 .GetEstateById(createdEstateId)
                 .ProjectTo<CommonRealEstateResponseModel>()
                 .FirstOrDefault();
 
-            return this.Created("", result);
+            return this.Created(string.Empty, result);
         }
     }
 }

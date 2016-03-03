@@ -1,11 +1,10 @@
 ﻿namespace TeleimotBg.Services.Data
 {
+    using System.Linq;
+
     using TeleimotBg.Data;
     using TeleimotBg.Models;
     using TeleimotBg.Services.Data.Contracts;
-    using System.Linq;
-    using System.Web;
-    using Microsoft.AspNet.Identity;
 
     public class UserService : IUserService
     {

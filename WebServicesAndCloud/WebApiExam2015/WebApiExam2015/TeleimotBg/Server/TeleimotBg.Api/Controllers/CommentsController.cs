@@ -1,13 +1,14 @@
 ﻿namespace TeleimotBg.Api.Controllers
 {
-    using System;
     using System.Linq;
     using System.Web.Http;
-    using TeleimotBg.Api.Models.TemplateModels;
-    using TeleimotBg.Services.Data.Contracts;
-    using AutoMapper.QueryableExtensions;
     using System.Web.Http.Cors;
+
+    using AutoMapper.QueryableExtensions;
+
+    using TeleimotBg.Api.Models.TemplateModels;
     using TeleimotBg.GlobalConstants;
+    using TeleimotBg.Services.Data.Contracts;
 
     [EnableCors("*", "*", "*")]
     [Authorize]
@@ -21,7 +22,6 @@
         }
 
         //-------------GET------------------
-
         public IHttpActionResult Get(int id, int skip = UtilityConstants.DefaultSkipSize, int take = UtilityConstants.DefaultTakeSize)
         {
             var result = this.comments
@@ -57,7 +57,7 @@
                 .ProjectTo<CommentsResponseModel>()
                 .FirstOrDefault();
 
-            return this.Created("", result);
+            return this.Created(string.Empty, result);
         }
     }
 }

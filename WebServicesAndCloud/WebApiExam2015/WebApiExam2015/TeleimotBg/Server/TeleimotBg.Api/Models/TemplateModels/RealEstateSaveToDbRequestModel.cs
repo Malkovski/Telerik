@@ -1,8 +1,7 @@
 ﻿namespace TeleimotBg.Api.Models.TemplateModels
 {
-    using System;
     using System.ComponentModel.DataAnnotations;
-    using System.Linq;
+
     using TeleimotBg.Api.Infrastructure.Mappings;
     using TeleimotBg.GlobalConstants;
     using TeleimotBg.Models;
@@ -34,7 +33,5 @@
 
         [Range(0, 3)]
         public int Type { get; set; }
-
-       
     }
 }
